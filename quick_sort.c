@@ -11,6 +11,7 @@ int swap (int *a, int *b) {
 }
 
 void quickSort(int start, int end) {
+
     if (start >= end) return;
     int key =start, i=start +1, j=end;
     while (i <=j) {
@@ -29,6 +30,7 @@ int main(void) {
     for (int i=0; i<n;i++) scanf("%d", &a[i]);
     quickSort(0, n-1);
     for (int i=0; i<n; i++) printf("%d ", a[i]);
+    system('pause');
     return 0;
 
 }

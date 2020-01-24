@@ -20,6 +20,7 @@ void addFront(Node *root, int index) {
 void dfs(int index) {
     if (c[index]) return;
     c[index] = 1;
+    printf("%d ", a[index]->index);
     Node *cur = a[index]->next;
     while (cur != NULL) {
         int next = cur->index;
@@ -31,11 +32,11 @@ void dfs(int index) {
 int main(void) {
     a = (Node **)malloc(sizeof(Node*)*MAX_SIZE);
     scanf("%d %d", &n, &m);
-    for (int i =1; i<n ; ++i) {
+    for (int i =1; i<=n ; ++i) {
         a[i] = (Node *)malloc(sizeof(Node));
     }
 
-    for (int i=1; i<m; ++i) {
+    for (int i=1; i<=m; i++) {
         int x,y;
         scanf("%d %d", &x, &y);
         addFront(a[x],y);
