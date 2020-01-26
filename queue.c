@@ -40,7 +40,7 @@ int pop(Queue *queue) {
         free(cur);
         return result;
     }
-}
+} 
 
 void show(Queue *queue) {
     Node *cur = queue->top;
