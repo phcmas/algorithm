@@ -2,7 +2,7 @@
 
 int Stack::pop() {
     int data = datas_.tail()->data();
-    datas_.remove();
+    datas_.removeTail();
     return data;
 }
 

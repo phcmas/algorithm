@@ -13,7 +13,7 @@ void LinkedList::insert(Node *node) {
     }
 }
 
-void LinkedList::remove() {
+void LinkedList::removeTail() {
     if (head_ == nullptr) return;
 
     Node *current = head_;
@@ -28,6 +28,11 @@ void LinkedList::remove() {
     }
     free(next);
     current->set_next(nullptr);
+}
+void LinkedList::removeHead() {
+    Node *node = head_;
+    head_ = head_->next();
+    free(node);
 }
 
 void LinkedList::printList() {
