@@ -7,7 +7,7 @@ int main(void) {
     numbers.push_back(4);
     numbers.push_back(2);
     numbers.push_back(7);
-    algorithm::SelectionSort(numbers);
+    algorithm::BubbleSort(numbers);
 
     for (int i=0; i<numbers.size(); ++i) {
         std::cout<< numbers[i] << " ";

@@ -1,11 +1,11 @@
 file(REMOVE_RECURSE
   "CMakeFiles/app.dir/linked_list.o"
   "CMakeFiles/app.dir/node.o"
+  "CMakeFiles/app.dir/queue.o"
   "CMakeFiles/app.dir/stack.o"
   "CMakeFiles/app.dir/test.o"
-  "CMakeFiles/app.dir/queue.o"
-  "app.pdb"
   "app"
+  "app.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
