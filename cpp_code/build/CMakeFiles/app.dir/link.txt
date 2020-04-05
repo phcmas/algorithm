@@ -1,1 +1,1 @@
-/Library/Developer/CommandLineTools/usr/bin/c++  -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/app.dir/linked_list.o CMakeFiles/app.dir/node.o CMakeFiles/app.dir/stack.o CMakeFiles/app.dir/test.o CMakeFiles/app.dir/queue.o  -o app 
+/usr/bin/c++  -g  -rdynamic CMakeFiles/app.dir/linked_list.o CMakeFiles/app.dir/node.o CMakeFiles/app.dir/stack.o CMakeFiles/app.dir/test.o CMakeFiles/app.dir/queue.o  -o app 

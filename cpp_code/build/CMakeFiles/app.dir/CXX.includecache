@@ -6,25 +6,45 @@
 
 #IncludeRegexTransform: 
 
-/Users/daehansultang/Exercise/cpp_code/algorithm.h
-vector
--
+/home/seung/Exercise/cpp_code/linked_list.cc
+linked_list.h
+/home/seung/Exercise/cpp_code/linked_list.h
 
-/Users/daehansultang/Exercise/cpp_code/linked_list.h
+/home/seung/Exercise/cpp_code/linked_list.h
 node.h
-/Users/daehansultang/Exercise/cpp_code/node.h
+/home/seung/Exercise/cpp_code/node.h
 
-/Users/daehansultang/Exercise/cpp_code/node.h
+/home/seung/Exercise/cpp_code/node.cc
+node.h
+/home/seung/Exercise/cpp_code/node.h
+
+/home/seung/Exercise/cpp_code/node.h
 iostream
 -
 
-/Users/daehansultang/Exercise/cpp_code/queue.h
-linked_list.h
-/Users/daehansultang/Exercise/cpp_code/linked_list.h
-
-/Users/daehansultang/Exercise/cpp_code/test.cc
+/home/seung/Exercise/cpp_code/queue.cc
 queue.h
-/Users/daehansultang/Exercise/cpp_code/queue.h
-algorithm.h
-/Users/daehansultang/Exercise/cpp_code/algorithm.h
+/home/seung/Exercise/cpp_code/queue.h
+
+/home/seung/Exercise/cpp_code/queue.h
+linked_list.h
+/home/seung/Exercise/cpp_code/linked_list.h
+
+/home/seung/Exercise/cpp_code/sort_algorithm.h
+vector
+-
+
+/home/seung/Exercise/cpp_code/stack.cc
+stack.h
+/home/seung/Exercise/cpp_code/stack.h
+
+/home/seung/Exercise/cpp_code/stack.h
+linked_list.h
+/home/seung/Exercise/cpp_code/linked_list.h
+
+/home/seung/Exercise/cpp_code/test.cc
+queue.h
+/home/seung/Exercise/cpp_code/queue.h
+sort_algorithm.h
+/home/seung/Exercise/cpp_code/sort_algorithm.h
 
