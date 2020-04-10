@@ -1,19 +1,16 @@
-#include "queue.h"
 #include "sort_algorithm.h"
+#include "graph.h"
 
 int main(void) {
-    std::vector<int> numbers;
-    numbers.push_back(3);
-    numbers.push_back(4);
-    numbers.push_back(2);
-    numbers.push_back(7);
-    numbers.push_back(5);
-    numbers.push_back(6);
-    numbers.push_back(1);
-    algorithm::MergeSort(numbers);
-
-    for (int i=0; i<numbers.size(); ++i) {
-        std::cout<< numbers[i] << " ";
-    }
+    Graph graph(8);
+    graph.AddEdge(1,2);
+    graph.AddEdge(1,3);
+    graph.AddEdge(1,6);
+    graph.AddEdge(2,7);
+    graph.AddEdge(6,7);
+    graph.AddEdge(3,4);
+    graph.AddEdge(4,5);
+    graph.PrintNeighbor(1);
+    graph.PrintNeighbor(2);
 
 }

@@ -124,6 +124,36 @@ app/fast:
 .PHONY : app/fast
 
 # target to build an object file
+binary_tree.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/binary_tree.o
+.PHONY : binary_tree.o
+
+# target to preprocess a source file
+binary_tree.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/binary_tree.i
+.PHONY : binary_tree.i
+
+# target to generate assembly for a file
+binary_tree.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/binary_tree.s
+.PHONY : binary_tree.s
+
+# target to build an object file
+graph.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/graph.o
+.PHONY : graph.o
+
+# target to preprocess a source file
+graph.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/graph.i
+.PHONY : graph.i
+
+# target to generate assembly for a file
+graph.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/graph.s
+.PHONY : graph.s
+
+# target to build an object file
 linked_list.o:
 	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/linked_list.o
 .PHONY : linked_list.o
@@ -152,6 +182,21 @@ node.i:
 node.s:
 	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/node.s
 .PHONY : node.s
+
+# target to build an object file
+priority_queue.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/priority_queue.o
+.PHONY : priority_queue.o
+
+# target to preprocess a source file
+priority_queue.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/priority_queue.i
+.PHONY : priority_queue.i
+
+# target to generate assembly for a file
+priority_queue.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/priority_queue.s
+.PHONY : priority_queue.s
 
 # target to build an object file
 queue.o:
@@ -207,12 +252,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... app"
 	@echo "... edit_cache"
+	@echo "... binary_tree.o"
+	@echo "... binary_tree.i"
+	@echo "... binary_tree.s"
+	@echo "... graph.o"
+	@echo "... graph.i"
+	@echo "... graph.s"
 	@echo "... linked_list.o"
 	@echo "... linked_list.i"
 	@echo "... linked_list.s"
 	@echo "... node.o"
 	@echo "... node.i"
 	@echo "... node.s"
+	@echo "... priority_queue.o"
+	@echo "... priority_queue.i"
+	@echo "... priority_queue.s"
 	@echo "... queue.o"
 	@echo "... queue.i"
 	@echo "... queue.s"

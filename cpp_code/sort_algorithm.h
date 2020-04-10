@@ -86,8 +86,12 @@ namespace algorithm {
 
     /* 머지 소트(합병 정렬) */
     void Merge (std::vector<int> &numbers, int left, int middle, int right) {
-        std::vector<int> lefts (numbers[left], numbers[middle]);
-        std::vector<int> rights (numbers[middle+1], numbers[right]);
+        std::vector<int> lefts;
+        std::vector<int> rights;
+
+        for (int i=left; i<=middle; ++i) lefts.push_back(numbers[i]);
+        for (int i=middle+1; i<=right; ++i) rights.push_back(numbers[i]);
+
         int i = 0, j=0;
         int index =left;
         while (true) {
@@ -122,6 +126,30 @@ namespace algorithm {
     void MergeSort (std::vector<int> & numbers) {
         MergeSortInternal (numbers, 0, numbers.size()-1);
     }
+
+    int BinarySearch (std::vector<int> &numbers, int number) {
+        /* numbers는 이미 정렬이 되어 있다고 가정 */
+        int start =0;
+        int end = numbers.size();
+        int middle = (start+end)/2;
+        int result = -1;
+
+        while (start <= end) {
+            if (numbers[middle] == number) {
+                result = middle;
+                break;
+            } else if (numbers[middle] < number) {
+                start = middle+1;
+                middle = (start+end)/2;
+            } else {
+                end = middle-1;
+                middle = (start+end)/2;
+            }
+        }
+        return result;
+    }
+
+
 }
 
 
