@@ -7,8 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/app.dir/queue.o"
   "CMakeFiles/app.dir/stack.o"
   "CMakeFiles/app.dir/test.o"
-  "app.pdb"
   "app"
+  "app.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

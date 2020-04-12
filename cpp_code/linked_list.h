@@ -9,6 +9,7 @@ void removeHead();
 void printList();
 Node *head();
 Node *tail();
+
 private:
 Node *head_;
 }; 

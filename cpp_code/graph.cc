@@ -31,3 +31,9 @@ void Graph::PrintNeighbor(int vertex) {
     LinkedList *adj_list = adjacency_list_[vertex];
     adj_list->printList();
 }
+
+std::vector<LinkedList *> &Graph::AdjacencyList() {
+    return adjacency_list_;
+}
+
+int Graph::CountOfVertices() { return adjacency_list_.size();}
