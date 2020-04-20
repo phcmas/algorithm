@@ -1,3 +1,5 @@
+#ifndef _NODE_
+#define _NODE_
 #include <iostream>
 
 class Node {
@@ -12,3 +14,5 @@ private:
  int data_;
  Node *next_;
 };
+#endif
+

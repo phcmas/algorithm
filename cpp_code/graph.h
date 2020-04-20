@@ -1,3 +1,6 @@
+#ifndef _GRAPH_
+#define _GRAPH_
+
 #include "linked_list.h"
 #include <vector>
 
@@ -14,3 +17,4 @@ int CountOfVertices();
 private:
 std::vector<LinkedList *> adjacency_list_;
 };
+#endif  

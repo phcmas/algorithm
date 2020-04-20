@@ -1,3 +1,5 @@
+#ifndef _LinkedList_
+#define _LinkedList_
 #include "node.h"
 
 class LinkedList {
@@ -13,3 +15,4 @@ Node *tail();
 private:
 Node *head_;
 }; 
+#endif

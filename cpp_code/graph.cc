@@ -6,7 +6,11 @@ Graph::Graph(int count_of_vertex) {
         adjacency_list_.push_back(adj_list);
     }
 }
-Graph::~Graph() {}
+Graph::~Graph() {
+    for (LinkedList *iter : adjacency_list_) {
+        free(iter);
+    }
+}
 
 void Graph::AddEdge(int start, int end) {
     int count_of_vertex = adjacency_list_.size();

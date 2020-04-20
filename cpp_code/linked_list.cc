@@ -20,6 +20,7 @@ void LinkedList::removeTail() {
     Node *next = current->next();
     if (next == nullptr) {
         free(head_);
+        head_=nullptr;
         return;
     }
     while (next->next() != nullptr) {
