@@ -64,19 +64,6 @@ int countBoard(std::vector<std::vector<int>> &board, int number_of_whites) {
     return count;
 }
 
-
-void printBoard(std::vector<std::vector<int>> &board) {
-    int height = board.size();
-    int width = board[0].size();
-
-    for (int i=0; i< height; ++i) {
-        for (int j=0; j<width; ++j) {
-            std::cout << board[i][j] << " ";
-        }
-        std::cout << std::endl;
-    }
-}
-
 int main(void) {
     int number_of_test_case = 0;
     std::vector<int> answers;
