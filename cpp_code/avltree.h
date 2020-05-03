@@ -2,6 +2,7 @@
 #define _ALV_TREE_
 
 #include <vector>
+#include "algorithm.h"
 #include "binary_tree.h"
 
 namespace avltree {
@@ -56,15 +57,26 @@ namespace avltree {
     BinaryTree *balance(BinaryTree *node) {
         int difference = getDifference(node);
         if (difference >=2) {
-            if (getDifference(node->left()) >=1) {
-
+            if (getDifference(node->left()) >=0) {
+                node = rotateLL(node);
             } else {
-
+                node = rotateLR(node);
             }
         } else if (difference <=-2) {
-            
+            if (getDifference(node->right()) <= 0) {
+                node = rotateRR(node);
+            } else {
+                node = rotateRL(node);
+            }
         }
-    
+        return node;
+    }
+
+    BinaryTree *InsertAVLTree(BinaryTree *node, int data) {
+        algorithm::InsertBinarySearchTree(node, data);
+        setHeight(node);
+        node = balance(node);
+        return node;
     }
 
 

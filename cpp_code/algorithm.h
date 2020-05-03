@@ -82,6 +82,7 @@ namespace algorithm {
     /* Binary Serach */
     void InsertBinarySearchTree(BinaryTree *node, int data) {
         BinaryTree *new_node = new BinaryTree(data);
+        node->increaseHeight();
         
         if (data <= node->data()) {
             BinaryTree *left = node->left();

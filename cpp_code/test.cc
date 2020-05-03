@@ -30,41 +30,82 @@ int count(std::vector<int> remains, bool table[][10]) {
     return answer;
 }
 
+void print(bool table [][10]) {
+    for (int j=0; j<10; ++j) {
+        for (int k=0; k<10; ++k){
+            std::cout << table[j][k] << " ";
+        }
+        std::cout<<std::endl;
+    }
+}
+
 int main (void) {
     std::vector<int> no_of_students;
     std::vector<int> no_of_friends;
     std::vector<int> counts;
     int no_of_test_case = 0;
+    std::vector<bool**> areFriends;
 
-    std::cin >> no_of_test_case;
-    bool areFriends[no_of_test_case][10][10];
+    // std::cin >> no_of_test_case;
+    // areFriends.reserve(no_of_test_case);
 
-    for (int i=0; i<no_of_test_case; ++i) {
-        for (int j=0; j<10; ++j) {
-            for (int k=0; k<10; ++k) {
-                areFriends[i][j][k] = false;
-            }
-        }
-    }
+    // for (int i=0; i<no_of_test_case; ++i) {
+    //     for (int j=0; j<10; ++j) {
+    //         for (int k=0; k<10; ++k) {
+    //             areFriends[i][j][k] = false;
+    //             std::cout << areFriends[i][j][k] << " ";
+    //         }
+    //         std::cout << std::endl;
+    //     }
+    //     std::cout << std::endl;
+    //     std::cout << std::endl;
+    // }
 
-    for (int i=0; i< no_of_test_case; ++i) {
-        int num1,num2;
-        std::cin >> num1 >> num2;
-        no_of_students.push_back(num1);
-        no_of_friends.push_back(num2);
-    }
+    bool temp[10][10];
+    temp[0][1] = true;
+    temp[1][0] = true;
+    print(temp);
 
-    for (int i=0; i< no_of_test_case; ++i) {
-        int num1, num2;
-        std::cin >> num1 >> num2;
-        areFriends[i][num1][num2] = true;
-        areFriends[i][num2][num1] = true;
-    }
+    // for (int i=0; i< no_of_test_case; ++i) {
+    //     int num1,num2;
+    //     std::cin >> num1 >> num2;
+    //     no_of_students.push_back(num1);
+    //     no_of_friends.push_back(num2);
+    // }
 
-    for (int i=0; i < no_of_test_case; ++i) {
-        std::vector<int> remains;
-        for (int j=0; j< no_of_friends)
-        int answer = count(remains, areFriends[i]);
-    }
+    // for (int i=0; i< no_of_test_case; ++i) {
+    //     int num1, num2;
+    //     std::cin >> num1 >> num2;
+    //     areFriends[i][num1][num2] = true;
+    //     areFriends[i][num2][num1] = true;
+    // }
+
+    // for (int i=0; i < no_of_test_case; ++i) {
+    //     std::vector<int> remains;
+    //     for (int j=0; j< no_of_friends[i]; ++j) {
+    //         remains.push_back(j);
+    //     }
+    //     int answer = count(remains, areFriends[i]);
+    //     remains.clear();
+    // }
+
+
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

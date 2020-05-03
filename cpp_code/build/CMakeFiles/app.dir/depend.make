@@ -29,12 +29,5 @@ CMakeFiles/app.dir/stack.o: ../node.h
 CMakeFiles/app.dir/stack.o: ../stack.cc
 CMakeFiles/app.dir/stack.o: ../stack.h
 
-CMakeFiles/app.dir/test.o: ../algorithm.h
-CMakeFiles/app.dir/test.o: ../binary_tree.h
-CMakeFiles/app.dir/test.o: ../graph.h
-CMakeFiles/app.dir/test.o: ../linked_list.h
-CMakeFiles/app.dir/test.o: ../node.h
-CMakeFiles/app.dir/test.o: ../queue.h
-CMakeFiles/app.dir/test.o: ../stack.h
 CMakeFiles/app.dir/test.o: ../test.cc
 

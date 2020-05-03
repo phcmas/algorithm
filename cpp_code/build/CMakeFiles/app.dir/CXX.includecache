@@ -6,20 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/seung/Exercise/cpp_code/algorithm.h
-vector
--
-utility
--
-graph.h
-/home/seung/Exercise/cpp_code/graph.h
-stack.h
-/home/seung/Exercise/cpp_code/stack.h
-queue.h
-/home/seung/Exercise/cpp_code/queue.h
-binary_tree.h
-/home/seung/Exercise/cpp_code/binary_tree.h
-
 /home/seung/Exercise/cpp_code/binary_tree.cc
 binary_tree.h
 /home/seung/Exercise/cpp_code/binary_tree.h
@@ -79,8 +65,8 @@ linked_list.h
 /home/seung/Exercise/cpp_code/linked_list.h
 
 /home/seung/Exercise/cpp_code/test.cc
-algorithm.h
-/home/seung/Exercise/cpp_code/algorithm.h
-graph.h
-/home/seung/Exercise/cpp_code/graph.h
+vector
+-
+iostream
+-
 
