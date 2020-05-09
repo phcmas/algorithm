@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/seung/Exercise/algorithm/chess.cc" "/home/seung/Exercise/algorithm/build/CMakeFiles/app.dir/chess.o"
+  "/home/seung/Exercise/algorithm/test.cc" "/home/seung/Exercise/algorithm/build/CMakeFiles/app.dir/test.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

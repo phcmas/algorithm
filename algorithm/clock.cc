@@ -25,13 +25,16 @@ int min (int num1, int num2) {
 void changeClock(std::vector<int> &clocks, int switch_num) {
     if (switch_num <0 || switch_num > 10 || clocks.size() !=16) {
         std::cout << "Error!";
+        return;
     } 
 
     const int *connected_clocks = clockswitch[switch_num];
     for (int i=0; i < 15; ++i) {
         if (connected_clocks[i] ==0) continue;
-        if (clocks[i] == 12) {clocks[i]=3;}
-        else {clocks[i] +=3;}
+        switch (clocks[i]) {
+            case 12 : clocks[i] =3; break;
+            default : clocks[i] +=3; break;
+        }
     }
 }
 
@@ -59,7 +62,7 @@ int countClock(std::vector<int> &clocks, int switch_num) {
 }
 
 int main(void) {
-    int number_of_test_case = 0;
+    int number_of_test_case = 1;
     std::vector<int> clocks;
     std::vector<int> answers;
     int inputs[16];

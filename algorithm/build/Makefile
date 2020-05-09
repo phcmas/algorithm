@@ -124,19 +124,19 @@ app/fast:
 .PHONY : app/fast
 
 # target to build an object file
-chess.o:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/chess.o
-.PHONY : chess.o
+test.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/test.o
+.PHONY : test.o
 
 # target to preprocess a source file
-chess.i:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/chess.i
-.PHONY : chess.i
+test.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/test.i
+.PHONY : test.i
 
 # target to generate assembly for a file
-chess.s:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/chess.s
-.PHONY : chess.s
+test.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/test.s
+.PHONY : test.s
 
 # Help Target
 help:
@@ -147,9 +147,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... app"
 	@echo "... edit_cache"
-	@echo "... chess.o"
-	@echo "... chess.i"
-	@echo "... chess.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 

@@ -6,9 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/seung/Exercise/algorithm/chess.cc
+/home/seung/Exercise/algorithm/test.cc
 vector
 -
 iostream
+-
+math.h
 -
 
