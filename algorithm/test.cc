@@ -3,7 +3,7 @@
 #include <math.h>
 
 int main() {
-    int ndv = -1;
+    double ndv = -1;
     std::vector<double> datas;
     std::vector<double> normalized_datas;
     std::vector<double> frequencies;
@@ -17,7 +17,7 @@ int main() {
     std::cin >> ndv;
 
     if (ndv == -1) {
-        int _ndv, highest_frequency, frequency;
+        double _ndv, highest_frequency, frequency;
         std::cin >> _ndv >> highest_frequency >> frequency;
         for (int i=0; i< _ndv; ++i) {
             if (i %2 ==0) {
@@ -34,6 +34,7 @@ int main() {
             }
         }
         ndv = _ndv;
+        std::cout << "ratio : " << highest_frequency/ (highest_frequency +(ndv-1)*frequency) << std::endl;
     } else {
         for (int i=0; i< ndv; ++i) {
             double data; 
@@ -56,7 +57,7 @@ int main() {
     temp = 0;
 
     for (int i=0; i < ndv; ++i) {
-        temp += (datas[i]-mean) * (datas[i]-mean);
+        temp += (datas[i]-mean) * (datas[i]-mean) * frequencies[i];
     }
     std::cout << "upper term : " << temp <<std::endl;
     std_deviation = sqrt(temp / total_count);
@@ -72,6 +73,14 @@ int main() {
 
     temp =0;
 
+    for (int i=0; i<ndv; ++i) {
+        temp += (datas[i] - mean) * (datas[i] - mean) *(datas[i] - mean) *(datas[i] - mean) *frequencies[i];
+    }
+
+    kurtosis = temp/(std_deviation* std_deviation *std_deviation *std_deviation *total_count);
+    std::cout << "Kurtosis : " << kurtosis <<std::endl;
+
+    temp = 0;
     for (int i=0; i< ndv; ++i) {
         temp += normalized_datas[i] * frequencies[i];
     }
@@ -79,16 +88,10 @@ int main() {
     temp = 0;
 
     for (int i=0; i < ndv; ++i) {
-        temp += (normalized_datas[i]-mean) * (normalized_datas[i]-mean);
+        temp += (normalized_datas[i]-mean) * (normalized_datas[i]-mean) *frequencies[i];
     }
     std_deviation = sqrt(temp / total_count);
     std::cout << "Mean after normalization :" << mean <<", " << "StdDeviation after normalization : " << std_deviation <<std::endl;
-
-    temp =0;
-    for (int i=0; i < ndv; ++i) {
-        temp += normalized_datas[i] * normalized_datas[i]* normalized_datas[i]* normalized_datas[i];
-    }
-    std::cout << "Kurtosis : " << temp/total_count <<std::endl;
 
 }
 
