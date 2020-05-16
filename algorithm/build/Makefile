@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/seung/Exercise/algorithm
+CMAKE_SOURCE_DIR = /home/seungkyun/Exercise/algorithm
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/seung/Exercise/algorithm/build
+CMAKE_BINARY_DIR = /home/seungkyun/Exercise/algorithm/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,8 +69,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/seung/Exercise/algorithm/build/CMakeFiles /home/seung/Exercise/algorithm/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/seungkyun/Exercise/algorithm/build/CMakeFiles /home/seungkyun/Exercise/algorithm/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/seung/Exercise/algorithm/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/seungkyun/Exercise/algorithm/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -124,19 +124,19 @@ app/fast:
 .PHONY : app/fast
 
 # target to build an object file
-test.o:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/test.o
-.PHONY : test.o
+quad_tree.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/quad_tree.o
+.PHONY : quad_tree.o
 
 # target to preprocess a source file
-test.i:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/test.i
-.PHONY : test.i
+quad_tree.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/quad_tree.i
+.PHONY : quad_tree.i
 
 # target to generate assembly for a file
-test.s:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/test.s
-.PHONY : test.s
+quad_tree.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/quad_tree.s
+.PHONY : quad_tree.s
 
 # Help Target
 help:
@@ -147,9 +147,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... app"
 	@echo "... edit_cache"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
+	@echo "... quad_tree.o"
+	@echo "... quad_tree.i"
+	@echo "... quad_tree.s"
 .PHONY : help
 
 

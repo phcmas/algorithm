@@ -6,11 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/seung/Exercise/algorithm/test.cc
+/home/seungkyun/Exercise/algorithm/quad_tree.cc
 vector
 -
 iostream
 -
-math.h
+string
+-
+string.h
+-
+assert.h
 -
 

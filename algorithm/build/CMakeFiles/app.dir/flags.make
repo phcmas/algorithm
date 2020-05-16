@@ -6,5 +6,5 @@ CXX_FLAGS = -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/seung/Exercise/algorithm 
+CXX_INCLUDES = -I/home/seungkyun/Exercise/algorithm 
 

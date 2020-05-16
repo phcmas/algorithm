@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/app.dir/test.o"
+  "CMakeFiles/app.dir/quad_tree.o"
   "app.pdb"
   "app"
 )
