@@ -6,15 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/seungkyun/Exercise/algorithm/quad_tree.cc
-vector
--
+/home/seungkyun/Exercise/algorithm/join_lis_jong.cc
 iostream
 -
-string
+list
 -
-string.h
+cstring
 -
-assert.h
+limits
 -
 

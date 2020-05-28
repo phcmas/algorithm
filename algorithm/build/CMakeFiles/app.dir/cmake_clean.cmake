@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/app.dir/quad_tree.o"
+  "CMakeFiles/app.dir/join_lis_jong.o"
   "app.pdb"
   "app"
 )

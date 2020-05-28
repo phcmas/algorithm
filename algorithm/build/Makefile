@@ -124,19 +124,19 @@ app/fast:
 .PHONY : app/fast
 
 # target to build an object file
-quad_tree.o:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/quad_tree.o
-.PHONY : quad_tree.o
+join_lis_jong.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/join_lis_jong.o
+.PHONY : join_lis_jong.o
 
 # target to preprocess a source file
-quad_tree.i:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/quad_tree.i
-.PHONY : quad_tree.i
+join_lis_jong.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/join_lis_jong.i
+.PHONY : join_lis_jong.i
 
 # target to generate assembly for a file
-quad_tree.s:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/quad_tree.s
-.PHONY : quad_tree.s
+join_lis_jong.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/join_lis_jong.s
+.PHONY : join_lis_jong.s
 
 # Help Target
 help:
@@ -147,9 +147,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... app"
 	@echo "... edit_cache"
-	@echo "... quad_tree.o"
-	@echo "... quad_tree.i"
-	@echo "... quad_tree.s"
+	@echo "... join_lis_jong.o"
+	@echo "... join_lis_jong.i"
+	@echo "... join_lis_jong.s"
 .PHONY : help
 
 
