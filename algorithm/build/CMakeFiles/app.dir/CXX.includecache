@@ -6,13 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/seungkyun/Exercise/algorithm/join_lis_jong.cc
+/home/seungkyun/Exercise/algorithm/dynamic_program/packing2.cc
 iostream
 -
-list
+vector
+-
+algorithm
+-
+string
 -
 cstring
--
-limits
 -
 

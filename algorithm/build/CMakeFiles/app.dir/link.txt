@@ -1,1 +1,1 @@
-/usr/bin/c++    -rdynamic CMakeFiles/app.dir/join_lis_jong.o  -o app 
+/usr/bin/c++  -g  -rdynamic CMakeFiles/app.dir/dynamic_program/packing2.o  -o app 

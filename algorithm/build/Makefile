@@ -124,19 +124,19 @@ app/fast:
 .PHONY : app/fast
 
 # target to build an object file
-join_lis_jong.o:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/join_lis_jong.o
-.PHONY : join_lis_jong.o
+dynamic_program/packing2.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/dynamic_program/packing2.o
+.PHONY : dynamic_program/packing2.o
 
 # target to preprocess a source file
-join_lis_jong.i:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/join_lis_jong.i
-.PHONY : join_lis_jong.i
+dynamic_program/packing2.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/dynamic_program/packing2.i
+.PHONY : dynamic_program/packing2.i
 
 # target to generate assembly for a file
-join_lis_jong.s:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/join_lis_jong.s
-.PHONY : join_lis_jong.s
+dynamic_program/packing2.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/dynamic_program/packing2.s
+.PHONY : dynamic_program/packing2.s
 
 # Help Target
 help:
@@ -147,9 +147,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... app"
 	@echo "... edit_cache"
-	@echo "... join_lis_jong.o"
-	@echo "... join_lis_jong.i"
-	@echo "... join_lis_jong.s"
+	@echo "... dynamic_program/packing2.o"
+	@echo "... dynamic_program/packing2.i"
+	@echo "... dynamic_program/packing2.s"
 .PHONY : help
 
 

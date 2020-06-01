@@ -13,7 +13,10 @@ int answers[50];
 int jlis(int indexA, int indexB) {
   int ret = cache[indexA + 1][indexB + 1];
   if(ret != -1) return ret;
-  ret = 2;
+
+  if (indexA == -1 && indexB == -1) ret =0;
+  else if (indexA == -1 && indexB != -1 || indexA !=-1 && indexB ==-1) ret=1;
+  else ret =2;
 
   long long a = (indexA == -1 ? NEGINF : A[indexA]);
   long long b = (indexB == -1 ? NEGINF : B[indexB]);
