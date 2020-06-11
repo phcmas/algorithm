@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/app.dir/dynamic_program/packing2.o"
+  "CMakeFiles/app.dir/dynamic_program/dragon.o"
   "app.pdb"
   "app"
 )

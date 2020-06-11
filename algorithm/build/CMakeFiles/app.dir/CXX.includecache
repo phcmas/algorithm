@@ -6,15 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/seungkyun/Exercise/algorithm/dynamic_program/packing2.cc
+/home/seungkyun/Exercise/algorithm/dynamic_program/dragon.cc
+math.h
+-
 iostream
 -
-vector
--
-algorithm
--
 string
--
-cstring
 -
 
