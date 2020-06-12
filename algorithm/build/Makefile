@@ -124,19 +124,19 @@ app/fast:
 .PHONY : app/fast
 
 # target to build an object file
-dynamic_program/dragon.o:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/dynamic_program/dragon.o
-.PHONY : dynamic_program/dragon.o
+jongman_book/dynamic_program/dragon.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/dynamic_program/dragon.o
+.PHONY : jongman_book/dynamic_program/dragon.o
 
 # target to preprocess a source file
-dynamic_program/dragon.i:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/dynamic_program/dragon.i
-.PHONY : dynamic_program/dragon.i
+jongman_book/dynamic_program/dragon.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/dynamic_program/dragon.i
+.PHONY : jongman_book/dynamic_program/dragon.i
 
 # target to generate assembly for a file
-dynamic_program/dragon.s:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/dynamic_program/dragon.s
-.PHONY : dynamic_program/dragon.s
+jongman_book/dynamic_program/dragon.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/dynamic_program/dragon.s
+.PHONY : jongman_book/dynamic_program/dragon.s
 
 # Help Target
 help:
@@ -147,9 +147,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... app"
 	@echo "... edit_cache"
-	@echo "... dynamic_program/dragon.o"
-	@echo "... dynamic_program/dragon.i"
-	@echo "... dynamic_program/dragon.s"
+	@echo "... jongman_book/dynamic_program/dragon.o"
+	@echo "... jongman_book/dynamic_program/dragon.i"
+	@echo "... jongman_book/dynamic_program/dragon.s"
 .PHONY : help
 
 

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/seungkyun/Exercise/algorithm/dynamic_program/dragon.cc
+/home/seungkyun/Exercise/algorithm/jongman_book/dynamic_program/dragon.cc
 math.h
 -
 iostream

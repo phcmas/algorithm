@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/seungkyun/Exercise/algorithm/dynamic_program/dragon.cc" "/home/seungkyun/Exercise/algorithm/build/CMakeFiles/app.dir/dynamic_program/dragon.o"
+  "/home/seungkyun/Exercise/algorithm/jongman_book/dynamic_program/dragon.cc" "/home/seungkyun/Exercise/algorithm/build/CMakeFiles/app.dir/jongman_book/dynamic_program/dragon.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
