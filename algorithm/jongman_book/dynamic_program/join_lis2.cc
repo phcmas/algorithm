@@ -1,107 +1,61 @@
 #include <iostream>
-#include <vector>
+#include <list>
 #include <cstring>
+#include <limits>
 
+using namespace std;
+
+const long long NEGINF = numeric_limits<long long>::min();
+int n, m, A[100], B[100];
 int cache[101][101];
-std::vector<int> first_sequence;
-std::vector<int> second_sequence;
+int answers[50];
 
-int max (int fst, int snd) {
-    if (fst <= snd) return snd;
-    else return fst;
-}
+int jlis(int indexA, int indexB) {
+  int ret = cache[indexA + 1][indexB + 1];
+  if(ret != -1) return ret;
 
-std::vector<int> NextElements (int start_index, std::vector<int> &sequence) {
-    std::vector<int> result;
-    for (int i=start_index; i < sequence.size(); ++i) {
-        if (sequence[i] > sequence[start_index]) {
-            result.push_back(i);
-        }
+  if (indexA == -1 && indexB == -1) ret =0;
+  else if (indexA == -1 && indexB != -1 || indexA !=-1 && indexB ==-1) ret=1;
+  else ret =2;
+
+  long long a = (indexA == -1 ? NEGINF : A[indexA]);
+  long long b = (indexB == -1 ? NEGINF : B[indexB]);
+  long long maxElement = max(a, b);
+
+  for(int nextA = indexA + 1; nextA < n; ++nextA) {
+    if (maxElement < A[nextA]) {
+      ret = max(ret, jlis(nextA, indexB) + 1);
     }
-    return result;
-}
+  }
 
-bool IsFirstMove(int start1, int start2, int number_of_next_elem1, int number_of_next_elem2) {
-    if (first_sequence[start1] < second_sequence[start2]) {
-        if (number_of_next_elem1 > 0) return true;
-        else return false;
-    } else if (first_sequence[start1] > second_sequence[start2]) {
-        if (number_of_next_elem2 > 0) return false;
-        else return true;
-    } else {
-        if (number_of_next_elem1 > 0) return true;
-        else return false;
+  for(int nextB = indexB + 1; nextB < m; ++nextB) {
+    if (maxElement < B[nextB]) {
+      ret = max(ret, jlis(indexA, nextB) + 1);
     }
-}
-
-int JLIS (int start1, int start2) {
-    std::vector<int> next_elem_index1 = NextElements(start1, first_sequence);
-    std::vector<int> next_elem_index2 = NextElements(start2, second_sequence);
-    int number_of_next_elem1 = next_elem_index1.size();
-    int number_of_next_elem2 = next_elem_index2.size();
-    int number =1;
-    int &answer =cache[start1][start2];
-    bool is_same = first_sequence[start1] == second_sequence[start2];
-    
-    if (answer != -1) return answer;
-    if (is_same) number--;
-    if (number_of_next_elem1 == 0 && number_of_next_elem2 ==0) return number+1;
-
-    bool move_first = IsFirstMove(start1,start2,number_of_next_elem1,number_of_next_elem2);
-
-    if (move_first) {
-        for (int &iter : next_elem_index1) {
-            answer = max(answer, JLIS(iter,start2));
-        }
-    } else {
-        for (int &iter : next_elem_index2) {
-            answer = max (answer, JLIS(start1, iter));
-        }
-    }
-
-    answer += number;
-    return answer;
+  }
+  return ret;
 }
 
 int main() {
-    int number_of_test_cases = 0;
-    std::vector<int> answers;
-    std::cin >>number_of_test_cases;
+  int testCaseCount;
+  scanf("%d", &testCaseCount);
+  
+  for (int i=0;i<testCaseCount; ++i) {
+    scanf("%d", &n);
+    scanf("%d", &m);
+    memset(cache, -1, sizeof(int) * 101 * 101);
 
-    for (int i=0; i< number_of_test_cases; ++i) {
-        int answer = 0;
-        int first_sequence_length = 0;
-        int second_sequence_length = 0;
-        first_sequence.clear();
-        second_sequence.clear();
-        std::cin >> first_sequence_length;
-        std::cin >> second_sequence_length;
-
-         for (int j=0; j<first_sequence_length; ++j) {
-              int element = 0;
-              std::cin >> element;
-              first_sequence.push_back(element);
-         }
-
-         for (int j=0; j<second_sequence_length; ++j) {
-             int element = 0;
-             std::cin >> element;
-             second_sequence.push_back(element);
-         }
-         memset(cache, -1, sizeof(cache));
-
-         for (int j=0; j<first_sequence_length; ++j) {
-             for (int k=0; k<second_sequence_length; ++k) {
-                 answer = max (answer, JLIS(j,k));
-             }
-         }
-
-         answers.push_back(answer);
+    for (int i=0; i < n; i++) {
+      scanf("%d", &A[i]);
     }
-
-    for (int i=0; i<number_of_test_cases; ++i) {
-        std::cout << answers[i]<< std::endl;
+    for (int i=0; i < m; i++) {
+        scanf("%d",&B[i]);
     }
+    
+    answers[i]= jlis(-1, -1) - 2;
+  }
 
-    return 0;
+  for (int i=0;i<testCaseCount;++i) {
+      printf("%d\n", answers[i]);
+  }
 }
