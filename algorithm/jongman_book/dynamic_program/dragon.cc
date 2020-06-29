@@ -4,6 +4,8 @@
 
 using namespace std;
 
+/* 내가 처음 구현 했던 코드 - 논리자체는 맞으나 시간초과 및 스택이 터지는 것으로 추정 */
+
 int number_of_created = 5;
 int number_of_test_cases = 1;
 int n=0;

@@ -2,6 +2,8 @@
 #include <vector>
 #include <cstring>
 
+/* 내가 처음 구현 했던 코드 - 지금까지 확인된 테스트케이스는 모두 통과하지만 뭔가 문제가 있는듯?? */
+
 int cache[101][101];
 int sequence1[100];
 int sequence2[100];

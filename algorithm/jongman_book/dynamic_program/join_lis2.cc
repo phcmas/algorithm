@@ -5,6 +5,8 @@
 
 using namespace std;
 
+/* 종만북에 나온 코드 */
+
 const long long NEGINF = numeric_limits<long long>::min();
 int n, m, A[100], B[100];
 int cache[101][101];

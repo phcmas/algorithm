@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/app.dir/jongman_book/dynamic_program/dragon.o"
+  "CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.o"
   "app.pdb"
   "app"
 )

@@ -1,1 +1,1 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/app.dir/jongman_book/dynamic_program/dragon.o  -o app 
+/usr/bin/c++  -g  -rdynamic CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.o  -o app 
