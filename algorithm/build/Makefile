@@ -124,19 +124,19 @@ app/fast:
 .PHONY : app/fast
 
 # target to build an object file
-jongman_book/dynamic_program/number_game.o:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.o
-.PHONY : jongman_book/dynamic_program/number_game.o
+jongman_book/greedy/str_join.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/greedy/str_join.o
+.PHONY : jongman_book/greedy/str_join.o
 
 # target to preprocess a source file
-jongman_book/dynamic_program/number_game.i:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.i
-.PHONY : jongman_book/dynamic_program/number_game.i
+jongman_book/greedy/str_join.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/greedy/str_join.i
+.PHONY : jongman_book/greedy/str_join.i
 
 # target to generate assembly for a file
-jongman_book/dynamic_program/number_game.s:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.s
-.PHONY : jongman_book/dynamic_program/number_game.s
+jongman_book/greedy/str_join.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/greedy/str_join.s
+.PHONY : jongman_book/greedy/str_join.s
 
 # Help Target
 help:
@@ -147,9 +147,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... app"
 	@echo "... edit_cache"
-	@echo "... jongman_book/dynamic_program/number_game.o"
-	@echo "... jongman_book/dynamic_program/number_game.i"
-	@echo "... jongman_book/dynamic_program/number_game.s"
+	@echo "... jongman_book/greedy/str_join.o"
+	@echo "... jongman_book/greedy/str_join.i"
+	@echo "... jongman_book/greedy/str_join.s"
 .PHONY : help
 
 

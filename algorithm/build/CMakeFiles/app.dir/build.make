@@ -57,38 +57,38 @@ include CMakeFiles/app.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/app.dir/flags.make
 
-CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.o: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.o: ../jongman_book/dynamic_program/number_game.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seungkyun/Exercise/algorithm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.o -c /home/seungkyun/Exercise/algorithm/jongman_book/dynamic_program/number_game.cc
+CMakeFiles/app.dir/jongman_book/greedy/str_join.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/jongman_book/greedy/str_join.o: ../jongman_book/greedy/str_join.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seungkyun/Exercise/algorithm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/app.dir/jongman_book/greedy/str_join.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/jongman_book/greedy/str_join.o -c /home/seungkyun/Exercise/algorithm/jongman_book/greedy/str_join.cc
 
-CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/seungkyun/Exercise/algorithm/jongman_book/dynamic_program/number_game.cc > CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.i
+CMakeFiles/app.dir/jongman_book/greedy/str_join.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/app.dir/jongman_book/greedy/str_join.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/seungkyun/Exercise/algorithm/jongman_book/greedy/str_join.cc > CMakeFiles/app.dir/jongman_book/greedy/str_join.i
 
-CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/seungkyun/Exercise/algorithm/jongman_book/dynamic_program/number_game.cc -o CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.s
+CMakeFiles/app.dir/jongman_book/greedy/str_join.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/jongman_book/greedy/str_join.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/seungkyun/Exercise/algorithm/jongman_book/greedy/str_join.cc -o CMakeFiles/app.dir/jongman_book/greedy/str_join.s
 
-CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.o.requires:
+CMakeFiles/app.dir/jongman_book/greedy/str_join.o.requires:
 
-.PHONY : CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.o.requires
+.PHONY : CMakeFiles/app.dir/jongman_book/greedy/str_join.o.requires
 
-CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.o.provides: CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.o.requires
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.o.provides.build
-.PHONY : CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.o.provides
+CMakeFiles/app.dir/jongman_book/greedy/str_join.o.provides: CMakeFiles/app.dir/jongman_book/greedy/str_join.o.requires
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/greedy/str_join.o.provides.build
+.PHONY : CMakeFiles/app.dir/jongman_book/greedy/str_join.o.provides
 
-CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.o.provides.build: CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.o
+CMakeFiles/app.dir/jongman_book/greedy/str_join.o.provides.build: CMakeFiles/app.dir/jongman_book/greedy/str_join.o
 
 
 # Object files for target app
 app_OBJECTS = \
-"CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.o"
+"CMakeFiles/app.dir/jongman_book/greedy/str_join.o"
 
 # External object files for target app
 app_EXTERNAL_OBJECTS =
 
-app: CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.o
+app: CMakeFiles/app.dir/jongman_book/greedy/str_join.o
 app: CMakeFiles/app.dir/build.make
 app: CMakeFiles/app.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/seungkyun/Exercise/algorithm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable app"
@@ -99,7 +99,7 @@ CMakeFiles/app.dir/build: app
 
 .PHONY : CMakeFiles/app.dir/build
 
-CMakeFiles/app.dir/requires: CMakeFiles/app.dir/jongman_book/dynamic_program/number_game.o.requires
+CMakeFiles/app.dir/requires: CMakeFiles/app.dir/jongman_book/greedy/str_join.o.requires
 
 .PHONY : CMakeFiles/app.dir/requires
 
