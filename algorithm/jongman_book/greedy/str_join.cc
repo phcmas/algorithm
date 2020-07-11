@@ -5,7 +5,6 @@ using namespace std;
 int number_of_test_case = 1;
 int number_of_strings =3;
 list<int> lengths; //string의 length를 모아놓은 배열
-int cost[100];
 int answer;
 int length;
 
