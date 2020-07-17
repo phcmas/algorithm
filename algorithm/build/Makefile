@@ -124,19 +124,19 @@ app/fast:
 .PHONY : app/fast
 
 # target to build an object file
-jongman_book/greedy/str_join.o:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/greedy/str_join.o
-.PHONY : jongman_book/greedy/str_join.o
+jongman_book/number_theory/test.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/number_theory/test.o
+.PHONY : jongman_book/number_theory/test.o
 
 # target to preprocess a source file
-jongman_book/greedy/str_join.i:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/greedy/str_join.i
-.PHONY : jongman_book/greedy/str_join.i
+jongman_book/number_theory/test.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/number_theory/test.i
+.PHONY : jongman_book/number_theory/test.i
 
 # target to generate assembly for a file
-jongman_book/greedy/str_join.s:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/greedy/str_join.s
-.PHONY : jongman_book/greedy/str_join.s
+jongman_book/number_theory/test.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/number_theory/test.s
+.PHONY : jongman_book/number_theory/test.s
 
 # Help Target
 help:
@@ -147,9 +147,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... app"
 	@echo "... edit_cache"
-	@echo "... jongman_book/greedy/str_join.o"
-	@echo "... jongman_book/greedy/str_join.i"
-	@echo "... jongman_book/greedy/str_join.s"
+	@echo "... jongman_book/number_theory/test.o"
+	@echo "... jongman_book/number_theory/test.i"
+	@echo "... jongman_book/number_theory/test.s"
 .PHONY : help
 
 
