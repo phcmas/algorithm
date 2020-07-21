@@ -6,9 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/seungkyun/Exercise/algorithm/jongman_book/bitmask/graduation2.cc
+/home/seungkyun/Exercise/algorithm/jongman_book/data_structure/josephus.cc
 iostream
--
-cstring
 -
 
