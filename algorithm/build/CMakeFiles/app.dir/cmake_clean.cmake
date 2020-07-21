@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/app.dir/jongman_book/number_theory/test.o"
+  "CMakeFiles/app.dir/jongman_book/bitmask/graduation2.o"
   "app.pdb"
   "app"
 )

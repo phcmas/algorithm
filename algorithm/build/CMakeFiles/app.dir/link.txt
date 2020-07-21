@@ -1,1 +1,1 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/app.dir/jongman_book/number_theory/test.o  -o app 
+/usr/bin/c++  -g  -rdynamic CMakeFiles/app.dir/jongman_book/bitmask/graduation2.o  -o app 

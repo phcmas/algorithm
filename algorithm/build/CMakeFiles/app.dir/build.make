@@ -57,38 +57,38 @@ include CMakeFiles/app.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/app.dir/flags.make
 
-CMakeFiles/app.dir/jongman_book/number_theory/test.o: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/jongman_book/number_theory/test.o: ../jongman_book/number_theory/test.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seungkyun/Exercise/algorithm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/app.dir/jongman_book/number_theory/test.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/jongman_book/number_theory/test.o -c /home/seungkyun/Exercise/algorithm/jongman_book/number_theory/test.cc
+CMakeFiles/app.dir/jongman_book/bitmask/graduation2.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/jongman_book/bitmask/graduation2.o: ../jongman_book/bitmask/graduation2.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seungkyun/Exercise/algorithm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/app.dir/jongman_book/bitmask/graduation2.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/jongman_book/bitmask/graduation2.o -c /home/seungkyun/Exercise/algorithm/jongman_book/bitmask/graduation2.cc
 
-CMakeFiles/app.dir/jongman_book/number_theory/test.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/app.dir/jongman_book/number_theory/test.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/seungkyun/Exercise/algorithm/jongman_book/number_theory/test.cc > CMakeFiles/app.dir/jongman_book/number_theory/test.i
+CMakeFiles/app.dir/jongman_book/bitmask/graduation2.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/app.dir/jongman_book/bitmask/graduation2.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/seungkyun/Exercise/algorithm/jongman_book/bitmask/graduation2.cc > CMakeFiles/app.dir/jongman_book/bitmask/graduation2.i
 
-CMakeFiles/app.dir/jongman_book/number_theory/test.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/jongman_book/number_theory/test.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/seungkyun/Exercise/algorithm/jongman_book/number_theory/test.cc -o CMakeFiles/app.dir/jongman_book/number_theory/test.s
+CMakeFiles/app.dir/jongman_book/bitmask/graduation2.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/jongman_book/bitmask/graduation2.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/seungkyun/Exercise/algorithm/jongman_book/bitmask/graduation2.cc -o CMakeFiles/app.dir/jongman_book/bitmask/graduation2.s
 
-CMakeFiles/app.dir/jongman_book/number_theory/test.o.requires:
+CMakeFiles/app.dir/jongman_book/bitmask/graduation2.o.requires:
 
-.PHONY : CMakeFiles/app.dir/jongman_book/number_theory/test.o.requires
+.PHONY : CMakeFiles/app.dir/jongman_book/bitmask/graduation2.o.requires
 
-CMakeFiles/app.dir/jongman_book/number_theory/test.o.provides: CMakeFiles/app.dir/jongman_book/number_theory/test.o.requires
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/number_theory/test.o.provides.build
-.PHONY : CMakeFiles/app.dir/jongman_book/number_theory/test.o.provides
+CMakeFiles/app.dir/jongman_book/bitmask/graduation2.o.provides: CMakeFiles/app.dir/jongman_book/bitmask/graduation2.o.requires
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/bitmask/graduation2.o.provides.build
+.PHONY : CMakeFiles/app.dir/jongman_book/bitmask/graduation2.o.provides
 
-CMakeFiles/app.dir/jongman_book/number_theory/test.o.provides.build: CMakeFiles/app.dir/jongman_book/number_theory/test.o
+CMakeFiles/app.dir/jongman_book/bitmask/graduation2.o.provides.build: CMakeFiles/app.dir/jongman_book/bitmask/graduation2.o
 
 
 # Object files for target app
 app_OBJECTS = \
-"CMakeFiles/app.dir/jongman_book/number_theory/test.o"
+"CMakeFiles/app.dir/jongman_book/bitmask/graduation2.o"
 
 # External object files for target app
 app_EXTERNAL_OBJECTS =
 
-app: CMakeFiles/app.dir/jongman_book/number_theory/test.o
+app: CMakeFiles/app.dir/jongman_book/bitmask/graduation2.o
 app: CMakeFiles/app.dir/build.make
 app: CMakeFiles/app.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/seungkyun/Exercise/algorithm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable app"
@@ -99,7 +99,7 @@ CMakeFiles/app.dir/build: app
 
 .PHONY : CMakeFiles/app.dir/build
 
-CMakeFiles/app.dir/requires: CMakeFiles/app.dir/jongman_book/number_theory/test.o.requires
+CMakeFiles/app.dir/requires: CMakeFiles/app.dir/jongman_book/bitmask/graduation2.o.requires
 
 .PHONY : CMakeFiles/app.dir/requires
 

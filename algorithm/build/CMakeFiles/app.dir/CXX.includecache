@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/seungkyun/Exercise/algorithm/jongman_book/number_theory/test.cc
-vector
--
+/home/seungkyun/Exercise/algorithm/jongman_book/bitmask/graduation2.cc
 iostream
+-
+cstring
 -
 
