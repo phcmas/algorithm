@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/seungkyun/Exercise/algorithm/jongman_book/data_structure/josephus.cc" "/home/seungkyun/Exercise/algorithm/build/CMakeFiles/app.dir/jongman_book/data_structure/josephus.o"
+  "/home/seungkyun/Exercise/algorithm/jongman_book/data_structure/bracket.cc" "/home/seungkyun/Exercise/algorithm/build/CMakeFiles/app.dir/jongman_book/data_structure/bracket.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -25,6 +25,9 @@ CMAKE_BACKWARDS_COMPATIBILITY:STRING=2.4
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
 CMAKE_BUILD_TYPE:STRING=DEBUG
 
+//No help, variable specified on the command line.
+CMAKE_BUILE_TYPE:UNINITIALIZED=DEBUG
+
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
 

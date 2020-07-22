@@ -6,7 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/seungkyun/Exercise/algorithm/jongman_book/data_structure/josephus.cc
+/home/seungkyun/Exercise/algorithm/jongman_book/data_structure/bracket.cc
 iostream
+-
+stack
+-
+unordered_map
+-
+string
+-
+cstring
 -
 
