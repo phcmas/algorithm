@@ -124,19 +124,19 @@ app/fast:
 .PHONY : app/fast
 
 # target to build an object file
-jongman_book/data_structure/bracket.o:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/data_structure/bracket.o
-.PHONY : jongman_book/data_structure/bracket.o
+jongman_book/data_structure/ites.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/data_structure/ites.o
+.PHONY : jongman_book/data_structure/ites.o
 
 # target to preprocess a source file
-jongman_book/data_structure/bracket.i:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/data_structure/bracket.i
-.PHONY : jongman_book/data_structure/bracket.i
+jongman_book/data_structure/ites.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/data_structure/ites.i
+.PHONY : jongman_book/data_structure/ites.i
 
 # target to generate assembly for a file
-jongman_book/data_structure/bracket.s:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/data_structure/bracket.s
-.PHONY : jongman_book/data_structure/bracket.s
+jongman_book/data_structure/ites.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/data_structure/ites.s
+.PHONY : jongman_book/data_structure/ites.s
 
 # Help Target
 help:
@@ -147,9 +147,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... app"
 	@echo "... edit_cache"
-	@echo "... jongman_book/data_structure/bracket.o"
-	@echo "... jongman_book/data_structure/bracket.i"
-	@echo "... jongman_book/data_structure/bracket.s"
+	@echo "... jongman_book/data_structure/ites.o"
+	@echo "... jongman_book/data_structure/ites.i"
+	@echo "... jongman_book/data_structure/ites.s"
 .PHONY : help
 
 

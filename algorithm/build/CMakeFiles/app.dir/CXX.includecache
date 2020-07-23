@@ -6,15 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/seungkyun/Exercise/algorithm/jongman_book/data_structure/bracket.cc
+/home/seungkyun/Exercise/algorithm/jongman_book/data_structure/ites.cc
 iostream
 -
-stack
--
-unordered_map
--
-string
--
-cstring
+list
 -
 

@@ -38,6 +38,8 @@ bool isMatched(string brackets) {
         if (isLeft(bracket)) {
             left_brackets.push(bracket);
         } else {
+            if (left_brackets.empty()) return false;
+            
             char left_bracket = left_brackets.top();
             if (isPair(left_bracket, bracket)) {
                 left_brackets.pop();
@@ -47,7 +49,7 @@ bool isMatched(string brackets) {
         }
     }
 
-    return true;
+    return left_brackets.empty();
 }
 
 int main() {
