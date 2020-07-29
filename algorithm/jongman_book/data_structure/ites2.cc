@@ -29,14 +29,15 @@ int numberOfIntervals () {
     int tail = head;
     int head_index = 0;
     int tail_index = 0; // tail_index >= head_index 여야함.
-    input_signals.push(head);
 
     while (sum >= k || tail < n) {
         if (sum == k) count++;
 
-        if (head_index == tail_index) {
-            head = input_signals.front();
-            tail = head;
+        if (sum < k || head_index == tail_index) {
+            tail = generator.next();
+            input_signals.push(tail);
+            sum += tail;
+            tail_index++;
         }
 
         if (sum >= k) {
@@ -44,10 +45,6 @@ int numberOfIntervals () {
             input_signals.pop();
             sum -= head;
             head_index++;
-        } else if (sum < k) {
-            tail = generator.next();
-            sum += tail;
-            tail_index++;
         }
 
     }

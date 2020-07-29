@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/seungkyun/Exercise/algorithm/jongman_book/data_structure/ites2.cc
+/home/seung/Exercise/algorithm/jongman_book/data_structure/ites2.cc
 iostream
 -
 queue
