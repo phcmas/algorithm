@@ -2,7 +2,7 @@
 #include <queue>
 
 using namespace std;
-int number_of_test_cases;
+int number_of_test_cases = 1;
 const long mod = 4294967296;
 int k;
 int n;
@@ -30,7 +30,7 @@ int numberOfIntervals () {
     int head_index = 0;
     int tail_index = 0; // tail_index >= head_index 여야함.
 
-    while (sum >= k || tail < n) {
+    while (sum >= k || tail_index < n) {
         if (sum == k) count++;
 
         if (sum < k || head_index == tail_index) {
@@ -38,15 +38,12 @@ int numberOfIntervals () {
             input_signals.push(tail);
             sum += tail;
             tail_index++;
-        }
-
-        if (sum >= k) {
+        } else if (sum >= k) {
             head = input_signals.front();
             input_signals.pop();
             sum -= head;
             head_index++;
         }
-
     }
 
     return count;

@@ -1,1 +1,0 @@
-/usr/lib/icecc/bin/c++  -g  -rdynamic CMakeFiles/app.dir/jongman_book/data_structure/ites2.o  -o app 
