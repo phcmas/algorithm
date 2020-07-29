@@ -27,12 +27,13 @@ void ObtainPostorderTraverse(int *preorder_traverse, int *inorder_traverse, int 
         }
     }
 
+    //root 기준으로 left tree의 postorder 순서 생성
 
-
+    //root 기준으로 right tree의 postorder 순서 생성
 
     //마지막 root 추가
     ObtainPostorderTraverse(&preorder_traverse[0], &inorder_traverse[index], end_index, end_index);
-    
+
 }
 
 int main() {
