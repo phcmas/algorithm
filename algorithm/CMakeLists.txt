@@ -3,5 +3,5 @@ cmake_minimum_required(VERSION 2.4)
 project(algorithm_study)
 
 include_directories(~/Exercise/algorithm)
-set(SRC_FILES jongman_book/data_structure/traversal.cc)
+set(SRC_FILES jongman_book/data_structure/nerd.cc)
 add_executable(app ${SRC_FILES})
