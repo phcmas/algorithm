@@ -6,9 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/seungkyun/Exercise/algorithm/jongman_book/data_structure/nerd2.cc
-stdio.h
--
-map
+/home/seungkyun/Exercise/algorithm/leet_code/0817.cc
+vector
 -
 
