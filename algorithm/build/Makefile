@@ -124,19 +124,19 @@ app/fast:
 .PHONY : app/fast
 
 # target to build an object file
-leet_code/0817.o:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/leet_code/0817.o
-.PHONY : leet_code/0817.o
+leet_code/0818.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/leet_code/0818.o
+.PHONY : leet_code/0818.o
 
 # target to preprocess a source file
-leet_code/0817.i:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/leet_code/0817.i
-.PHONY : leet_code/0817.i
+leet_code/0818.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/leet_code/0818.i
+.PHONY : leet_code/0818.i
 
 # target to generate assembly for a file
-leet_code/0817.s:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/leet_code/0817.s
-.PHONY : leet_code/0817.s
+leet_code/0818.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/leet_code/0818.s
+.PHONY : leet_code/0818.s
 
 # Help Target
 help:
@@ -147,9 +147,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... app"
 	@echo "... edit_cache"
-	@echo "... leet_code/0817.o"
-	@echo "... leet_code/0817.i"
-	@echo "... leet_code/0817.s"
+	@echo "... leet_code/0818.o"
+	@echo "... leet_code/0818.i"
+	@echo "... leet_code/0818.s"
 .PHONY : help
 
 
