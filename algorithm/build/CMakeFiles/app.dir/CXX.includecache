@@ -6,11 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/seungkyun/Exercise/algorithm/leet_code/0818.cc
+/home/seungkyun/Exercise/algorithm/leet_code/0820.cc
 vector
 -
-list
--
-math.h
+stdlib.h
 -
 
