@@ -6,11 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/seungkyun/Exercise/algorithm/jongman_book/data_structure/running_median.cc
-stdio.h
--
-queue
--
+/home/seungkyun/Exercise/algorithm/leet_code/0824.cc
 vector
+-
+stdio.h
 -
 

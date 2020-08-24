@@ -124,19 +124,19 @@ app/fast:
 .PHONY : app/fast
 
 # target to build an object file
-jongman_book/data_structure/running_median.o:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/data_structure/running_median.o
-.PHONY : jongman_book/data_structure/running_median.o
+leet_code/0824.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/leet_code/0824.o
+.PHONY : leet_code/0824.o
 
 # target to preprocess a source file
-jongman_book/data_structure/running_median.i:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/data_structure/running_median.i
-.PHONY : jongman_book/data_structure/running_median.i
+leet_code/0824.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/leet_code/0824.i
+.PHONY : leet_code/0824.i
 
 # target to generate assembly for a file
-jongman_book/data_structure/running_median.s:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/data_structure/running_median.s
-.PHONY : jongman_book/data_structure/running_median.s
+leet_code/0824.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/leet_code/0824.s
+.PHONY : leet_code/0824.s
 
 # Help Target
 help:
@@ -147,9 +147,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... app"
 	@echo "... edit_cache"
-	@echo "... jongman_book/data_structure/running_median.o"
-	@echo "... jongman_book/data_structure/running_median.i"
-	@echo "... jongman_book/data_structure/running_median.s"
+	@echo "... leet_code/0824.o"
+	@echo "... leet_code/0824.i"
+	@echo "... leet_code/0824.s"
 .PHONY : help
 
 

@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/app.dir/jongman_book/data_structure/running_median.o"
+  "CMakeFiles/app.dir/leet_code/0824.o"
   "app.pdb"
   "app"
 )
