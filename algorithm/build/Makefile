@@ -124,19 +124,19 @@ app/fast:
 .PHONY : app/fast
 
 # target to build an object file
-leet_code/0824.o:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/leet_code/0824.o
-.PHONY : leet_code/0824.o
+jongman_book/dfs/dictionary.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/dfs/dictionary.o
+.PHONY : jongman_book/dfs/dictionary.o
 
 # target to preprocess a source file
-leet_code/0824.i:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/leet_code/0824.i
-.PHONY : leet_code/0824.i
+jongman_book/dfs/dictionary.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/dfs/dictionary.i
+.PHONY : jongman_book/dfs/dictionary.i
 
 # target to generate assembly for a file
-leet_code/0824.s:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/leet_code/0824.s
-.PHONY : leet_code/0824.s
+jongman_book/dfs/dictionary.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/dfs/dictionary.s
+.PHONY : jongman_book/dfs/dictionary.s
 
 # Help Target
 help:
@@ -147,9 +147,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... app"
 	@echo "... edit_cache"
-	@echo "... leet_code/0824.o"
-	@echo "... leet_code/0824.i"
-	@echo "... leet_code/0824.s"
+	@echo "... jongman_book/dfs/dictionary.o"
+	@echo "... jongman_book/dfs/dictionary.i"
+	@echo "... jongman_book/dfs/dictionary.s"
 .PHONY : help
 
 

@@ -6,9 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/seungkyun/Exercise/algorithm/leet_code/0824.cc
+/home/seungkyun/Exercise/algorithm/jongman_book/dfs/dictionary.cc
+iostream
+-
 vector
 -
-stdio.h
+string
+-
+math.h
 -
 
