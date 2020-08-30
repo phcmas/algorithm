@@ -1,1 +1,1 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/app.dir/jongman_book/dfs/dictionary.o  -o app 
+/usr/bin/c++  -g  -rdynamic CMakeFiles/app.dir/leet_code/0830.o  -o app 
