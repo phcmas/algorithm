@@ -6,11 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/seungkyun/Exercise/algorithm/leet_code/0830.cc
+/home/seungkyun/Exercise/algorithm/jongman_book/dfs/wordchain.cc
 vector
 -
-math.h
+string
 -
 iostream
+-
+iterator
+-
+algorithm
 -
 
