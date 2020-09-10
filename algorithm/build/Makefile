@@ -124,19 +124,19 @@ app/fast:
 .PHONY : app/fast
 
 # target to build an object file
-jongman_book/dfs/wordchain.o:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/dfs/wordchain.o
-.PHONY : jongman_book/dfs/wordchain.o
+leet_code/0910.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/leet_code/0910.o
+.PHONY : leet_code/0910.o
 
 # target to preprocess a source file
-jongman_book/dfs/wordchain.i:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/dfs/wordchain.i
-.PHONY : jongman_book/dfs/wordchain.i
+leet_code/0910.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/leet_code/0910.i
+.PHONY : leet_code/0910.i
 
 # target to generate assembly for a file
-jongman_book/dfs/wordchain.s:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/dfs/wordchain.s
-.PHONY : jongman_book/dfs/wordchain.s
+leet_code/0910.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/leet_code/0910.s
+.PHONY : leet_code/0910.s
 
 # Help Target
 help:
@@ -147,9 +147,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... app"
 	@echo "... edit_cache"
-	@echo "... jongman_book/dfs/wordchain.o"
-	@echo "... jongman_book/dfs/wordchain.i"
-	@echo "... jongman_book/dfs/wordchain.s"
+	@echo "... leet_code/0910.o"
+	@echo "... leet_code/0910.i"
+	@echo "... leet_code/0910.s"
 .PHONY : help
 
 

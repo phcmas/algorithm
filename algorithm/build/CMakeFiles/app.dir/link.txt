@@ -1,1 +1,1 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/app.dir/jongman_book/dfs/wordchain.o  -o app 
+/usr/bin/c++  -g  -rdynamic CMakeFiles/app.dir/leet_code/0910.o  -o app 
