@@ -30,11 +30,13 @@ string getHint(string secret, string guess) {
     int bullCount = 0;
     int cowCount = 0;
 
+    // 각 숫자들의 개수를 count vector에 저장
     for (int i=0; i< secret.length(); ++i) {
         int num = secret[i]-'0';
         count[num]++;
     }
 
+    // bull이 되는 숫자들의 개수를 찾고, 아닌 숫자들을 nonBull에 세팅
     for (int i=0; i < guess.length(); ++i) {
         int num = guess[i]-'0';
         if (secret[i] == guess[i]) {
@@ -45,6 +47,7 @@ string getHint(string secret, string guess) {
         }
     }
 
+    // nonBull에서 cow가 될 수 있는 숫자들을 찾음
     for (int &iter : nonBull) {
         if (count[iter] > 0) {
             cowCount++;
