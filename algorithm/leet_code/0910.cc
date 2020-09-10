@@ -31,17 +31,17 @@ string getHint(string secret, string guess) {
     int cowCount = 0;
 
     for (int i=0; i< secret.length(); ++i) {
-        int index = secret[i]-'0';
-        count[index]++;
+        int num = secret[i]-'0';
+        count[num]++;
     }
 
     for (int i=0; i < guess.length(); ++i) {
-        int index = guess[i]-'0';
+        int num = guess[i]-'0';
         if (secret[i] == guess[i]) {
             bullCount++;
-            count[index]--;
+            count[num]--;
         } else {
-            possibleCow.push_back(index);
+            possibleCow.push_back(num);
         }
     }
 
