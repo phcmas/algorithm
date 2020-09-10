@@ -25,7 +25,7 @@ using namespace std;
 
 string getHint(string secret, string guess) {
     vector<int> count (10, 0);
-    vector<int> possibleCow;
+    vector<int> nonBull;
     string answers;
     int bullCount = 0;
     int cowCount = 0;
@@ -41,11 +41,11 @@ string getHint(string secret, string guess) {
             bullCount++;
             count[num]--;
         } else {
-            possibleCow.push_back(num);
+            nonBull.push_back(num);
         }
     }
 
-    for (int &iter : possibleCow) {
+    for (int &iter : nonBull) {
         if (count[iter] > 0) {
             cowCount++;
             count[iter]--;
