@@ -6,11 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/seungkyun/Exercise/algorithm/leet_code/0910.cc
-string
+/home/seungkyun/Exercise/algorithm/jongman_book/dfs/gallery.cc
+iostream
 -
 vector
--
-iostream
 -
 
