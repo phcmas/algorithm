@@ -58,7 +58,8 @@ int solve (const vector<int> &perm) {
 }
 
 int main() {
-    cin >> number_of_test_case;
+    //cin >> number_of_test_case;
+    int test = 9 >> 2;
 
     for (int i=0; i< number_of_test_case; ++i) {
         cin >> length;
