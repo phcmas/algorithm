@@ -32,8 +32,8 @@ int isIn (int point, vector<int> &interval) {
     }
 }
 
-vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
-    vector<vector<int>> answer;
+vector<vector<int> > insert(vector<vector<int> >& intervals, vector<int>& newInterval) {
+    vector<vector<int> > answer;
     vector<int> mergedInterval;
     int start = newInterval.front();
     int end = newInterval.back();
@@ -83,7 +83,7 @@ vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInter
 }
 
 int main() {
-    vector<vector<int>> intervals;
+    vector<vector<int> > intervals;
     vector<int> newInt;
     vector<int> int1;
     vector<int> int2;
@@ -108,7 +108,7 @@ int main() {
     newInt.push_back(6);
     newInt.push_back(8);    
 
-    vector<vector<int>> answer = insert (intervals, newInt);
+    vector<vector<int> > answer = insert (intervals, newInt);
 
     for (int i=0; i < answer.size(); ++i) {
         cout << answer[i].front() << "," << answer[i].back() <<endl;
