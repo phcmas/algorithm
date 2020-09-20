@@ -8,6 +8,16 @@ map<vector<int>, int> toSort;
 int number_of_test_case;
 int length;
 
+void reverse (vector<int> &src, int i, int j) {
+    int temp;
+    while (i < j-1) {
+        temp = src[i];
+        src[i] = src[j-1];
+        src[j-1] = temp;
+        i++; j--;
+    }
+}
+
 void precalc (int n) {
     vector<int> perm(n);
     for (int i=0; i<n; ++i) perm[i] = i;
@@ -20,13 +30,13 @@ void precalc (int n) {
         queue.pop();
         int cost = toSort[here];
         for (int i=0; i<n; ++i) {
-            for (int j=i+2; j<=n; ++i) {
-                reverse (here.begin()+i, here.begin()+j);
+            for (int j=i+2; j<=n; ++j) {
+                reverse (here, i, j);
                 if (toSort.count(here) == 0) {
                     toSort[here] = cost +1;
                     queue.push(here);
                 }
-                reverse (here.begin()+i, here.begin()+j);
+                reverse (here, i, j);
             }
         }
     }   
@@ -48,23 +58,16 @@ int solve (const vector<int> &perm) {
 }
 
 int main() {
-    //cin >> number_of_test_case;
-    number_of_test_case = 1;
-    cout << "aa";
+    cin >> number_of_test_case;
 
     for (int i=0; i< number_of_test_case; ++i) {
-        //cin >> length;
-        length = 8;
+        cin >> length;
         vector<int> perm (length);
-        for (int j=0; j<length;++j) perm[j]=j;
-        //for (int j=0; j < length; ++j) {
-        //    int temp;
-        //    cin >> temp;
-        //    perm[j] = temp;
-        //}
+        for (int j=0; j < length; ++j) {
+            cin >> perm[j];
+        }
         precalc (length);
         cout << solve (perm) << endl;
-
     }
 
     return 0;
