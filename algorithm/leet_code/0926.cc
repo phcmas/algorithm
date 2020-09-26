@@ -28,35 +28,35 @@
 
 #include <vector>
 #include <iostream>
+#include <limits.h>
 using namespace std;
 
 int findPoisonedDuration(vector<int>& timeSeries, int duration) {
     if (timeSeries.empty() || duration == 0) return 0;
 
+    int poisonEnd;
+    int current;
+    int nextAttackStart;
     int damage = 0;
-    int maxTime = timeSeries[0]+duration-1;
-    int currentTime = timeSeries[0];
-    int index = 0;
+    int size = timeSeries.size();
 
-    while (index < timeSeries.size() || currentTime <= maxTime) {
-        if (index < timeSeries.size() && currentTime == timeSeries[index]) {
-            maxTime = timeSeries[index] + duration-1;
-            damage++;
-            index++;
-        } else if (currentTime <= maxTime) {
-            damage++;
+    for (int i=0; i < size; ++i) {
+        current = timeSeries[i];
+        nextAttackStart = i == size-1 ? INT_MAX : timeSeries[i+1];
+        poisonEnd = current + duration-1;
+        
+        if (poisonEnd < nextAttackStart) {
+            damage += duration;
+        } else {
+            damage += nextAttackStart - current;
         }
-
-        currentTime++;
-        cout << "curr time : " << currentTime << " max time : " << maxTime << " index: " << index 
-        << " damage : " << damage << endl;
     }
 
     return damage;
 }
 
 int main() {
-    vector<int> timeSeries {1,2};
+    vector<int> timeSeries {1,4};
     int duration = 2;
     int answer = findPoisonedDuration (timeSeries, duration);
 
