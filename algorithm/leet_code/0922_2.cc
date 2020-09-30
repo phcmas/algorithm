@@ -1,7 +1,6 @@
 #include <vector>
 #include <iostream>
 
-
 // 결국 못풀어서 Discusstion 봄
 using namespace std;
 
