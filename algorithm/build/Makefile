@@ -124,19 +124,19 @@ app/fast:
 .PHONY : app/fast
 
 # target to build an object file
-jongman_book/dfs/gallery.o:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/dfs/gallery.o
-.PHONY : jongman_book/dfs/gallery.o
+leet_code/1005.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/leet_code/1005.o
+.PHONY : leet_code/1005.o
 
 # target to preprocess a source file
-jongman_book/dfs/gallery.i:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/dfs/gallery.i
-.PHONY : jongman_book/dfs/gallery.i
+leet_code/1005.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/leet_code/1005.i
+.PHONY : leet_code/1005.i
 
 # target to generate assembly for a file
-jongman_book/dfs/gallery.s:
-	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/jongman_book/dfs/gallery.s
-.PHONY : jongman_book/dfs/gallery.s
+leet_code/1005.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/leet_code/1005.s
+.PHONY : leet_code/1005.s
 
 # Help Target
 help:
@@ -147,9 +147,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... app"
 	@echo "... edit_cache"
-	@echo "... jongman_book/dfs/gallery.o"
-	@echo "... jongman_book/dfs/gallery.i"
-	@echo "... jongman_book/dfs/gallery.s"
+	@echo "... leet_code/1005.o"
+	@echo "... leet_code/1005.i"
+	@echo "... leet_code/1005.s"
 .PHONY : help
 
 

@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/app.dir/jongman_book/dfs/gallery.o"
+  "CMakeFiles/app.dir/leet_code/1005.o"
   "app.pdb"
   "app"
 )
