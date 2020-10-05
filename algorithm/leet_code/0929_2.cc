@@ -20,6 +20,8 @@
  *  Input: s = "catsandog", wordDict = ["cats", "dog", "sand", "and", "cat"]
  *  Output: false **/
 
+/** leetcode discussion에 있던 풀이 **/
+
 #include <vector>
 #include <string>
 #include <algorithm>

@@ -37,6 +37,7 @@
 /** discussion에 나와있는 backtracking algorithm을 이용하여 해결 **/
 
 #include <vector>
+#include <algorithm>
 #include <iostream>
 using namespace std;
 
