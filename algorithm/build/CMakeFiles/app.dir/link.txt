@@ -1,1 +1,0 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/app.dir/leet_code/1005.o  -o app 
