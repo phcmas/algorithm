@@ -36,7 +36,30 @@ struct TreeNode {
 };
 
 TreeNode* insertIntoBST(TreeNode* root, int val) {
+    if (root == nullptr) return new TreeNode(val);
     
+    int rootVal = root->val;
+    TreeNode *node = root;
+
+    while (true) {
+        if (val < node->val) {
+            if (node->left == nullptr) {
+                node->left = new TreeNode(val);
+                break;
+            } else {
+                node = node->left;
+            }
+        } else {
+            if (node->right == nullptr) {
+                node->right = new TreeNode(val);
+                break;
+            } else {
+                node = node->right;
+            }
+        }
+    }
+
+    return root;
 }
 
 int main() {
