@@ -45,34 +45,35 @@ int solution(vector<vector<int>> a) {
         }
     }
 
-    if (r != oneCount[0]) {
-        cache[0][r-oneCount[0]] = binomial(r, r-oneCount[0]);
-    }
+    cache[0][r-oneCount[0]] = binomial(r, r-oneCount[0]);
 
     for (int n=0; n < c-1; ++n) {
         int c = oneCount[n+1];
-        for (int a=0; a <= r; ++a) {
-            int minimum = max (0, c+a-r);
-            int maximum = min (a,c);
-            for (int k = minimum; k <= maximum; ++k) {
-                if (cache[n+1][a+c-2*k] != 0) continue;
-                cache[n+1][a+c-2*k] = cache[n][a] * binomial(a,k) * binomial(r-a, c-k);
+        for (int l=0; l<=r; ++l) {
+            for (int a=0; a<=r; ++a) {
+                if (a+c-l < 0 || (a+c-l) %2 != 0) continue;
+                int k = (a+c-l)/2;
+                int minimum = max (0,c+a-r);
+                int maximum = min (a,c);
+                if (k < minimum || k > maximum) continue;
+                cache[n+1][l] += cache[n][a] * binomial(a, k) * binomial(r-a, c-k);
             }
         }
     }
 
-    for (int i=0; i < r; i +=2) {
-        answer += cache[c-1][i];
-    }
-
-    return answer;
+    return cache[c-1][r];
 }
 
 int main() {
-    vector<int> x {1,0};//,0,1,1};
-    vector<int> y {0,0};//,0,0,0};
-    vector<int> z {1,1};//,0,0,0};
-    vector<int> w {0,0};//,0,0,1};
+    //vector<int> x {0,1,0};
+    //vector<int> y {1,1,1};
+    //vector<int> z {1,1,0};
+    //vector<int> w {0,1,1};
+
+    vector<int> x {1,0,0,1,1};
+    vector<int> y {0,0,0,0,0};
+    vector<int> z {1,1,0,0,0};
+    vector<int> w {0,0,0,0,1};
     vector<vector<int>> a;
     a.push_back(x);
     a.push_back(y);
