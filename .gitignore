@@ -1,6 +1,12 @@
 algorithm/CMakeLists.txt
 algorithm/build
 algorithm/.vscode
+algorithm/leet_code/2020_08/*.dSYM
+algorithm/leet_code/2020_08/*.out
+algorithm/leet_code/2020_09/*.dSYM
+algorithm/leet_code/2020_09/*.out
+algorithm/leet_code/2020_10/*.dSYM
+algorithm/leet_code/2020_10/*.out
 .vscode
 cpp_code/CMakeLists.txt
 cpp_code/build
