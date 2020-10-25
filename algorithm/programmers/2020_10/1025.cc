@@ -7,7 +7,7 @@
 
 using namespace std;
 
-int cache[101][101];
+int cache[120][120];
 vector<vector<int> > pudds;
 
 bool cannotGo (int i, int j, int m, int n) {
