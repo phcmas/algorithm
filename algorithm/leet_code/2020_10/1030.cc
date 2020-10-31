@@ -31,39 +31,53 @@ pair<int,int> numberOfLIS(vector<int> &nums, int start) {
 
     if (count != -1) return ret;
 
+    count = 1;
+    length = 1;
+
     if (start == nums.size()-1) {
-        count = 1;
-        length = 1;
         return ret;
     }
 
-    for (int i = start; i < nums.size(); ++i) {
-        if (nums[start] <= nums[i]) {
+    for (int i = start+1; i < nums.size(); ++i) {
+        if (nums[start] < nums[i]) {
             pair<int,int> next = numberOfLIS(nums, i);
-            if (length < next.second) {
+            if (length < next.second+1) {
                 count = next.first;
-                length = next.second;
+                length = next.second+1;
+            } else if (length == next.second+1) {
+                count += next.first;
             }
         }
     }
-
-    length++;
 
     return ret;
 }
 
 int findNumberOfLIS(vector<int>& nums) {
-    int answer = 0;
+    int count = 0;
+    int length = 0;
     memset (cache, -1, sizeof(cache));
 
     for (int i = 0; i < nums.size(); ++i) {
-        answer = max (answer, numberOfLIS(nums,i).first);
+        pair<int,int> ret = numberOfLIS(nums, i);
+
+        if (length < ret.second) {
+            count = ret.first;
+            length = ret.second;
+        } else if (length == ret.second) {
+            count += ret.first;
+        }
     }
 
-    return answer;
+    return count;
 }
 
 int main() {
+    vector<int> nums {1,3,5,4,7};
+    int answer = findNumberOfLIS(nums);
+
+    cout << answer << endl;
+
     return 0;
 }
 
