@@ -12,26 +12,25 @@ vector<int> indices[maxLength];
 int solution(vector<int> a) {
     int answer = 0;
     int selected = -2;
-    set<int> nums;
-    set<int>::iterator iter;
+    vector<int> nums;
 
     for (int i = 0; i < maxLength; ++i) {
         indices[i].clear();
     }
 
     for (int i = 0; i < a.size(); ++i) {
-        nums.insert(a[i]);
+        if (indices[a[i]].empty()) nums.push_back(a[i]);
         indices[a[i]].push_back(i);
     }
 
-    for (iter = nums.begin(); iter != nums.end(); ++iter) {
+    for (int i = 0; i < nums.size(); ++i) {
         int setCount = 0;
-        for (int j = 0; j < indices[*iter].size(); ++j) {
-            int index = indices[*iter][j];
-            if (index > 0 && a[index-1] != *iter && selected != index-1) {
+        for (int j = 0; j < indices[nums[i]].size(); ++j) {
+            int index = indices[nums[i]][j];
+            if (index > 0 && a[index-1] != nums[i] && selected != index-1) {
                 selected = index-1;
                 setCount++;
-            } else if (index < a.size()-1 && a[index+1] != *iter && selected != index+1) {
+            } else if (index < a.size()-1 && a[index+1] != nums[i] && selected != index+1) {
                 selected = index+1;
                 setCount++;
             }
