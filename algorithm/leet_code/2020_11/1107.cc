@@ -40,10 +40,7 @@ int smallestDivisor(vector<int>& nums, int threshold) {
     sort(nums.begin(), nums.end());
     nums.push_back(nums.back());
     
-    int next;
-    int cur;
-    int sum;
-    int div;
+    int next, cur, sum, div;
     bool found;
 
     for (int i = nums.size() - 1; i >= 1; ++i) {
