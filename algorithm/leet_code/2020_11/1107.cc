@@ -1,4 +1,5 @@
 /* Find the Smallest Divisor Given a Threshold */
+
 /** Given an array of integers nums and an integer threshold, we will 
  *  choose a positive integer divisor and divide all the array by it and sum the result 
  *  of the division. Find the smallest divisor such that the result mentioned above is less 
@@ -32,27 +33,32 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <cmath>
 #include <iostream>
 
 using namespace std;
 
 int smallestDivisor(vector<int>& nums, int threshold) {
     sort(nums.begin(), nums.end());
-    nums.push_back(nums.back());
     
-    int next, cur, sum, div;
+    int next, cur, sum;
+    int i = -1;
+    double div;
     bool found;
 
-    for (int i = nums.size() - 1; i >= 1; ++i) {
-        sum = 0;
-        found = false;
-        next = nums[i];
-        cur = nums[i-1];
+    if (nums.empty()) return 0;
 
-        for (int j = next/cur; j >= 1; ++j) {
+    cur = 1;
+    next = nums[0];
+
+    while (true) {
+        found = false;
+
+        for (int j = 1; j <= next/cur; ++j) {
             div = j * cur;
-            for (int k = 0; k < nums.size()-1; ++k) {
-                sum += nums[k]/div;
+            sum = 0;
+            for (int k = 0; k < nums.size(); ++k) {
+                sum += ceil(nums[k]/div);
             }
 
             if (sum <= threshold) {
@@ -62,12 +68,31 @@ int smallestDivisor(vector<int>& nums, int threshold) {
         }
 
         if (found) break;
+
+        i++;
+        cur = nums[i];
+        next = (i == nums.size()-1) ? nums[i] : nums[i+1];
     }
 
     return div;
 }
 
 int main() {
+    int num  = 2;
+    double num2 = 3;
+    cout << num/num2 << endl;
+    cout << ceil(num/num2) << endl;
+
+    //vector<int> nums {1,2,5,9};
+    //vector<int> nums {2,3,5,7,11};
+    //vector<int> nums {19};
+    vector<int> nums {2620,5743,4716,5581,9508,5404,2448,2224,9682,735,7778,2886,9864,5081,5437,2208,
+    2378,5281,8177,6801,5896,307,9618,7899,2268,986,1114,4600,4093,2476,2623,6312,4061,
+    5846,9245,3952,2344,65,593,6079,8719,8727,717,8740,2940,2291,339,8275,2890,7222};
+    int threshould = 2451;
+    int answer = smallestDivisor(nums, threshould);
+    // 답은 98
+    cout << answer << endl;
 
     return 0;
 }
