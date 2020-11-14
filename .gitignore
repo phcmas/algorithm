@@ -8,5 +8,6 @@ algorithm/leet_code/2020_09/*.out
 algorithm/leet_code/2020_10/*.dSYM
 algorithm/leet_code/2020_10/*.out
 .vscode
+.DS_Store
 cpp_code/CMakeLists.txt
 cpp_code/build
