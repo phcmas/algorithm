@@ -5,7 +5,7 @@ using namespace std;
 
 class CombinationIterator {
 public:
-    vector<string> combinations;
+    vector<string>  combinations;
     
     CombinationIterator(string characters, int combinationLength) {
         priority_queue<string> pq;

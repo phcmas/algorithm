@@ -12,9 +12,10 @@
  *  1 <= nums.length <= 8
  *  -10 <= nums[i] <= 10 **/
 
+/* counts와 newNums를 인자로 넘기면 counts를 매번 계산안해도 될 것으로 보임. backtracking으로 개선해보자*/
+
 #include <vector>
 #include <iostream>
-#include <cstring>
 
 using namespace std;
 
@@ -53,7 +54,7 @@ vector<vector<int>> permuteUnique(vector<int> &nums) {
     }
 
     for (int i = 0; i < nums.size(); ++i) {
-        answer = addNumber (answer);
+        answer = addNumber(answer);
     }
 
     return answer;
