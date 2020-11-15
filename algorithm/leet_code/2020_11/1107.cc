@@ -51,7 +51,7 @@ int smallestDivisor(vector<int>& nums, int threshold) {
     if (nums.empty()) return 0;
     sort (nums.begin(), nums.end());
 
-    int left = 1
+    int left = 1;
     int right = nums.back();
     int mid, sum;
     int i = 0;
@@ -70,11 +70,6 @@ int smallestDivisor(vector<int>& nums, int threshold) {
 }
 
 int main() {
-    int num  = 2;
-    double num2 = 3;
-    //cout << num/num2 << endl;
-    //cout << ceil(num/num2) << endl;
-
     //vector<int> nums {1,2,5,9};
     vector<int> nums;
     nums.push_back(2);
