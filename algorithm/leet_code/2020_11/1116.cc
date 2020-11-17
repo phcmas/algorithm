@@ -31,18 +31,26 @@ using namespace std;
 
 int longestMountain(vector<int>& A) {
     int length = 0;
+    int leftCompare = -1;
+    int rightCompare = -1;
     int index = -1;
 
-    if (A.size() <=1) return 0;
+    if (A.size() <= 1) return 0;
 
     for (int i = 0; i < A.size(); ++i) {
-        if (index == -1 && A[i] < A[i+1]) {
+        leftCompare = (i == 0) ? 0 : A[i]-A[i-1];
+        rightCompare = (i == A.size()-1) ? 0 : A[i]-A[i+1];
+
+        if (leftCompare < 0 && rightCompare < 0) {
+            length = (index != -1) ? max(length, i-index+1) : length;
             index = i;
-        } else if ((i>0 && i < A.size()-1 && A[i-1] > A[i] && A[i] < A[i+1]) || (i == A.size()-1 && A[i-1] > A[i])) {
-            if (index != -1) {
-                length = max(length, i-index+1);
-            }
+        } else if (leftCompare == 0 && rightCompare < 0) {
             index = i;
+        } else if (leftCompare > 0 && rightCompare == 0) {
+            index = -1;
+        } else if (leftCompare < 0 && rightCompare == 0) {
+            length = (index != -1) ? max(length, i-index+1) : length;
+            index = -1;
         }
     }
 
@@ -50,8 +58,11 @@ int longestMountain(vector<int>& A) {
 }
 
 int main() {
+    vector<int> A {3,3,2,2,1,1,0,0,0,1,3,3,3,3,0,0,2,0,3,2,2,0,0,3,2,0,1,0,3,1,1,1,0,1,0,3,1,
+    3,2,2,3,2,1,1,1,3,3,0,2,2,0,3,0,3,3,1,1,2,0,0,1,3,0,1,3,0,0,1,2,0,0,0,0,0,2,
+    0,1,3,0,1,3,3,3,1,0,3,3,1,0,1,0,2,3,1,1,2,3,1,2,3};
     //vector<int> A {2,1,4,7,3,2,5}; 
-    vector<int> A {1,1,0,0,1,0};
+    //vector<int> A {1,1,0,0,1,0};
 
     int answer = longestMountain(A);
     cout << answer << endl;
