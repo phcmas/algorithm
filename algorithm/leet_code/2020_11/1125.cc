@@ -21,6 +21,8 @@
  *  0 <= k <= 10^4
  *  0 <= t <= 2^31 - 1 **/
 
+/* Discusstion에서 아이디어를 얻은 뒤 다시 내가 구현한 풀이 */
+
 #include <iostream>
 #include <iterator>
 #include <vector>
