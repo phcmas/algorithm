@@ -16,11 +16,10 @@
  *  -1000 <= Node.val <= 1000
  *  The depth of the tree will not exceed 1000. **/
 
-/* 내가 처음 생각한 솔루션. Accepted 되었으나 효율은 안좋은 편 */
+/* 1205와 같은 문제. Discussion을 보고 효율 좋은 방법으로 재구현. 근데 원래 내 방법이랑 비슷한듯 */
 
-#include <vector>
-#include <map>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -33,58 +32,29 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-map<int, int> lengths;
+int ret;
 
-int setLengths(TreeNode *node) {
-    TreeNode *left;
-    TreeNode *right;
-    bool leftSame;
-    bool rightSame;
-    int length = 0;
-    int leftLength = 0;
-    int rightLength = 0;
-    int result = 0;
-
+int helper(TreeNode *node, int val) {
     if (node == nullptr) return 0;
 
-    left = node->left;
-    right = node->right;
-    leftSame = (left != nullptr) && (left->val == node->val);
-    rightSame = (right != nullptr) && (right->val == node->val);
-    leftLength = setLengths(left);
-    rightLength = setLengths(right);
-
-    if (leftSame && rightSame) {
-        length = leftLength + rightLength + 2;
-        result = max(leftLength, rightLength) + 1;
-    } else if (leftSame) {
-        length = leftLength + 1;
-        result = leftLength + 1;
-    } else if (rightSame) {
-        length = rightLength + 1;
-        result = rightLength + 1;
+    if (node->val != val) {
+        helper(node, node->val);
+        return 0;
     }
 
-    if (lengths.count(node->val)) {
-        lengths[node->val] = max(lengths[node->val], length);
-    } else {
-        lengths[node->val] = length;
-    }
-
-    return result;
+    int left = helper(node->left, val);
+    int right = helper(node->right, val);
+    ret = max(ret, left + right);
+    
+    return max(left, right) + 1;
 }
 
 int longestUnivaluePath(TreeNode* root) {
-    int answer = 0;
+    if (root == nullptr) return 0;
 
-    lengths.clear();
-    setLengths(root);
-
-    for (auto iter = lengths.begin(); iter != lengths.end(); ++iter) {
-        answer = max(iter->second, answer);
-    }
-
-    return answer;
+    ret = 0;
+    helper(root, root->val);
+    return ret;
 }
 
 int main() {
@@ -133,3 +103,5 @@ int main() {
 
     return 0;
 }
+
+
