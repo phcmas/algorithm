@@ -26,39 +26,82 @@
 
 #include <string>
 #include <vector>
+#include <queue>
+#include <iostream>
 
 using namespace std;
 
 vector<vector<int>> adj;
-vector<int> distance;
 
-void makeGraph(string begin, vector<string> &words) {
+int makeGraph(string begin, string target, vector<string> &words) {
+    int index = 0;
+    int diffCount = 0;
+
     adj.clear();
-    adj.resize(words.size(), vector<int>());
+    adj.resize(words.size()+1, vector<int>());
 
-    for (int i = 0; i < words.size(); ++i) {
-        int diffCount = 0;
-        for (int j = 0 ; j < begin.length(); ++j) {
-            if (begin[j] == words[i][j]) diffCount++;
-        }
+    for (int i = -1; i < (int)words.size(); ++i) {
+        string current = (i == -1) ? begin : words[i];
 
-        if (diffCount == 1) {
-            adj[0].push_back(i);
-            adj[i].push_back(0);
+        for (int j = i+1; j < words.size(); ++j) {
+            diffCount = 0;
+
+            for (int k = 0; k < current.size(); ++k) {
+                if (current[k] != words[j][k]) diffCount++;
+            }
+
+            if (diffCount == 1) {
+                adj[i+1].push_back(j+1);
+                adj[j+1].push_back(i+1);
+            }
+
+            if (target == words[j]) index = j+1;
         }
     }
 
+    return index;
 }
 
 int solution(string begin, string target, vector<string> words) {
-    int answer = 0;
-    return answer;
+    vector<int> distances;
+    queue<int> queue;
+    int targetIndex = makeGraph(begin, target, words);
+
+    distances.resize(words.size()+1, -1);
+
+    queue.push(0);
+    distances[0] = 0;
+
+    while (!queue.empty()) {
+        int here = queue.front();
+        queue.pop();
+
+        for (int i = 0; i < adj[here].size(); ++i) {
+            int there = adj[here][i];
+            if (distances[there] == -1) {
+                queue.push(there);
+                distances[there] = distances[here]+1;
+            }
+        }
+    }
+
+    return distances[targetIndex];
 }
 
 int main() {
-    vector<int> vv {1,2,3,4};
-    vv.clear();
+    string begin = "hit";
+    string target = "cog";
+    vector<string> words {"hot","dot","dog","lot","log","cog"};
+
+    for (int i = -1; i < 0; ++i) {
+        cout << "ss" << endl;
+    }
+
+    int answer = solution(begin, target, words);
+
+    cout << answer << endl;
 
     return 0;
 }
+
 
