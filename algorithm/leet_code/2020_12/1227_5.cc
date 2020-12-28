@@ -31,12 +31,6 @@
 
 using namespace std;
 
-void swap(vector<int> &nums, int idx0, int idx1) {
-    int temp = nums[idx0];
-    nums[idx0] = nums[idx1];
-    nums[idx1] = temp;
-}
-
 void nextPermutation(vector<int> &nums) {
     int index1 = -1;
     int index2 = -1;
@@ -57,7 +51,7 @@ void nextPermutation(vector<int> &nums) {
         if (nums[i] > nums[index1] && nums[i] < nums[index2]) index2 = i;
     }
 
-    swap(nums, index1, index2);
+    swap(nums[index1], nums[index2]);
     sort(nums.begin()+index1+1, nums.end());
 }
 
