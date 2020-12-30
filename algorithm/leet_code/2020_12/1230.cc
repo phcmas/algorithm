@@ -22,7 +22,9 @@
  *  1 <= word.length <= 10^3
  *  board and word consists only of lowercase and uppercase English letters. **/
 
-/* 이거 푸는데 너무 오래 걸렸네... 흑흑 */
+/** 이거 푸는데 너무 오래 걸렸네... 흑흑 
+ *  backTracking 함수에서 vector<vector<char>> &board가 아니라 vector<vector<char>> board
+ *  를 사용하면 board의 복사가 매번 일어나서 Time Limit으로 실패한다.*/
 #include <vector>
 #include <string>
 #include <cstring>
@@ -48,9 +50,7 @@ bool backTracking(vector<vector<char>> &board, string &word, int covered, int x,
     if (covered == word.length()) return true;
 
     for (int i = 0; i < 4; ++i) {
-        if (!ret) {
-            ret = backTracking(board, word, covered, x+dx[i], y+dy[i]);
-        }
+        if (!ret) ret = backTracking(board, word, covered, x+dx[i], y+dy[i]);
     }
 
     visited[y][x] = false;
