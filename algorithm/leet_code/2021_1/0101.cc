@@ -28,11 +28,21 @@ using namespace std;
 
 string table[8] = {"abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
-void addPossibleAlphabets (queue<string> &queue, string str, char digit) {
+void addAlphabets (queue<string> &queue, string str, char digit) {
     string possible = table[digit-'2'];
 
     for (int i = 0; i < possible.length(); ++i) {
         queue.push(str + possible[i]);
+    }
+}
+
+void queueToVector (queue<string> &queue, vector<string> &vec) {
+    int count = queue.size();
+    vec.resize(count);
+
+    for (int i = 0; i < count; ++i) {
+        vec[i] = queue.front();
+        queue.pop();
     }
 }
 
@@ -44,23 +54,17 @@ vector<string> letterCombinations(string digits) {
 
     if (digits.empty()) return vector<string>();
 
-    addPossibleAlphabets(queue, "", digits[0]);
+    addAlphabets(queue, "", digits[0]);
 
     for (int i = 1; i < digits.length(); ++i) {
         count = queue.size();
         for (int j = 0 ; j < count; ++j) {
-            addPossibleAlphabets(queue, queue.front(), digits[i]);
+            addAlphabets(queue, queue.front(), digits[i]);
             queue.pop();
         }
     }
 
-    count = queue.size();
-    answer.resize(count);
-
-    for (int i = 0; i < count; ++i) {
-        answer[i] = queue.front();
-        queue.pop();
-    }
+    queueToVector(queue, answer);
 
     return answer;
 }
