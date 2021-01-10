@@ -16,26 +16,36 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include <queue>
+#include <limits.h>
 
 using namespace std;
 
 vector<pair<int,int>> adj[101];
 int minTime[101];
 
-int networkDelayTime(vector<vector<int>> &times, int N, int K) {
-    int answer = 0;
-    queue<pair<int,int>> queue;
-    vector<bool> received;
+void init (vector<vector<int>> &times, int N) {
+    fill(minTime, minTime+101, INT_MAX);
 
-    if (times.empty()) return 0;
-
-    received.resize(N+1, false);
+    for (int i = 0; i < N+1; ++i) {
+        adj[i].clear();
+    }
 
     for (int i = 0; i < times.size(); ++i) {
         adj[times[i][0]].push_back({times[i][1], times[i][2]});
     }
+}
 
+int networkDelayTime(vector<vector<int>> &times, int N, int K) {
+    int answer = 0;
+    int visited = 0;
+    queue<pair<int,int>> queue;
+
+    if (times.empty()) return 0;
+    
+    init(times, N);
+    minTime[K] = 0;
     queue.push({K,0});
 
     while (!queue.empty()) {
@@ -50,13 +60,16 @@ int networkDelayTime(vector<vector<int>> &times, int N, int K) {
             if (nextTime < minTime[there]) {
                 minTime[there] = nextTime;
                 queue.push({there, nextTime});
-            } else {
-                answer = nextTime;
             }
+
         }
     }
 
-    return answer;
+    for (int i = 1; i < N+1; ++i) {
+        answer = max(answer, minTime[i]);
+    }
+
+    return answer == INT_MAX ? -1 : answer;
 }
 
 int main() {
@@ -65,9 +78,15 @@ int main() {
     vector<int> row02 {3,4,1};
     vector<vector<int>> times0 {row00, row01, row02};
 
+    vector<int> row10 {1,2,1};
+    vector<int> row11 {2,1,3};
+    vector<vector<int>> times1 {row10, row11};
+
     int ans0 = networkDelayTime(times0, 4, 2);
+    int ans1 = networkDelayTime(times1, 2, 2);
 
     cout << ans0 << endl; // 2
+    cout << ans1 << endl; // 3
 
     return 0;
 }
