@@ -180,9 +180,105 @@ public class Test {
         System.out.println();
     }
 
+    public static void evaluateDivisionTest() {
+        evaluateDivision test0 = new evaluateDivision();
+        evaluateDivision test1 = new evaluateDivision();
+
+        List<String> eq00 = new ArrayList<>();
+        eq00.add("a");
+        eq00.add("b");
+        List<String> eq01 = new ArrayList<>();
+        eq01.add("b");
+        eq01.add("c");
+        List<List<String>> equations0 = new ArrayList<>();
+        equations0.add(eq00);
+        equations0.add(eq01);
+
+        double[] values0 = new double[2];
+        values0[0] = 2.0;
+        values0[1] = 3.0;
+
+        List<String> q00 = new ArrayList<>();
+        q00.add("a");
+        q00.add("c");
+        List<String> q01 = new ArrayList<>();
+        q01.add("b");
+        q01.add("a");
+        List<String> q02 = new ArrayList<>();
+        q02.add("a");
+        q02.add("e");
+        List<String> q03 = new ArrayList<>();
+        q03.add("a");
+        q03.add("a");
+        List<String> q04 = new ArrayList<>();
+        q04.add("x");
+        q04.add("x");
+
+        List<List<String>> queries0 = new ArrayList<>();
+        queries0.add(q00);
+        queries0.add(q01);
+        queries0.add(q02);
+        queries0.add(q03);
+        queries0.add(q04);
+
+        double[] answer0 = test0.calcEquation(equations0, values0, queries0);
+
+        List<String> eq10 = new ArrayList<>();
+        eq10.add("a");
+        eq10.add("b");
+        List<String> eq11 = new ArrayList<>();
+        eq11.add("b");
+        eq11.add("c");
+        List<String> eq12 = new ArrayList<>();
+        eq12.add("bc");
+        eq12.add("cd");
+
+        List<List<String>> equations1 = new ArrayList<>();
+        equations1.add(eq10);
+        equations1.add(eq11);
+        equations1.add(eq12);
+
+        double[] values1 = new double[3];
+        values1[0] = 1.5;
+        values1[1] = 2.5;
+        values1[2] = 5.0;
+
+        List<String> q10 = new ArrayList<>();
+        q10.add("a");
+        q10.add("c");
+        List<String> q11 = new ArrayList<>();
+        q11.add("c");
+        q11.add("b");
+        List<String> q12 = new ArrayList<>();
+        q12.add("bc");
+        q12.add("cd");
+        List<String> q13 = new ArrayList<>();
+        q13.add("cd");
+        q13.add("bc");
+
+        List<List<String>> queries1 = new ArrayList<>();
+        queries1.add(q10);
+        queries1.add(q11);
+        queries1.add(q12);
+        queries1.add(q13);
+
+        double[] answer1 = test1.calcEquation(equations1, values1, queries1);
+
+        for (int i = 0; i < answer0.length; ++i) {
+            System.out.println(answer0[i] + " ");
+        }
+        System.out.println();
+
+        for (int i = 0; i < answer1.length; ++i) {
+            System.out.println(answer1[i] + " ");
+        }
+        System.out.println();
+
+    }
     public static void main(String[] args) {
         //sortColorTest();       
         //allPathsSourceTargetTest(); 
-        allPathsSourceTargetTest2(); 
+        //allPathsSourceTargetTest2(); 
+        evaluateDivisionTest();
     }
 }
