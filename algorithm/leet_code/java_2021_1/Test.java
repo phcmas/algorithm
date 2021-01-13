@@ -275,10 +275,166 @@ public class Test {
         System.out.println();
 
     }
+
+    public static void findSmallestSetOfVerticesTest() {
+        findSmallestSetOfVertices test0 = new findSmallestSetOfVertices();
+        findSmallestSetOfVertices test1 = new findSmallestSetOfVertices();
+        ArrayList<Integer> test = new ArrayList<>();
+        test.add(-1);
+        test.add(-1);
+
+        List<Integer> edge00 = new ArrayList<>(test);
+        edge00.set(0,0);
+        edge00.set(1,1);
+
+        List<Integer> edge01 = new ArrayList<>(test);
+        edge01.set(0,0);
+        edge01.set(1,2);
+
+        List<Integer> edge02 = new ArrayList<>(test);
+        edge02.set(0,2);
+        edge02.set(1,5);
+
+        List<Integer> edge03 = new ArrayList<>(test);
+        edge03.set(0,3);
+        edge03.set(1,4);
+
+        List<Integer> edge04 = new ArrayList<>(test);
+        edge04.set(0,4);
+        edge04.set(1,2);
+
+        List<List<Integer>> edges0 = new ArrayList<>(5);
+        edges0.add(edge00);
+        edges0.add(edge01);
+        edges0.add(edge02);
+        edges0.add(edge03);
+        edges0.add(edge04);
+
+        List<Integer> answer0 = test0.findSmallestSetOfVertices(6, edges0);
+
+
+        List<Integer> edge10 = new ArrayList<>(test);
+        edge10.set(0,0);
+        edge10.set(1,1);
+
+        List<Integer> edge11 = new ArrayList<>(test);
+        edge11.set(0,2);
+        edge11.set(1,1);
+
+        List<Integer> edge12 = new ArrayList<>(test);
+        edge12.set(0,3);
+        edge12.set(1,1);
+
+        List<Integer> edge13 = new ArrayList<>(test);
+        edge13.set(0,1);
+        edge13.set(1,4);
+
+        List<Integer> edge14 = new ArrayList<>(test);
+        edge14.set(0,2);
+        edge14.set(1,4);
+
+        List<List<Integer>> edges1 = new ArrayList<>(5);
+        edges1.add(edge10);
+        edges1.add(edge11);
+        edges1.add(edge12);
+        edges1.add(edge13);
+        edges1.add(edge14);
+
+        List<Integer> answer1 = test1.findSmallestSetOfVertices(5, edges1);
+
+        for (int iter : answer0) {
+            System.out.print(iter + " ");
+        }
+        System.out.println(); // 0 3
+
+        for (int iter : answer1) {
+            System.out.print(iter + " ");
+        }
+        System.out.println(); // 0 2 3
+    }
+    
+    public static void findSmallestSetOfVertices2Test() {
+        findSmallestSetOfVertices2 test0 = new findSmallestSetOfVertices2();
+        findSmallestSetOfVertices2 test1 = new findSmallestSetOfVertices2();
+        ArrayList<Integer> test = new ArrayList<>();
+        test.add(-1);
+        test.add(-1);
+
+        List<Integer> edge00 = new ArrayList<>(test);
+        edge00.set(0,0);
+        edge00.set(1,1);
+
+        List<Integer> edge01 = new ArrayList<>(test);
+        edge01.set(0,0);
+        edge01.set(1,2);
+
+        List<Integer> edge02 = new ArrayList<>(test);
+        edge02.set(0,2);
+        edge02.set(1,5);
+
+        List<Integer> edge03 = new ArrayList<>(test);
+        edge03.set(0,3);
+        edge03.set(1,4);
+
+        List<Integer> edge04 = new ArrayList<>(test);
+        edge04.set(0,4);
+        edge04.set(1,2);
+
+        List<List<Integer>> edges0 = new ArrayList<>(5);
+        edges0.add(edge00);
+        edges0.add(edge01);
+        edges0.add(edge02);
+        edges0.add(edge03);
+        edges0.add(edge04);
+
+        List<Integer> answer0 = test0.findSmallestSetOfVertices2(6, edges0);
+
+
+        List<Integer> edge10 = new ArrayList<>(test);
+        edge10.set(0,0);
+        edge10.set(1,1);
+
+        List<Integer> edge11 = new ArrayList<>(test);
+        edge11.set(0,2);
+        edge11.set(1,1);
+
+        List<Integer> edge12 = new ArrayList<>(test);
+        edge12.set(0,3);
+        edge12.set(1,1);
+
+        List<Integer> edge13 = new ArrayList<>(test);
+        edge13.set(0,1);
+        edge13.set(1,4);
+
+        List<Integer> edge14 = new ArrayList<>(test);
+        edge14.set(0,2);
+        edge14.set(1,4);
+
+        List<List<Integer>> edges1 = new ArrayList<>(5);
+        edges1.add(edge10);
+        edges1.add(edge11);
+        edges1.add(edge12);
+        edges1.add(edge13);
+        edges1.add(edge14);
+
+        List<Integer> answer1 = test1.findSmallestSetOfVertices2(5, edges1);
+
+        for (int iter : answer0) {
+            System.out.print(iter + " ");
+        }
+        System.out.println(); // 0 3
+
+        for (int iter : answer1) {
+            System.out.print(iter + " ");
+        }
+        System.out.println(); // 0 2 3
+    }
     public static void main(String[] args) {
         //sortColorTest();       
         //allPathsSourceTargetTest(); 
         //allPathsSourceTargetTest2(); 
-        evaluateDivisionTest();
+        //evaluateDivisionTest();
+        //findSmallestSetOfVerticesTest();
+        findSmallestSetOfVertices2Test();
     }
 }
