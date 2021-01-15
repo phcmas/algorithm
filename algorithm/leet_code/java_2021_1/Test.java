@@ -429,12 +429,59 @@ public class Test {
         }
         System.out.println(); // 0 2 3
     }
+    
+    public static void pacificAtlanticTest() {
+        pacificAtlantic test0 = new pacificAtlantic();
+
+        int[][] matrix0 = new int[5][5];
+
+        matrix0[0][0] = 1;
+        matrix0[0][1] = 2;
+        matrix0[0][2] = 2;
+        matrix0[0][3] = 3;
+        matrix0[0][4] = 5;
+
+        matrix0[1][0] = 3;
+        matrix0[1][1] = 2;
+        matrix0[1][2] = 3;
+        matrix0[1][3] = 4;
+        matrix0[1][4] = 4;
+
+        matrix0[2][0] = 2;
+        matrix0[2][1] = 4;
+        matrix0[2][2] = 5;
+        matrix0[2][3] = 3;
+        matrix0[2][4] = 1;
+
+        matrix0[3][0] = 6;
+        matrix0[3][1] = 7;
+        matrix0[3][2] = 1;
+        matrix0[3][3] = 4;
+        matrix0[3][4] = 5;
+
+        matrix0[4][0] = 5;
+        matrix0[4][1] = 1;
+        matrix0[4][2] = 1;
+        matrix0[4][3] = 2;
+        matrix0[4][4] = 4;
+
+        List<List<Integer>> answer0 = test0.pacificAtlantic(matrix0);
+
+        for (List<Integer> iter0 : answer0) {
+            for (int iter1 : iter0) {
+                System.out.print(iter1 + " ");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         //sortColorTest();       
         //allPathsSourceTargetTest(); 
         //allPathsSourceTargetTest2(); 
         //evaluateDivisionTest();
         //findSmallestSetOfVerticesTest();
-        findSmallestSetOfVertices2Test();
+        //findSmallestSetOfVertices2Test();
+        pacificAtlanticTest();
     }
 }
