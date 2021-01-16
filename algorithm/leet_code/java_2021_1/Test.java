@@ -475,6 +475,111 @@ public class Test {
         }
     }
 
+    public static void jumpGameIIITest() {
+        JumpGameIII test0 = new JumpGameIII();
+        JumpGameIII test1 = new JumpGameIII();
+        JumpGameIII test2 = new JumpGameIII();
+
+        int[] arr0 = {4,2,3,0,3,1,2};
+        int start0 = 5;
+
+        boolean ans0 = test0.canReach(arr0, start0);
+
+        int[] arr1 = {4,2,3,0,3,1,2};
+        int start1 = 0;
+
+        boolean ans1 = test1.canReach(arr1, start1);
+
+        int[] arr2 = {3,0,2,1,2};
+        int start2 = 2;
+
+        boolean ans2 = test2.canReach(arr2, start2);
+
+        System.out.println(ans0); // true
+        System.out.println(ans1); // true
+        System.out.println(ans2); // true
+    }
+    
+    public static void PalindromePartitioningTest() {
+        PalindromePartitioning test0 = new PalindromePartitioning();
+        PalindromePartitioning test1 = new PalindromePartitioning();
+
+        String s0 = "aab";
+        String s1 = "a";
+
+        List<List<String>> ans0 = test0.partition(s0);
+        List<List<String>> ans1 = test1.partition(s1);
+
+        for (List<String> iter0 : ans0) {
+            for (String iter1 : iter0) {
+                System.out.print(iter1 + " ");
+            }
+            System.out.print("     ");
+        } // [["a","a","b"],["aa","b"]]
+
+        System.out.println();
+
+        for (List<String> iter0 : ans1) {
+            for (String iter1 : iter0) {
+                System.out.print(iter1 + " ");
+            }
+            System.out.print("     ");
+        } // [["a"]]
+
+    }
+    
+    public static void monotoneIncreasingDigitsTest() {
+        monotoneIncreasingDigits test0 = new monotoneIncreasingDigits();
+        monotoneIncreasingDigits test1 = new monotoneIncreasingDigits();
+        monotoneIncreasingDigits test2 = new monotoneIncreasingDigits();
+        monotoneIncreasingDigits test3 = new monotoneIncreasingDigits();
+        monotoneIncreasingDigits test4 = new monotoneIncreasingDigits();
+
+        int N0 = 10;
+        int N1 = 1234;
+        int N2 = 332;
+        int N3 = 120;
+        int N4 = 989998;
+
+        int ans0 = test0.monotoneIncreasingDigits(N0);
+        int ans1 = test1.monotoneIncreasingDigits(N1);
+        int ans2 = test2.monotoneIncreasingDigits(N2);
+        int ans3 = test3.monotoneIncreasingDigits(N3);
+        int ans4 = test4.monotoneIncreasingDigits(N4);
+        
+        System.out.println(ans0);
+        System.out.println(ans1);
+        System.out.println(ans2);
+        System.out.println(ans3);
+        System.out.println(ans4);
+
+    }
+    
+    public static void monotoneIncreasingDigitsTest2() {
+        monotoneIncreasingDigits test0 = new monotoneIncreasingDigits();
+        monotoneIncreasingDigits test1 = new monotoneIncreasingDigits();
+        monotoneIncreasingDigits test2 = new monotoneIncreasingDigits();
+        monotoneIncreasingDigits test3 = new monotoneIncreasingDigits();
+        monotoneIncreasingDigits test4 = new monotoneIncreasingDigits();
+
+        int N0 = 10;
+        int N1 = 1234;
+        int N2 = 332;
+        int N3 = 120;
+        int N4 = 989998;
+
+        int ans0 = test0.monotoneIncreasingDigits2(N0);
+        int ans1 = test1.monotoneIncreasingDigits2(N1);
+        int ans2 = test2.monotoneIncreasingDigits2(N2);
+        int ans3 = test3.monotoneIncreasingDigits2(N3);
+        int ans4 = test4.monotoneIncreasingDigits2(N4);
+        
+        System.out.println(ans0);
+        System.out.println(ans1);
+        System.out.println(ans2);
+        System.out.println(ans3);
+        System.out.println(ans4);
+    }
     public static void main(String[] args) {
         //sortColorTest();       
         //allPathsSourceTargetTest(); 
@@ -482,6 +587,11 @@ public class Test {
         //evaluateDivisionTest();
         //findSmallestSetOfVerticesTest();
         //findSmallestSetOfVertices2Test();
-        pacificAtlanticTest();
+        //pacificAtlanticTest();
+        //jumpGameIIITest();
+        //PalindromePartitioningTest();
+        monotoneIncreasingDigitsTest();
+        monotoneIncreasingDigitsTest2();
+
     }
 }
