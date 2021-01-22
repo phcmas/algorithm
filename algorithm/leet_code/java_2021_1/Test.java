@@ -580,6 +580,38 @@ public class Test {
         System.out.println(ans3);
         System.out.println(ans4);
     }
+    
+    public static void sortListTest() {
+        sortList test0 = new sortList();
+        sortList test1 = new sortList();
+
+        ListNode node03 = new ListNode(3);
+        ListNode node02 = new ListNode(1, node03);
+        ListNode node01 = new ListNode(2, node02);
+        ListNode node00 = new ListNode(4, node01);
+
+        ListNode ans0 = test0.sortList(node00);
+
+        while (ans0 != null) {
+            System.out.print(ans0.val + " ");
+            ans0 = ans0.next;
+        }
+        System.out.println(); // 1 2 3 4 
+
+        ListNode node14 = new ListNode(0);
+        ListNode node13 = new ListNode(4, node14);
+        ListNode node12 = new ListNode(3, node13);
+        ListNode node11 = new ListNode(5, node12);
+        ListNode node10 = new ListNode(-1, node11);
+
+        ListNode ans1 = test1.sortList(node10);
+
+        while (ans1 != null) {
+            System.out.print(ans1.val + " ");
+            ans1 = ans1.next;
+        }
+        System.out.println(); // -1 0 3 4 5
+    }
     public static void main(String[] args) {
         //sortColorTest();       
         //allPathsSourceTargetTest(); 
@@ -590,8 +622,8 @@ public class Test {
         //pacificAtlanticTest();
         //jumpGameIIITest();
         //PalindromePartitioningTest();
-        monotoneIncreasingDigitsTest();
-        monotoneIncreasingDigitsTest2();
-
+        //monotoneIncreasingDigitsTest();
+        //monotoneIncreasingDigitsTest2();
+        sortListTest();
     }
 }
