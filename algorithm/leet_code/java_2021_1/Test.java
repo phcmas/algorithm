@@ -612,6 +612,40 @@ public class Test {
         }
         System.out.println(); // -1 0 3 4 5
     }
+    
+    public static void CoinChangeTest2() {
+        CoinChange2 test0 = new CoinChange2();
+        CoinChange2 test1 = new CoinChange2();
+        CoinChange2 test2 = new CoinChange2();
+        CoinChange2 test3 = new CoinChange2();
+        CoinChange2 test4 = new CoinChange2();
+
+        int[] coins0 = {1, 2, 5}; 
+        int amount0 = 11;
+        int ans0 = test0.coinChange(coins0, amount0);
+
+        int[] coins1 = {2};
+        int amount1 = 3;
+        int ans1 = test1.coinChange(coins1, amount1);
+
+        int[] coins2 = {1};
+        int amount2 = 0;
+        int ans2 = test2.coinChange(coins2, amount2);
+
+        int[] coins3 = {1};
+        int amount3 = 1;
+        int ans3 = test3.coinChange(coins3, amount3);
+
+        int[] coins4 = {1};
+        int amount4 = 2;
+        int ans4 = test4.coinChange(coins4, amount4);
+        
+        System.out.println(ans0); // 3
+        System.out.println(ans1); // -1
+        System.out.println(ans2); // 0
+        System.out.println(ans3); // 1
+        System.out.println(ans4); // 2
+    }
     public static void main(String[] args) {
         //sortColorTest();       
         //allPathsSourceTargetTest(); 
@@ -624,6 +658,7 @@ public class Test {
         //PalindromePartitioningTest();
         //monotoneIncreasingDigitsTest();
         //monotoneIncreasingDigitsTest2();
-        sortListTest();
+        //sortListTest();
+        CoinChangeTest2();
     }
 }
