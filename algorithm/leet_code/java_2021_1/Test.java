@@ -646,6 +646,17 @@ public class Test {
         System.out.println(ans3); // 1
         System.out.println(ans4); // 2
     }
+    public static void GrumpyBookStoreOwnerTest() {
+        GrumpyBookStoreOwner test0 = new GrumpyBookStoreOwner();
+
+        int[] customers0 = {1,0,1,2,1,1,7,5};
+        int[] grumpy0 = {0,1,0,1,0,1,0,1};
+        int X0 = 3;
+
+        int ans0 = test0.maxSatisfied(customers0, grumpy0, X0);
+        System.out.println(ans0);
+
+    }
     public static void main(String[] args) {
         //sortColorTest();       
         //allPathsSourceTargetTest(); 
@@ -659,6 +670,7 @@ public class Test {
         //monotoneIncreasingDigitsTest();
         //monotoneIncreasingDigitsTest2();
         //sortListTest();
-        CoinChangeTest2();
+        //CoinChangeTest2();
+        GrumpyBookStoreOwnerTest();
     }
 }
