@@ -26,8 +26,7 @@
  *  0 <= ai, bi < numCourses
  *  ai != bi
  *  All the pairs [ai, bi] are distinct. **/
-
-/* bfs 에서 사이클 체크 로직 수정해야함 */
+/* bfs와 dfs를 둘 다 구현하였음 */
 
 #include <vector>
 #include <queue>
@@ -37,16 +36,22 @@
 using namespace std;
 
 vector<vector<int>> adj;
-vector<int> indegree;
+vector<int> indegree; // bfs 이용시 쓰임
+vector<int> status; // dfs 이용시 쓰임
 
-void init(int total) {
+void initBFS(int total, vector<vector<int>> &prerequisites) {
     adj.clear();
     indegree.clear();
     adj.resize(total);
     indegree.resize(total, 0);
+
+    for (int i = 0; i < prerequisites.size(); ++i) {
+        adj[prerequisites[i][1]].push_back(prerequisites[i][0]);
+        indegree[prerequisites[i][0]]++;
+    }
 }
 
-void bfs(vector<int> &answer, int total) {
+void bfs(int total, vector<int> &answer) {
     queue<int> queue;
 
     for (int i = 0; i < total; ++i) {
@@ -66,25 +71,62 @@ void bfs(vector<int> &answer, int total) {
     }
 }
 
-vector<int> findOrder(int numCourses, vector<vector<int>> &prerequisites) {
-    bool hasCycle = false;
-    vector<int> answer;
-
-    init(numCourses);
+void initDFS(int total, vector<vector<int>> &prerequisites) {
+    adj.clear();
+    status.clear();
+    adj.resize(total);
+    status.resize(total, 0);
 
     for (int i = 0; i < prerequisites.size(); ++i) {
-        adj[prerequisites[i][1]].push_back(prerequisites[i][0]);
-        indegree[prerequisites[i][0]]++;
+        adj[prerequisites[i][0]].push_back(prerequisites[i][1]);
+    }
+}
+
+bool dfs(int index, vector<int> &answer) {
+    status[index] = 2;
+
+    for (int i = 0; i < adj[index].size(); ++i) {
+        int next = adj[index][i];
+        if (status[next] == 1) {
+            continue;
+        } else if (status[next] == 2) {
+            return true;
+        } else {
+            if (dfs(next, answer)) return true;
+        }
     }
 
-    bfs(answer, numCourses);
-    
-    for (int i = 0; i < indegree.size(); ++i) {
-        if (indegree[i] != 0) return vector<int>();
+    status[index] = 1;
+    answer.push_back(index);
+    return false;
+}
+
+vector<int> findOrder(int numCourses, vector<vector<int>> &prerequisites) {
+    vector<int> answer;
+    bool hasCycle = false;
+    initDFS(numCourses, prerequisites);
+
+    for (int i = 0; i < numCourses; ++i) {
+        if (status[i] == 0) {
+            if (dfs(i, answer)) return vector<int>();
+        }
     }
 
     return answer;
 }
+
+//vector<int> findOrder(int numCourses, vector<vector<int>> &prerequisites) {
+//    vector<int> answer;
+//
+//    initBFS(numCourses, prerequisites);
+//    bfs(numCourses, answer);
+//    
+//    for (int i = 0; i < indegree.size(); ++i) {
+//        if (indegree[i] != 0) return vector<int>();
+//    }
+//
+//    return answer;
+//}
 
 int main() {
     int numCourses0 = 4;
