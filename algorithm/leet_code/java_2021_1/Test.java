@@ -657,6 +657,18 @@ public class Test {
         System.out.println(ans0);
 
     }
+
+    public static void NumberOfIslandsTest() {
+        NumberOfIslands test0 = new NumberOfIslands();
+        char[][] grid0 = {{'1','1','0','0','0'}, {'1','1','0','0','0'}, {'0','0','1','0','0'}, {'1','1','0','0','0'}};
+        int ans0 = test0.numIslands(grid0);
+        System.out.println(ans0); // 3
+
+        NumberOfIslands test1 = new NumberOfIslands();
+        char[][] grid1 = {{'1','1','1', '1','0'}, {'1','1','0','1','0'}, {'1','1','0','0','0'},{'0','0','0','0','0'}};
+        int ans1 = test1.numIslands(grid1);
+        System.out.println(ans1); // 1
+    }
     public static void main(String[] args) {
         //sortColorTest();       
         //allPathsSourceTargetTest(); 
@@ -671,6 +683,7 @@ public class Test {
         //monotoneIncreasingDigitsTest2();
         //sortListTest();
         //CoinChangeTest2();
-        GrumpyBookStoreOwnerTest();
+        //GrumpyBookStoreOwnerTest();
+        NumberOfIslandsTest();
     }
 }
