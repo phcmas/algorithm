@@ -669,6 +669,26 @@ public class Test {
         int ans1 = test1.numIslands(grid1);
         System.out.println(ans1); // 1
     }
+
+    public static void RemoveDuplicatesfromSortedArrayIITest() {
+        RemoveDuplicatesfromSortedArrayII test0 = new RemoveDuplicatesfromSortedArrayII();
+        int[] nums0 = {1,1,1,2,2,3};
+        int ans0 = test0.removeDuplicates2(nums0);
+
+        RemoveDuplicatesfromSortedArrayII test1 = new RemoveDuplicatesfromSortedArrayII();
+        int[] nums1 = {0,0,1,1,1,1,2,3,3};
+        int ans1 = test1.removeDuplicates2(nums1);
+
+        for (int i = 0; i < ans0; ++i) {
+            System.out.print(nums0[i] + " ");
+        }
+        System.out.println();
+
+        for (int i = 0; i < ans1; ++i) {
+            System.out.print(nums1[i] + " ");
+        }
+        System.out.println();
+    }
     public static void main(String[] args) {
         //sortColorTest();       
         //allPathsSourceTargetTest(); 
@@ -684,6 +704,7 @@ public class Test {
         //sortListTest();
         //CoinChangeTest2();
         //GrumpyBookStoreOwnerTest();
-        NumberOfIslandsTest();
+        //NumberOfIslandsTest();
+        RemoveDuplicatesfromSortedArrayIITest();
     }
 }
