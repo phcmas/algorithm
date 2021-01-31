@@ -646,6 +646,49 @@ public class Test {
         System.out.println(ans3); // 1
         System.out.println(ans4); // 2
     }
+    public static void GrumpyBookStoreOwnerTest() {
+        GrumpyBookStoreOwner test0 = new GrumpyBookStoreOwner();
+
+        int[] customers0 = {1,0,1,2,1,1,7,5};
+        int[] grumpy0 = {0,1,0,1,0,1,0,1};
+        int X0 = 3;
+
+        int ans0 = test0.maxSatisfied(customers0, grumpy0, X0);
+        System.out.println(ans0);
+
+    }
+
+    public static void NumberOfIslandsTest() {
+        NumberOfIslands test0 = new NumberOfIslands();
+        char[][] grid0 = {{'1','1','0','0','0'}, {'1','1','0','0','0'}, {'0','0','1','0','0'}, {'1','1','0','0','0'}};
+        int ans0 = test0.numIslands(grid0);
+        System.out.println(ans0); // 3
+
+        NumberOfIslands test1 = new NumberOfIslands();
+        char[][] grid1 = {{'1','1','1', '1','0'}, {'1','1','0','1','0'}, {'1','1','0','0','0'},{'0','0','0','0','0'}};
+        int ans1 = test1.numIslands(grid1);
+        System.out.println(ans1); // 1
+    }
+
+    public static void RemoveDuplicatesfromSortedArrayIITest() {
+        RemoveDuplicatesfromSortedArrayII test0 = new RemoveDuplicatesfromSortedArrayII();
+        int[] nums0 = {1,1,1,2,2,3};
+        int ans0 = test0.removeDuplicates2(nums0);
+
+        RemoveDuplicatesfromSortedArrayII test1 = new RemoveDuplicatesfromSortedArrayII();
+        int[] nums1 = {0,0,1,1,1,1,2,3,3};
+        int ans1 = test1.removeDuplicates2(nums1);
+
+        for (int i = 0; i < ans0; ++i) {
+            System.out.print(nums0[i] + " ");
+        }
+        System.out.println();
+
+        for (int i = 0; i < ans1; ++i) {
+            System.out.print(nums1[i] + " ");
+        }
+        System.out.println();
+    }
     public static void main(String[] args) {
         //sortColorTest();       
         //allPathsSourceTargetTest(); 
@@ -659,6 +702,9 @@ public class Test {
         //monotoneIncreasingDigitsTest();
         //monotoneIncreasingDigitsTest2();
         //sortListTest();
-        CoinChangeTest2();
+        //CoinChangeTest2();
+        //GrumpyBookStoreOwnerTest();
+        //NumberOfIslandsTest();
+        RemoveDuplicatesfromSortedArrayIITest();
     }
 }

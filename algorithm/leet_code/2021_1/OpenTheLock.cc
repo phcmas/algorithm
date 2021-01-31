@@ -54,9 +54,9 @@ string neighbor(string cur, int num) {
     string next = cur;
 
     if (num < 4) {
-        next[index] = ((next[index]-'0'+1) % 10) + '0';
+        next[index] = next[index] == '9' ? '0' : next[index]+1;
     } else {
-        next[index] = ((next[index]-'0'+9) % 10) + '0';
+        next[index] = next[index] == '0' ? '9' : next[index]-1;
     }
 
     return next;
@@ -64,14 +64,10 @@ string neighbor(string cur, int num) {
 
 int openLock(vector<string> &deadends, string target) {
     queue<string> queue;
-    unordered_set<string> visited;
+    unordered_set<string> seen (deadends.begin(), deadends.end());
     int dist = 0;
-    
-    for (string iter : deadends) {
-        visited.insert(iter);
-    }
 
-    if (visited.count("0000")) return -1;
+    if (seen.count("0000")) return -1;
 
     queue.push("0000");
     while (!queue.empty()) {
@@ -79,15 +75,16 @@ int openLock(vector<string> &deadends, string target) {
 
         for (int i = 0; i < size; ++i) {
             string cur = queue.front();
-            visited.insert(cur);
             queue.pop();
 
             if (cur == target) return dist;
 
             for (int j = 0; j < 8; ++j) {
                 string next = neighbor(cur, j);
-                if (visited.count(next)) continue;
-                queue.push(next);
+                if (!seen.count(next)) {
+                    seen.insert(next);
+                    queue.push(next);
+                }
             }
         }
 
