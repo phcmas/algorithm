@@ -19,7 +19,8 @@
  *  Replace the one 'A' in the middle with 'B' and form "AABBBBA".
  *  The substring "BBBB" has the longest repeating letters, which is 4. **/
 
-#include <queue>
+/* Discussion 참고하여 푼 풀이 */
+
 #include <string>
 #include <cstring>
 #include <iostream>
@@ -27,30 +28,27 @@
 using namespace std;
 
 int characterReplacement(string s, int k) {
-    queue<int> indices;
     int count[26];
-    int start = 0;
-    int end = 1;
+    int left = 0;
+    int maxCount = 0;
     int answer = 0;
-    int curLength = 1;
 
     if (s.length() <= 1) return s.length();
     memset(count, 0, sizeof(count));
 
-    while (end < s.length()) {
-        if (s[start] == s[end]) {
-            curLength++;
-            end++;
-        } else if (indices.size() < k) {
-            indices.push(end);
-            count[s[end]-'A']++;
-            curLength++;
-            end++;
-        } else {
-            
+    for (int right = 0; right < s.length(); ++right) {
+        count[s[right]-'A']++;
+        maxCount = max(maxCount, count[s[right]-'A']);
+
+        if (right-left+1-maxCount > k) {
+            count[s[left]-'A']--;
+            left++;
         }
+
+        answer = max(answer, right-left+1);
     }
 
+    return answer;
 }
 
 int main() {
@@ -62,8 +60,13 @@ int main() {
     int k1 = 1;
     int ans1 = characterReplacement(s1, k1);
 
+    string s2 = "AACBABBBA";
+    int k2 = 2;
+    int ans2 = characterReplacement(s2, k2);
+
     cout << ans0 << endl; // 4
     cout << ans1 << endl; // 4
+    cout << ans2 << endl; // 6
 
     return 0;
 }
