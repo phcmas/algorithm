@@ -32,20 +32,20 @@ using namespace std;
 
 int minimumTotal(vector<vector<int>> &triangle) {
     vector<int> cache(triangle.size(), -1);
-    int prev = INT_MAX;
-    int cur = INT_MAX;
+    int val1, val2;
     int answer = INT_MAX;
 
     if (triangle.empty()) return 0;
     cache[0] = triangle[0][0];
     
     for (int i = 1; i < triangle.size(); ++i) {
+        val1 = INT_MAX;
         for (int j = 0; j < i; ++j) {
-            prev = cache[j];
-            cache[j] = triangle[i][j]+ min(cur, cache[j]);
-            cur = prev;
+            val2 = cache[j];
+            cache[j] = triangle[i][j]+ min(val1, val2);
+            val1 = val2;
         }
-        cache[i] = cache[i-1]+triangle[i][i];
+        cache[i] = val1 + triangle[i][i];
     }
 
     for (int i = 0; i < triangle.size(); ++i) {
@@ -69,8 +69,8 @@ int main() {
 
     int ans1 = minimumTotal(triangle1);
 
-    cout << ans0 << endl;
-    cout << ans1 << endl;
+    cout << ans0 << endl; // 11
+    cout << ans1 << endl; // -10
 
     return 0;
 }
