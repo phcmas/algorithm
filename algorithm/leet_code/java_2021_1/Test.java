@@ -689,6 +689,24 @@ public class Test {
         }
         System.out.println();
     }
+
+    public static void MaxConsecutiveOnesIIITest() {
+        MaxConsecutiveOnesIII test0 = new MaxConsecutiveOnesIII();
+        MaxConsecutiveOnesIII test1 = new MaxConsecutiveOnesIII();
+
+        int[] A0 = {1,1,1,0,0,0,1,1,1,1,0};
+        int K0 = 2;
+
+        int[] A1 = {0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1};
+        int K1 = 3;
+
+        int ans0 = test0.longestOnes(A0, K0);
+        int ans1 = test1.longestOnes(A1, K1);
+
+        System.out.println(ans0); // 6
+        System.out.println(ans1); // 10
+    }
+
     public static void main(String[] args) {
         //sortColorTest();       
         //allPathsSourceTargetTest(); 
@@ -705,6 +723,7 @@ public class Test {
         //CoinChangeTest2();
         //GrumpyBookStoreOwnerTest();
         //NumberOfIslandsTest();
-        RemoveDuplicatesfromSortedArrayIITest();
+        //RemoveDuplicatesfromSortedArrayIITest();
+        MaxConsecutiveOnesIIITest();
     }
 }
