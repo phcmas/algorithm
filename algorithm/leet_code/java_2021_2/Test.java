@@ -46,10 +46,72 @@ public class Test {
         System.out.println(ans2); // 1
         System.out.println(ans3); // 6
     }
+    public static void CombinationSumIIITest() {
+        CombinationSumIII test0 = new CombinationSumIII();
+        List<List<Integer>> ans0 = test0.combinationSum3(3, 7);
+
+        CombinationSumIII test1 = new CombinationSumIII();
+        List<List<Integer>> ans1 = test1.combinationSum3(3, 9);
+
+        CombinationSumIII test2 = new CombinationSumIII();
+        List<List<Integer>> ans2 = test2.combinationSum3(4, 1);
+
+        CombinationSumIII test3 = new CombinationSumIII();
+        List<List<Integer>> ans3 = test3.combinationSum3(3, 2);
+
+        CombinationSumIII test4 = new CombinationSumIII();
+        List<List<Integer>> ans4 = test4.combinationSum3(9, 45);
+
+        for (List<Integer> list : ans0) {
+            System.out.print("[");
+            for (int ele : list) {
+                System.out.print(ele + " ");
+            }
+            System.out.print("], ");
+        }
+        System.out.println(); // [1,2,4]
+
+        for (List<Integer> list : ans1) {
+            System.out.print("[");
+            for (int ele : list) {
+                System.out.print(ele + " ");
+            }
+            System.out.print("], ");
+        }
+        System.out.println(); // [[1,2,6],[1,3,5],[2,3,4]]
+
+        for (List<Integer> list : ans2) {
+            System.out.print("[");
+            for (int ele : list) {
+                System.out.print(ele + " ");
+            }
+            System.out.print("], ");
+        }
+        System.out.println(); // []
+
+        for (List<Integer> list : ans3) {
+            System.out.print("[");
+            for (int ele : list) {
+                System.out.print(ele + " ");
+            }
+            System.out.print("], ");
+        }
+        System.out.println(); // []
+
+        for (List<Integer> list : ans4) {
+            System.out.print("[");
+            for (int ele : list) {
+                System.out.print(ele + " ");
+            }
+            System.out.print("], ");
+        }
+        System.out.println(); // [[1,2,3,4,5,6,7,8,9]]
+    }
 
     public static void main(String[] args) {
         //MaxConsecutiveOnesIIITest();
-        LongestIncreasingSubsequenceTest();
+        //LongestIncreasingSubsequenceTest();
+        CombinationSumIIITest();
     }
 }
 
