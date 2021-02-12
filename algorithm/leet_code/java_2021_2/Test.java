@@ -107,11 +107,25 @@ public class Test {
         }
         System.out.println(); // [[1,2,3,4,5,6,7,8,9]]
     }
+    public static void KthLargestElementInAnArrayTest() {
+        KthLargestElementInAnArray test0 = new KthLargestElementInAnArray();
+        KthLargestElementInAnArray test1 = new KthLargestElementInAnArray();
+
+        int[] nums0 = {3,2,1,5,6,4};
+        int ans0 = test0.findKthLargest2(nums0, 2);
+
+        int[] nums1 = {3,2,3,1,2,4,5,5,6};
+        int ans1 = test1.findKthLargest2(nums1, 4);
+
+        System.out.println(ans0);
+        System.out.println(ans1);
+    }
 
     public static void main(String[] args) {
         //MaxConsecutiveOnesIIITest();
         //LongestIncreasingSubsequenceTest();
-        CombinationSumIIITest();
+        //CombinationSumIIITest();
+        KthLargestElementInAnArrayTest();
     }
 }
 
