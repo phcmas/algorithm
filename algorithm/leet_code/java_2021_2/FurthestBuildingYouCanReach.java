@@ -35,7 +35,30 @@
 package leet_code.java_2021_2;
 
 public class FurthestBuildingYouCanReach {
+    /* bruteForce로 푼 것은 TimeLimit Exceeded -> DP를 쓸 수도 없고 ㅜㅠ */
+    public int bruteForce(int[] heights, int cur, int bricks, int ladders) {
+        int cand1 = cur;
+        int cand2 = cur;
+        int ret;
+
+        if (cur == heights.length-1) return cur;
+
+        if (heights[cur] < heights[cur+1]) {
+            if (bricks >= heights[cur+1]-heights[cur]) {
+                cand1 = bruteForce(heights, cur+1, bricks-heights[cur+1]+heights[cur], ladders);
+            }
+            if (ladders > 0) {
+                cand2 = bruteForce(heights, cur+1, bricks, ladders-1);
+            }
+            ret = Math.max(cand1, cand2);
+        } else {
+            ret = bruteForce(heights, cur+1, bricks, ladders);
+        }
+
+        return ret;
+    }
+
     public int furthestBuilding(int[] heights, int bricks, int ladders) {
-        return 0;
+        
     }
 }

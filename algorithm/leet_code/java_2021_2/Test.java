@@ -166,13 +166,38 @@ public class Test {
             System.out.print(", ");
         } // [[3,3], [-2,4]]
     }
+
+    public static void FurthestBuildingYouCanReachTest() {
+        FurthestBuildingYouCanReach test0 = new FurthestBuildingYouCanReach();
+        FurthestBuildingYouCanReach test1 = new FurthestBuildingYouCanReach();
+        FurthestBuildingYouCanReach test2 = new FurthestBuildingYouCanReach();
+        FurthestBuildingYouCanReach test3 = new FurthestBuildingYouCanReach();
+
+        int[] heights0 = {4,2,7,6,9,14,12};
+        int ans0 = test0.furthestBuilding(heights0, 5, 1);
+
+        int[] heights1 = {4,12,2,7,3,18,20,3,19};
+        int ans1 = test1.furthestBuilding(heights1, 10, 2);
+
+        int[] heights2 = {14,3,19,3};
+        int ans2 = test2.furthestBuilding(heights2, 17, 0);
+
+        int[] heights3 = {1,5,1,2,3,4,10000};
+        int ans3 = test3.furthestBuilding(heights3, 4, 1);
+        
+        System.out.println(ans0); // 4
+        System.out.println(ans1); // 7
+        System.out.println(ans2); // 3
+        System.out.println(ans3); // 5
+    }
     public static void main(String[] args) {
         //MaxConsecutiveOnesIIITest();
         //LongestIncreasingSubsequenceTest();
         //CombinationSumIIITest();
         //KthLargestElementInAnArrayTest();
         //SplitArrayIntoConsecutiveSubsequencesTest();
-        KClosestPointsToOriginTest();
+        //KClosestPointsToOriginTest();
+        FurthestBuildingYouCanReachTest();
     }
 }
 
