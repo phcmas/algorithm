@@ -30,68 +30,31 @@ package leet_code.java_2021_2;
 
 import java.util.PriorityQueue;
 import java.util.Queue;
+import java.util.HashMap;
 
 public class SplitArrayIntoConsecutiveSubsequences {
-
-    private boolean checkQueue(Queue<Integer> pq) {
-        for (int i = 0; i < pq.size(); ++i) {
-            if (pq.poll() < 3) return false;
-        }
-
-        return true;
-    }
-
-    private boolean addNumber(Queue<Integer> pq, int size) {
-        int[] temp = new int[size];
-
-        for (int i = 0; i < size; ++i) {
-            if (pq.isEmpty()) {
-                temp[i] = 1;
-            } else {
-                temp[i] = pq.poll()+1;
-            }
-        }
-        
-        if (!checkQueue(pq)) return false;
-        
-        for (int i = 0; i < size; ++i) {
-            pq.add(temp[i]);
-        }
-
-        return true;
-    }
-
     public boolean isPossible(int[] nums) {
-        int prev, cur;
-        int size = 0;;
-        Queue<Integer> pq1 = new PriorityQueue<>((y,x)->Integer.compare(x, y));
-        Queue<Integer> pq2 = new PriorityQueue<>();
+        HashMap<Integer, Integer> counts = new HashMap<>();
+        HashMap<Integer, Integer> tails = new HashMap<>();
 
-        if (nums.length < 3) return false;
+        for (int iter : nums) counts.put(iter, counts.getOrDefault(iter, 0)+1);
 
         for (int iter : nums) {
-            pq1.add(iter);
-        }
+            if (counts.get(iter) == 0) {
+                continue;
+            } else if (tails.getOrDefault(iter, 0) > 0) {
+                tails.put(iter, tails.getOrDefault(iter, 0)-1);
+                tails.put(iter+1, tails.getOrDefault(iter+1, 0)+1);
+            } else if (counts.getOrDefault(iter+1, 0) > 0 && counts.getOrDefault(iter+2, 0) > 0) {
+                counts.put(iter+1, counts.getOrDefault(iter+1, 0)-1);
+                counts.put(iter+2, counts.getOrDefault(iter+2, 0)-1);
+                tails.put(iter+3, tails.getOrDefault(iter+3, 0)+1);
+            } else return false;
 
-        prev = pq1.peek();
-        while (!pq1.isEmpty()) {
-            cur = pq1.poll();
-
-            if (prev == cur) {
-                size++;
-            } else if (cur == prev-1) {
-                if (!addNumber(pq2, size)) return false;
-                prev = cur;
-                size = 1;
-            } else {
-                if (!checkQueue(pq2)) return false;
-                prev = cur;
-                size = 1;
-            }
+            counts.put(iter, counts.getOrDefault(iter, 0)-1);
         }
 
         return true;
     }
-
 }
 

@@ -121,11 +121,58 @@ public class Test {
         System.out.println(ans1);
     }
 
+    public static void SplitArrayIntoConsecutiveSubsequencesTest() {
+        SplitArrayIntoConsecutiveSubsequences test0 = new SplitArrayIntoConsecutiveSubsequences();
+        SplitArrayIntoConsecutiveSubsequences test1 = new SplitArrayIntoConsecutiveSubsequences();
+        SplitArrayIntoConsecutiveSubsequences test2 = new SplitArrayIntoConsecutiveSubsequences();
+
+        int[] nums0 = {1,2,3,3,4,5};
+        int[] nums1 = {1,2,3,3,4,4,5,5};
+        int[] nums2 = {1,2,3,4,4,5};
+
+        boolean ans0 = test0.isPossible(nums0);
+        boolean ans1 = test1.isPossible(nums1);
+        boolean ans2 = test2.isPossible(nums2);
+
+        System.out.println(ans0); // true
+        System.out.println(ans1); // true
+        System.out.println(ans2); // false
+
+    }
+
+    public static void KClosestPointsToOriginTest() {
+        KClosestPointsToOrigin test0 = new KClosestPointsToOrigin();
+        KClosestPointsToOrigin test1 = new KClosestPointsToOrigin();
+
+        int[][] points0 = {{1,3}, {-2,2}};
+        int[][] points1 = {{3,3}, {5,-1}, {-2,4}};
+
+        int[][] ans0 = test0.kClosest(points0, 1);
+        int[][] ans1 = test1.kClosest(points1, 2);
+
+        for (int i = 0; i < ans0.length; ++i) {
+            for (int j = 0; j < ans0[0].length; ++j) {
+                System.out.print(ans0[i][j] + " ");
+            }
+            System.out.print(", ");
+        } // [[-2,2]]
+
+        System.out.println();
+
+        for (int i = 0; i < ans1.length; ++i) {
+            for (int j = 0; j < ans1[0].length; ++j) {
+                System.out.print(ans1[i][j] + " ");
+            }
+            System.out.print(", ");
+        } // [[3,3], [-2,4]]
+    }
     public static void main(String[] args) {
         //MaxConsecutiveOnesIIITest();
         //LongestIncreasingSubsequenceTest();
         //CombinationSumIIITest();
-        KthLargestElementInAnArrayTest();
+        //KthLargestElementInAnArrayTest();
+        //SplitArrayIntoConsecutiveSubsequencesTest();
+        KClosestPointsToOriginTest();
     }
 }
 
