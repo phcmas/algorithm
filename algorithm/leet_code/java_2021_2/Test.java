@@ -204,6 +204,31 @@ public class Test {
         System.out.println(ans0);
 
     }
+    public static void CopyListWithRandomPointer() {
+        Node iter;
+        CopyListWithRandomPointer test0 = new CopyListWithRandomPointer();
+
+        Node node00 = new Node(3);
+        Node node01 = new Node(3);
+        Node node02 = new Node(3);
+
+        node00.next = node01;
+        node01.next = node02;
+        node02.next = null;
+        node00.random = null;
+        node01.random = node00;
+        node02.random = null;
+
+        Node ans0 = test0.copyRandomList(node00);
+
+        iter = ans0;
+        while (iter != null) {
+            System.out.print("val : " + iter.val + ", random : " + iter.random +" ");
+            System.out.println();
+            iter = iter.next;
+        }
+    }
+
     public static void main(String[] args) {
         //MaxConsecutiveOnesIIITest();
         //LongestIncreasingSubsequenceTest();
@@ -212,7 +237,8 @@ public class Test {
         //SplitArrayIntoConsecutiveSubsequencesTest();
         //KClosestPointsToOriginTest();
         //FurthestBuildingYouCanReachTest();
-        MaxAreaOfIslandTest();
+        //MaxAreaOfIslandTest();
+        CopyListWithRandomPointer();
     }
 }
 
