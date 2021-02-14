@@ -34,6 +34,9 @@
 
 package leet_code.java_2021_2;
 
+import java.util.Queue;
+import java.util.PriorityQueue;
+
 public class FurthestBuildingYouCanReach {
     /* bruteForce로 푼 것은 TimeLimit Exceeded -> DP를 쓸 수도 없고 ㅜㅠ */
     public int bruteForce(int[] heights, int cur, int bricks, int ladders) {
@@ -59,6 +62,24 @@ public class FurthestBuildingYouCanReach {
     }
 
     public int furthestBuilding(int[] heights, int bricks, int ladders) {
-        
+        Queue<Integer> pq = new PriorityQueue<>();
+        int usedBricks = 0;
+
+        for (int i = 1; i < heights.length; ++i) {
+            if (heights[i] <= heights[i-1]) continue;
+
+            int diff = heights[i] - heights[i-1];
+            pq.add(diff);
+
+            if (pq.size() > ladders) {
+                int min = pq.poll();
+                usedBricks += min;
+                if (usedBricks > bricks) return i-1;
+            }
+        }
+
+        return heights.length-1;
     }
+
+
 }

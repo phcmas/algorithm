@@ -190,6 +190,20 @@ public class Test {
         System.out.println(ans2); // 3
         System.out.println(ans3); // 5
     }
+
+    public static void MaxAreaOfIslandTest() {
+        MaxAreaOfIsland test0 = new MaxAreaOfIsland();
+
+        int[] row00 = {1,1,0,0,0};
+        int[] row01 = {1,1,0,0,0};
+        int[] row02 = {0,0,0,1,1};
+        int[] row03 = {0,0,0,1,1};
+        int[][] grid0 = {row00, row01, row02, row03};
+
+        int ans0 = test0.maxAreaOfIsland(grid0);
+        System.out.println(ans0);
+
+    }
     public static void main(String[] args) {
         //MaxConsecutiveOnesIIITest();
         //LongestIncreasingSubsequenceTest();
@@ -197,7 +211,8 @@ public class Test {
         //KthLargestElementInAnArrayTest();
         //SplitArrayIntoConsecutiveSubsequencesTest();
         //KClosestPointsToOriginTest();
-        FurthestBuildingYouCanReachTest();
+        //FurthestBuildingYouCanReachTest();
+        MaxAreaOfIslandTest();
     }
 }
 
