@@ -229,6 +229,14 @@ public class Test {
         }
     }
 
+    public static void ArithmeticSlicesTest() {
+        ArithmeticSlices test0 = new ArithmeticSlices();
+        int[] A0 = {1, 2, 3, 4};
+        int ans0 = test0.numberOfArithmeticSlices(A0);
+
+        System.out.println(ans0); // 3
+    }
+
     public static void main(String[] args) {
         //MaxConsecutiveOnesIIITest();
         //LongestIncreasingSubsequenceTest();
@@ -238,7 +246,8 @@ public class Test {
         //KClosestPointsToOriginTest();
         //FurthestBuildingYouCanReachTest();
         //MaxAreaOfIslandTest();
-        CopyListWithRandomPointer();
+        //CopyListWithRandomPointer();
+        ArithmeticSlicesTest();
     }
 }
 
