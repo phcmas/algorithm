@@ -237,6 +237,23 @@ public class Test {
         System.out.println(ans0); // 3
     }
 
+    public static void ShortestBridgeTest() {
+        ShortestBridge test0 = new ShortestBridge();
+        ShortestBridge test1 = new ShortestBridge();
+        ShortestBridge test2 = new ShortestBridge();
+
+        int[][] A0 = {{0,1}, {1,0}};
+        int[][] A1 = {{0,1,0}, {0,0,0}, {0,0,1}};
+        int[][] A2 = {{1,1,1,1,1}, {1,0,0,0,1}, {1,0,1,0,1}, {1,0,0,0,1}, {1,1,1,1,1}};
+
+        int ans0 = test0.shortestBridge(A0);
+        int ans1 = test1.shortestBridge(A1);
+        int ans2 = test2.shortestBridge(A2);
+
+        System.out.println(ans0); // 1
+        System.out.println(ans1); // 2
+        System.out.println(ans2); // 1
+    }
     public static void main(String[] args) {
         //MaxConsecutiveOnesIIITest();
         //LongestIncreasingSubsequenceTest();
@@ -247,7 +264,8 @@ public class Test {
         //FurthestBuildingYouCanReachTest();
         //MaxAreaOfIslandTest();
         //CopyListWithRandomPointer();
-        ArithmeticSlicesTest();
+        //ArithmeticSlicesTest();
+        ShortestBridgeTest();
     }
 }
 

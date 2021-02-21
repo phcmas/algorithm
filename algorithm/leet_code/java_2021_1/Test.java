@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Test {
     public static void sortColorTest() {
-        sortColor tester = new sortColor();
+        SortColor tester = new SortColor();
         int[] nums0 = {2,0,2,1,1,0};
         tester.sortColor(nums0);
 
@@ -48,7 +48,7 @@ public class Test {
     }
 
     public static void allPathsSourceTargetTest() {
-        allPathsSourceTarget test = new allPathsSourceTarget();
+        AllPathsSourceTarget test = new AllPathsSourceTarget();
         int[][] graph0 = new int[4][];
         graph0[0] = new int[2];
 
@@ -114,9 +114,9 @@ public class Test {
     }
 
     public static void allPathsSourceTargetTest2() {
-        allPathsSourceTarget2 test0 = new allPathsSourceTarget2();
-        allPathsSourceTarget2 test1 = new allPathsSourceTarget2();
-        allPathsSourceTarget2 test2 = new allPathsSourceTarget2();
+        AllPathsSourceTarget2 test0 = new AllPathsSourceTarget2();
+        AllPathsSourceTarget2 test1 = new AllPathsSourceTarget2();
+        AllPathsSourceTarget2 test2 = new AllPathsSourceTarget2();
         int[][] graph0 = new int[4][];
         graph0[0] = new int[2];
 
@@ -181,8 +181,8 @@ public class Test {
     }
 
     public static void evaluateDivisionTest() {
-        evaluateDivision test0 = new evaluateDivision();
-        evaluateDivision test1 = new evaluateDivision();
+        EvaluateDivision test0 = new EvaluateDivision();
+        EvaluateDivision test1 = new EvaluateDivision();
 
         List<String> eq00 = new ArrayList<>();
         eq00.add("a");
@@ -277,8 +277,8 @@ public class Test {
     }
 
     public static void findSmallestSetOfVerticesTest() {
-        findSmallestSetOfVertices test0 = new findSmallestSetOfVertices();
-        findSmallestSetOfVertices test1 = new findSmallestSetOfVertices();
+        FindSmallestSetOfVertices test0 = new FindSmallestSetOfVertices();
+        FindSmallestSetOfVertices test1 = new FindSmallestSetOfVertices();
         ArrayList<Integer> test = new ArrayList<>();
         test.add(-1);
         test.add(-1);
@@ -354,8 +354,8 @@ public class Test {
     }
     
     public static void findSmallestSetOfVertices2Test() {
-        findSmallestSetOfVertices2 test0 = new findSmallestSetOfVertices2();
-        findSmallestSetOfVertices2 test1 = new findSmallestSetOfVertices2();
+        FindSmallestSetOfVertices2 test0 = new FindSmallestSetOfVertices2();
+        FindSmallestSetOfVertices2 test1 = new FindSmallestSetOfVertices2();
         ArrayList<Integer> test = new ArrayList<>();
         test.add(-1);
         test.add(-1);
@@ -431,7 +431,7 @@ public class Test {
     }
     
     public static void pacificAtlanticTest() {
-        pacificAtlantic test0 = new pacificAtlantic();
+        PacificAtlantic test0 = new PacificAtlantic();
 
         int[][] matrix0 = new int[5][5];
 
@@ -529,11 +529,11 @@ public class Test {
     }
     
     public static void monotoneIncreasingDigitsTest() {
-        monotoneIncreasingDigits test0 = new monotoneIncreasingDigits();
-        monotoneIncreasingDigits test1 = new monotoneIncreasingDigits();
-        monotoneIncreasingDigits test2 = new monotoneIncreasingDigits();
-        monotoneIncreasingDigits test3 = new monotoneIncreasingDigits();
-        monotoneIncreasingDigits test4 = new monotoneIncreasingDigits();
+        MonotoneIncreasingDigits test0 = new MonotoneIncreasingDigits();
+        MonotoneIncreasingDigits test1 = new MonotoneIncreasingDigits();
+        MonotoneIncreasingDigits test2 = new MonotoneIncreasingDigits();
+        MonotoneIncreasingDigits test3 = new MonotoneIncreasingDigits();
+        MonotoneIncreasingDigits test4 = new MonotoneIncreasingDigits();
 
         int N0 = 10;
         int N1 = 1234;
@@ -556,11 +556,11 @@ public class Test {
     }
     
     public static void monotoneIncreasingDigitsTest2() {
-        monotoneIncreasingDigits test0 = new monotoneIncreasingDigits();
-        monotoneIncreasingDigits test1 = new monotoneIncreasingDigits();
-        monotoneIncreasingDigits test2 = new monotoneIncreasingDigits();
-        monotoneIncreasingDigits test3 = new monotoneIncreasingDigits();
-        monotoneIncreasingDigits test4 = new monotoneIncreasingDigits();
+        MonotoneIncreasingDigits test0 = new MonotoneIncreasingDigits();
+        MonotoneIncreasingDigits test1 = new MonotoneIncreasingDigits();
+        MonotoneIncreasingDigits test2 = new MonotoneIncreasingDigits();
+        MonotoneIncreasingDigits test3 = new MonotoneIncreasingDigits();
+        MonotoneIncreasingDigits test4 = new MonotoneIncreasingDigits();
 
         int N0 = 10;
         int N1 = 1234;
@@ -582,8 +582,8 @@ public class Test {
     }
     
     public static void sortListTest() {
-        sortList test0 = new sortList();
-        sortList test1 = new sortList();
+        SortList test0 = new SortList();
+        SortList test1 = new SortList();
 
         ListNode node03 = new ListNode(3);
         ListNode node02 = new ListNode(1, node03);
@@ -706,6 +706,6 @@ public class Test {
         //CoinChangeTest2();
         //GrumpyBookStoreOwnerTest();
         //NumberOfIslandsTest();
-        //RemoveDuplicatesfromSortedArrayIITest();
+        RemoveDuplicatesfromSortedArrayIITest();
     }
 }
