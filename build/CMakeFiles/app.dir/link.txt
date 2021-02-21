@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/app.dir/leet_code/2020_12/1209.o  -o app 
