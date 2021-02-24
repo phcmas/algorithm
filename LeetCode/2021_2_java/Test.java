@@ -1,5 +1,3 @@
-package leet_code.java_2021_2;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -254,6 +252,36 @@ public class Test {
         System.out.println(ans1); // 2
         System.out.println(ans2); // 1
     }
+
+    public static void IsSubsequenceTest() {
+         IsSubsequence test0 = new IsSubsequence();
+         IsSubsequence test1 = new IsSubsequence();
+
+         String s0 = "abc";
+         String s1 = "axc";
+         String t0 = "ahbgdc";
+         String t1 = "ahbgdc";
+
+         boolean ans0 = test0.isSubsequence(s0, t0);
+         boolean ans1 = test1.isSubsequence(s1, t1);
+
+         System.out.println(ans0); // true
+         System.out.println(ans1); // false
+    }
+
+    public static void LongestPalindromicSubsequenceTest() {
+        LongestPalindromicSubsequence test0 = new LongestPalindromicSubsequence();
+        LongestPalindromicSubsequence test1 = new LongestPalindromicSubsequence();
+
+        String s0 = "bbbab";
+        String s1 = "cbbd";
+        
+        int ans0 = test0.longestPalindromeSubseq(s0);
+        int ans1 = test1.longestPalindromeSubseq(s1);
+
+        System.out.println(ans0);
+        System.out.println(ans1);
+    }
     public static void main(String[] args) {
         //MaxConsecutiveOnesIIITest();
         //LongestIncreasingSubsequenceTest();
@@ -265,7 +293,9 @@ public class Test {
         //MaxAreaOfIslandTest();
         //CopyListWithRandomPointer();
         //ArithmeticSlicesTest();
-        ShortestBridgeTest();
+        //ShortestBridgeTest();
+        //IsSubsequenceTest();
+        LongestIncreasingSubsequenceTest();
     }
 }
 

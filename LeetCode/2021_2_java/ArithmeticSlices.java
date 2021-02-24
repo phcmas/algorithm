@@ -17,8 +17,6 @@
  *  A = [1, 2, 3, 4]
  *  return: 3, for 3 arithmetic slices in A: [1, 2, 3], [2, 3, 4] and [1, 2, 3, 4] itself. **/
 
-package leet_code.java_2021_2;
-
 public class ArithmeticSlices {
     public int numberOfArithmeticSlices(int[] A) {
         int answer = 0;
