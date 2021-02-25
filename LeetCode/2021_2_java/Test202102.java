@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Test {
+public class Test202102 {
     public static void MaxConsecutiveOnesIIITest() {
         MaxConsecutiveOnesIII test0 = new MaxConsecutiveOnesIII();
         MaxConsecutiveOnesIII test1 = new MaxConsecutiveOnesIII();

@@ -25,7 +25,6 @@
 
 /* 처음에 내가 생각한 방법. 빠를 줄 알았는데 생각보다 그렇게 빠르지는 않네 */
 
-package leet_code.java_2021_1;
 import java.util.List;
 import java.util.ArrayList;
 

@@ -25,7 +25,6 @@
  *  1 <= m, n <= 300
  *  grid[i][j] is '0' or '1'. **/
 
-package leet_code.java_2021_1;
 
 public class NumberOfIslands {
     boolean[][] visited;

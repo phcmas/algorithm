@@ -32,7 +32,6 @@
  *  -10^4 <= nums[i] <= 10^4
  *  nums is sorted in ascending order. **/
 
-package leet_code.java_2021_1;
 
 public class RemoveDuplicatesfromSortedArrayII {
     public int removeDuplicates(int[] nums) {

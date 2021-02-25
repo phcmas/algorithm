@@ -29,8 +29,6 @@
  *  0 <= arr[i] < arr.length
  *  0 <= start < arr.length **/
 
-package leet_code.java_2021_1;
-
 public class JumpGameIII {
     boolean[] visited;
     int[] direction = {1, -1}; // right, left

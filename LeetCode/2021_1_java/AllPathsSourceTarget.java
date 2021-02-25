@@ -34,7 +34,6 @@
 
 /* 자바 연습으로 거의 처음 짜봐서 많이 헤맸다 */
 
-package leet_code.java_2021_1;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;

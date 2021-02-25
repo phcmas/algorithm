@@ -33,8 +33,6 @@
  /** 처음에 풀었을 때는 시간초과함. 원인은 Arrays.fill(minCoins, -1)로 minCoins를 초기화하였기 때문에.. 
   *  이게 c++의 memset과는 다르게 생각보다 overhead가 큰 것 같다 */
 
-package leet_code.java_2021_1;
-
 public class CoinChange {
     private int fewestCombination(int[] coins, int[] minCoins, int amount) {
         int ret = Integer.MAX_VALUE;

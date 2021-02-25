@@ -25,7 +25,6 @@
 
  /* discussion을 보고 조금 더 나은 풀이 구현. indegree를 이용 */
 
-package leet_code.java_2021_1;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;

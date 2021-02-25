@@ -20,7 +20,6 @@
 
  /* 처음에 삽질을 많이 하다가 결국 Solution을 보고 푼 문제 */
 
-package leet_code.java_2021_1;
 
 public class SortList {
     private ListNode getMid(ListNode head) {

@@ -15,7 +15,6 @@
  *  Output: 299
  *  Note: N is an integer in the range [0, 10^9]. **/
 
-package leet_code.java_2021_1;
 import java.lang.Math;
 import java.util.ArrayList;
 import java.util.List;

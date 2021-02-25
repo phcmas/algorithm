@@ -35,7 +35,6 @@
  * (Java는 pointer만 있고 double pointer는 없고, dereferencing해서 클래스를 복사하여 함수의 파라미터로 넘기는 경우는 없다고 이해해도 되는건가??)
  */
 
-package leet_code.java_2021_1;
 import java.util.List;
 import java.util.ArrayList;
 

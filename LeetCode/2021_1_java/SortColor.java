@@ -28,7 +28,6 @@
  *  1 <= n <= 300
  *  nums[i] is 0, 1, or 2. **/
 
-package leet_code.java_2021_1;
 
 public class SortColor {
     public void swap(int[] nums, int idx0, int idx1) {

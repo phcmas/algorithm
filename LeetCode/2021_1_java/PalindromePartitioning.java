@@ -15,7 +15,6 @@
  *  1 <= s.length <= 16
  *  s contains only lowercase English letters. **/
 
-package leet_code.java_2021_1;
 import java.util.ArrayList;
 import java.util.List;
 

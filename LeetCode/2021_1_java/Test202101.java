@@ -1,9 +1,8 @@
-package leet_code.java_2021_1;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Test {
+public class Test202101 {
     public static void sortColorTest() {
         SortColor tester = new SortColor();
         int[] nums0 = {2,0,2,1,1,0};

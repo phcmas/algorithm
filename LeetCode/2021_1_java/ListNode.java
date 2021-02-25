@@ -1,4 +1,3 @@
-package leet_code.java_2021_1;
 
 public class ListNode {
     int val;

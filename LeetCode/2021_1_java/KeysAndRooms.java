@@ -28,7 +28,6 @@
 
  /* dfs, bfs 연습하려고 쉬어갈겸 풀었던 문제 */
 
-package leet_code.java_2021_1;
 import java.util.ArrayDeque;
 import java.util.List;
 import java.util.Queue;

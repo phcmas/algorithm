@@ -20,7 +20,6 @@
  *  Return:
  *  [[0, 4], [1, 3], [1, 4], [2, 2], [3, 0], [3, 1], [4, 0]] (positions with parentheses in above matrix) **/
 
-package leet_code.java_2021_1;
 import java.util.List;
 import java.util.ArrayList;
 

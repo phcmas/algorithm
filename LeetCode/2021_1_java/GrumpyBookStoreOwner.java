@@ -17,8 +17,6 @@
  *  0 <= customers[i] <= 1000
  *  0 <= grumpy[i] <= 1 **/
 
-package leet_code.java_2021_1;
-
 public class GrumpyBookStoreOwner {
     public int maxSatisfied(int[] customers, int[] grumpy, int X) {
         int answer = 0;

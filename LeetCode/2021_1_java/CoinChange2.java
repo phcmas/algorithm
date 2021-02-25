@@ -30,7 +30,6 @@
  *  1 <= coins[i] <= 2^31 - 1
  *  0 <= amount <= 10^4 */
 
-package leet_code.java_2021_1;
 import java.util.Arrays;
 
 public class CoinChange2 {

@@ -35,7 +35,6 @@
  *  1 <= Cj.length, Dj.length <= 5
  *  Ai, Bi, Cj, Dj consist of lower case English letters and digits. */
 
-package leet_code.java_2021_1;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
