@@ -42,8 +42,6 @@
  *  2 <= k <= 9
  *  1 <= n <= 60 */
 
-package leet_code.java_2021_2;
-
 import java.util.List;
 import java.util.ArrayList;
 

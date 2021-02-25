@@ -13,8 +13,6 @@
 
  /* findKthLargest는 내가 처음 생각한 풀이, findKthLargerst2는 Discussion 참고(quick select) */
 
-package leet_code.java_2021_2;
-
 import java.util.PriorityQueue;
 import java.util.Queue;
 

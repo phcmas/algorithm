@@ -32,8 +32,6 @@
  *  0 <= bricks <= 10^9
  *  0 <= ladders <= heights.length */
 
-package leet_code.java_2021_2;
-
 import java.util.Queue;
 import java.util.PriorityQueue;
 

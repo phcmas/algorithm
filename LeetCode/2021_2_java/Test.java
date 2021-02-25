@@ -272,15 +272,19 @@ public class Test {
     public static void LongestPalindromicSubsequenceTest() {
         LongestPalindromicSubsequence test0 = new LongestPalindromicSubsequence();
         LongestPalindromicSubsequence test1 = new LongestPalindromicSubsequence();
+        LongestPalindromicSubsequence test2 = new LongestPalindromicSubsequence();
 
         String s0 = "bbbab";
         String s1 = "cbbd";
+        String s2 = "euazbipzncptldueeuechubrcourfpftcebikrxhybkymimgvldiwqvkszfycvqyvtiwfckexmowcxztkfyzqovbtmzpxojfofbvwnncajvrvdbvjhcrameamcfmcoxryjukhpljwszknhiypvyskmsujkuggpztltpgoczafmfelahqwjbhxtjmebnymdyxoeodqmvkxittxjnlltmoobsgzdfhismogqfpfhvqnxeuosjqqalvwhsidgiavcatjjgeztrjuoixxxoznklcxolgpuktirmduxdywwlbikaqkqajzbsjvdgjcnbtfksqhquiwnwflkldgdrqrnwmshdpykicozfowmumzeuznolmgjlltypyufpzjpuvucmesnnrwppheizkapovoloneaxpfinaontwtdqsdvzmqlgkdxlbeguackbdkftzbnynmcejtwudocemcfnuzbttcoew";
         
         int ans0 = test0.longestPalindromeSubseq(s0);
         int ans1 = test1.longestPalindromeSubseq(s1);
+        int ans2 = test2.longestPalindromeSubseq(s2);
 
-        System.out.println(ans0);
-        System.out.println(ans1);
+        System.out.println(ans0); // 4
+        System.out.println(ans1); // 2
+        System.out.println(ans2); // 159
     }
     public static void main(String[] args) {
         //MaxConsecutiveOnesIIITest();
@@ -295,7 +299,7 @@ public class Test {
         //ArithmeticSlicesTest();
         //ShortestBridgeTest();
         //IsSubsequenceTest();
-        LongestIncreasingSubsequenceTest();
+        LongestPalindromicSubsequenceTest();
     }
 }
 

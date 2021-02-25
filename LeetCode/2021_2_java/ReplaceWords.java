@@ -39,8 +39,6 @@
 
  /* 나중에 Trie를 공부하고 다시 풀어보자 */
 
-package leet_code.java_2021_2;
-
 import java.util.List;
 import java.util.ArrayList;
 

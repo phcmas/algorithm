@@ -20,8 +20,6 @@
  *  Given the above grid, return 0.
  *  Note: The length of each dimension in the given grid does not exceed 50. */
 
-package leet_code.java_2021_2;
-
 public class MaxAreaOfIsland {
     int[] dr = {-1, 0, 1, 0}; // up, right, down, left
     int[] dc = {0, 1, 0, -1};

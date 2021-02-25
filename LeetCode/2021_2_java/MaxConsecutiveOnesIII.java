@@ -21,8 +21,6 @@
  *  0 <= K <= A.length
  *  A[i] is 0 or 1  **/ 
 
-package leet_code.java_2021_2;
-
 public class MaxConsecutiveOnesIII {
     public int longestOnes(int[] A, int K) {
         /* 내가 처음 생각한 풀이 */

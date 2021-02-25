@@ -25,8 +25,6 @@
  *  Could you improve it to O(n log(n)) time complexity? */
 
 
-package leet_code.java_2021_2;
-
 import java.util.Arrays;
 
 public class LongestIncreasingSubsequence {

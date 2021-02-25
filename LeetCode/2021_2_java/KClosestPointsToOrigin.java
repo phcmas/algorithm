@@ -21,7 +21,7 @@
  *  1 <= K <= points.length <= 10000
  *  -10000 < points[i][0] < 10000
  *  -10000 < points[i][1] < 10000 */
-package leet_code.java_2021_2;
+
 import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;

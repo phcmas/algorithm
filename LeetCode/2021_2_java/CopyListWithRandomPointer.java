@@ -38,8 +38,6 @@
  *  -10000 <= Node.val <= 10000
  *  Node.random is null or is pointing to some node in the linked list. **/
 
-package leet_code.java_2021_2;
-
 import java.util.HashMap;
 
 // Definition for a Node.
