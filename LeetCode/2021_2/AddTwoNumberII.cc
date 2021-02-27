@@ -1,0 +1,96 @@
+/* 445. Add Two Numbers II */
+/** You are given two non-empty linked lists representing two non-negative integers. 
+ *  The most significant digit comes first and each of their nodes contain a single digit. 
+ *  Add the two numbers and return it as a linked list.
+ * 
+ *  You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+ *  Follow up:
+ *  What if you cannot modify the input lists? In other words, reversing the lists is not allowed.
+ * 
+ *  Example:
+ *  Input: (7 -> 2 -> 4 -> 3) + (5 -> 6 -> 4)
+ *  Output: 7 -> 8 -> 0 -> 7 **/
+// 처음 풀이. list로 표현되는 숫자가 너무 커지면 stoll 또는 stoi로 이 숫자를 표현하지 못하여 에러가 난다.
+
+#include <vector>
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+
+long long listToInt(ListNode *node) {
+    string s;
+    int num;
+
+    while (node != nullptr) {
+        s = s + to_string(node->val);
+        node = node->next;
+    }
+
+    return stoll(s);
+}
+
+ListNode* intTolist(long long num) {
+    string s = to_string(num);
+    ListNode *head = new ListNode((int)(s[0]-'0'));
+    ListNode *prev = head;
+
+    for (int i = 1; i < s.length(); ++i) {
+        ListNode *newNode = new ListNode((int)(s[i]-'0'));
+        prev->next = newNode;
+        prev = newNode;
+    }
+
+    return head;
+}
+
+ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+    return intTolist(listToInt(l1) + listToInt(l2));
+}
+
+int main() {
+    ListNode *l00 = new ListNode(3);
+    ListNode *l01 = new ListNode(4, l00);
+    ListNode *l02 = new ListNode(2, l01);
+    ListNode *l03 = new ListNode(7, l02);
+    
+    ListNode *r00 = new ListNode(4);
+    ListNode *r01 = new ListNode(6, r00);
+    ListNode *r02 = new ListNode(5, r01);
+    ListNode *ans0 = addTwoNumbers(l03, r02);
+
+    ListNode *l10 = new ListNode(9);
+    ListNode *l11 = new ListNode(9, l10);
+    ListNode *l12 = new ListNode(9, l11);
+    ListNode *l13 = new ListNode(9, l12);
+    ListNode *l14 = new ListNode(9, l13);
+    ListNode *l15 = new ListNode(9, l14);
+    ListNode *l16 = new ListNode(9, l15);
+    ListNode *l17 = new ListNode(9, l16);
+    ListNode *l18 = new ListNode(9, l17);
+    ListNode *l19 = new ListNode(3, l18);
+
+    ListNode *r10 = new ListNode(7);
+    ListNode *ans1 = addTwoNumbers(l19, r10);
+
+    while (ans0 != nullptr) {
+        cout << ans0->val << " ";
+        ans0 = ans0->next;
+    } cout << endl; // 7 -> 8 -> 0 -> 7
+
+    while (ans1 != nullptr) {
+        cout << ans1->val << " ";
+        ans1 = ans1->next;
+    } cout << endl; //4 0 0 0 0 0 0 0 0 6
+
+
+    return 0;
+}
