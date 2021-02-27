@@ -317,7 +317,45 @@ public class Test202102 {
             System.out.print(ans2.val + " ");
             ans2 = ans2.next;
         } System.out.println(); // []
+    }
 
+    public static void printTree(TreeNode root) {
+        // print pre order
+        if (root == null) return;
+        System.out.print(root.val);
+        printTree(root.left);
+        printTree(root.right);
+    }
+
+    public static void SmallestSubtreeWithAllTheDeepestNodesTest() {
+        SmallestSubtreeWithAllTheDeepestNodes test0 = new SmallestSubtreeWithAllTheDeepestNodes();
+        SmallestSubtreeWithAllTheDeepestNodes test1 = new SmallestSubtreeWithAllTheDeepestNodes();
+        SmallestSubtreeWithAllTheDeepestNodes test2 = new SmallestSubtreeWithAllTheDeepestNodes();
+
+        TreeNode node04 = new TreeNode(4);
+        TreeNode node07 = new TreeNode(7);
+        TreeNode node06 = new TreeNode(6);
+        TreeNode node02 = new TreeNode(2, node07, node04);
+        TreeNode node00 = new TreeNode(0);
+        TreeNode node08 = new TreeNode(8);
+        TreeNode node05 = new TreeNode(5, node06, node02);
+        TreeNode node01 = new TreeNode(1, node00, node08);
+        TreeNode node03 = new TreeNode(3, node05, node01);
+
+        TreeNode node11 = new TreeNode(1);
+
+        TreeNode node22 = new TreeNode(2);
+        TreeNode node21 = new TreeNode(1, null, node22);
+        TreeNode node23 = new TreeNode(3);
+        TreeNode node20 = new TreeNode(0, node21, node23);
+
+        TreeNode ans0 = test0.subtreeWithAllDeepest(node03);
+        TreeNode ans1 = test1.subtreeWithAllDeepest(node11);
+        TreeNode ans2 = test2.subtreeWithAllDeepest(node20);
+
+        printTree(ans0); // 2 7 4
+        printTree(ans1); // 1
+        printTree(ans2); // 2
     }
     public static void main(String[] args) {
         //MaxConsecutiveOnesIIITest();
