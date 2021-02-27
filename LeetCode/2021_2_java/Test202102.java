@@ -286,6 +286,39 @@ public class Test202102 {
         System.out.println(ans1); // 2
         System.out.println(ans2); // 159
     }
+
+    public static void SwapNodesInPairsTest() {
+        SwapNodesInPairs test0 = new SwapNodesInPairs();
+        SwapNodesInPairs test1 = new SwapNodesInPairs();
+        SwapNodesInPairs test2 = new SwapNodesInPairs();
+
+        ListNode node00 = new ListNode(4);
+        ListNode node01 = new ListNode(3, node00);
+        ListNode node02 = new ListNode(2, node01);
+        ListNode node03 = new ListNode(1, node02);
+        ListNode ans0 = test0.swapPairs(node03);
+
+        ListNode node10 = new ListNode(1);
+        ListNode ans1 = test1.swapPairs(node10);
+
+        ListNode ans2 = test2.swapPairs(null);
+
+        while (ans0 != null) {
+            System.out.print(ans0.val + " ");
+            ans0 = ans0.next;
+        } System.out.println(); // [2,1,4,3]
+
+        while (ans1 != null) {
+            System.out.print(ans1.val + " ");
+            ans1 = ans1.next;
+        } System.out.println(); // [1]
+
+        while (ans2 != null) {
+            System.out.print(ans2.val + " ");
+            ans2 = ans2.next;
+        } System.out.println(); // []
+
+    }
     public static void main(String[] args) {
         //MaxConsecutiveOnesIIITest();
         //LongestIncreasingSubsequenceTest();
@@ -299,7 +332,8 @@ public class Test202102 {
         //ArithmeticSlicesTest();
         //ShortestBridgeTest();
         //IsSubsequenceTest();
-        LongestPalindromicSubsequenceTest();
+        //LongestPalindromicSubsequenceTest();
+        SwapNodesInPairsTest();
     }
 }
 
