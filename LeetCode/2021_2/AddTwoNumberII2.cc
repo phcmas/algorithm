@@ -25,11 +25,12 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
+// discussion을 보고 다시 구현한 간결한 풀이.
 ListNode *addTwoNumbers(ListNode* l1, ListNode* l2) {
     stack<ListNode *> st1;
     stack<ListNode *> st2;
-    ListNode *next = nullptr;
-    bool moreThanTen;
+    ListNode *list = new ListNode(0);
+    int sum = 0;
 
     while (l1 != nullptr || l2 != nullptr) {
         if (l1 != nullptr) {
@@ -43,24 +44,24 @@ ListNode *addTwoNumbers(ListNode* l1, ListNode* l2) {
     }
 
     while (!st1.empty() || !st2.empty()) {
-        int leftVal = st1.empty() ? 0 : st1.top()->val;
-        int rightVal = st2.empty() ? 0 : st2.top()->val;
-        st1.pop();
-        st2.pop();
-
-        int val = node1->val + node2->val;
-
-        if (val >= 10) {
-            moreThanTen = true;
-            val %= 10;
+        if (!st1.empty()) {
+            sum += st1.top()->val;
+            st1.pop();
         }
 
-        ListNode *newNode = new ListNode(val);
-        if (next != nullptr) next->next = newNode;
-        next = newNode;
+        if (!st2.empty()) {
+            sum += st2.top()->val;
+            st2.pop();
+        }
+
+        list->val = sum%10;
+        sum = sum/10;
+        ListNode *head = new ListNode(sum);
+        head->next = list;
+        list = head;
     }
 
-    return nullptr;
+    return list->val == 0 ? list->next : list;
 }
 
 int main() {
@@ -84,9 +85,12 @@ int main() {
     ListNode *l17 = new ListNode(9, l16);
     ListNode *l18 = new ListNode(9, l17);
     ListNode *l19 = new ListNode(3, l18);
-
     ListNode *r10 = new ListNode(7);
     ListNode *ans1 = addTwoNumbers(l19, r10);
+
+    ListNode *l20 = new ListNode(5);
+    ListNode *r20 = new ListNode(5);
+    ListNode *ans2 = addTwoNumbers(l20, r20);
 
     while (ans0 != nullptr) {
         cout << ans0->val << " ";
@@ -96,8 +100,12 @@ int main() {
     while (ans1 != nullptr) {
         cout << ans1->val << " ";
         ans1 = ans1->next;
-    } cout << endl; //4 0 0 0 0 0 0 0 0 6
+    } cout << endl; // 4 0 0 0 0 0 0 0 0 6
 
+    while (ans2 != nullptr) {
+        cout << ans2->val << " ";
+        ans2 = ans2->next;
+    } cout << endl; // 1 0
 
     return 0;
 }

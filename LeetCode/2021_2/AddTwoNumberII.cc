@@ -13,7 +13,7 @@
 // 처음 풀이. list로 표현되는 숫자가 너무 커지면 stoll 또는 stoi로 이 숫자를 표현하지 못하여 에러가 난다.
 
 #include <vector>
-#include <string>
+#include <stack>
 #include <iostream>
 
 using namespace std;
@@ -26,34 +26,48 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
-long long listToInt(ListNode *node) {
-    string s;
-    int num;
-
-    while (node != nullptr) {
-        s = s + to_string(node->val);
-        node = node->next;
+// 아래는 내가 처음 생각한 풀이. 복잡하다
+ListNode *addTwoNumbers(ListNode* l1, ListNode* l2) {
+    stack<ListNode *> st1;
+    stack<ListNode *> st2;
+    ListNode *next = nullptr;
+    bool moreThanTen = false;
+    
+    while (l1 != nullptr || l2 != nullptr) {
+        if (l1 != nullptr) {
+            st1.push(l1);
+            l1 = l1->next;
+        }
+        
+        if (l2 != nullptr) {
+            st2.push(l2);
+            l2 = l2->next;
+        }
     }
 
-    return stoll(s);
-}
+    while (moreThanTen || !st1.empty() || !st2.empty()) {
+        int leftVal = 0;
+        int rightVal = 0;
 
-ListNode* intTolist(long long num) {
-    string s = to_string(num);
-    ListNode *head = new ListNode((int)(s[0]-'0'));
-    ListNode *prev = head;
+        if (!st1.empty()) {
+            leftVal = st1.top()->val;
+            st1.pop();
+        }
 
-    for (int i = 1; i < s.length(); ++i) {
-        ListNode *newNode = new ListNode((int)(s[i]-'0'));
-        prev->next = newNode;
-        prev = newNode;
+        if (!st2.empty()) {
+            rightVal = st2.top()->val;
+            st2.pop();
+        }
+
+        int val = moreThanTen ? leftVal+rightVal+1 : leftVal + rightVal;
+        moreThanTen = val >= 10;
+        val %= 10;
+        ListNode *newNode = new ListNode(val);
+        if (next != nullptr) newNode->next = next;
+        next = newNode;
     }
 
-    return head;
-}
-
-ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-    return intTolist(listToInt(l1) + listToInt(l2));
+    return next;
 }
 
 int main() {
@@ -81,6 +95,10 @@ int main() {
     ListNode *r10 = new ListNode(7);
     ListNode *ans1 = addTwoNumbers(l19, r10);
 
+    ListNode *l20 = new ListNode(5);
+    ListNode *r20 = new ListNode(5);
+    ListNode *ans2 = addTwoNumbers(l20, r20);
+
     while (ans0 != nullptr) {
         cout << ans0->val << " ";
         ans0 = ans0->next;
@@ -91,6 +109,10 @@ int main() {
         ans1 = ans1->next;
     } cout << endl; //4 0 0 0 0 0 0 0 0 6
 
+    while (ans2 != nullptr) {
+        cout << ans2->val << " ";
+        ans2 = ans2->next;
+    } cout << endl; // 1 0
 
     return 0;
 }
