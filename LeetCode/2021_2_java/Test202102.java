@@ -354,8 +354,13 @@ public class Test202102 {
         TreeNode ans2 = test2.subtreeWithAllDeepest(node20);
 
         printTree(ans0); // 2 7 4
+        System.out.println();
+        
         printTree(ans1); // 1
+        System.out.println();
+
         printTree(ans2); // 2
+        System.out.println();
     }
     public static void main(String[] args) {
         //MaxConsecutiveOnesIIITest();
@@ -371,7 +376,8 @@ public class Test202102 {
         //ShortestBridgeTest();
         //IsSubsequenceTest();
         //LongestPalindromicSubsequenceTest();
-        SwapNodesInPairsTest();
+        //SwapNodesInPairsTest();
+        SmallestSubtreeWithAllTheDeepestNodesTest();
     }
 }
 

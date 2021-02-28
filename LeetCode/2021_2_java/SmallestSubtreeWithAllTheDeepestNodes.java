@@ -27,7 +27,35 @@
  *  The values of the nodes in the tree are unique. **/
 
 public class SmallestSubtreeWithAllTheDeepestNodes {
+    class Pair {
+        TreeNode node;
+        int depth;
+        Pair(TreeNode n, int d) {
+            node = n;
+            depth = d;
+        }
+    }
+
+    private Pair findSubTreeWithDeepest(TreeNode node, int depth) {
+        if (node == null) return new Pair(null, depth-1);
+
+        Pair ret;
+        Pair left = findSubTreeWithDeepest(node.left, depth+1);
+        Pair right = findSubTreeWithDeepest(node.right, depth+1);
+
+        if (left.depth > right.depth) {
+            ret = new Pair(left.node, left.depth);
+        } else if (left.depth < right.depth) {
+            ret = new Pair(right.node, right.depth);
+        } else {
+            ret = new Pair(node, left.depth);
+        }
+
+        return ret;
+    }
+
     public TreeNode subtreeWithAllDeepest(TreeNode root) {
-        
+        Pair answer = findSubTreeWithDeepest(root, 0);
+        return answer.node;
     }
 }
