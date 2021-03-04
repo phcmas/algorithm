@@ -18,6 +18,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <limits.h>
 
 using namespace std;
 
@@ -33,25 +34,29 @@ ListNode* deleteDuplicates(ListNode *head) {
     ListNode *iter;
     ListNode *start;
 
-    ListNode *dummy = new ListNode(101, head);
+    ListNode *dummy = new ListNode(INT_MAX, head);
     iter = dummy;
+    start = nullptr;
 
     while (iter->next != nullptr) {
         ListNode *next = iter->next;
         ListNode *nextNext = iter->next->next;
 
         if (iter->val != next->val) {
-            if (nextNext != nullptr && next->val == nextNext->val) {
+            if (start == nullptr && nextNext != nullptr && next->val == nextNext->val) {
                 start = iter;
-            } else if (start != nullptr) {
+            } else if (start != nullptr && (nextNext == nullptr || next->val != nextNext->val)) {
                 start->next = iter->next;
+                start = nullptr;
             }
         }
 
         iter = iter->next;
     }
 
-    return head;
+    if (start != nullptr) start->next = iter->next;
+
+    return dummy->next;
 }
 
 ListNode* makeListNode(vector<int> nums) {
@@ -80,8 +85,12 @@ int main() {
     ListNode *test1 = makeListNode({1,1,1,2,3});
     ListNode *ans1 = deleteDuplicates(test1);
 
+    ListNode *test2 = makeListNode({1,1});
+    ListNode *ans2 = deleteDuplicates(test2);
+
     printListNode(ans0);
     printListNode(ans1);
+    printListNode(ans2);
 
     return 0;
 }
