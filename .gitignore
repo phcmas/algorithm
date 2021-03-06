@@ -8,9 +8,11 @@ LeetCode/2020_09/*.out
 LeetCode/2020_10/*.dSYM
 LeetCode/2020_10/*.out
 LeetCode/2020_12/*.out
-LeetCode/2021_1/*.out
-LeetCode/2021_2/*.out
-LeetCode/2021_2/*.out.dSYM/
+LeetCode/2021_01/*.out
+LeetCode/2021_02/*.out
+LeetCode/2021_02/*.out.dSYM/
+LeetCode/2021_03/*.out
+LeetCode/2021_03/*.out.dSYM/
 .vscode
 .DS_Store
 CMakeLists.txt
