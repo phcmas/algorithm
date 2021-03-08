@@ -37,13 +37,11 @@ using namespace std;
 // up, right, down, left
 int dr[4] = {-1, 0, 1, 0};
 int dc[4] = {0, 1, 0, -1};
+bool seen[11][11];
 
-int bfs(queue<pair<int,int>> queue, int orangeCount, vector<vector<int>> &grid) {
-    int minute = 0;
+int bfs(queue<pair<int,int>> &queue, int orangeCount, vector<vector<int>> &grid) {
+    int minute = -1;
     int rottenCount = 0;
-    bool seen[grid.size()][grid[0].size()];
-
-    memset(seen, false, sizeof(seen));
 
     while (!queue.empty()) {
         int size = queue.size();
@@ -60,10 +58,10 @@ int bfs(queue<pair<int,int>> queue, int orangeCount, vector<vector<int>> &grid) 
                 int nextCol = col + dc[j];
 
                 if (nextRow < 0 || nextRow >= grid.size() || nextCol < 0 || nextCol >= grid[0].size()) continue;
-                if (seen[nextRow][nextCol]) continue;
-                if (grid[nextRow][nextCol] == 1) rottenCount++;
-                queue.push(make_pair(nextRow, nextCol));
+                if (seen[nextRow][nextCol] || grid[nextRow][nextCol] == 0) continue;
+                
                 seen[nextRow][nextCol] = true;
+                queue.push(make_pair(nextRow, nextCol));
             }
         }
     }
@@ -77,18 +75,21 @@ int orangesRotting(vector<vector<int>>& grid) {
 
     if (grid.empty()) return 0;
 
+    memset(seen, false, sizeof(seen));
+
     for (int i = 0; i < grid.size(); ++i) {
         for (int j = 0; j < grid[0].size(); ++j) {
             if (grid[i][j] == 1) {
                 orangeCount++;
             } else if (grid[i][j] == 2) {
                 orangeCount++;
+                seen[i][j] = true;
                 queue.push(make_pair(i,j));
             }
         }
     }
 
-    return bfs(queue, orangeCount, grid);
+    return orangeCount == 0 ? 0 : bfs(queue, orangeCount, grid);
 }
 
 int main() {
