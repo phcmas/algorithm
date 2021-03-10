@@ -14,42 +14,52 @@
  *  Note: S will consist of lowercase letters and have length in range [1, 500]. **/
 
 #include <string>
+#include <cstring>
 #include <vector>
-#include <set>
+#include <queue>
 #include <iostream>
 
 using namespace std;
 
-int frequency[26];
+// 처음에 떠올린 풀이. 온라인 채점 통과하고 맞는 풀이이지만 뭔가 더 쉬운 방법이 없을까?
 
-void addString(string &S, char character) {
-    if (frequency[character-'a'] > 0) {
-        answer += character;
-        frequency[character-'a']--;
+struct compare {
+    bool operator() (const pair<char, int> &lhs, const pair<char,int> &rhs) {
+        if (lhs.second != rhs.second) return lhs.second < rhs.second;
+        return lhs.first <= rhs.first;
     }
-}
+};
 
 string reorganizeString(string S) {
     string answer;
-    char max = 'a';
-    set<char> others;
+    int count[26];
+    priority_queue<pair<char,int>, vector<pair<char,int>>, compare> pq;
+ 
+    memset(count, 0, sizeof(count));
 
-    for (char iter : S) {
-        frequency[iter-'a']++;
-        others.insert(iter);
-        if (frequency[iter-'a'] > frequency[max-'a']) max = iter;
+    for (char iter : S) count[iter-'a']++;
+    for (int i = 0; i < 26; ++i) {
+        if (count[i] > 0) pq.push(make_pair('a'+i, count[i]));
     }
 
-    others.erase(max);
+    while (!pq.empty()) {
+        pair<char, int> top = pq.top();
+        pq.pop();
 
-    while (!others.empty()) {
-        char other = other.lower_bound(max);
-        addString(max);
-        addString(other);
+        if (answer.back() == top.first) {
+            if (pq.empty()) return "";
+            pair<char,int> nextTop = pq.top();
+            pq.pop();
+            answer += nextTop.first;
+            pq.push(top);
+            if (nextTop.second > 1) pq.push(make_pair(nextTop.first, nextTop.second-1));
+        } else {
+            answer += top.first;
+            if (top.second > 1) pq.push(make_pair(top.first, top.second-1));
+        }
     }
 
-    
-
+    return answer;
 }
 
 int main() {
