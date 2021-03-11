@@ -51,11 +51,13 @@ string reorganizeString(string S) {
             pair<char,int> nextTop = pq.top();
             pq.pop();
             answer += nextTop.first;
+            nextTop.second--;
             pq.push(top);
-            if (nextTop.second > 1) pq.push(make_pair(nextTop.first, nextTop.second-1));
+            if (nextTop.second > 0) pq.push(nextTop);
         } else {
             answer += top.first;
-            if (top.second > 1) pq.push(make_pair(top.first, top.second-1));
+            top.second--;
+            if (top.second > 0) pq.push(top);
         }
     }
 
