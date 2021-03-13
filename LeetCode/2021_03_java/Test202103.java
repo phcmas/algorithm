@@ -76,10 +76,35 @@ public class Test202103 {
         System.out.println(ans1); // 5
     }
 
+    public static void LongestSubstringWithoutRepeatingCharactersTest() {
+        LongestSubstringWithoutRepeatingCharacters test0 = new LongestSubstringWithoutRepeatingCharacters();
+        LongestSubstringWithoutRepeatingCharacters test1 = new LongestSubstringWithoutRepeatingCharacters();
+        LongestSubstringWithoutRepeatingCharacters test2 = new LongestSubstringWithoutRepeatingCharacters();
+        LongestSubstringWithoutRepeatingCharacters test3 = new LongestSubstringWithoutRepeatingCharacters();
+
+        String s0 = "abcabcbb";
+        String s1 = "bbbbb";
+        String s2 = "pwwkew";
+        String s3 = "";
+        String s4 = " ";
+
+        int ans0 = test0.lengthOfLongestSubstring(s0);
+        int ans1 = test1.lengthOfLongestSubstring(s1);
+        int ans2 = test2.lengthOfLongestSubstring(s2);
+        int ans3 = test3.lengthOfLongestSubstring(s3);
+        int ans4 = test3.lengthOfLongestSubstring(s4);
+
+        System.out.println(ans0); // 3
+        System.out.println(ans1); // 1
+        System.out.println(ans2); // 3
+        System.out.println(ans3); // 0
+        System.out.println(ans4); // 1
+    }
     public static void main(String[] args) {
         //UniqueBinarySearchTreesTest();
         //MaximumLengthOfRepeatedSubarray();
         //SubsetsTest();
-        LongestSubstringWithAtLeastKRepeatingCharactersTest();
+        //LongestSubstringWithAtLeastKRepeatingCharactersTest();
+        LongestSubstringWithoutRepeatingCharactersTest();
     }
 }
