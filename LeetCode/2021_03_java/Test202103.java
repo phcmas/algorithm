@@ -58,9 +58,28 @@ public class Test202103 {
         } // [[],[0]]
 
     }
+
+    public static void LongestSubstringWithAtLeastKRepeatingCharactersTest() {
+        LongestSubstringWithAtLeastKRepeatingCharacters test0 = new LongestSubstringWithAtLeastKRepeatingCharacters();
+        LongestSubstringWithAtLeastKRepeatingCharacters test1 = new LongestSubstringWithAtLeastKRepeatingCharacters();
+
+        String s0 = "aaabb";
+        String s1 = "ababbc";
+
+        int k0 = 3;
+        int k1 = 2;
+
+        int ans0 = test0.longestSubstring(s0, k0);
+        int ans1 = test1.longestSubstring(s1, k1);
+
+        System.out.println(ans0); // 3
+        System.out.println(ans1); // 5
+    }
+
     public static void main(String[] args) {
         //UniqueBinarySearchTreesTest();
         //MaximumLengthOfRepeatedSubarray();
-        SubsetsTest();
+        //SubsetsTest();
+        LongestSubstringWithAtLeastKRepeatingCharactersTest();
     }
 }
