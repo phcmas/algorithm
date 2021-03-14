@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /** 986. Interval List Intersections */
 /** You are given two lists of closed intervals, firstList and secondList, 
  *  where firstList[i] = [starti, endi] and secondList[j] = [startj, endj]. 
@@ -31,11 +33,35 @@
  *  endi < starti+1
  *  0 <= startj < endj <= 109
  *  endj < startj+1  **/
+/* Discussion을 보고 다시 구현 */
 
-
+import java.util.List;
 
 public class IntervalListIntersections {
     public int[][] intervalIntersection(int[][] firstList, int[][] secondList) {
+        int firstIndex = 0;
+        int secondIndex = 0;
+        List<int[]> result = new ArrayList<>();
 
+        while (firstIndex < firstList.length && secondIndex < secondList.length) {
+            int[] firstInterval = firstList[firstIndex];
+            int[] secondInterval = secondList[secondIndex];
+
+            if (firstInterval[0] > secondInterval[1]) {
+                secondIndex++;
+            } else if (firstInterval[1] < secondInterval[0]) {
+                firstIndex++;
+            } else {
+                result.add(new int[] {
+                    Math.max(firstInterval[0], secondInterval[0]), 
+                    Math.min(firstInterval[1], secondInterval[1])
+                });
+
+                if (firstInterval[1] >= secondInterval[1]) secondIndex++; 
+                else firstIndex++; 
+            }
+        }
+
+        return result.toArray(new int[result.size()][]);
     }
 }
