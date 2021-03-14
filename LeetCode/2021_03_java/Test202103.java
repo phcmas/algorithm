@@ -100,11 +100,73 @@ public class Test202103 {
         System.out.println(ans3); // 0
         System.out.println(ans4); // 1
     }
+    
+    public static void IntervalListIntersectionsTest() {
+        IntervalListIntersections test0 = new IntervalListIntersections();
+        IntervalListIntersections test1 = new IntervalListIntersections();
+        IntervalListIntersections test2 = new IntervalListIntersections();
+        IntervalListIntersections test3 = new IntervalListIntersections();
+
+
+        int[][] firstList0 = {{0,2},{5,10},{13,23},{24,25}};
+        int[][] secondList0 = {{1,5},{8,12},{15,24},{25,26}};
+
+        int[][] firstList1 = {{1,3},{5,9}};
+        int[][] secondList1 = {};
+
+        int[][] firstList2 = {};
+        int[][] secondList2 = {{4,8},{10,12}};
+
+        int[][] firstList3 = {{1,7}};
+        int[][] secondList3 = {{3,10}};
+
+        int[][] ans0 = test0.intervalIntersection(firstList0, secondList0);
+        int[][] ans1 = test1.intervalIntersection(firstList1, secondList1);
+        int[][] ans2 = test2.intervalIntersection(firstList2, secondList2);
+        int[][] ans3 = test3.intervalIntersection(firstList3, secondList3);
+
+        for (int i = 0; i < ans0.length; ++i) {
+            System.out.print("[");
+            for (int j = 0; j < ans0[0].length; ++j) {
+                System.out.print(ans0[i][j] + " ");
+            }
+            System.out.print("] ");
+        } // [[1,2],[5,5],[8,10],[15,23],[24,24],[25,25]]
+
+        System.out.println();
+        for (int i = 0; i < ans1.length; ++i) {
+            System.out.print("[");
+            for (int j = 0; j < ans1[0].length; ++j) {
+                System.out.print(ans1[i][j] + " ");
+            }
+            System.out.print("] ");
+        } // []
+
+        System.out.println();
+        for (int i = 0; i < ans2.length; ++i) {
+            System.out.print("[");
+            for (int j = 0; j < ans2[0].length; ++j) {
+                System.out.print(ans2[i][j] + " ");
+            }
+            System.out.print("] ");
+        } // []
+
+        System.out.println();
+        for (int i = 0; i < ans3.length; ++i) {
+            System.out.print("[");
+            for (int j = 0; j < ans3[0].length; ++j) {
+                System.out.print(ans3[i][j] + " ");
+            }
+            System.out.print("] ");
+        } // [[3,7]]
+
+    }
     public static void main(String[] args) {
         //UniqueBinarySearchTreesTest();
         //MaximumLengthOfRepeatedSubarray();
         //SubsetsTest();
         //LongestSubstringWithAtLeastKRepeatingCharactersTest();
-        LongestSubstringWithoutRepeatingCharactersTest();
+        //LongestSubstringWithoutRepeatingCharactersTest();
+        IntervalListIntersectionsTest();
     }
 }
