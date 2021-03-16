@@ -20,7 +20,7 @@
  *  The number of nodes in the tree is in the range [1, 10^4].
  *  0 <= Node.val <= 10^4 **/
 
-#include <TreeNode.h>
+#include "TreeNode.h"
 #include <unordered_map>
 #include <iostream>
 
@@ -29,14 +29,21 @@ using namespace std;
 unordered_map<TreeNode *, int> cache;
 
 int maxAmount (TreeNode *root, bool parentIsRobbed) {
+    int cand1 = 0;
+    int cand2 = 0;
+
     if (root == nullptr) return 0;
     if (!parentIsRobbed) {
-        if (cache.count(root)) return cache[root];
-        cache[root] = root->val + maxAmount(root->left, true) + maxAmount(root->right, true);
-        return cache[root];
+        if (cache.count(root) != 0) {
+            cand1 = cache[root];
+        } else {
+            cache[root] = root->val + maxAmount(root->left, true) + maxAmount(root->right, true);
+            cand1 = cache[root];
+        }
     }
 
-    return maxAmount(root->left, false) + maxAmount(root->right, false);
+    cand2 = maxAmount(root->left, false) + maxAmount(root->right, false); 
+    return max(cand1, cand2);
 }
 
 int rob(TreeNode *root) {
@@ -57,6 +64,8 @@ int main() {
     TreeNode *node13_2 = new TreeNode(3, node14, node15);
 
     int ans0 = rob(node03_3);
+    cache.clear();
+
     int ans1 = rob(node13_2);
 
     cout << ans0 << endl; // 7
