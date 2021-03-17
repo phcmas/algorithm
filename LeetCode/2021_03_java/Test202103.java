@@ -161,12 +161,27 @@ public class Test202103 {
         } // [[3,7]]
 
     }
+
+    public static void PalindromeSubstringsTest() {
+        PalindromicSubstrings test0 = new PalindromicSubstrings();
+        PalindromicSubstrings test1 = new PalindromicSubstrings();
+
+        String s0 = "abc";
+        String s1 = "aaa";
+
+        int ans0 = test0.countSubstrings(s0);
+        int ans1 = test1.countSubstrings(s1);
+
+        System.out.println(ans0); // 3
+        System.out.println(ans1); // 6
+    }
     public static void main(String[] args) {
         //UniqueBinarySearchTreesTest();
         //MaximumLengthOfRepeatedSubarray();
         //SubsetsTest();
         //LongestSubstringWithAtLeastKRepeatingCharactersTest();
         //LongestSubstringWithoutRepeatingCharactersTest();
-        IntervalListIntersectionsTest();
+        //IntervalListIntersectionsTest();
+        PalindromeSubstringsTest();
     }
 }
