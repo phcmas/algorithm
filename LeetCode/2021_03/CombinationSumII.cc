@@ -7,21 +7,11 @@
  * 
  *  Example 1:
  *  Input: candidates = [10,1,2,7,6,1,5], target = 8
- *  Output: 
- *  [
- *  [1,1,6],
- *  [1,2,5],
- *  [1,7],
- *  [2,6]
- *  ]
+ *  Output: [[1,1,6], [1,2,5], [1,7], [2,6]]
  * 
  *  Example 2:
  *  Input: candidates = [2,5,2,1,2], target = 5
- *  Output: 
- *  [
- *  [1,2,2],
- *  [5]
- *  ]
+ *  Output: [[1,2,2], [5]]
  * 
  *  Constraints:
  *  1 <= candidates.length <= 100
@@ -30,11 +20,40 @@
 
 #include <vector>
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
+vector<int> collections;
+int targetNumber;
+
+void backTracking(vector<vector<int>> &answer, vector<int> &cases, int index, int sum) {
+    if (sum == targetNumber) {
+        vector<int> newCase = cases;
+        sort(newCase.begin(), newCase.end());
+        
+        for (int i = 0; i < answer.size(); ++i) {
+            if (answer[i] == newCase) return;
+        }
+        answer.push_back(newCase);
+        return;
+    } else if (sum > targetNumber || index == collections.size()) {
+        return;
+    }
+
+    backTracking(answer, cases, index+1, sum);
+    cases.push_back(collections[index]);
+    backTracking(answer, cases, index+1, sum + collections[index]);
+    cases.pop_back();
+}
+
 vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
-    
+    vector<vector<int>> answer;
+    vector<int> cases;
+    collections = candidates;
+    targetNumber = target;
+    backTracking(answer, cases, 0, 0);
+    return answer;
 }
 
 int main() {
@@ -52,6 +71,7 @@ int main() {
         cout << "], ";
     } // [[1,1,6], [1,2,5], [1,7], [2,6]]
 
+    cout << endl;
     for (vector<int> iter0 : ans1) {
         cout << "[ ";
         for (int iter1 : iter0) {
