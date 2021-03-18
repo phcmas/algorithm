@@ -14,21 +14,26 @@
  * 
  *  Note: The input string length won't exceed 1000. */
 
- public class PalindromicSubstrings {
+public class PalindromicSubstrings {
     boolean[][] isPalindromic;
 
     public int countSubstrings(String s) {
         int count = 0;
-        isPalindromic = new boolean[s.length()][s.length()];
+        isPalindromic = new boolean[s.length()+1][s.length()+1];
+
+        if (s.isEmpty()) return 0;
 
         for (int i = 0; i < s.length(); ++i) {
+            char elem = s.charAt(i);
             for (int j = 0; j <= i; ++j) {
-                if (j - i <= 1 || isPalindromic[j+1][i-1]) {
+                if (s.charAt(j) != elem) continue;
+                if (i-j <= 1 || isPalindromic[j+1][i-1]) {
+                    isPalindromic[j][i] = true;
                     count++;
                 }
             }
         }
         
-        return 0;   
+        return count;
     }
  }
