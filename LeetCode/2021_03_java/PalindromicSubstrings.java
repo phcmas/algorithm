@@ -15,7 +15,7 @@
  *  Note: The input string length won't exceed 1000. */
 
 public class PalindromicSubstrings {
-    boolean[][] isPalindromic;
+    private boolean[][] isPalindromic;
 
     public int countSubstrings(String s) {
         int count = 0;
