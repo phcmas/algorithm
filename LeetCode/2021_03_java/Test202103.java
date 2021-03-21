@@ -184,7 +184,23 @@ public class Test202103 {
 
         System.out.println(ans0); // 32
     }
-    
+
+    public static void KthLargestTest() {
+        int[] nums0 = {4,5,8,2};
+        KthLargest test0 = new KthLargest(3, nums0);
+
+        int ans0 = test0.add(3);
+        int ans1 = test0.add(5);
+        int ans2 = test0.add(10);
+        int ans3 = test0.add(9);
+        int ans4 = test0.add(4);
+
+        System.out.println(ans0); // 4
+        System.out.println(ans1); // 5
+        System.out.println(ans2); // 5
+        System.out.println(ans3); // 8
+        System.out.println(ans4); // 8
+    }
     public static void main(String[] args) {
         //UniqueBinarySearchTreesTest();
         //MaximumLengthOfRepeatedSubarray();
@@ -193,6 +209,7 @@ public class Test202103 {
         //LongestSubstringWithoutRepeatingCharactersTest();
         //IntervalListIntersectionsTest();
         //PalindromeSubstringsTest();
-        MinimumCostTreeFromLeafValuesTest();
+        //MinimumCostTreeFromLeafValuesTest();
+        KthLargestTest();
     }
 }
