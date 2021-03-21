@@ -175,6 +175,15 @@ public class Test202103 {
         System.out.println(ans0); // 3
         System.out.println(ans1); // 6
     }
+    
+    public static void MinimumCostTreeFromLeafValuesTest() {
+        MinimumCostTreeFromLeafValues test0 = new MinimumCostTreeFromLeafValues();
+        int[] arr0 = {6,2,4};
+
+        int ans0 = test0.mctFromLeafValues(arr0);
+
+        System.out.println(ans0); // 32
+    }
     public static void main(String[] args) {
         //UniqueBinarySearchTreesTest();
         //MaximumLengthOfRepeatedSubarray();
@@ -182,6 +191,7 @@ public class Test202103 {
         //LongestSubstringWithAtLeastKRepeatingCharactersTest();
         //LongestSubstringWithoutRepeatingCharactersTest();
         //IntervalListIntersectionsTest();
-        PalindromeSubstringsTest();
+        //PalindromeSubstringsTest();
+        MinimumCostTreeFromLeafValuesTest();
     }
 }
