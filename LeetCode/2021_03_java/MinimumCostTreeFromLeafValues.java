@@ -31,29 +31,45 @@
 
     private void setMax(int[] arr) {
         for (int i = 0; i < arr.length; ++i) {
-            max[i][i] = arr[i];
-        }
-
-        for (int i = 1; i < arr.length; ++i) {
             for (int j = 0; j < arr.length-i; ++j) {
                 max[j][j+i] = Math.max(max[j+1][j+i], arr[j]);
             }
         }
     }
 
-    private void setDp(int[] arr) {
+    private int topDownDP(int start, int end) {
+        if (start >= end) return 0;
+        if (dp[start][end] != 0) return dp[start][end];
 
+        dp[start][end] = max[start][start] * max[start+1][end] + topDownDP(start+1, end);
+
+        for (int k = start+1; k <= end; ++k) {
+            dp[start][end] = Math.min(dp[start][end], max[start][k] * max[k+1][end] + topDownDP(start, k) + topDownDP(k+1, end));
+        }
+
+        return dp[start][end];
     }
 
+    private void bottomUpDP(int[] arr) {
+        for (int i = 1; i < arr.length; ++i) {
+            for (int j = 0; j < arr.length-i; ++j) {
+                for (int k = j; k < j+i; ++k) {
+                    int temp = max[j][k] * max[k+1][j+i] + dp[j][k] + dp[k+1][j+i];
+                    dp[j][j+i] = dp[j][j+i] == 0 ? temp : Math.min(dp[j][j+i], temp);
+                }
+            }
+        }
+    }
 
     public int mctFromLeafValues(int[] arr) {
-        max = new int[arr.length][arr.length];
-        dp = new int[arr.length][arr.length];
+        max = new int[arr.length+1][arr.length+1];
+        dp = new int[arr.length+1][arr.length+1];
 
         setMax(arr);
-        setDp(arr);
+        //bottomUpDP(arr);
 
-        return dp[0][arr.length-1];
+        return topDownDP(0, arr.length-1);
     }
  }
+
 
