@@ -201,6 +201,28 @@ public class Test202103 {
         System.out.println(ans3); // 8
         System.out.println(ans4); // 8
     }
+
+    public static void LemonadeChangeTest() {
+        LemonadeChange test0 = new LemonadeChange();
+        LemonadeChange test1 = new LemonadeChange();
+        LemonadeChange test2 = new LemonadeChange();
+        LemonadeChange test3 = new LemonadeChange();
+
+        int[] bills0 = {5,5,5,10,20};
+        int[] bills1 = {5,5,10};
+        int[] bills2 = {10,10};
+        int[] bills3 = {5,5,10,10,20};
+
+        boolean ans0 = test0.lemonadeChange(bills0);
+        boolean ans1 = test1.lemonadeChange(bills1);
+        boolean ans2 = test2.lemonadeChange(bills2);
+        boolean ans3 = test3.lemonadeChange(bills3);
+
+        System.out.println(ans0); // true
+        System.out.println(ans1); // true
+        System.out.println(ans2); // false
+        System.out.println(ans3); // false
+    }
     public static void main(String[] args) {
         //UniqueBinarySearchTreesTest();
         //MaximumLengthOfRepeatedSubarray();
@@ -210,6 +232,7 @@ public class Test202103 {
         //IntervalListIntersectionsTest();
         //PalindromeSubstringsTest();
         //MinimumCostTreeFromLeafValuesTest();
-        KthLargestTest();
+        //KthLargestTest();
+        LemonadeChangeTest();
     }
 }
