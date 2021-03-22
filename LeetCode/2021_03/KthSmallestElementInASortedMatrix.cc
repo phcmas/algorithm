@@ -28,26 +28,22 @@
 
 using namespace std;
 
-bool seen[300][300];
-int dr[4] ={};
-int dc[4] ={};
-
 int kthSmallest(vector<vector<int>>& matrix, int k) {
-    int order = 0;
-    queue<int> q;
     priority_queue<int> pq;
+    int size;
 
-    memset(seen, 0, sizeof(seen));
-    q.push(matrix[0][0]);
-    pq.push(matrix[0][0]);
-    while (!q.empty()) {
-        int num = q.front();
-        q.pop();
+    if (matrix.empty()) return 0;
+    size = matrix.size();
 
-
-
+    for (int row = 0; row < min(k, size); ++row) {
+        for (int col = 0; col < min(k-row, size); ++col) {
+            pq.push(matrix[row][col]);
+        }
     }
 
+    while (pq.size() > k) pq.pop();
+
+    return pq.top();
 }
 
 int main() {
@@ -59,11 +55,19 @@ int main() {
     vector<int> row10 {-5};
     vector<vector<int>> matrix1 {row10};
 
+    vector<int> row20 {1,3,5};
+    vector<int> row21 {6,7,12};
+    vector<int> row22 {11,14,14};
+    vector<vector<int>> matrix2 {row20, row21, row22};
+
     int ans0 = kthSmallest(matrix0, 8);
     int ans1 = kthSmallest(matrix1, 1);
+    int ans2 = kthSmallest(matrix2, 3);
 
     cout << ans0 << endl; // 13
     cout << ans1 << endl; // -5
+    cout << ans2 << endl; // 5
 
     return 0;
 }
+
