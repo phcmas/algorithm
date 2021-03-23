@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Stack;
 
 public class Test202103 {
     public static void UniqueBinarySearchTreesTest() {
@@ -223,6 +224,28 @@ public class Test202103 {
         System.out.println(ans2); // false
         System.out.println(ans3); // false
     }
+    
+    public static void MinimumAddToMakeParenthesesValidTest() {
+        MinimumAddToMakeParenthesesValid test0 = new MinimumAddToMakeParenthesesValid();
+        MinimumAddToMakeParenthesesValid test1 = new MinimumAddToMakeParenthesesValid();
+        MinimumAddToMakeParenthesesValid test2 = new MinimumAddToMakeParenthesesValid();
+        MinimumAddToMakeParenthesesValid test3 = new MinimumAddToMakeParenthesesValid();
+        
+        String S0 = "())";
+        String S1 = "(((";
+        String S2 = "()";
+        String S3 = "()))((";
+        
+        int ans0 = test0.minAddToMakeValid(S0);
+        int ans1 = test1.minAddToMakeValid(S1);
+        int ans2 = test2.minAddToMakeValid(S2);
+        int ans3 = test3.minAddToMakeValid(S3);
+        
+        System.out.println(ans0); // 1
+        System.out.println(ans1); // 3
+        System.out.println(ans2); // 0
+        System.out.println(ans3); // 4
+    }
     public static void main(String[] args) {
         //UniqueBinarySearchTreesTest();
         //MaximumLengthOfRepeatedSubarray();
@@ -233,6 +256,7 @@ public class Test202103 {
         //PalindromeSubstringsTest();
         //MinimumCostTreeFromLeafValuesTest();
         //KthLargestTest();
-        LemonadeChangeTest();
+        //LemonadeChangeTest();
+        MinimumAddToMakeParenthesesValidTest();
     }
 }
