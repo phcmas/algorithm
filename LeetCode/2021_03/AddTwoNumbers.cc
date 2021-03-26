@@ -29,37 +29,34 @@
 using namespace std;
 
 ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-    ListNode *head = nullptr;
-    ListNode *node = nullptr;
-    bool moreThanTen = false;
+    ListNode *head = new ListNode(-1);
+    ListNode *cur = head;
+    ListNode *ans = nullptr;
+    int val = 0;
 
-    while (l1 != nullptr || l2 != nullptr) {
+    while (l1 != nullptr || l2 != nullptr || val > 0) {
         int val1 = 0;
         int val2 = 0;
 
-        if (l1 != nullptr) val1 = l1->val;
-        if (l2 != nullptr) val2 = l2->val;
+        if (l1 != nullptr) {
+            val1 = l1->val;
+            l1 = l1->next;
+        }
 
-        int val = moreThanTen ? val1 + val2 + 1 : val1 + val2;
-        moreThanTen = val >= 10;
+        if (l2 != nullptr) {
+            val2 = l2->val;
+            l2 = l2->next;
+        }
 
-        ListNode *newNode = new ListNode(val % 10, node);
-        if (node != nullptr) node->next = newNode;
-        node = newNode;
-        if (head == nullptr) head = node;
-
-        if (l1 != nullptr) l1 = l1->next;
-        if (l2 != nullptr) l2 = l2->next;
+        val = val1 + val2 + val;
+        cur->next = new ListNode(val % 10);
+        val /= 10;
+        cur = cur->next;
     }
 
-    if (moreThanTen) {
-        ListNode *newNode = new ListNode(1, node);
-        if (node != nullptr) node->next = newNode;
-        node = newNode;
-    }
-    node->next = nullptr;
-
-    return head;
+    ans = head->next;
+    delete head;
+    return ans;
 }
 
 int main() {
