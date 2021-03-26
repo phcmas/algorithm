@@ -23,17 +23,17 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 public class KthSmallestElementInaBST {
-    private void collectTreeNodeInOrder(TreeNode root, Queue<TreeNode> queue) {
+    private void inorderTraversal(TreeNode root, Queue<TreeNode> queue) {
         if (root == null) return;
-        collectTreeNodeInOrder(root.left, queue);
+        inorderTraversal(root.left, queue);
         queue.add(root);
-        collectTreeNodeInOrder(root.right, queue);
+        inorderTraversal(root.right, queue);
     }
 
     public int kthSmallest(TreeNode root, int k) {
         Queue<TreeNode> queue = new ArrayDeque<>();
         
-        collectTreeNodeInOrder(root, queue);
+        inorderTraversal(root, queue);
         for (int i = 0; i < k-1; ++i) queue.remove();
 
         return queue.peek().val;
