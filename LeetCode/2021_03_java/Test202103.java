@@ -287,6 +287,24 @@ public class Test202103 {
         System.out.println(ans1); // 3
 
     }
+
+    public static void HandOfStraightsTest() {
+        HandOfStraights test0 = new HandOfStraights();
+        HandOfStraights test1 = new HandOfStraights();
+        HandOfStraights test2 = new HandOfStraights();
+
+        int[] hand0 = {1,2,3,6,2,3,4,7,8};
+        int[] hand1 = {1,2,3,4,5};
+        int[] hand2 = {8,10,12};
+
+        boolean ans0 = test0.isNStraightHand(hand0, 3);
+        boolean ans1 = test1.isNStraightHand(hand1, 4);
+        boolean ans2 = test2.isNStraightHand(hand2, 3);
+
+        System.out.println(ans0); // true
+        System.out.println(ans1); // false
+        System.out.println(ans2); // false
+    }
     public static void main(String[] args) {
         //UniqueBinarySearchTreesTest();
         //MaximumLengthOfRepeatedSubarray();
@@ -300,6 +318,8 @@ public class Test202103 {
         //LemonadeChangeTest();
         //MinimumAddToMakeParenthesesValidTest();
         //AssignCookiesTest();
-        KthSmallestElementInaBSTTest();
+        //KthSmallestElementInaBSTTest();
+        HandOfStraightsTest();
     }
 }
+
