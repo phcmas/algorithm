@@ -246,6 +246,47 @@ public class Test202103 {
         System.out.println(ans2); // 0
         System.out.println(ans3); // 4
     }
+
+    public static void AssignCookiesTest() {
+        AssignCookies test0 = new AssignCookies();
+        AssignCookies test1 = new AssignCookies();
+
+        int[] g0 = {1,2,3};
+        int[] s0 = {1,1};
+
+        int[] g1 = {1,2};
+        int[] s1 = {1,2,3};
+
+        int ans0 = test0.findContentChildren(g0, s0);
+        int ans1 = test1.findContentChildren(g1, s1);
+
+        System.out.println(ans0); // 1
+        System.out.println(ans1); // 2
+    }
+    
+    public static void KthSmallestElementInaBSTTest() {
+        KthSmallestElementInaBST test0 = new KthSmallestElementInaBST();
+        KthSmallestElementInaBST test1 = new KthSmallestElementInaBST();
+
+        TreeNode node02 = new TreeNode(2);
+        TreeNode node01 = new TreeNode(1, null, node02);
+        TreeNode node04 = new TreeNode(4);
+        TreeNode node03 = new TreeNode(3, node01, node04);
+
+        TreeNode node11 = new TreeNode(1);
+        TreeNode node12 = new TreeNode(2, node11, null);
+        TreeNode node14 = new TreeNode(4);
+        TreeNode node13 = new TreeNode(3, node12, node14);
+        TreeNode node16 = new TreeNode(6);
+        TreeNode node15 = new TreeNode(5, node13, node16);
+
+        int ans0 = test0.kthSmallest(node03, 1);
+        int ans1 = test1.kthSmallest(node15, 3);
+
+        System.out.println(ans0); // 1
+        System.out.println(ans1); // 3
+
+    }
     public static void main(String[] args) {
         //UniqueBinarySearchTreesTest();
         //MaximumLengthOfRepeatedSubarray();
@@ -257,6 +298,8 @@ public class Test202103 {
         //MinimumCostTreeFromLeafValuesTest();
         //KthLargestTest();
         //LemonadeChangeTest();
-        MinimumAddToMakeParenthesesValidTest();
+        //MinimumAddToMakeParenthesesValidTest();
+        //AssignCookiesTest();
+        KthSmallestElementInaBSTTest();
     }
 }
