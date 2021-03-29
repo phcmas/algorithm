@@ -297,9 +297,9 @@ public class Test202103 {
         int[] hand1 = {1,2,3,4,5};
         int[] hand2 = {8,10,12};
 
-        boolean ans0 = test0.isNStraightHand(hand0, 3);
-        boolean ans1 = test1.isNStraightHand(hand1, 4);
-        boolean ans2 = test2.isNStraightHand(hand2, 3);
+        boolean ans0 = test0.isNStraightHand2(hand0, 3);
+        boolean ans1 = test1.isNStraightHand2(hand1, 4);
+        boolean ans2 = test2.isNStraightHand2(hand2, 3);
 
         System.out.println(ans0); // true
         System.out.println(ans1); // false

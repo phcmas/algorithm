@@ -21,7 +21,6 @@
  *  0 <= hand[i] <= 10^9
  *  1 <= W <= hand.length */
 
-import java.util.Map;
 import java.util.TreeMap;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,6 +28,32 @@ import java.util.Arrays;
  public class HandOfStraights { 
     // 아래는 Solution을 보고 구현한 풀이.
     public boolean isNStraightHand2(int[] hand, int W) {
+        TreeMap<Integer, Integer> frequencies = new TreeMap<>();
+
+        if (hand.length % W != 0) return false;
+
+        for (int iter : hand) {
+            if (frequencies.containsKey(iter)) {
+                frequencies.replace(iter, frequencies.get(iter)+1);
+            } else {
+                frequencies.put(iter, 1);
+            }
+        }
+
+        for (int i = 0; i < hand.length / W; ++i) {
+            int firstKey = frequencies.firstKey();
+            for (int j = firstKey; j < firstKey + W; ++j) {
+                if (!frequencies.containsKey(j)) return false;
+                int count = frequencies.get(j);
+                if (count == 1) {
+                    frequencies.remove(j);
+                } else {
+                    frequencies.replace(j, frequencies.get(j)-1);
+                }
+            }
+        }
+
+        return true;
     }
 
     
