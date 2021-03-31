@@ -31,79 +31,9 @@
  *  0 <= Node.val <= n
  *  The sum of Node.val is n. */
 
-import java.util.Queue;
-import java.util.Set;
-import java.util.ArrayDeque;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.List;
-import java.util.ArrayList;
+
 
 public class DistributeCoinsInBinaryTree {
-    private Map<TreeNode, TreeNode> parents;
-    private List<TreeNode> starts;
-    private Set<TreeNode> seen;
-
-    private void dfs(TreeNode cur, TreeNode parent) {
-        if (cur == null) return;
-        if (parent != null) parents.put(cur, parent);
-        if (cur.val > 1) {
-            starts.add(cur);
-            seen.add(cur);
-        }
-
-        dfs(cur.left, cur);
-        dfs(cur.right, cur);
-    }
-
-    private int bfs(TreeNode node) {
-        Queue<TreeNode> queue = new ArrayDeque<>();
-        int result = 0;
-        int coins = queue.peek().val;
-
-        queue.add(node);
-        while (queue.isEmpty()) {
-            TreeNode cur = queue.poll();
-            if (cur.val == 0) {
-                cur.val++;
-                coins--;
-            }
-
-            if (coins == 1) break;
-
-            if (parents.containsKey(cur) && !seen.contains(parents.get(cur))) {
-                queue.add(parents.get(cur));
-                seen.add(parents.get(cur));
-            }
-
-            if (cur.left != null && !seen.contains(cur.left)) {
-                queue.add(cur.left);
-                seen.add(cur.left);
-            }
-
-            if (cur.right != null && !seen.contains(cur.right)) {
-                queue.add(cur.right);
-                seen.add(cur.right);
-            }
-        }
-
-        return result;
-    }
-
     public int distributeCoins(TreeNode root) {
-        int answer = 0;
-        parents = new HashMap<>();
-        starts = new ArrayList<>();
-        seen = new HashSet<>();
-
-        dfs(root, null);
-
-        for (TreeNode iter : starts) {
-            answer += bfs(iter);
-        }
-        
-        return answer;
     }
 }
-

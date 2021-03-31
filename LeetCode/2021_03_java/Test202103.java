@@ -316,6 +316,50 @@ public class Test202103 {
         } System.out.println(); // 2 -1 2
 
     }
+
+    public static void DistributeCoinsInBinaryTreeTest() {
+        DistributeCoinsInBinaryTree test0 = new DistributeCoinsInBinaryTree();
+        DistributeCoinsInBinaryTree test1 = new DistributeCoinsInBinaryTree();
+        DistributeCoinsInBinaryTree test2 = new DistributeCoinsInBinaryTree();
+        DistributeCoinsInBinaryTree test3 = new DistributeCoinsInBinaryTree();
+        DistributeCoinsInBinaryTree test4 = new DistributeCoinsInBinaryTree();
+
+        TreeNode node00_1 = new TreeNode(0);
+        TreeNode node00_2 = new TreeNode(0);
+        TreeNode node03 = new TreeNode(3, node00_1, node00_2);
+
+        TreeNode node13 = new TreeNode(3);
+        TreeNode node10_1 = new TreeNode(0);
+        TreeNode node10_2 = new TreeNode(0, node13, node10_1);
+
+        TreeNode node20 = new TreeNode(0);
+        TreeNode node22 = new TreeNode(2);
+        TreeNode node21 = new TreeNode(1, node20, node22);
+
+        TreeNode node33 = new TreeNode(3);
+        TreeNode node30_1 = new TreeNode(0, null, node33);
+        TreeNode node30_2 = new TreeNode(0);
+        TreeNode node31 = new TreeNode(1, node30_1, node30_2);
+
+        TreeNode node42 = new TreeNode(2);
+        TreeNode node40_1 = new TreeNode(0, null, node42);
+        TreeNode node40_2 = new TreeNode(0, null, node40_1);
+        TreeNode node40_3 = new TreeNode(0);
+        TreeNode node40_4 = new TreeNode(0, node40_2, node40_3);
+        TreeNode node44 = new TreeNode(4, null, node40_4);
+
+        int ans0 = test0.distributeCoins(node03);
+        int ans1 = test1.distributeCoins(node10_2);
+        int ans2 = test2.distributeCoins(node21);
+        int ans3 = test3.distributeCoins(node31);
+        int ans4 = test4.distributeCoins(node44);
+
+        System.out.println(ans0); // 2
+        System.out.println(ans1); // 3
+        System.out.println(ans2); // 2
+        System.out.println(ans3); // 4
+        System.out.println(ans4); // 6
+    }
     public static void main(String[] args) {
         //UniqueBinarySearchTreesTest();
         //MaximumLengthOfRepeatedSubarray();
@@ -331,7 +375,8 @@ public class Test202103 {
         //AssignCookiesTest();
         //KthSmallestElementInaBSTTest();
         //HandOfStraightsTest();
-        NextGreaterElementIITest();
+        //NextGreaterElementIITest();
+        DistributeCoinsInBinaryTreeTest();
     }
 }
 
