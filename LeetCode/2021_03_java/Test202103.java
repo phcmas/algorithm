@@ -305,6 +305,17 @@ public class Test202103 {
         System.out.println(ans1); // false
         System.out.println(ans2); // false
     }
+    public static void NextGreaterElementIITest() {
+        NextGreaterElementII test0 = new NextGreaterElementII();
+
+        int[] nums0 = {1,2,1};
+        int[] ans0 = test0.nextGreaterElements(nums0);
+
+        for (int iter : ans0) {
+            System.out.print(iter + " ");
+        } System.out.println(); // 2 -1 2
+
+    }
     public static void main(String[] args) {
         //UniqueBinarySearchTreesTest();
         //MaximumLengthOfRepeatedSubarray();
@@ -319,7 +330,8 @@ public class Test202103 {
         //MinimumAddToMakeParenthesesValidTest();
         //AssignCookiesTest();
         //KthSmallestElementInaBSTTest();
-        HandOfStraightsTest();
+        //HandOfStraightsTest();
+        NextGreaterElementIITest();
     }
 }
 
