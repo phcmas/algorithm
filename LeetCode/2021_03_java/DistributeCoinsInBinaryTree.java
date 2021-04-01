@@ -32,8 +32,21 @@
  *  The sum of Node.val is n. */
 
 
+// 아래는 Solution 보고 구현한 풀이. 완전 창의적인 아이디어다!
 
 public class DistributeCoinsInBinaryTree {
+    private int answer;
+    private int dfs(TreeNode cur) {
+        if (cur == null) return 0;
+        int left = dfs(cur.left);
+        int right = dfs(cur.right);
+        answer += Math.abs(left) + Math.abs(right);
+        return cur.val-1+left+right;
+    }
+
     public int distributeCoins(TreeNode root) {
+        answer = 0;
+        dfs(root);
+        return answer;
     }
 }
