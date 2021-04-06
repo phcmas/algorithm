@@ -35,7 +35,25 @@ public class Test202104 {
         System.out.println(ans3); // 4325
     }
 
+    public static void MaximumSubArrayTest() {
+        MaximumSubArray test0 = new MaximumSubArray();
+        MaximumSubArray test1 = new MaximumSubArray();
+        MaximumSubArray tset2 = new MaximumSubArray();
+
+        int[] nums0 = {-2,1,-3,4,-1,2,1,-5,4};
+        int[] nums1 = {1};
+        int[] nums2 = {5,4,-1,7,8};
+
+        int ans0 = test0.maxSubArray(nums0);
+        int ans1 = test0.maxSubArray(nums1);
+        int ans2 = test0.maxSubArray(nums2);
+
+        System.out.println(ans0); // 6
+        System.out.println(ans1); // 1
+        System.out.println(ans2); // 23
+    }
     public static void main(String[] args) {
-        SingleElementInASortedArrayTest();
+        //SingleElementInASortedArrayTest();
+        MaximumSubArrayTest();
     }
 }
