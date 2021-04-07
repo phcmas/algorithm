@@ -28,40 +28,63 @@
  *  0 <= Node.val <= 9
  *  The depth of the tree will not exceed 10. **/
 
-#include "TreeNode.h"
-#include <unordered_map>
+#include "/home/seungkyun/Algorithm/LeetCode/common/TreeNode.h"
+//#include "TreeNode.h"
 #include <iostream>
+#include <vector>
+#include <math.h>
 
 using namespace std;
 
-int maxDepth;
-unordered_map<TreeNode *, bool> visited;
+vector<int> dfs(TreeNode *node, int &sum) {
+    vector<int> heights;
 
-int dfs(TreeNode *node, int &sum) {
-    int answer = 0;
-    int depth = 0;
+    if (node == nullptr) return heights;
 
-    if (node == nullptr) {
-        sum = node->val;
-        return 0;
+    if (node->left == nullptr && node->right == nullptr) {
+        sum += node->val;
+        heights.push_back(0);
+    }
+
+    for (int iter : dfs(node->left, sum)) {
+        sum += pow(10, iter+1) * node->val;
+        heights.push_back(iter+1);
+    }
+
+    for (int iter : dfs(node->right, sum)) {
+        sum += pow(10, iter+1) * node->val;
+        heights.push_back(iter+1);
     }
     
-    visited[node] = true;
-    if (node->left != nullptr) { 
-        depth = dfs(node->left, sum);
-    }
-
-    if (node->right != nullptr) {
-        dfs(node->right, sum);
-    }
-
+    return heights;
 }
 
 int sumNumbers(TreeNode *root) {
-    visited.clear();
-    return dfs(root, 0);
+    int answer = 0;
+    dfs(root, answer);
+
+    return answer;
 }
 
 int main() {
+    TreeNode *node02 = new TreeNode(2);
+    TreeNode *node03 = new TreeNode(3);
+    TreeNode *node01 = new TreeNode(1, node02, node03);
+
+    TreeNode *node11 = new TreeNode(1);
+    TreeNode *node15 = new TreeNode(5);
+    TreeNode *node19 = new TreeNode(9, node15, node11);
+    TreeNode *node10 = new TreeNode(0);
+    TreeNode *node14 = new TreeNode(4, node19, node10);
+
+    int ans0 = sumNumbers(node01);
+    int ans1 = sumNumbers(node14);
+
+    cout << ans0 << endl; // 25
+    cout << ans1 << endl; // 1026
+
     return 0;
 }
+
+
+
