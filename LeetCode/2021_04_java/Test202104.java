@@ -52,8 +52,28 @@ public class Test202104 {
         System.out.println(ans1); // 1
         System.out.println(ans2); // 23
     }
+
+    public static void SingleNumberTest() {
+        SingleNumber test0 = new SingleNumber();
+        SingleNumber test1 = new SingleNumber();
+        SingleNumber test2 = new SingleNumber();
+
+        int[] nums0 = {2,2,1};
+        int[] nums1 = {4,1,2,1,2};
+        int[] nums2 = {1};
+
+        int ans0 = test0.singleNumber(nums0);
+        int ans1 = test1.singleNumber(nums1);
+        int ans2 = test2.singleNumber(nums2);
+
+        System.out.println(ans0); // 1
+        System.out.println(ans1); // 4
+        System.out.println(ans2); // 1
+
+    }
     public static void main(String[] args) {
         //SingleElementInASortedArrayTest();
-        MaximumSubArrayTest();
+        //MaximumSubArrayTest();
+        SingleNumberTest();
     }
 }
