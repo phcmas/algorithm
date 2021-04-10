@@ -71,9 +71,37 @@ public class Test202104 {
         System.out.println(ans2); // 1
 
     }
+
+    public static void QueueReconstructionByHeightTest() {
+        QueueReconstructionByHeight test0 = new QueueReconstructionByHeight();
+        QueueReconstructionByHeight test1 = new QueueReconstructionByHeight();
+
+        int[][] people0 = {{7,0}, {4,4}, {7,1}, {5,0}, {6,1}, {5,2}};
+        int[][] people1 = {{6,0}, {5,0}, {4,0}, {3,2}, {2,2}, {1,4}};
+
+        int[][] ans0 = test0.reconstructQueue1(people0);
+        int[][] ans1 = test1.reconstructQueue1(people1);
+
+        for (int i = 0; i < ans0.length; ++i) {
+            for (int j = 0; j < ans0[0].length; ++j) {
+                System.out.print(ans0[i][j] + " ");
+            }
+            System.out.print("  ");
+        } // [5,0],[7,0],[5,2],[6,1],[4,4],[7,1]
+        System.out.println();
+
+        for (int i = 0; i < ans1.length; ++i) {
+            for (int j = 0; j < ans1[0].length; ++j) {
+                System.out.print(ans1[i][j] + " ");
+            }
+            System.out.print("  ");
+        } // [4,0],[5,0],[2,2],[3,2],[1,4],[6,0]
+    }
+
     public static void main(String[] args) {
         //SingleElementInASortedArrayTest();
         //MaximumSubArrayTest();
-        SingleNumberTest();
+        //SingleNumberTest();
+        QueueReconstructionByHeightTest();
     }
 }
