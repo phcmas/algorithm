@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Test202104 {
@@ -98,10 +99,34 @@ public class Test202104 {
         } // [4,0],[5,0],[2,2],[3,2],[1,4],[6,0]
     }
 
+    public static void LongestWordInDictionaryThroughDeletingTest() {
+        LongestWordInDictionaryThroughDeleting test0 = new LongestWordInDictionaryThroughDeleting();
+        LongestWordInDictionaryThroughDeleting test1 = new LongestWordInDictionaryThroughDeleting();
+
+        String s0 = "abpcplea";
+        List<String> dictionary0 = new ArrayList<>();
+        dictionary0.add("ale");
+        dictionary0.add("apple");
+        dictionary0.add("monkey");
+        dictionary0.add("plea");
+
+        String s1 = "abpcplea";
+        List<String> dictionary1 = new ArrayList<>();
+        dictionary1.add("a");
+        dictionary1.add("b");
+        dictionary1.add("c");
+
+        String ans0 = test0.findLongestWord(s0, dictionary0);
+        String ans1 = test1.findLongestWord(s1, dictionary1);
+
+        System.out.println(ans0); // apple
+        System.out.println(ans1); // a
+    }
     public static void main(String[] args) {
         //SingleElementInASortedArrayTest();
         //MaximumSubArrayTest();
         //SingleNumberTest();
-        QueueReconstructionByHeightTest();
+        //QueueReconstructionByHeightTest();
+        LongestWordInDictionaryThroughDeletingTest();
     }
 }
