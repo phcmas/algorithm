@@ -98,10 +98,20 @@ public class Test202104 {
         } // [4,0],[5,0],[2,2],[3,2],[1,4],[6,0]
     }
 
+    public static void LastStoneWeightTest() {
+        LastStoneWeight test0 = new LastStoneWeight();
+        int[] stones0 = {2,7,4,1,8,1};
+
+        int ans0 = test0.lastStoneWeight(stones0);
+
+        System.out.println(ans0);
+    }
+
     public static void main(String[] args) {
         //SingleElementInASortedArrayTest();
         //MaximumSubArrayTest();
         //SingleNumberTest();
-        QueueReconstructionByHeightTest();
+        //QueueReconstructionByHeightTest();
+        LastStoneWeightTest();
     }
 }
