@@ -131,12 +131,39 @@ public class Test202104 {
         System.out.println(ans0); // apple
         System.out.println(ans1); // a
     }
+
+    public static void MostFrequentSubtreeSumTest() {
+        MostFrequentSubtreeSum test0 = new MostFrequentSubtreeSum();
+        MostFrequentSubtreeSum test1 = new MostFrequentSubtreeSum();
+
+        TreeNode node0_2 = new TreeNode(2);
+        TreeNode node0_3 = new TreeNode(-3);
+        TreeNode node0_5 = new TreeNode(5, node0_2, node0_3);
+
+        TreeNode node1_2 = new TreeNode(2);
+        TreeNode node1_5 = new TreeNode(-5);
+        TreeNode node1_5_2 = new TreeNode(5, node1_2, node1_5);
+
+        int[] ans0 = test0.findFrequentTreeSum(node0_5);
+        int[] ans1 = test1.findFrequentTreeSum(node1_5_2);
+
+        for (int iter : ans0) {
+            System.out.print(iter + " ");
+        } System.out.println(); // 2 -3 4
+
+        for (int iter : ans1) {
+            System.out.print(iter + " ");
+        } System.out.println(); // 2
+
+    }
+
     public static void main(String[] args) {
         //SingleElementInASortedArrayTest();
         //MaximumSubArrayTest();
         //SingleNumberTest();
         //QueueReconstructionByHeightTest();
         //LongestWordInDictionaryThroughDeletingTest();
-        LastStoneWeightTest();
+        //LastStoneWeightTest();
+        MostFrequentSubtreeSumTest();
     }
 }
