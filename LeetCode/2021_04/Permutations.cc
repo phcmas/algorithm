@@ -37,7 +37,7 @@ void makePermutation(vector<vector<int>> &answer, vector<int> &nums, int used, v
         if (used & (1 << i)) continue;
         permutation.push_back(nums[i]);
         newUsed |= (1 << i);
-        makePermutation(answer, nums, used, permutation);
+        makePermutation(answer, nums, newUsed, permutation);
         permutation.pop_back();
     }
 
@@ -48,7 +48,7 @@ vector<vector<int>> permute(vector<int> &nums) {
     int used = 1 << nums.size();
     vector<int> permutation;
 
-    makePermutation(answer, nums, used, permutation, 0);
+    makePermutation(answer, nums, used, permutation);
 
     return answer;
 }
@@ -68,6 +68,7 @@ int main() {
             cout << iter1 << " ";
         } cout << "] ";
     } // [1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]
+    cout << endl;
  
     for (vector<int> iter0 : ans1) {
         cout << "[";
@@ -75,13 +76,15 @@ int main() {
             cout << iter1 << " ";
         } cout << "] ";
     } // [0,1],[1,0]
+    cout << endl;
 
-     for (vector<int> iter0 : ans2) {
+    for (vector<int> iter0 : ans2) {
         cout << "[";
         for (int iter1 : iter0) {
             cout << iter1 << " ";
         } cout << "] ";
     } // [1]
+    cout << endl;
 
     return 0;
 }
