@@ -157,6 +157,41 @@ public class Test202104 {
 
     }
 
+    public static void MaximumNumberOfVowelsInASubstringOfGivenLengthTest() {
+        MaximumNumberOfVowelsInASubstringOfGivenLength test0 = new MaximumNumberOfVowelsInASubstringOfGivenLength();
+        MaximumNumberOfVowelsInASubstringOfGivenLength test1 = new MaximumNumberOfVowelsInASubstringOfGivenLength();
+        MaximumNumberOfVowelsInASubstringOfGivenLength test2 = new MaximumNumberOfVowelsInASubstringOfGivenLength();
+        MaximumNumberOfVowelsInASubstringOfGivenLength test3 = new MaximumNumberOfVowelsInASubstringOfGivenLength();
+        MaximumNumberOfVowelsInASubstringOfGivenLength test4 = new MaximumNumberOfVowelsInASubstringOfGivenLength();
+
+        String s0 = "abciiidef";
+        int k0 = 3;
+
+        String s1 = "aeiou";
+        int k1 = 2;
+
+        String s2 = "leetcode";
+        int k2 = 3;
+
+        String s3 = "rhythms";
+        int k3 = 4;
+
+        String s4 = "tryhard";
+        int k4 = 4;
+
+        int ans0 = test0.maxVowels(s0, k0);
+        int ans1 = test1.maxVowels(s1, k1);
+        int ans2 = test2.maxVowels(s2, k2);
+        int ans3 = test3.maxVowels(s3, k3);
+        int ans4 = test4.maxVowels(s4, k4);
+
+        System.out.println(ans0); // 3
+        System.out.println(ans1); // 2
+        System.out.println(ans2); // 2
+        System.out.println(ans3); // 0
+        System.out.println(ans4); // 1
+
+    }
     public static void main(String[] args) {
         //SingleElementInASortedArrayTest();
         //MaximumSubArrayTest();
@@ -164,6 +199,7 @@ public class Test202104 {
         //QueueReconstructionByHeightTest();
         //LongestWordInDictionaryThroughDeletingTest();
         //LastStoneWeightTest();
-        MostFrequentSubtreeSumTest();
+        //MostFrequentSubtreeSumTest();
+        MaximumNumberOfVowelsInASubstringOfGivenLengthTest();
     }
 }
