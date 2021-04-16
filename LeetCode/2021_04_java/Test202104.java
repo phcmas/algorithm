@@ -192,6 +192,24 @@ public class Test202104 {
         System.out.println(ans4); // 1
 
     }
+
+    public static void TwoCitySchedulingTest() {
+        TwoCityScheduling test0 = new TwoCityScheduling();
+        TwoCityScheduling test1 = new TwoCityScheduling();
+        TwoCityScheduling test2 = new TwoCityScheduling();
+
+        int[][] costs0 = {{10,20},  {30,200}, {400,50}, {30,20}};
+        int[][] costs1 = {{259,770}, {448,54}, {926,667}, {184,139}, {840,118}, {577,469}};
+        int[][] costs2 = {{515,563}, {451,713}, {537,709}, {343,819}, {855,779}, {457,60}, {650,359}, {631,42}};
+
+        int ans0 = test0.twoCitySchedCost(costs0);
+        int ans1 = test1.twoCitySchedCost(costs1);
+        int ans2 = test2.twoCitySchedCost(costs2);
+
+        System.out.println(ans0); // 110
+        System.out.println(ans1); // 1859
+        System.out.println(ans2); // 3086
+    }
     public static void main(String[] args) {
         //SingleElementInASortedArrayTest();
         //MaximumSubArrayTest();
@@ -200,6 +218,7 @@ public class Test202104 {
         //LongestWordInDictionaryThroughDeletingTest();
         //LastStoneWeightTest();
         //MostFrequentSubtreeSumTest();
-        MaximumNumberOfVowelsInASubstringOfGivenLengthTest();
+        //MaximumNumberOfVowelsInASubstringOfGivenLengthTest();
+        TwoCitySchedulingTest();
     }
 }
