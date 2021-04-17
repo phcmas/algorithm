@@ -210,6 +210,67 @@ public class Test202104 {
         System.out.println(ans1); // 1859
         System.out.println(ans2); // 3086
     }
+
+    public static void SplitAStringInBalancedStringsTest() {
+        SplitAStringInBalancedStrings test0 = new SplitAStringInBalancedStrings();
+        SplitAStringInBalancedStrings test1 = new SplitAStringInBalancedStrings();
+        SplitAStringInBalancedStrings test2 = new SplitAStringInBalancedStrings();
+        SplitAStringInBalancedStrings test3 = new SplitAStringInBalancedStrings();
+
+        String s0 = "RLRRLLRLRL";
+        String s1 = "RLLLLRRRLR";
+        String s2 = "LLLLRRRR";
+        String s3 = "RLRRRLLRLL";
+
+        int ans0 = test0.balancedStringSplit(s0);
+        int ans1 = test1.balancedStringSplit(s1);
+        int ans2 = test2.balancedStringSplit(s2);
+        int ans3 = test3.balancedStringSplit(s3);
+
+        System.out.println(ans0); // 4
+        System.out.println(ans1); // 3
+        System.out.println(ans2); // 1
+        System.out.println(ans3); // 2
+    }
+
+    public static void TwoSumIIInputArraryIsSortedTest() {
+        TwoSumIIInputArrayIsSorted test0 = new TwoSumIIInputArrayIsSorted();
+        TwoSumIIInputArrayIsSorted test1 = new TwoSumIIInputArrayIsSorted();
+        TwoSumIIInputArrayIsSorted test2 = new TwoSumIIInputArrayIsSorted();
+        TwoSumIIInputArrayIsSorted test3 = new TwoSumIIInputArrayIsSorted();
+
+        int[] numbers0 = {2,7,11,15};
+        int[] numbers1 = {2,3,4};
+        int[] numbers2 = {-1,0};
+        int[] numbers3 = {3,24,50,79,88,150,345};
+
+        int target0 = 9;
+        int target1 = 6;
+        int target2 = -1;
+        int target3 = 200;
+
+        int[] ans0 = test0.twoSum(numbers0, target0);
+        int[] ans1 = test1.twoSum(numbers1, target1);
+        int[] ans2 = test2.twoSum(numbers2, target2);
+        int[] ans3 = test3.twoSum(numbers3, target3);
+
+        for (int iter : ans0) {
+            System.out.print(iter + " ");
+        } System.out.println(); // 1 2
+        
+        for (int iter : ans1) {
+            System.out.print(iter + " ");
+        } System.out.println(); // 1 3
+
+        for (int iter : ans2) {
+            System.out.print(iter + " ");
+        } System.out.println(); // 1 2
+
+        for (int iter : ans3) {
+            System.out.print(iter + " ");
+        } System.out.println(); // 3 6
+    }
+
     public static void main(String[] args) {
         //SingleElementInASortedArrayTest();
         //MaximumSubArrayTest();
@@ -219,6 +280,9 @@ public class Test202104 {
         //LastStoneWeightTest();
         //MostFrequentSubtreeSumTest();
         //MaximumNumberOfVowelsInASubstringOfGivenLengthTest();
-        TwoCitySchedulingTest();
+        //TwoCitySchedulingTest();
+        //SplitAStringInBalancedStringsTest();
+        TwoSumIIInputArraryIsSortedTest();
     }
 }
+
