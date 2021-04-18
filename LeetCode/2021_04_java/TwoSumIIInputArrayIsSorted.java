@@ -28,16 +28,53 @@
 
 
 public class TwoSumIIInputArrayIsSorted {
+    private int nextLeft(int[] numbers, int target, int iLeft, int iRight) {
+        int left = iLeft;
+        int right = iRight;
+
+        while (left <= right) {
+            int middle = (left + right) / 2;
+
+            if (numbers[iRight] + numbers[middle] >= target) {
+                right = middle - 1;
+            } else {
+                left = middle + 1;
+            }
+        }
+
+        return left;
+    }
+
+    private int nextRight(int[] numbers, int target, int iLeft, int iRight) {
+        int left = iLeft;
+        int right = iRight;
+
+        while (left <= right) {
+            int middle = (left + right) / 2;
+
+            if (numbers[iLeft] + numbers[middle] <= target) {
+                left = middle + 1;
+            } else {
+                right = middle - 1;
+            }
+        }
+
+        return right;
+    }
+
     public int[] twoSum(int[] numbers, int target) {
         int[] answer = new int[2];
         int left = 0;
         int right = numbers.length - 1;
 
-        while (left < right) {
-            int middle = (left + right) / 2;
-
-
+        while (true) {
+            right = nextRight(numbers, target, left, right);
+            left = nextLeft(numbers, target, left, right);
+            if (numbers[left] + numbers[right] == target) break;
         }
+        
+        answer[0] = left + 1;
+        answer[1] = right + 1;
 
         return answer;
     }
