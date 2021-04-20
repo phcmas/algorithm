@@ -271,6 +271,26 @@ public class Test202104 {
         } System.out.println(); // 3 6
     }
 
+    public static void NextGreaterElementIITest() {
+        NextGreaterElementII test0 = new NextGreaterElementII();
+        NextGreaterElementII test1 = new NextGreaterElementII();
+
+        int[] nums0 = {1,2,1};
+        int[] nums1 = {1,2,3,4,3};
+
+        int[] ans0 = test0.nextGreaterElements(nums0);
+        int[] ans1 = test1.nextGreaterElements(nums1);
+
+        for (int iter : ans0) {
+            System.out.print(iter + " ");
+        } System.out.println(); // 2,-1,2
+
+        for (int iter : ans1) {
+            System.out.print(iter + " ");
+        } System.out.println(); // 2,3,4,-1,4
+        
+    }
+
     public static void main(String[] args) {
         //SingleElementInASortedArrayTest();
         //MaximumSubArrayTest();
@@ -282,7 +302,8 @@ public class Test202104 {
         //MaximumNumberOfVowelsInASubstringOfGivenLengthTest();
         //TwoCitySchedulingTest();
         //SplitAStringInBalancedStringsTest();
-        TwoSumIIInputArraryIsSortedTest();
+        //TwoSumIIInputArraryIsSortedTest();
+        NextGreaterElementIITest();
     }
 }
 
