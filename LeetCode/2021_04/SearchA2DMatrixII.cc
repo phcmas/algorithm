@@ -27,8 +27,40 @@
 
 using namespace std;
 
+bool searchInternal(vector<vector<int>> &matrix, int top, int left, int bottom, int right, int target) {
+    int middleRow = (top + bottom) / 2;
+    int middleCol = (left + right) / 2;
+    bool first = false;
+    bool second = false;
+    bool third = false;
+    bool fourth = false;
+
+    if (left == right && top == bottom) return matrix[top][left] == target;
+
+    if (matrix[top][left] <= target && matrix[middleRow][middleCol] >= target) {
+        first = searchInternal(matrix, top, left, middleRow, middleCol, target);
+    }
+
+    if (middleCol < matrix[0].size()-1 && 
+        matrix[top][middleCol+1] <= target && matrix[middleRow][right] >= target) {
+            second = searchInternal(matrix, top, middleCol+1, middleRow, right, target);
+    }
+
+    if (middleRow < matrix.size()-1 &&
+        matrix[middleRow+1][left] <= target && matrix[bottom][middleCol] >= target) {
+            third = searchInternal(matrix, middleRow+1, left, bottom, middleCol, target);
+    }
+
+    if (middleCol < matrix[0].size()-1 && middleRow < matrix.size()-1 &&
+        matrix[middleRow+1][middleCol+1] <= target && matrix[bottom][right] >= target) {
+            fourth = searchInternal(matrix, middleRow+1, middleCol+1, bottom, right, target);
+    }
+
+    return first || second || third || fourth;
+}
+
 bool searchMatrix(vector<vector<int>>& matrix, int target) {
-        
+    return searchInternal(matrix, 0, 0, matrix.size()-1, matrix[0].size()-1, target);
 }
 
 int main() {
