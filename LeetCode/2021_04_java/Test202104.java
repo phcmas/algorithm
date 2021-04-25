@@ -291,6 +291,24 @@ public class Test202104 {
         
     }
 
+    public static void LongestArithmeticSubsequenceTest() {
+        LongestArithmeticSubsequence test0 = new LongestArithmeticSubsequence();
+        LongestArithmeticSubsequence test1 = new LongestArithmeticSubsequence();
+        LongestArithmeticSubsequence test2 = new LongestArithmeticSubsequence();
+
+        int[] A0 = {3,6,9,12};
+        int[] A1 = {9,4,7,2,10};
+        int[] A2 = {20,1,15,3,10,5,8};
+
+        int ans0 = test0.longestArithSeqLength(A0);
+        int ans1 = test0.longestArithSeqLength(A1);
+        int ans2 = test0.longestArithSeqLength(A2);
+
+        System.out.println(ans0); // 4
+        System.out.println(ans1); // 3
+        System.out.println(ans2); // 4
+    }
+
     public static void main(String[] args) {
         //SingleElementInASortedArrayTest();
         //MaximumSubArrayTest();
@@ -303,7 +321,8 @@ public class Test202104 {
         //TwoCitySchedulingTest();
         //SplitAStringInBalancedStringsTest();
         //TwoSumIIInputArraryIsSortedTest();
-        NextGreaterElementIITest();
+        //NextGreaterElementIITest();
+        LongestArithmeticSubsequenceTest();
     }
 }
 
