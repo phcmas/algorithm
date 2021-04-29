@@ -35,17 +35,17 @@ ListNode *reverseBetween(ListNode* head, int left, int right) {
     ListNode *before = nullptr;
     ListNode *after = nullptr;
     ListNode *iter = head;
-    int index = 1;
 
-    for (int i = 0; i < left-1; ++i) {
+    for (int i = 1; i < left-1; ++i) {
         iter = iter->next;
     }
+
     before = iter;
     ListNode *cur = iter->next;
     ListNode *next = cur->next;
     ListNode *nextNext = nullptr;
 
-    for (int i = 0; i < right-left; ++i) {
+    for (int i = left+1; i <= right; ++i) {
         nextNext = next->next;
         next->next = cur;
         cur = next;
@@ -53,7 +53,7 @@ ListNode *reverseBetween(ListNode* head, int left, int right) {
     }
 
     before->next->next = nextNext;
-    nextNext->next = before;
+    before->next = cur;
 
     return head;
 }
