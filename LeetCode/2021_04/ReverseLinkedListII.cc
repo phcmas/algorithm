@@ -32,11 +32,11 @@ struct ListNode {
 ListNode *reverseBetween(ListNode* head, int left, int right) {
     if (head == nullptr || left == right) return head;
 
+    ListNode *dummy = new ListNode(-1, head);
     ListNode *before = nullptr;
-    ListNode *after = nullptr;
-    ListNode *iter = head;
+    ListNode *iter = dummy;
 
-    for (int i = 1; i < left-1; ++i) {
+    for (int i = 0; i < left-1; ++i) {
         iter = iter->next;
     }
 
@@ -55,7 +55,7 @@ ListNode *reverseBetween(ListNode* head, int left, int right) {
     before->next->next = nextNext;
     before->next = cur;
 
-    return head;
+    return dummy->next;
 }
 
 int main() {
@@ -67,8 +67,12 @@ int main() {
 
     ListNode *node15 = new ListNode(1);
 
+    ListNode *node25 = new ListNode(5);
+    ListNode *node23 = new ListNode(3, node25);
+
     ListNode *ans0 = reverseBetween(node01, 2, 4);
     ListNode *ans1 = reverseBetween(node15, 1, 1);
+    ListNode *ans2 = reverseBetween(node23, 1, 2);
 
     ListNode *iter = ans0;
     while (iter != nullptr) {
@@ -82,4 +86,9 @@ int main() {
         iter = iter->next;
     } cout << endl; // 5
 
+    iter = ans2;
+    while (iter != nullptr) {
+        cout << iter->val << " ";
+        iter = iter->next;
+    } cout << endl; // 5 3
 }
