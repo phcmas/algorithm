@@ -309,6 +309,27 @@ public class Test202104 {
         System.out.println(ans2); // 4
     }
 
+    public static void JumpGameTest() {
+        JumpGame test0 = new JumpGame();
+        JumpGame test1 = new JumpGame();
+        JumpGame test2 = new JumpGame();
+
+        int[] nums0 = {2,3,1,1,4};
+        int[] nums1 = {3,2,1,0,4};
+        int[] nums2 = {2,0,1,0,1};
+        int[] nums3 = {3,0,0,0};
+
+        boolean ans0 = test0.canJump(nums0);
+        boolean ans1 = test1.canJump(nums1);
+        boolean ans2 = test2.canJump(nums2);
+        boolean ans3 = test2.canJump(nums3);
+
+        System.out.println(ans0); // true
+        System.out.println(ans1); // false
+        System.out.println(ans2); // false
+        System.out.println(ans3); // true
+    }
+
     public static void main(String[] args) {
         //SingleElementInASortedArrayTest();
         //MaximumSubArrayTest();
@@ -322,7 +343,8 @@ public class Test202104 {
         //SplitAStringInBalancedStringsTest();
         //TwoSumIIInputArraryIsSortedTest();
         //NextGreaterElementIITest();
-        LongestArithmeticSubsequenceTest();
+        //LongestArithmeticSubsequenceTest();
+        JumpGameTest();
     }
 }
 
