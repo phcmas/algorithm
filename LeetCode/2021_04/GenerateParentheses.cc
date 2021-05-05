@@ -61,5 +61,8 @@ int main() {
         cout << iter << " ";
     } cout << endl;
 
+    int test = 0;
+    cout << (test-1)/2 << endl;
+
     return 0;
 }
