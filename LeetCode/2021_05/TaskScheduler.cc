@@ -38,14 +38,66 @@
  *  The integer n is in the range [0, 100]. **/
 
 #include <vector>
+#include <queue>
+#include <cstring>
 #include <iostream>
 
 using namespace std;
 
-int leastInterval(vector<char>& tasks, int n) {
-            
+int count[26];
+
+int leastInterval(vector<char> &tasks, int n) {
+    int answer = 0;
+    priority_queue<int> pq;
+    vector<int> pickedTask;
+
+    memset(count, 0, sizeof(count));
+    pickedTask.reserve(26);
+    
+    for (int i = 0; i < tasks.size(); ++i) {
+        count[tasks[i]-'A']++;
+    }
+
+    for (int i = 0; i < 26; ++i) {
+        if (count[i] > 0) pq.push(count[i]);
+    }
+
+    while (!pq.empty()) {
+        pickedTask.clear();
+
+        for (int i = 0; i < n+1; ++i) {
+            if (!pq.empty()) {
+                pickedTask.push_back(pq.top());
+                pq.pop();
+            }
+        }
+
+        for (int t : pickedTask) {
+            if (t > 1) pq.push(t-1);
+        }
+
+        answer += n+1;
+    }
+
+    answer -= (n+1-pickedTask.size());
+    return answer;
 }
 
 int main() {
+    vector<char> tasks0 {'A','A','A','B','B','B'};
+    vector<char> tasks1 {'A','A','A','B','B','B'};
+    vector<char> tasks2 {'A','A','A','A','A','A','B','C','D','E','F','G'};
+
+    int ans0 = leastInterval(tasks0, 2);
+    int ans1 = leastInterval(tasks1, 0);
+    int ans2 = leastInterval(tasks2, 2);
+
+    cout << ans0 << endl; // 8
+    cout << ans1 << endl; // 6
+    cout << ans2 << endl; // 16
+
     return 0;
 }
+
+
+
