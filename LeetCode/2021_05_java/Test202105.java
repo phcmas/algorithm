@@ -51,11 +51,34 @@ public class Test202105 {
         System.out.println(ans1); // 9
         System.out.println(ans2); // 4
     }
+    
+    public static void MaximumAscendingSubarraySumTest() {
+        MaximumAscendingSubarraySum test0 = new MaximumAscendingSubarraySum();
+        MaximumAscendingSubarraySum test1 = new MaximumAscendingSubarraySum();
+        MaximumAscendingSubarraySum test2 = new MaximumAscendingSubarraySum();
+        MaximumAscendingSubarraySum test3 = new MaximumAscendingSubarraySum();
+
+        int[] nums0 = {10,20,30,5,10,50};
+        int[] nums1 = {10,20,30,40,50};
+        int[] nums2 = {12,17,15,13,10,11,12};
+        int[] nums3 = {100,10,1};
+
+        int ans0 = test0.maxAscendingSum(nums0);
+        int ans1 = test1.maxAscendingSum(nums1);
+        int ans2 = test2.maxAscendingSum(nums2);
+        int ans3 = test3.maxAscendingSum(nums3);
+
+        System.out.println(ans0); // 65
+        System.out.println(ans1); // 150
+        System.out.println(ans2); // 33
+        System.out.println(ans3); // 100
+    }
 
     public static void main(String[] args) {
         //MagneticForceBetweenTwoBallsTest();
         //MaximizeSumOfArrayAfterKNegationsTest();
         //FindBottomLeftTreeValueTest();
-        DeleteAndEarnTest();
+        //DeleteAndEarnTest();
+        MaximumAscendingSubarraySumTest();
     }
 }
