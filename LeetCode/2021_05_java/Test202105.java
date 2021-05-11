@@ -12,8 +12,50 @@ public class Test202105 {
         System.out.println(ans0); // 3
         System.out.println(ans1); // 999999999
     }
+    
+    public static void MaximizeSumOfArrayAfterKNegationsTest() {
+        MaximizeSumOfArrayAfterKNegations test0 = new MaximizeSumOfArrayAfterKNegations();
+        MaximizeSumOfArrayAfterKNegations test1 = new MaximizeSumOfArrayAfterKNegations();
+        MaximizeSumOfArrayAfterKNegations test2 = new MaximizeSumOfArrayAfterKNegations();
+
+        int[] A0 = {4,2,3};
+        int[] A1 = {3,-1,0,2};
+        int[] A2 = {2,-3,-1,5,-4};
+
+        int ans0 = test0.largestSumAfterKNegations(A0, 1);
+        int ans1 = test1.largestSumAfterKNegations(A1, 3);
+        int ans2 = test2.largestSumAfterKNegations(A2, 2);
+
+        System.out.println(ans0); // 5
+        System.out.println(ans1); // 6
+        System.out.println(ans2); // 13
+    }
+
+    public static void FindBottomLeftTreeValueTest() {
+        // 테스트 만드는거 귀찮아서 생략.
+    }
+ 
+    public static void DeleteAndEarnTest() {
+        DeleteAndEarn test0 = new DeleteAndEarn();
+        DeleteAndEarn test1 = new DeleteAndEarn();
+
+        int[] nums0 = {3,4,2};
+        int[] nums1 = {2,2,3,3,3,4};
+        int[] nums2 = {3,1};
+
+        int ans0 = test0.deleteAndEarn(nums0);
+        int ans1 = test0.deleteAndEarn(nums1);
+        int ans2 = test0.deleteAndEarn(nums2);
+        
+        System.out.println(ans0); // 6
+        System.out.println(ans1); // 9
+        System.out.println(ans2); // 4
+    }
 
     public static void main(String[] args) {
-        MagneticForceBetweenTwoBallsTest();
+        //MagneticForceBetweenTwoBallsTest();
+        //MaximizeSumOfArrayAfterKNegationsTest();
+        //FindBottomLeftTreeValueTest();
+        DeleteAndEarnTest();
     }
 }
