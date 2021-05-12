@@ -17,18 +17,7 @@ import java.util.ArrayDeque;
 import java.util.HashSet;
 import java.util.Queue;
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
+
 
 public class FindBottomLeftTreeValue {
     public int findBottomLeftValue(TreeNode root) {
