@@ -28,12 +28,6 @@ using namespace std;
 vector<vector<int>> diagonalSort(vector<vector<int>> &mat) {
     int rowCount = mat.size();
     int columCount = mat[0].size();
-    vector<vector<int>> answer;
-
-    answer.resize(rowCount);
-    for (vector<int> &iter : answer) {
-        iter.resize(columCount);
-    }
 
     for (int r = rowCount-1; r >= 0; --r) {
         vector<int> diagonal;
@@ -46,13 +40,13 @@ vector<vector<int>> diagonalSort(vector<vector<int>> &mat) {
         sort(diagonal.begin(), diagonal.end());
 
         for (int i = 0; i < count; ++i) {
-            answer[r+i][i] = diagonal[i];
+            mat[r+i][i] = diagonal[i];
         }
     }
 
     for (int c = 1; c < columCount; ++c) {
         vector<int> diagonal;
-        int count = 0;
+        int count = min(rowCount, columCount-c);
 
         for (int i = 0; i < count; ++i) {
             diagonal.push_back(mat[i][c+i]);
@@ -61,14 +55,24 @@ vector<vector<int>> diagonalSort(vector<vector<int>> &mat) {
         sort(diagonal.begin(), diagonal.end());
 
         for (int i = 0; i < count; ++i) {
-            answer[i][c+i] = diagonal[i];
+            mat[i][c+i] = diagonal[i];
         }
     }
 
-    return answer;
+    return mat;
 
 }
 
 int main() {
+    vector<vector<int>> mat0 {{3,3,1,1},{2,2,1,2},{1,1,1,2}};
+    vector<vector<int>> ans0 = diagonalSort(mat0);
+
+    for (vector<int> row : ans0) {
+        for (int num : row) {
+            cout << num << " ";
+        }
+        cout << endl;
+    }
+
     return 0;
 }
