@@ -31,14 +31,33 @@
 
 using namespace std;
 
-int scoreOfParentheses(string s) {
-    string stack = '(';
+int scoreOfParentheses(const string &s, int &index) {
+    string stack;
     int answer = 0;
-    int count = 0;
-    int score = 0;
+    int sum = 0;
+    
+    stack += s[index];
+    index++;
 
-    stack.append(s[0]);
-    for (int i = 1; i < s.length(); ++i) {
+    while (stack.length() > 0) {
+        if (s[index] == '(') {
+            sum += scoreOfParentheses(s, index);
+        } else {
+            sum = sum == 0 ? 1 : sum * 2;
+            stack.pop_back();
+            index++;
+        }
+    }
+
+    return sum;
+}
+
+int scoreOfParentheses(string s) {
+    int index = 0;
+    int answer = 0;
+
+    while (index < s.length()) {
+        answer += scoreOfParentheses(s, index);
     }
 
     return answer;
