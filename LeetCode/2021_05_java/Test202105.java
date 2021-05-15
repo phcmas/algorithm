@@ -74,11 +74,30 @@ public class Test202105 {
         System.out.println(ans3); // 100
     }
 
+    public static void MinimumOperationsToMakeTheArrayIncreasingTest() {
+        MinimumOperationsToMakeTheArrayIncreasing test0 = new MinimumOperationsToMakeTheArrayIncreasing();
+        MinimumOperationsToMakeTheArrayIncreasing test1 = new MinimumOperationsToMakeTheArrayIncreasing();
+        MinimumOperationsToMakeTheArrayIncreasing test2 = new MinimumOperationsToMakeTheArrayIncreasing();
+
+        int[] nums0 = {1,1,1};
+        int[] nums1 = {1,5,2,4,1};
+        int[] nums2 = {8};
+
+        int ans0 = test0.minOperations(nums0);
+        int ans1 = test0.minOperations(nums1);
+        int ans2 = test0.minOperations(nums2);
+
+        System.out.println(ans0); // 3
+        System.out.println(ans1); // 14
+        System.out.println(ans2); // 0
+    }
+
     public static void main(String[] args) {
         //MagneticForceBetweenTwoBallsTest();
         //MaximizeSumOfArrayAfterKNegationsTest();
         //FindBottomLeftTreeValueTest();
         //DeleteAndEarnTest();
-        MaximumAscendingSubarraySumTest();
+        //MaximumAscendingSubarraySumTest();\
+        MinimumOperationsToMakeTheArrayIncreasingTest();
     }
 }
