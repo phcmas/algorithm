@@ -3,6 +3,9 @@ build
 LeetCode/C++/*.dSYM
 LeetCode/C++/*.out
 LeetCode/C++/*.out.dSYM
+LeetCode/C++/common/*.out
+LeetCode/C++/common/*.out
+LeetCode/C++/common/*.out.dSYM
 LeetCode/C++/CMakeFiles/
 LeetCode/C++/cmake_install.cmake
 LeetCode/C++/CMakeCache.txt
