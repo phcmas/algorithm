@@ -3,6 +3,7 @@ build
 LeetCode/C++/*.dSYM
 LeetCode/C++/*.out
 LeetCode/C++/*.out.dSYM
+LeetCode/C++/algorithm
 LeetCode/C++/common/*.out
 LeetCode/C++/common/*.out
 LeetCode/C++/common/*.out.dSYM
