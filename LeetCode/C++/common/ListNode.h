@@ -1,3 +1,6 @@
+#include <vector>
+using namespace std;
+
 class ListNode {
 public:
 	int val;
@@ -5,5 +8,9 @@ public:
     ListNode();
     ListNode(int x);
 	ListNode(int x, ListNode *next);
-	void printList();
 };
+
+namespace util {
+    ListNode *makeLinkedList(vector<int> nums);
+	void printList(ListNode *head);
+}
