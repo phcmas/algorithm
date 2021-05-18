@@ -40,18 +40,3 @@ namespace util {
     } 
 }
 
-int main() {
-    vector<int> nums0 {1,3,4,5,1};
-    vector<int> nums1 {3,6,4,1,10,22,3,10};
-    vector<int> nums2 {4,5,3,6,1,0,1};
-
-    ListNode *ans0 = util::makeLinkedList(nums0);
-    ListNode *ans1 = util::makeLinkedList(nums1);
-    ListNode *ans2 = util::makeLinkedList(nums2);
-
-    util::printList(ans0);
-    util::printList(ans1);
-    util::printList(ans2);
-
-
-}
