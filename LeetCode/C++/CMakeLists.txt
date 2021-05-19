@@ -13,7 +13,7 @@ file(GLOB SRC_FILES
 
 include_directories(${CMAKE_SOURCE_DIR}/common)
 
-add_library(common SHARED ./common/ListNode.cc)
+add_subdirectory(common)
 add_executable(algorithm ${SRC_FILES})
 target_link_libraries(algorithm PUBLIC common)
 
