@@ -24,7 +24,7 @@ namespace util {
         return head;
     }
 
-    void printList(ListNode *head) { 
+    void printList(ListNode *head) {
         ListNode *iter = head;
 
         if (head == nullptr) cout << "no element" << endl;
@@ -35,8 +35,7 @@ namespace util {
             iter = iter->next;
         }
 
-        cout << iter->val << "]";
-        cout << endl;
+        cout << iter->val << "]" << endl;
     } 
 }
 
