@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Test202105 {
     public static void MagneticForceBetweenTwoBallsTest() {
         MagneticForceBetweenTwoBalls test0 = new MagneticForceBetweenTwoBalls();
@@ -92,12 +94,58 @@ public class Test202105 {
         System.out.println(ans2); // 0
     }
 
+    public static void UniquePathIITest() {
+        UniquePathII test0 = new UniquePathII();
+        UniquePathII test1 = new UniquePathII();
+
+        int[][] grid0 = {{0,0,0},{0,1,0},{0,0,0}};
+        int[][] grid1 = {{0,1},{0,0}};
+
+        int ans0 = test0.uniquePathsWithObstacles(grid0);
+        int ans1 = test1.uniquePathsWithObstacles(grid1);
+
+        System.out.println(ans0); // 2
+        System.out.println(ans1); // 1
+    }
+
+    public static void SplitArrayIntoFibonacciSequenceTest() {
+        SplitArrayIntoFibonacciSequence test = new SplitArrayIntoFibonacciSequence();
+
+        String nums0 = "123456579";
+        String nums1 = "11235813";
+        String nums2 = "0123";
+        String nums3 = "1101111";
+
+        List<Integer> ans0 = test.splitIntoFibonacci(nums0);
+        List<Integer> ans1 = test.splitIntoFibonacci(nums1);
+        List<Integer> ans2 = test.splitIntoFibonacci(nums2);
+        List<Integer> ans3 = test.splitIntoFibonacci(nums3);
+
+        for (int iter : ans0) {
+            System.out.print(iter);
+        } System.out.println();
+
+        for (int iter : ans1) {
+            System.out.print(iter);
+        } System.out.println();
+
+        for (int iter : ans2) {
+            System.out.print(iter);
+        } System.out.println();
+
+        for (int iter : ans3) {
+            System.out.print(iter);
+        } System.out.println();
+    }
+
     public static void main(String[] args) {
         //MagneticForceBetweenTwoBallsTest();
         //MaximizeSumOfArrayAfterKNegationsTest();
         //FindBottomLeftTreeValueTest();
         //DeleteAndEarnTest();
         //MaximumAscendingSubarraySumTest();\
-        MinimumOperationsToMakeTheArrayIncreasingTest();
+        //MinimumOperationsToMakeTheArrayIncreasingTest();
+        //UniquePathIITest();
+        SplitArrayIntoFibonacciSequenceTest();
     }
 }
