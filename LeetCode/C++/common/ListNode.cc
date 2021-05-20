@@ -27,7 +27,10 @@ namespace util {
     void printList(ListNode *head) {
         ListNode *iter = head;
 
-        if (head == nullptr) cout << "no element" << endl;
+        if (head == nullptr) {
+            cout << "no element" << endl;
+            return;
+        }
 
         cout << "[";
         while (iter->next != nullptr) {

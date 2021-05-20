@@ -41,7 +41,10 @@ namespace util {
 	}
 
 	void printTree(TreeNode *root) {
-		if (root == nullptr) return;
+		if (root == nullptr) {
+			cout << "no element" << endl;
+			return;
+		}
 		
 		queue<TreeNode *> queue;
 		string str = "";
