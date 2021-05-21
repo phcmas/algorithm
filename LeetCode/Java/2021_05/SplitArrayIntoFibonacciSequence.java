@@ -38,19 +38,21 @@
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class SplitArrayIntoFibonacciSequence {
 
     private boolean checkFibonacci(String num, int index, String second, String third, List<Integer> nums) {
-        int thirdNum = Integer.parseInt(third);
-        int secondNum = Integer.parseInt(second);
-        String diff = String.valueOf(thirdNum-secondNum);
-        
-        if (index >= diff.length()-1) return false;
         if (index < 0) return true;
 
-        String first = num.substring(index-diff.length()+1, index);
+        int thirdNum = Integer.parseInt(third);
+        int secondNum = Integer.parseInt(second);
+        if (thirdNum-secondNum < 0) return false;
 
+        String diff = String.valueOf(thirdNum-secondNum);
+        if (index < diff.length()-1) return false;
+
+        String first = num.substring(index-diff.length()+1, index+1);
         if (first.equals(diff)) {
             nums.add(thirdNum-secondNum);
             return checkFibonacci(num, index-diff.length(), first, second, nums);
@@ -62,17 +64,21 @@ public class SplitArrayIntoFibonacciSequence {
     public List<Integer> splitIntoFibonacci(String num) {
 
         for (int i = num.length()-1; i >= 0; --i) {
-            List<Integer> nums = new ArrayList<>();
             String third = num.substring(i);
 
-            for (int j = 1; j <= third.length(); ++i) {
+            for (int j = 1; j <= third.length(); ++j) {
+                List<Integer> nums = new ArrayList<>();
                 String second = num.substring(i-j, i);
-                if (checkFibonacci(num, i-j-1, second, third, nums)) {
+                nums.add(Integer.parseInt(third));
+                nums.add(Integer.parseInt(second));
+
+                if (checkFibonacci(num, i-j-1, second, third, nums) && nums.size() >= 3) {
+                    Collections.reverse(nums);
                     return nums;
                 }
             }
         }
 
-        return null;
+        return new ArrayList<>();
     }
 }

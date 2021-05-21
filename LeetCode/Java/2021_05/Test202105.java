@@ -122,19 +122,19 @@ public class Test202105 {
         List<Integer> ans3 = test.splitIntoFibonacci(nums3);
 
         for (int iter : ans0) {
-            System.out.print(iter);
+            System.out.print(iter+ " ");
         } System.out.println();
 
         for (int iter : ans1) {
-            System.out.print(iter);
+            System.out.print(iter + " ");
         } System.out.println();
 
         for (int iter : ans2) {
-            System.out.print(iter);
+            System.out.print(iter + " ");
         } System.out.println();
 
         for (int iter : ans3) {
-            System.out.print(iter);
+            System.out.print(iter + " ");
         } System.out.println();
     }
 
