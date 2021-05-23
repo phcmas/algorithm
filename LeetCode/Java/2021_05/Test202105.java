@@ -137,6 +137,28 @@ public class Test202105 {
             System.out.print(iter + " ");
         } System.out.println();
     }
+    
+    public static void MostStonesRemovedWithSameRowOrColumnTest() {
+        MostStonesRemovedWithSameRowOrColumn test0 = new MostStonesRemovedWithSameRowOrColumn();
+        MostStonesRemovedWithSameRowOrColumn test1 = new MostStonesRemovedWithSameRowOrColumn();
+        MostStonesRemovedWithSameRowOrColumn test2 = new MostStonesRemovedWithSameRowOrColumn();
+        MostStonesRemovedWithSameRowOrColumn test3 = new MostStonesRemovedWithSameRowOrColumn();
+
+        int[][] stones0 = {{0,0},{0,1},{1,0},{1,2},{2,1},{2,2}};
+        int[][] stones1 = {{0,0},{0,2},{1,1},{2,0},{2,2}};
+        int[][] stones2 = {{0,0}};
+        int[][] stones3 = {{0,1},{1,0},{1,1}};
+
+        int ans0 = test0.removeStones(stones0);
+        int ans1 = test1.removeStones(stones1);
+        int ans2 = test2.removeStones(stones2);
+        int ans3 = test3.removeStones(stones3);
+
+        System.out.println(ans0); // 5
+        System.out.println(ans1); // 3
+        System.out.println(ans2); // 0
+        System.out.println(ans3); // 2
+    }
 
     public static void main(String[] args) {
         //MagneticForceBetweenTwoBallsTest();
@@ -146,6 +168,7 @@ public class Test202105 {
         //MaximumAscendingSubarraySumTest();\
         //MinimumOperationsToMakeTheArrayIncreasingTest();
         //UniquePathIITest();
-        SplitArrayIntoFibonacciSequenceTest();
+        //SplitArrayIntoFibonacciSequenceTest();
+        MostStonesRemovedWithSameRowOrColumnTest();
     }
 }
