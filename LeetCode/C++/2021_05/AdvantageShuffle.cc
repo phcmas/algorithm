@@ -19,15 +19,43 @@
 
 #include <vector>
 #include <iostream>
+#include <cstring>
+#include <algorithm>
 
 using namespace std;
 
-int findLowerBound(vector<int> &nums, int num) {
+bool used[10000];
 
+int findAdvantage(vector<int> &nums, int num) {
+    auto upper = upper_bound(nums.begin(), nums.end(), num);
+    int index = distance(nums.begin(), upper);
+
+    for (int i = index; i < nums.size(); ++i) {
+        if (!used[i]) {
+            used[i] = true;
+            return nums[i];
+        }
+    }
+
+    for (int i = 0; i < index; ++i) {
+        if (!used[i]) {
+            used[i] = true;
+            return nums[i];
+        }
+    }
 }
 
 vector<int> advantageCount(vector<int> &nums1, vector<int> &nums2) {
+    vector<int> answer(nums2.size(), -1);
+    memset(used, false, sizeof(used));
     sort(nums1.begin(), nums1.end());
+
+    for (int i = 0; i < nums2.size(); ++i) {
+        int advantage = findAdvantage(nums1, nums2[i]);
+        if (advantage != -1) answer[i] = advantage;
+    }
+
+    return answer;
 }
 
 int main() {
@@ -41,10 +69,10 @@ int main() {
     vector<int> ans1 = advantageCount(nums11, nums12);
 
     for (int iter : ans0)  cout << iter << " ";
-    cout << endl;
+    cout << endl; // 2 11 7 15
 
     for (int iter : ans1)  cout << iter << " ";
-    cout << endl;
+    cout << endl; // 24 32 8 12
 
     return 0;
 }
