@@ -160,6 +160,20 @@ public class Test202105 {
         System.out.println(ans3); // 2
     }
 
+    public static void LongestConsecutiveSequenceTest() {
+        LongestConsecutiveSequence test0 = new LongestConsecutiveSequence();
+        LongestConsecutiveSequence test1 = new LongestConsecutiveSequence();
+
+        int[] nums0 = {100,4,200,1,3,2};
+        int[] nums1 = {0,3,7,2,5,8,4,6,0,1};
+
+        int ans0 = test0.longestConsecutive(nums0);
+        int ans1 = test0.longestConsecutive(nums1);
+
+        System.out.println(ans0); // 4
+        System.out.println(ans1); // 9
+    }
+
     public static void main(String[] args) {
         //MagneticForceBetweenTwoBallsTest();
         //MaximizeSumOfArrayAfterKNegationsTest();
@@ -169,6 +183,7 @@ public class Test202105 {
         //MinimumOperationsToMakeTheArrayIncreasingTest();
         //UniquePathIITest();
         //SplitArrayIntoFibonacciSequenceTest();
-        MostStonesRemovedWithSameRowOrColumnTest();
+        //MostStonesRemovedWithSameRowOrColumnTest();
+        LongestConsecutiveSequenceTest();
     }
 }
