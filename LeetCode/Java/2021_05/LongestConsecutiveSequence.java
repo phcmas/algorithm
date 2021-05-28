@@ -15,20 +15,86 @@
  *  0 <= nums.length <= 10^5
  *  -10^9 <= nums[i] <= 10^9 **/
 
-public class LongestConsecutiveSequence {
+import java.util.Map;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.HashSet;
 
-    public int longestConsecutive(int[] nums) {
-        if (nums.length == 0) return 0;
-        
-        int min = nums[0];
-        int max = nums[0];
+public class LongestConsecutiveSequence {
+    int[] parent;
+    int[] child;
+    Map<Integer, Integer> numToIndex;
+
+    private void initialize(int[] nums) {
+        numToIndex = new HashMap<>();
+        parent = new int[nums.length];
+        child = new int[nums.length];
 
         for (int i = 0; i < nums.length; ++i) {
-            min = Math.min(min, nums[i]);
-            max = Math.max(max, nums[i]);
+            parent[i] = i;
+            child[i] = i;
+            numToIndex.put(nums[i], i);
+        }
+    }
+
+    private int lengthOfSequence(int[] child, int root) {
+        int num = root;
+        int length = 1;
+
+        while (child[num] != num) {
+            num = child[num];
+            length++;
         }
 
-        // union find 로 할 수 있을 듯 내일 꼭 푼다
-
+        return length; 
     }
+
+    // 아래는 내가 구현한 풀이
+    public int longestConsecutive(int[] nums) {
+        int answer = 0;
+
+        if (nums.length == 0) return 0;
+        initialize(nums);
+        
+        for (int i = 0; i < nums.length; ++i) {
+            int childIndex = numToIndex.containsKey(nums[i]-1) ? numToIndex.get(nums[i]-1) : -1;
+            int parentIndex = numToIndex.containsKey(nums[i]+1) ? numToIndex.get(nums[i]+1) : -1;
+
+            if (childIndex != -1) child[i] = childIndex;
+            if (parentIndex != -1) parent[i] = parentIndex;
+        }
+
+        for (int i = 0; i < nums.length; ++i) {
+            if (parent[i] == i) {
+                answer = Math.max(answer, lengthOfSequence(child, i));
+            }
+        }
+
+        return answer;
+    }
+
+    // 아래는 Discussion 보고 구현. 간단하구만 와우
+    public int longestConsecutive2(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        int length = 0;
+
+        for (int i = 0; i < nums.length; ++i) {
+            set.add(nums[i]);
+        }
+
+        for (int i = 0; i < nums.length; ++i) {
+            if (!set.contains(nums[i])) continue;
+            
+            int prev = nums[i]-1;
+            int next = nums[i]+1;
+
+            while (set.contains(prev)) set.remove(prev--);
+            while (set.contains(next)) set.remove(next++);
+            length = Math.max(length, next-prev-1);
+        }
+
+        return length;
+    }
+
 }

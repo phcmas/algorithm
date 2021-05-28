@@ -166,12 +166,15 @@ public class Test202105 {
 
         int[] nums0 = {100,4,200,1,3,2};
         int[] nums1 = {0,3,7,2,5,8,4,6,0,1};
+        int[] nums2 = {0,-1};
 
-        int ans0 = test0.longestConsecutive(nums0);
-        int ans1 = test0.longestConsecutive(nums1);
+        int ans0 = test0.longestConsecutive2(nums0);
+        int ans1 = test0.longestConsecutive2(nums1);
+        int ans2 = test0.longestConsecutive2(nums2);
 
         System.out.println(ans0); // 4
         System.out.println(ans1); // 9
+        System.out.println(ans2); // 2
     }
 
     public static void main(String[] args) {
