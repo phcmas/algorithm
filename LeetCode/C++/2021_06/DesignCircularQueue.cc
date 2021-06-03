@@ -75,13 +75,11 @@ public:
     }
     
     int Front() {
-        if (size == 0) return -1;
-        return nums[front];
+        return size == 0 ? -1 : nums[front];
     }
     
     int Rear() {
-        if (size == 0) return -1;
-        return nums[rear];
+        return size == 0 ? -1 : nums[rear];
     }
     
     bool isEmpty() {
