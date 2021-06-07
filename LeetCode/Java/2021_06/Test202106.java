@@ -1,4 +1,5 @@
 
+import java.util.List;
 
 public class Test202106 {
     public static void VerifyPreorderSerializationOfABinaryTreeTest() {
@@ -26,7 +27,50 @@ public class Test202106 {
         System.out.println(ans3); // true
         System.out.println(ans4); // true
     }
+
+    public static void MinimumSubsequenceInNonIncreasingOrderTest() {
+        MinimumSubsequenceInNonIncreasingOrder test0 = new MinimumSubsequenceInNonIncreasingOrder();
+        MinimumSubsequenceInNonIncreasingOrder test1 = new MinimumSubsequenceInNonIncreasingOrder();
+        MinimumSubsequenceInNonIncreasingOrder test2 = new MinimumSubsequenceInNonIncreasingOrder();
+
+        int[] nums0 = {4,3,10,9,8};
+        int[] nums1 = {4,4,7,6,7};
+        int[] nums2 = {6};
+
+        List<Integer> ans0 = test0.minSubsequence(nums0);
+        List<Integer> ans1 = test1.minSubsequence(nums1);
+        List<Integer> ans2 = test2.minSubsequence(nums2);
+
+        for (int iter : ans0) {
+            System.out.print(iter + " ");
+        } System.out.println(); // 10, 9
+
+        for (int iter : ans0) {
+            System.out.print(iter + " ");
+        } System.out.println(); // 7, 7, 6
+
+        for (int iter : ans0) {
+            System.out.print(iter + " ");
+        } System.out.println(); // 6
+    }
+
+    public static void JumpGameIITest() {
+        JumpGameII test0 = new JumpGameII();
+        JumpGameII test1 = new JumpGameII();
+
+        int[] nums0 = {2,3,1,1,4};
+        int[] nums1 = {2,3,0,1,4};
+
+        int ans0 = test0.jump(nums0);
+        int ans1 = test1.jump(nums1);
+
+        System.out.println(ans0); // 2
+        System.out.println(ans1); // 2
+    }
+
     public static void main(String[] args) {
-        VerifyPreorderSerializationOfABinaryTreeTest();
+        //VerifyPreorderSerializationOfABinaryTreeTest();
+        //MinimumSubsequenceInNonIncreasingOrderTest();
+        JumpGameIITest();
     }
 };
