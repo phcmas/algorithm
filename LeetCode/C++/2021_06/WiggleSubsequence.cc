@@ -38,8 +38,30 @@
 
 using namespace std;
 
-int wiggleMaxLength(vector<int>& nums) {
-        
+int cache[2][1000];
+    
+void initialize() {
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 1000; ++j) {
+            cache[i][j] = 1;
+        }
+    }
+}
+
+int wiggleMaxLength(vector<int> &nums) {
+    initialize();
+    
+    for (int i = nums.size()-2; i >= 0; --i) {
+        for (int j = i + 1; j < nums.size(); ++j) {
+            if (nums[j]-nums[i] > 0) {
+                cache[0][i] = max(cache[0][i], cache[1][j]+1);
+            } else if (nums[j]-nums[i] < 0) {
+                cache[1][i] = max(cache[1][i], cache[0][j]+1);
+            }
+        }
+    }
+    
+    return max(cache[0][0], cache[1][0]);
 }
 
 int main() {
