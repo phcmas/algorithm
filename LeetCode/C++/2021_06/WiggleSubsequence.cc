@@ -39,7 +39,7 @@
 using namespace std;
 
 int cache[2][1000];
-    
+
 void initialize() {
     for (int i = 0; i < 2; ++i) {
         for (int j = 0; j < 1000; ++j) {
