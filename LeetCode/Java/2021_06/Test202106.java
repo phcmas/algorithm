@@ -1,5 +1,6 @@
-
 import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class Test202106 {
     public static void VerifyPreorderSerializationOfABinaryTreeTest() {
@@ -68,9 +69,32 @@ public class Test202106 {
         System.out.println(ans1); // 2
     }
 
+    public static void NextGreaterElementITest() {
+        NextGreaterElementI test0 = new NextGreaterElementI();
+        NextGreaterElementI test1 = new NextGreaterElementI();
+
+        int[] nums01 = {4,1,2};
+        int[] nums02 = {1,3,4,2};
+
+        int[] nums11 = {2,4};
+        int[] nums12 = {1,2,3,4};
+
+        int[] ans0 = test0.nextGreaterElement(nums01, nums02);
+        int[] ans1 = test1.nextGreaterElement(nums11, nums12);
+
+        for (int iter : ans0) {
+            System.out.print(iter + " ");
+        } System.out.println(); // -1, 3, -1
+
+        for (int iter : ans1) {
+            System.out.print(iter + " ");
+        } // 3, -1
+    }
+
     public static void main(String[] args) {
         //VerifyPreorderSerializationOfABinaryTreeTest();
         //MinimumSubsequenceInNonIncreasingOrderTest();
-        JumpGameIITest();
+        //JumpGameIITest();
+        NextGreaterElementITest();
     }
 };
