@@ -91,10 +91,29 @@ public class Test202106 {
         } // 3, -1
     }
 
+    public static void BestTimeToBuyAndSellStockWithCooldownTest() {
+        BestTimeToBuyAndSellStockWithCooldown test0 = new BestTimeToBuyAndSellStockWithCooldown();
+        BestTimeToBuyAndSellStockWithCooldown test1 = new BestTimeToBuyAndSellStockWithCooldown();
+        BestTimeToBuyAndSellStockWithCooldown test2 = new BestTimeToBuyAndSellStockWithCooldown();
+
+        int[] prices0 = {1,2,3,0,2};
+        int[] prices1 = {1};
+        int[] prices2 = {6,1,6,4,3,0,2};
+
+        int ans0 = test0.maxProfit(prices0);
+        int ans1 = test1.maxProfit(prices1);
+        int ans2 = test2.maxProfit(prices2);
+
+        System.out.println(ans0); // 3
+        System.out.println(ans1); // 0
+        System.out.println(ans2); // 7
+    }
+
     public static void main(String[] args) {
         //VerifyPreorderSerializationOfABinaryTreeTest();
         //MinimumSubsequenceInNonIncreasingOrderTest();
         //JumpGameIITest();
-        NextGreaterElementITest();
+        //NextGreaterElementITest();
+        BestTimeToBuyAndSellStockWithCooldownTest();
     }
 };
