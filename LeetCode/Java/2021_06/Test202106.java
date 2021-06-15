@@ -1,3 +1,5 @@
+import java.util.ArrayDeque;
+import java.util.HashMap;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -115,5 +117,12 @@ public class Test202106 {
         //JumpGameIITest();
         //NextGreaterElementITest();
         BestTimeToBuyAndSellStockWithCooldownTest();
+
+        List<Integer> list = new ArrayList<>();
+
+        for (int iter : list) {
+            System.out.println(iter);
+        }
+
     }
 };
