@@ -110,19 +110,69 @@ public class Test202106 {
         System.out.println(ans1); // 0
         System.out.println(ans2); // 7
     }
+    
+    public static void FindValidMatrixGivenRowAndColumnSumsTest() {
+        FindValidMatrixGivenRowAndColumnSums test0 = new FindValidMatrixGivenRowAndColumnSums();
+        FindValidMatrixGivenRowAndColumnSums test1 = new FindValidMatrixGivenRowAndColumnSums();
+        FindValidMatrixGivenRowAndColumnSums test2 = new FindValidMatrixGivenRowAndColumnSums();
+        FindValidMatrixGivenRowAndColumnSums test3 = new FindValidMatrixGivenRowAndColumnSums();
+        FindValidMatrixGivenRowAndColumnSums test4 = new FindValidMatrixGivenRowAndColumnSums();
+
+        int[] rowSum0 = {3,8};
+        int[] colSum0 = {4,7};
+        int[][] answer0 = test0.restoreMatrix(rowSum0, colSum0);
+
+        int[] rowSum1 = {5,7,10};
+        int[] colSum1 = {8,6,8};
+        int[][] answer1 = test1.restoreMatrix(rowSum1, colSum1);
+
+        int[] rowSum2 = {14,9};
+        int[] colSum2 = {6,9,8};
+        int[][] answer2 = test2.restoreMatrix(rowSum2, colSum2);
+
+        int[] rowSum3 = {1,0};
+        int[] colSum3 = {1};
+        int[][] answer3 = test3.restoreMatrix(rowSum3, colSum3);
+
+        int[] rowSum4 = {0};
+        int[] colSum4 = {0};
+        int[][] answer4 = test4.restoreMatrix(rowSum4, colSum4);
+
+        for (int i = 0; i < answer0.length; ++i) {
+            for (int j = 0; j < answer0[0].length; ++j) {
+                System.out.print(answer0[i][j]);
+            }
+            System.out.println();
+        } System.out.println();
+
+        for (int i = 0; i < answer1.length; ++i) {
+            for (int j = 0; j < answer1[0].length; ++j) {
+                System.out.print(answer1[i][j]);
+            }
+            System.out.println();
+        } System.out.println();
+
+        for (int i = 0; i < answer2.length; ++i) {
+            for (int j = 0; j < answer2[0].length; ++j) {
+                System.out.print(answer2[i][j]);
+            }
+            System.out.println();
+        } System.out.println();
+
+        for (int i = 0; i < answer3.length; ++i) {
+            for (int j = 0; j < answer3[0].length; ++j) {
+                System.out.print(answer3[i][j]);
+            }
+            System.out.println();
+        } System.out.println();
+    }
 
     public static void main(String[] args) {
         //VerifyPreorderSerializationOfABinaryTreeTest();
         //MinimumSubsequenceInNonIncreasingOrderTest();
         //JumpGameIITest();
         //NextGreaterElementITest();
-        BestTimeToBuyAndSellStockWithCooldownTest();
-
-        List<Integer> list = new ArrayList<>();
-
-        for (int iter : list) {
-            System.out.println(iter);
-        }
-
+        //BestTimeToBuyAndSellStockWithCooldownTest();
+        FindValidMatrixGivenRowAndColumnSumsTest();
     }
 };
