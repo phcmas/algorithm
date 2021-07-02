@@ -67,3 +67,7 @@ console.log(ans2); // ["12345"]
 console.log(ans3); // ["0"]
 console.log(ans4); // ["0"]
 
+var digit = parseInt(8%3, 10);
+
+console.log(digit);
+
