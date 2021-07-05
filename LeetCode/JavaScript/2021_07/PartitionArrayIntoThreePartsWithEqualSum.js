@@ -60,4 +60,3 @@ var ans2 = canThreePartsEqualSum(arr2);
 console.log(ans0); // true
 console.log(ans1); // false
 console.log(ans2); // true
-
