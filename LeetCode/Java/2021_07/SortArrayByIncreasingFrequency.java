@@ -43,8 +43,8 @@ class SortArrayByIncreasingFrequency {
     };
 
     public int[] frequencySort(int[] nums) {
-        int[] answer = new int[nums.length];
         int index = 0;
+        int[] answer = new int[nums.length];
         HashMap<Integer, Integer> numToFreq = new HashMap<>();
         PriorityQueue<Pair> pq = new PriorityQueue<>();
 
