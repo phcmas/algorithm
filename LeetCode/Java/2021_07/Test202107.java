@@ -48,6 +48,7 @@ public class Test202107 {
 
     public static void LargestNumberTest() {
         LargestNumber test = new LargestNumber();
+        LargestNumber2 test2 = new LargestNumber2();
 
         int[] nums0 = {10,2};
         int[] nums1 = {3,30,34,5,9};
@@ -57,13 +58,13 @@ public class Test202107 {
         int[] nums5 = {8308,8308,830};
         int[] nums6 = {0,0};
 
-        String ans0 = test.largestNumber(nums0);
-        String ans1 = test.largestNumber(nums1);
-        String ans2 = test.largestNumber(nums2);
-        String ans3 = test.largestNumber(nums3);
-        String ans4 = test.largestNumber(nums4);
-        String ans5 = test.largestNumber(nums5);
-        String ans6 = test.largestNumber(nums6);
+        String ans0 = test2.largestNumber(nums0);
+        String ans1 = test2.largestNumber(nums1);
+        String ans2 = test2.largestNumber(nums2);
+        String ans3 = test2.largestNumber(nums3);
+        String ans4 = test2.largestNumber(nums4);
+        String ans5 = test2.largestNumber(nums5);
+        String ans6 = test2.largestNumber(nums6);
 
         System.out.println(ans0); // "210"
         System.out.println(ans1); // "9534330"
