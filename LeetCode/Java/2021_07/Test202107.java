@@ -46,8 +46,37 @@ public class Test202107 {
         } System.out.println(); // 5,-1,4,4,-6,-6,1,1,1
     }
 
+    public static void LargestNumberTest() {
+        LargestNumber test = new LargestNumber();
+
+        int[] nums0 = {10,2};
+        int[] nums1 = {3,30,34,5,9};
+        int[] nums2 = {1};
+        int[] nums3 = {10};
+        int[] nums4 = {432, 43243};
+        int[] nums5 = {8308,8308,830};
+        int[] nums6 = {0,0};
+
+        String ans0 = test.largestNumber(nums0);
+        String ans1 = test.largestNumber(nums1);
+        String ans2 = test.largestNumber(nums2);
+        String ans3 = test.largestNumber(nums3);
+        String ans4 = test.largestNumber(nums4);
+        String ans5 = test.largestNumber(nums5);
+        String ans6 = test.largestNumber(nums6);
+
+        System.out.println(ans0); // "210"
+        System.out.println(ans1); // "9534330"
+        System.out.println(ans2); // "1"
+        System.out.println(ans3); // "10"
+        System.out.println(ans4); // "43243432"
+        System.out.println(ans5); // "83088308830"
+        System.out.println(ans6); // "0"
+    }
+
     public static void main(String[] args) {
         //RelativeRanksTest();
-        SortArrayByIncreasingFrequencyTest();
+        //SortArrayByIncreasingFrequencyTest();
+        LargestNumberTest();
     }
 }
