@@ -75,9 +75,23 @@ public class Test202107 {
         System.out.println(ans6); // "0"
     }
 
+    public static void ValidTriangleNumberTest() {
+        ValidTriangleNumber test = new ValidTriangleNumber();
+
+        int[] nums0 = {2,2,3,4};
+        int[] nums1 = {4,2,3,4};
+
+        int ans0 = test.triangleNumber(nums0);
+        int ans1 = test.triangleNumber(nums1);
+
+        System.out.println(ans0); // 3
+        System.out.println(ans1); // 4
+    }
+
     public static void main(String[] args) {
         //RelativeRanksTest();
         //SortArrayByIncreasingFrequencyTest();
-        LargestNumberTest();
+        //LargestNumberTest();
+        ValidTriangleNumberTest();
     }
 }
