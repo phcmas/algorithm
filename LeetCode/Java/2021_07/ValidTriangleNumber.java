@@ -23,25 +23,34 @@ import java.util.Arrays;
 class ValidTriangleNumber {
     public int triangleNumber(int[] nums) {
         Arrays.sort(nums);
+        
         int max = nums[nums.length-1];
-        int[] counts = new int[max];
+        int[] counts = new int[max+2];
+        int start = 0;
         int count = nums.length-1;
         int answer = 0;
+        
+        for (int i = 0; i < nums.length; ++i) {
+            if (nums[i] == 0) {
+                start++;
+            } else {
+                break;
+            }
+        }
 
-        for (int i = nums.length-1; i >= 1; ++i) {
-            for (int j = nums[i-1]+1; j < nums[i]; ++j) {
+        if (nums.length - start < 3) return 0;
+
+        counts[max+1] = nums.length;
+        for (int i = nums.length-1; i >= start+1; --i) {
+            for (int j = nums[i-1]+1; j <= nums[i]; ++j) {
                 counts[j] = count;
             }
             count--;
         }
 
-        for (int i = 0; i < nums.length; ++i) {
-            for (int j = i+1; j < nums.length; ++j) {
-                if (nums[i] + nums[j] > max) {
-                    answer += nums.length-2;
-                } else if (nums[i] + nums[j] <= max) {
-                    answer += counts[nums[i]+nums[j]]-2;
-                }
+        for (int i = start; i < nums.length-2; ++i) {
+            for (int j = i+1; j < nums.length-1; ++j) {
+                answer += counts[Math.min(max+1, nums[i]+nums[j])] - (j+1);
             }
         }
 

@@ -77,15 +77,22 @@ public class Test202107 {
 
     public static void ValidTriangleNumberTest() {
         ValidTriangleNumber test = new ValidTriangleNumber();
+        ValidTriangleNumber2 test2 = new ValidTriangleNumber2();
 
         int[] nums0 = {2,2,3,4};
         int[] nums1 = {4,2,3,4};
+        int[] nums2 = {0,1,1,1};
+        int[] nums3 = {0,0,0};
 
-        int ans0 = test.triangleNumber(nums0);
-        int ans1 = test.triangleNumber(nums1);
+        int ans0 = test2.triangleNumber(nums0);
+        int ans1 = test2.triangleNumber(nums1);
+        int ans2 = test2.triangleNumber(nums2);
+        int ans3 = test2.triangleNumber(nums3);
 
         System.out.println(ans0); // 3
-        System.out.println(ans1); // 4
+        System.out.println(ans1); // 4 
+        System.out.println(ans2); // 1
+        System.out.println(ans3); // 0
     }
 
     public static void main(String[] args) {
