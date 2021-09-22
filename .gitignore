@@ -12,4 +12,5 @@ LeetCode/C++/cmake_install.cmake
 LeetCode/C++/CMakeCache.txt
 LeetCode/C++/Makefile
 LeetCode/C++/*.dylib
+LeetCode/.history/*
 .DS_Store

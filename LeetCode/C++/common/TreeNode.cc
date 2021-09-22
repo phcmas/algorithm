@@ -1,10 +1,7 @@
 #include <iostream>
 #include <queue>
 #include <string>
-#include "limits.h"
 #include "TreeNode.h"
-
-const int NONE = INT_MAX;
 
 TreeNode::TreeNode() : val(0), left(nullptr), right(nullptr) {}
 TreeNode::TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}

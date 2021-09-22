@@ -1,6 +1,8 @@
 #include <vector>
+#include "limits.h"
 using namespace std;
 
+const int NONE = INT_MAX;
 class TreeNode {
 public:
     int val;
