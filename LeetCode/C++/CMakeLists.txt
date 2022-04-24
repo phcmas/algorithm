@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.0)
 set(CMAKE_BUILD_TYPE DEBUG)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")	
 set(YEAR_MONTH 2021_10)
-set(FILE_NAME CheckIfAStringCanBreakAnotherString.cc)
+set(FILE_NAME LongestIncreasingSubsequence.cc)
 
 project(algorithm)
 
