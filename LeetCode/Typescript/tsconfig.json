@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "declaration": true,
+        "allowJs": true,
+        "removeComments": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true, 
+        "target": "es2017",
+        "outDir": "./",
+        "outFile": "./",
+        "rootDir": "./",
+        "lib": ["es2021"],
+        "noImplicitAny": true
+    },
+    "include": ["**/*.ts"],
+    "exclude": ["node_modules", "test" ,"dist"]
+}
