@@ -22,7 +22,10 @@ Constraints:
 s1 and s2 consist of lowercase English letters. */
 
 function minimumDeleteSum(s1: string, s2: string): number {
-  return 0;
+  const str = "ABC";
+  const code = str.charCodeAt(1);
+
+  return 231;
 }
 
 export default minimumDeleteSum;
