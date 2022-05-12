@@ -1,16 +1,14 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
         "declaration": true,
         "allowJs": true,
         "removeComments": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true, 
-        "target": "es2017",
-        "outDir": "./",
-        "outFile": "./",
+        "target": "es6",
+        "outDir": "./dist",
         "rootDir": "./",
-        "lib": ["es2021"],
+        "lib": ["es2017"],
         "noImplicitAny": true
     },
     "include": ["**/*.ts"],
