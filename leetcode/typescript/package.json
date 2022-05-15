@@ -30,7 +30,7 @@
   },
   "husky":{
     "hooks":{
-      "pre-commit": "yarn test"
+      "pre-commit": "echo commit"
     }
   },
   "jest": {
