@@ -62,4 +62,4 @@ function minimumDeleteSum2(s1: string, s2: string): number {
   return cache[0][0];
 }
 
-export default minimumDeleteSum2;
+export { minimumDeleteSum2 };

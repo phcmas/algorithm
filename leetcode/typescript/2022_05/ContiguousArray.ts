@@ -35,4 +35,4 @@ function findMaxLength(nums: number[]): number {
   return max;
 }
 
-export default findMaxLength;
+export { findMaxLength };

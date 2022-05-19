@@ -1,6 +1,8 @@
-import minimumDeleteSum1 from "../2022_05/MinimumASCIIDeleteSumForTwoStrings-1";
-import minimumDeleteSum2 from "../2022_05/MinimumASCIIDeleteSumForTwoStrings-2";
-import findMaxLength from "../2022_05/ContiguousArray";
+import { minimumDeleteSum1 } from "../2022_05/MinimumASCIIDeleteSumForTwoStrings-1";
+import { minimumDeleteSum2 } from "../2022_05/MinimumASCIIDeleteSumForTwoStrings-2";
+import { findMaxLength } from "../2022_05/ContiguousArray";
+import { mergeTrees } from "../2022_05/MergeTwoBinaryTrees";
+import { TreeNode } from "../common/TreeNode";
 
 describe("2022_05 test", () => {
   it("Minimum ASCII Delete Sum for Two Strings - 1", () => {
@@ -62,5 +64,30 @@ describe("2022_05 test", () => {
     expect(ans3).toEqual(6);
     expect(ans4).toEqual(6);
     expect(ans5).toEqual(2);
+  });
+
+  it("merge two binary trees", () => {
+    const nums00 = [1, 3, 2, 5];
+    const nums01 = [2, 1, 3, null, 4, null, 7];
+    const ansNum0 = [3, 4, 5, 5, 4, null, 7];
+
+    const nums10 = [1];
+    const nums11 = [1, 2];
+    const ansNum1 = [2, 2];
+
+    const tree00 = TreeNode.makeTreeNode(nums00);
+    const tree01 = TreeNode.makeTreeNode(nums01);
+    const ansTree0 = TreeNode.makeTreeNode(ansNum0);
+    const retTree0 = mergeTrees(tree00, tree01);
+    const ans0 = TreeNode.isSameTree(retTree0, ansTree0);
+
+    const tree10 = TreeNode.makeTreeNode(nums10);
+    const tree11 = TreeNode.makeTreeNode(nums11);
+    const ansTree1 = TreeNode.makeTreeNode(ansNum1);
+    const retTree1 = mergeTrees(tree10, tree11);
+    const ans1 = TreeNode.isSameTree(retTree1, ansTree1);
+
+    expect(ans0).toEqual(true);
+    expect(ans1).toEqual(true);
   });
 });
