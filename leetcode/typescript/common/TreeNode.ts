@@ -35,38 +35,17 @@ export class TreeNode {
     return root;
   }
 
-  static compareNodes(node0: TreeNode | null, node1: TreeNode | null) {
-    if (!node0 && !node1) return true;
-    if ((node0 && !node1) || (!node0 && node1)) return false;
-
-    return node0?.val === node1?.val;
-  }
-
-  static isSameTree(tree0: TreeNode, tree1: TreeNode) {
-    if (tree0.val !== tree1.val) return false;
-
-    const queue0: TreeNode[] = [tree0];
-    const queue1: TreeNode[] = [tree1];
-
-    while (queue0.length > 0) {
-      const node0 = queue0.shift() as TreeNode;
-      const node1 = queue1.shift() as TreeNode;
-      const compareLeft = this.compareNodes(node0.left, node1.left);
-      const compareRight = this.compareNodes(node0.right, node1.right);
-
-      if (!compareLeft || !compareRight) return false;
-
-      if (node0.left && node1.left) {
-        queue0.push(node0.left);
-        queue1.push(node1.left);
-      }
-
-      if (node0.right && node1.right) {
-        queue0.push(node0.right);
-        queue1.push(node1.right);
-      }
+  static isSameTree(tree0: TreeNode | null, tree1: TreeNode | null): boolean {
+    if (tree0 === null || tree1 === null) {
+      if (tree0 === null && tree1 === null) return true;
+      return false;
     }
 
-    return true;
+    if (tree0.val !== tree1.val) return false;
+
+    const isLeftSubTreeSame = this.isSameTree(tree0.left, tree1.left);
+    const isRightSubTreeSame = this.isSameTree(tree0.right, tree1.right);
+
+    return isLeftSubTreeSame && isRightSubTreeSame;
   }
 }

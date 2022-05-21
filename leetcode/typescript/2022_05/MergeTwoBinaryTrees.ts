@@ -29,7 +29,14 @@ function mergeTrees(
     return root1 || root2;
   }
 
-  return null;
+  const newRoot = new TreeNode(root1.val + root2.val);
+  const newLeft = mergeTrees(root1.left, root2.left);
+  const newRight = mergeTrees(root1.right, root2.right);
+
+  newRoot.left = newLeft;
+  newRoot.right = newRight;
+
+  return newRoot;
 }
 
 export { mergeTrees };
