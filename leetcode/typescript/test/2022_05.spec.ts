@@ -3,6 +3,8 @@ import { minimumDeleteSum2 } from "../2022_05/MinimumASCIIDeleteSumForTwoStrings
 import { findMaxLength } from "../2022_05/ContiguousArray";
 import { mergeTrees } from "../2022_05/MergeTwoBinaryTrees";
 import { TreeNode } from "../common/TreeNode";
+import { lexicalOrder } from "../2022_05/LexicographicalNumbers";
+import { isArraySame } from "../common/Util";
 
 describe("2022_05 test", () => {
   it("Minimum ASCII Delete Sum for Two Strings - 1", () => {
@@ -89,5 +91,22 @@ describe("2022_05 test", () => {
 
     expect(ans0).toEqual(true);
     expect(ans1).toEqual(true);
+  });
+
+  it("lexicographical numbers", () => {
+    const n0 = 13;
+    const n1 = 2;
+
+    const ret0 = lexicalOrder(n0);
+    const ret1 = lexicalOrder(n1);
+
+    const ans0 = [1, 10, 11, 12, 13, 2, 3, 4, 5, 6, 7, 8, 9];
+    const ans1 = [1, 2];
+
+    const compare0 = isArraySame(ans0, ret0);
+    const compare1 = isArraySame(ans1, ret1);
+
+    expect(compare0).toEqual(true);
+    expect(compare1).toEqual(true);
   });
 });
