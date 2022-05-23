@@ -2,9 +2,10 @@ import { minimumDeleteSum1 } from "../2022_05/MinimumASCIIDeleteSumForTwoStrings
 import { minimumDeleteSum2 } from "../2022_05/MinimumASCIIDeleteSumForTwoStrings-2";
 import { findMaxLength } from "../2022_05/ContiguousArray";
 import { mergeTrees } from "../2022_05/MergeTwoBinaryTrees";
-import { TreeNode } from "../common/TreeNode";
 import { lexicalOrder } from "../2022_05/LexicographicalNumbers";
-import { isArraySame } from "../common/Util";
+import { distanceK } from "../2022_05/AllNodesDistanceKInBinaryTree";
+import { TreeNode } from "../common/TreeNode";
+import { isArraySame, isArraySameIgnoringOrder } from "../common/Util";
 
 describe("2022_05 test", () => {
   it("Minimum ASCII Delete Sum for Two Strings - 1", () => {
@@ -108,5 +109,48 @@ describe("2022_05 test", () => {
 
     expect(compare0).toEqual(true);
     expect(compare1).toEqual(true);
+  });
+
+  it("all nodes distance K in binary tree", () => {
+    const arr0 = [3, 5, 1, 6, 2, 0, 8, null, null, 7, 4];
+    const root0 = TreeNode.makeTreeNode(arr0);
+    const target0 = TreeNode.makeTreeNode([5]);
+    const k0 = 2;
+
+    const arr1 = [1];
+    const root1 = TreeNode.makeTreeNode(arr1);
+    const target1 = TreeNode.makeTreeNode([1]);
+    const k1 = 3;
+
+    const arr2 = [0, 2, 1, null, null, 3];
+    const root2 = TreeNode.makeTreeNode(arr2);
+    const target2 = TreeNode.makeTreeNode([3]);
+    const k2 = 3;
+
+    const arr3 = [0, 1, 3, 2, null, null, null, 4];
+    const root3 = TreeNode.makeTreeNode(arr3);
+    const target3 = TreeNode.makeTreeNode([1]);
+    const k3 = 0;
+
+    const ret0 = distanceK(root0, target0, k0);
+    const ans0 = [7, 4, 1];
+    const compare0 = isArraySameIgnoringOrder(ret0, ans0);
+
+    const ret1 = distanceK(root1, target1, k1);
+    const ans1: number[] = [];
+    const compare1 = isArraySameIgnoringOrder(ret1, ans1);
+
+    const ret2 = distanceK(root2, target2, k2);
+    const ans2: number[] = [2];
+    const compare2 = isArraySameIgnoringOrder(ret2, ans2);
+
+    const ret3 = distanceK(root3, target3, k3);
+    const ans3: number[] = [1];
+    const compare3 = isArraySameIgnoringOrder(ret3, ans3);
+
+    expect(compare0).toEqual(true);
+    expect(compare1).toEqual(true);
+    expect(compare2).toEqual(true);
+    expect(compare3).toEqual(true);
   });
 });
