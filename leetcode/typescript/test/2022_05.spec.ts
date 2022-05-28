@@ -1,9 +1,10 @@
-import { minimumDeleteSum1 } from "../2022_05/MinimumASCIIDeleteSumForTwoStrings-1";
-import { minimumDeleteSum2 } from "../2022_05/MinimumASCIIDeleteSumForTwoStrings-2";
+import { minimumDeleteSum1 } from "../2022_05/MinimumASCIIDeleteSumForTwoStrings1";
+import { minimumDeleteSum2 } from "../2022_05/MinimumASCIIDeleteSumForTwoStrings2";
 import { findMaxLength } from "../2022_05/ContiguousArray";
 import { mergeTrees } from "../2022_05/MergeTwoBinaryTrees";
 import { lexicalOrder } from "../2022_05/LexicographicalNumbers";
 import { distanceK } from "../2022_05/AllNodesDistanceKInBinaryTree";
+import { pseudoPalindromicPaths } from "../2022_05/PseudoPalindromicPathsInABinaryTree";
 import { TreeNode } from "../common/TreeNode";
 import { isArraySame, isArraySameIgnoringOrder } from "../common/Util";
 
@@ -152,5 +153,51 @@ describe("2022_05 test", () => {
     expect(compare1).toEqual(true);
     expect(compare2).toEqual(true);
     expect(compare3).toEqual(true);
+  });
+
+  it("pseudo palindrom path in a binary tree", () => {
+    const arr0 = [2, 3, 1, 3, 1, null, 1];
+    const root0 = TreeNode.makeTreeNode(arr0);
+
+    const arr1 = [2, 1, 1, 1, 3, null, null, null, null, null, 1];
+    const root1 = TreeNode.makeTreeNode(arr1);
+
+    const arr2 = [9];
+    const root2 = TreeNode.makeTreeNode(arr2);
+
+    const arr3 = [
+      8,
+      6,
+      9,
+      null,
+      null,
+      null,
+      4,
+      4,
+      1,
+      5,
+      4,
+      null,
+      null,
+      null,
+      null,
+      8,
+    ];
+    const root3 = TreeNode.makeTreeNode(arr3);
+
+    const ret0 = pseudoPalindromicPaths(root0);
+    const ret1 = pseudoPalindromicPaths(root1);
+    const ret2 = pseudoPalindromicPaths(root2);
+    const ret3 = pseudoPalindromicPaths(root3);
+
+    const ans0 = 2;
+    const ans1 = 1;
+    const ans2 = 1;
+    const ans3 = 0;
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+    expect(ret2).toEqual(ans2);
+    expect(ret3).toEqual(ans3);
   });
 });

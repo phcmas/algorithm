@@ -10,7 +10,7 @@ export class TreeNode {
   }
 
   // array를 tree로 만드는 함수. LeetCode TreeVisualizer가 array를 Tree로 만드는 방식과 동일.
-  static makeTreeNode(numbers: (number | null)[]) {
+  static makeTreeNode(numbers: (number | null)[]): TreeNode | null {
     if (numbers.length === 0 || numbers[0] === null) return null;
 
     const root = new TreeNode(numbers[0]);
