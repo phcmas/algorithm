@@ -7,6 +7,7 @@ import { distanceK } from "../2022_05/AllNodesDistanceKInBinaryTree";
 import { pseudoPalindromicPaths } from "../2022_05/PseudoPalindromicPathsInABinaryTree";
 import { TreeNode } from "../common/TreeNode";
 import { isArraySame, isArraySameIgnoringOrder } from "../common/Util";
+import { maxLevelSum } from "../2022_05/MaximumLevelSumOfABinaryTree";
 
 describe("2022_05 test", () => {
   it("Minimum ASCII Delete Sum for Two Strings - 1", () => {
@@ -199,5 +200,28 @@ describe("2022_05 test", () => {
     expect(ret1).toEqual(ans1);
     expect(ret2).toEqual(ans2);
     expect(ret3).toEqual(ans3);
+  });
+
+  it("maximum level sum of a binary tree", () => {
+    const arr0 = [1, 7, 0, 7, -8, null, null];
+    const root0 = TreeNode.makeTreeNode(arr0);
+
+    const arr1 = [989, null, 10250, 98693, -89388, null, null, null, -32127];
+    const root1 = TreeNode.makeTreeNode(arr1);
+
+    const arr2 = [-100, -200, -300, -20, -5, -10, null];
+    const root2 = TreeNode.makeTreeNode(arr2);
+
+    const ret0 = maxLevelSum(root0);
+    const ret1 = maxLevelSum(root1);
+    const ret2 = maxLevelSum(root2);
+
+    const ans0 = 2;
+    const ans1 = 2;
+    const ans2 = 3;
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+    expect(ret2).toEqual(ans2);
   });
 });
