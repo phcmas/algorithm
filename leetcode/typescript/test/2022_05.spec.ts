@@ -8,7 +8,6 @@ import { pseudoPalindromicPaths } from "../2022_05/PseudoPalindromicPathsInABina
 import { TreeNode } from "../common/TreeNode";
 import { isArraySame, isArraySameIgnoringOrder } from "../common/Util";
 import { maxLevelSum } from "../2022_05/MaximumLevelSumOfABinaryTree";
-import { minimumSwap } from "../2022_05/MinimumSwapsToMakeStringsEqual";
 
 describe("2022_05 test", () => {
   it("Minimum ASCII Delete Sum for Two Strings - 1", () => {
@@ -224,44 +223,5 @@ describe("2022_05 test", () => {
     expect(ret0).toEqual(ans0);
     expect(ret1).toEqual(ans1);
     expect(ret2).toEqual(ans2);
-  });
-
-  it("minimum swaps to make strings equal", () => {
-    const s00 = "xx";
-    const s01 = "yy";
-
-    const s10 = "xy";
-    const s11 = "yx";
-
-    const s20 = "xx";
-    const s21 = "xy";
-
-    const s30 = "xxyy";
-    const s31 = "xyxy";
-
-    const s40 = "xxyyxyxyxx";
-    const s41 = "xyyxyxxxyx";
-
-    const s50 = "xyyyyx";
-    const s51 = "xxxxyy";
-
-    const s60 = "xxxxyyyy";
-    const s61 = "yyyyxyyx";
-
-    const ret0 = minimumSwap(s00, s01);
-    const ret1 = minimumSwap(s10, s11);
-    const ret2 = minimumSwap(s20, s21);
-    const ret3 = minimumSwap(s30, s31);
-    const ret4 = minimumSwap(s40, s41);
-    const ret5 = minimumSwap(s50, s51);
-    const ret6 = minimumSwap(s60, s61);
-
-    expect(ret0).toEqual(1);
-    expect(ret1).toEqual(2);
-    expect(ret2).toEqual(-1);
-    expect(ret3).toEqual(2);
-    expect(ret4).toEqual(4);
-    expect(ret5).toEqual(3);
-    expect(ret6).toEqual(3);
   });
 });
