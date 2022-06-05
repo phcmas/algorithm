@@ -1,4 +1,5 @@
 import { TreeNode } from "../common/TreeNode";
+import { ListNode } from "../common/ListNode";
 
 const treeExample0 = () => {
   const node5 = new TreeNode(5);
@@ -19,6 +20,25 @@ const treeExample1 = () => {
   return node2;
 };
 
+const listExample0 = () => {
+  const node1 = new ListNode(3);
+  const node0 = new ListNode(2, node1);
+  return new ListNode(1, node0);
+};
+
+const listExample1 = () => {
+  const node3 = new ListNode(4);
+  const node2 = new ListNode(3, node3);
+  const node1 = new ListNode(2, node2);
+  return new ListNode(1, node1);
+};
+
+const listExample2 = () => {
+  const node1 = new ListNode(4);
+  const node0 = new ListNode(3, node1);
+  return new ListNode(2, node0);
+};
+
 describe("common utility test", () => {
   it("check if two trees are same", () => {
     const tree0 = treeExample0();
@@ -33,7 +53,7 @@ describe("common utility test", () => {
     expect(ans2).toEqual(false);
   });
 
-  it("make tree from array", () => {
+  it("make a tree from array", () => {
     const arr0 = [1, 3, 2, 5];
     const arr1 = [2, 1, 3, null, 4, null, 7];
 
@@ -45,6 +65,39 @@ describe("common utility test", () => {
 
     const compare0 = TreeNode.isSameTree(ret0, ans0);
     const compare1 = TreeNode.isSameTree(ret1, ans1);
+
+    expect(compare0).toEqual(true);
+    expect(compare1).toEqual(true);
+  });
+
+  it("check if two linked lists are same", () => {
+    const list0 = listExample0();
+    const list1 = listExample1();
+    const list2 = listExample2();
+
+    const compare0 = ListNode.isSameList(list0, list0);
+    const compare1 = ListNode.isSameList(list0, list1);
+    const compare2 = ListNode.isSameList(list0, list2);
+    const compare3 = ListNode.isSameList(list1, list1);
+
+    expect(compare0).toEqual(true);
+    expect(compare1).toEqual(false);
+    expect(compare2).toEqual(false);
+    expect(compare3).toEqual(true);
+  });
+
+  it("make a linked list from array ", () => {
+    const arr0 = [1, 2, 3];
+    const arr1 = [1, 2, 3, 4];
+
+    const ret0 = ListNode.makeList(arr0);
+    const ret1 = ListNode.makeList(arr1);
+
+    const ans0 = listExample0();
+    const ans1 = listExample1();
+
+    const compare0 = ListNode.isSameList(ret0, ans0);
+    const compare1 = ListNode.isSameList(ret1, ans1);
 
     expect(compare0).toEqual(true);
     expect(compare1).toEqual(true);
