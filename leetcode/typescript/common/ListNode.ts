@@ -1,3 +1,5 @@
+import { TreeNode } from "./TreeNode";
+
 export class ListNode {
   val: number;
   next: ListNode | null;
@@ -38,5 +40,30 @@ export class ListNode {
     }
 
     return node2 === null;
+  }
+
+  static splitList(node: ListNode | null, start: number, count: number) {
+    let head: ListNode | null = node;
+
+    for (let i = 0; i < start; ++i) {
+      if (head === null) {
+        throw new Error(`cannot split list started from ${start}`);
+      }
+
+      head = head.next;
+    }
+
+    let end: ListNode | null = head;
+
+    for (let i = 0; i < count - 1; ++i) {
+      if (end === null) {
+        throw new Error(`cannot split list of node ${count}`);
+      }
+
+      end = end.next;
+    }
+
+    if (end !== null) end.next = null;
+    return head;
   }
 }

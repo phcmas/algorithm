@@ -25,7 +25,55 @@
  *  0 <= Node.val <= 1000
  *  1 <= k <= 50 */
 
+import { ListNode } from "../common/ListNode";
+
+function splitList(
+  node: ListNode | null,
+  splitted: (ListNode | null)[],
+  splitCount: number,
+  partCount: number
+) {
+  let cur: ListNode | null = node;
+  let prev: ListNode | null = new ListNode(-1, cur);
+
+  for (let i = 0; i < splitCount; ++i) {
+    const node: ListNode | null = cur;
+
+    for (let i = 0; i < partCount; ++i) {
+      prev = prev === null ? null : prev.next;
+      cur = cur === null ? null : cur.next;
+    }
+
+    if (prev !== null) prev.next = null;
+    prev = new ListNode(-1, cur);
+    splitted.push(node);
+  }
+
+  return cur;
+}
+
 function splitListToParts(
   head: ListNode | null,
   k: number
-): Array<ListNode | null> {}
+): (ListNode | null)[] {
+  let total = 0;
+  let cur = head;
+  const splitted: (ListNode | null)[] = [];
+
+  while (cur !== null) {
+    cur = cur.next;
+    total++;
+  }
+
+  const bigPartsCount = total % k;
+  const smallPartsCount = k - bigPartsCount;
+  const nodeCountOfSmallPart = Math.floor(total / k);
+  const nodeCountOfBigPart = Math.floor(total / k) + 1;
+
+  cur = splitList(head, splitted, bigPartsCount, nodeCountOfBigPart);
+  splitList(cur, splitted, smallPartsCount, nodeCountOfSmallPart);
+
+  return splitted;
+}
+
+export { splitListToParts };

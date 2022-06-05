@@ -1,4 +1,4 @@
-export const isArraySame = (arr0: number[], arr1: number[]) => {
+const isArraySame = (arr0: number[], arr1: number[]) => {
   if (arr0.length !== arr1.length) return false;
 
   return arr0.every((element, index) => {
@@ -6,9 +6,11 @@ export const isArraySame = (arr0: number[], arr1: number[]) => {
   });
 };
 
-export const isArraySameIgnoringOrder = (arr0: number[], arr1: number[]) => {
+const isArraySameIgnoringOrder = (arr0: number[], arr1: number[]) => {
   const sorted0 = arr0.sort();
   const sorted1 = arr1.sort();
 
   return isArraySame(sorted0, sorted1);
 };
+
+export { isArraySame, isArraySameIgnoringOrder };

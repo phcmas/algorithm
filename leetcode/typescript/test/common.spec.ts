@@ -102,4 +102,18 @@ describe("common utility test", () => {
     expect(compare0).toEqual(true);
     expect(compare1).toEqual(true);
   });
+
+  it("split linked list", () => {
+    const list0 = listExample0();
+    const list1 = listExample1();
+
+    const ret0 = ListNode.splitList(list0, 1, 2);
+    const ret1 = ListNode.splitList(list1, 1, 3);
+
+    const compare0 = ListNode.isSameList(ret0, list0.next);
+    const compare1 = ListNode.isSameList(ret1, list1.next);
+
+    expect(compare0).toEqual(true);
+    expect(compare1).toEqual(true);
+  });
 });
