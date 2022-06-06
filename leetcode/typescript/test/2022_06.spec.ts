@@ -1,9 +1,10 @@
 import { minimumSwap } from "../2022_06/MinimumSwapsToMakeStringsEqual";
 import { numOfSubarrays } from "../2022_06/NumberOfSubArraysOfSizeKAndAverageGreaterThanOrEqualToThreshold";
 import { kWeakestRows } from "../2022_06/TheKWeakestRowsInAMatrix";
-import { isArraySame } from "../common/Util";
+import { isArraySame, isArraySameIgnoringOrder } from "../common/Util";
 import { ListNode } from "../common/ListNode";
 import { splitListToParts } from "../2022_06/SplitLinkedListInParts";
+import { twoSum } from "../2022_06/TwoSum";
 
 describe("2022_06 test", () => {
   it("minimum swaps to make strings equal", () => {
@@ -166,5 +167,31 @@ describe("2022_06 test", () => {
     expect(compare10).toEqual(true);
     expect(compare11).toEqual(true);
     expect(compare12).toEqual(true);
+  });
+
+  it("two sum", () => {
+    const nums0 = [2, 7, 11, 15];
+    const nums1 = [3, 2, 4];
+    const nums2 = [3, 3];
+
+    const target0 = 9;
+    const target1 = 6;
+    const target2 = 6;
+
+    const ans0 = [0, 1];
+    const ans1 = [1, 2];
+    const ans2 = [0, 1];
+
+    const ret0 = twoSum(nums0, target0);
+    const ret1 = twoSum(nums1, target1);
+    const ret2 = twoSum(nums2, target2);
+
+    const compare0 = isArraySameIgnoringOrder(ret0, ans0);
+    const compare1 = isArraySameIgnoringOrder(ret1, ans1);
+    const compare2 = isArraySameIgnoringOrder(ret2, ans2);
+
+    expect(compare0).toEqual(true);
+    expect(compare1).toEqual(true);
+    expect(compare2).toEqual(true);
   });
 });
