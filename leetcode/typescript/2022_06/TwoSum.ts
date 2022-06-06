@@ -25,25 +25,28 @@
 function twoSum(nums: number[], target: number): number[] {
   let start = 0;
   let end = nums.length - 1;
-  let twoNums: number[] = [];
+  const twoNums: number[] = [];
   const indices = [];
   const sorted = [...nums].sort((a, b) => a - b);
 
   while (start < end) {
-    if (sorted[start] + sorted[end] > target) {
-      end--;
-    } else if (sorted[start] + sorted[end] < target) {
-      start++;
-    } else {
-      twoNums = [sorted[start], sorted[end]];
+    const sum = sorted[start] + sorted[end];
+
+    if (sum === target) {
+      twoNums.push(sorted[start]);
+      twoNums.push(sorted[end]);
       break;
+    }
+
+    if (sum > target) {
+      end--;
+    } else {
+      start++;
     }
   }
 
   for (let i = 0; i < nums.length; ++i) {
-    if (twoNums.includes(nums[i])) {
-      indices.push(i);
-    }
+    if (twoNums.includes(nums[i])) indices.push(i);
   }
 
   return indices;
