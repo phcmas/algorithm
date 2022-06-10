@@ -5,6 +5,7 @@ import { isArraySame, isArraySameIgnoringOrder } from "../common/Util";
 import { ListNode } from "../common/ListNode";
 import { splitListToParts } from "../2022_06/SplitLinkedListInParts";
 import { twoSum } from "../2022_06/TwoSum";
+import { detectCycle } from "../2022_06/LinkedListCycleII";
 
 describe("2022_06 test", () => {
   it("minimum swaps to make strings equal", () => {
@@ -189,6 +190,33 @@ describe("2022_06 test", () => {
     const compare0 = isArraySameIgnoringOrder(ret0, ans0);
     const compare1 = isArraySameIgnoringOrder(ret1, ans1);
     const compare2 = isArraySameIgnoringOrder(ret2, ans2);
+
+    expect(compare0).toEqual(true);
+    expect(compare1).toEqual(true);
+    expect(compare2).toEqual(true);
+  });
+
+  it("detect cycle", () => {
+    const arr0: [number[], number] = [[3, 2, 0, -4], 1];
+    const arr1: [number[], number] = [[1, 2], 0];
+    const arr2: [number[], number] = [[1], -1];
+    const arr3: [number[], number] = [[2, 0, -4], 0];
+    const arr4: [number[], number] = [[1, 2], 0];
+
+    const list0 = ListNode.makeCircularList(arr0);
+    const list1 = ListNode.makeCircularList(arr1);
+    const list2 = ListNode.makeCircularList(arr2);
+    const ans0 = ListNode.makeCircularList(arr3);
+    const ans1 = ListNode.makeCircularList(arr4);
+    const ans2 = null;
+
+    const ret0 = detectCycle(list0);
+    const ret1 = detectCycle(list1);
+    const ret2 = detectCycle(list2);
+
+    const compare0 = ListNode.isSameCircularList(ret0, ans0);
+    const compare1 = ListNode.isSameCircularList(ret1, ans1);
+    const compare2 = ListNode.isSameCircularList(ret2, ans2);
 
     expect(compare0).toEqual(true);
     expect(compare1).toEqual(true);
