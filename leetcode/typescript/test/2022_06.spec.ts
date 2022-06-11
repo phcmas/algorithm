@@ -6,6 +6,8 @@ import { ListNode } from "../common/ListNode";
 import { splitListToParts } from "../2022_06/SplitLinkedListInParts";
 import { twoSum } from "../2022_06/TwoSum";
 import { detectCycle } from "../2022_06/LinkedListCycleII";
+import { invertTree } from "../2022_06/InvertBinaryTree";
+import { TreeNode } from "../common/TreeNode";
 
 describe("2022_06 test", () => {
   it("minimum swaps to make strings equal", () => {
@@ -217,6 +219,35 @@ describe("2022_06 test", () => {
     const compare0 = ListNode.isSameCircularList(ret0, ans0);
     const compare1 = ListNode.isSameCircularList(ret1, ans1);
     const compare2 = ListNode.isSameCircularList(ret2, ans2);
+
+    expect(compare0).toEqual(true);
+    expect(compare1).toEqual(true);
+    expect(compare2).toEqual(true);
+  });
+
+  it("invert binary tree", () => {
+    const arr0 = [4, 2, 7, 1, 3, 6, 9];
+    const arr1 = [2, 1, 3];
+    const arr2: number[] = [];
+    const arr3 = [4, 7, 2, 9, 6, 3, 1];
+    const arr4 = [2, 3, 1];
+    const arr5: number[] = [];
+
+    const tree0 = TreeNode.makeTreeNode(arr0);
+    const tree1 = TreeNode.makeTreeNode(arr1);
+    const tree2 = TreeNode.makeTreeNode(arr2);
+
+    const ans0 = TreeNode.makeTreeNode(arr3);
+    const ans1 = TreeNode.makeTreeNode(arr4);
+    const ans2 = TreeNode.makeTreeNode(arr5);
+
+    const ret0 = invertTree(tree0);
+    const ret1 = invertTree(tree1);
+    const ret2 = invertTree(tree2);
+
+    const compare0 = TreeNode.isSameTree(ret0, ans0);
+    const compare1 = TreeNode.isSameTree(ret1, ans1);
+    const compare2 = TreeNode.isSameTree(ret2, ans2);
 
     expect(compare0).toEqual(true);
     expect(compare1).toEqual(true);
