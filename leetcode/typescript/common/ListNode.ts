@@ -95,6 +95,7 @@ export class ListNode {
     let node1: ListNode | null = head1;
     let node2: ListNode | null = head2;
 
+    // cycle 시작점까지 노드 비교
     for (let i = 0; i < floyed1.index; ++i) {
       if (node1 === null) return node2 === null;
       if (node2 === null) return node1 === null;
@@ -104,6 +105,7 @@ export class ListNode {
       node2 = node2.next;
     }
 
+    // 같은 cycle인지 비교
     while (true) {
       if (node1 === null) return node2 === null;
       if (node2 === null) return node1 === null;
