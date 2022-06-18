@@ -8,6 +8,8 @@ import { twoSum } from "../2022_06/TwoSum";
 import { detectCycle } from "../2022_06/LinkedListCycleII";
 import { invertTree } from "../2022_06/InvertBinaryTree";
 import { TreeNode } from "../common/TreeNode";
+import { minimumSize } from "../2022_06/MinimumLimitOfBallsInABag";
+import { canPartitionKSubsets } from "../2022_06/PartitionToKEqualSumSubsets";
 
 describe("2022_06 test", () => {
   it("minimum swaps to make strings equal", () => {
@@ -252,5 +254,51 @@ describe("2022_06 test", () => {
     expect(compare0).toEqual(true);
     expect(compare1).toEqual(true);
     expect(compare2).toEqual(true);
+  });
+
+  it("minimum limit of balls in a bag", () => {
+    const nums0 = [9];
+    const maxOperations0 = 2;
+
+    const nums1 = [2, 4, 8, 2];
+    const maxOperations1 = 4;
+
+    const nums2 = [7, 17];
+    const maxOperations2 = 2;
+
+    const ret0 = minimumSize(nums0, maxOperations0);
+    const ret1 = minimumSize(nums1, maxOperations1);
+    const ret2 = minimumSize(nums2, maxOperations2);
+
+    const ans0 = 3;
+    const ans1 = 2;
+    const ans2 = 7;
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+    expect(ret2).toEqual(ans2);
+  });
+
+  it("partition to k equal sum subsets", () => {
+    const nums0 = [4, 3, 2, 3, 5, 2, 1];
+    const k0 = 4;
+
+    const nums1 = [1, 2, 3, 4];
+    const k1 = 3;
+
+    const nums2 = [2, 2, 2, 2, 3, 4, 5];
+    const k2 = 4;
+
+    const ret0 = canPartitionKSubsets(nums0, k0);
+    const ret1 = canPartitionKSubsets(nums1, k1);
+    const ret2 = canPartitionKSubsets(nums2, k2);
+
+    const ans0 = true;
+    const ans1 = false;
+    const ans2 = false;
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+    expect(ret2).toEqual(ans2);
   });
 });
