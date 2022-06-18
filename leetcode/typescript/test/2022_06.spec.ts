@@ -10,6 +10,7 @@ import { invertTree } from "../2022_06/InvertBinaryTree";
 import { TreeNode } from "../common/TreeNode";
 import { minimumSize } from "../2022_06/MinimumLimitOfBallsInABag";
 import { canPartitionKSubsets } from "../2022_06/PartitionToKEqualSumSubsets";
+import { divideArray } from "../2022_06/DivideArrayIntoEqualPairs";
 
 describe("2022_06 test", () => {
   it("minimum swaps to make strings equal", () => {
@@ -300,5 +301,19 @@ describe("2022_06 test", () => {
     expect(ret0).toEqual(ans0);
     expect(ret1).toEqual(ans1);
     expect(ret2).toEqual(ans2);
+  });
+
+  it("divide array into equal pairs", () => {
+    const nums0 = [3, 2, 3, 2, 2, 2];
+    const nums1 = [1, 2, 3, 4];
+
+    const ans0 = true;
+    const ans1 = false;
+
+    const ret0 = divideArray(nums0);
+    const ret1 = divideArray(nums1);
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
   });
 });
