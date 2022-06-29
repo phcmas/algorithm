@@ -1,7 +1,11 @@
 import { minimumSwap } from "../2022_06/MinimumSwapsToMakeStringsEqual";
 import { numOfSubarrays } from "../2022_06/NumberOfSubArraysOfSizeKAndAverageGreaterThanOrEqualToThreshold";
 import { kWeakestRows } from "../2022_06/TheKWeakestRowsInAMatrix";
-import { isArraySame, isArraySameIgnoringOrder } from "../common/Util";
+import {
+  isArraySame,
+  isArraySameIgnoringOrder,
+  isTwoDimensionalArraySame,
+} from "../common/Util";
 import { ListNode } from "../common/ListNode";
 import { splitListToParts } from "../2022_06/SplitLinkedListInParts";
 import { twoSum } from "../2022_06/TwoSum";
@@ -11,6 +15,9 @@ import { TreeNode } from "../common/TreeNode";
 import { minimumSize } from "../2022_06/MinimumLimitOfBallsInABag";
 import { canPartitionKSubsets } from "../2022_06/PartitionToKEqualSumSubsets";
 import { divideArray } from "../2022_06/DivideArrayIntoEqualPairs";
+import { addDigits } from "../2022_06/AddDigits";
+import { binaryTreePaths } from "../2022_06/BinaryTreePaths";
+import { generateMatrix } from "../2022_06/SpiralMatrixII";
 
 describe("2022_06 test", () => {
   it("minimum swaps to make strings equal", () => {
@@ -315,5 +322,60 @@ describe("2022_06 test", () => {
 
     expect(ret0).toEqual(ans0);
     expect(ret1).toEqual(ans1);
+  });
+
+  it("add digits", () => {
+    const num0 = 38;
+    const num1 = 0;
+
+    const ans0 = 2;
+    const ans1 = 0;
+
+    const ret0 = addDigits(num0);
+    const ret1 = addDigits(num1);
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+  });
+
+  it("binary tree paths", () => {
+    const arr0 = [1, 2, 3, null, 5];
+    const arr1 = [1];
+
+    const root0 = TreeNode.makeTreeNode(arr0);
+    const root1 = TreeNode.makeTreeNode(arr1);
+
+    const ans0 = ["1->2->5", "1->3"];
+    const ans1 = ["1"];
+
+    const ret0 = binaryTreePaths(root0);
+    const ret1 = binaryTreePaths(root1);
+
+    const compare0 = isArraySame(ret0, ans0);
+    const compare1 = isArraySame(ret1, ans1);
+
+    expect(compare0).toEqual(true);
+    expect(compare1).toEqual(true);
+  });
+
+  it("spiral matrix II", () => {
+    const n0 = 3;
+    const n1 = 1;
+
+    const ans0 = [
+      [1, 2, 3],
+      [8, 9, 4],
+      [7, 6, 5],
+    ];
+    const ans1 = [[1]];
+
+    const ret0 = generateMatrix(n0);
+    const ret1 = generateMatrix(n1);
+
+    const compare0 = isTwoDimensionalArraySame(ret0, ans0);
+    const compare1 = isTwoDimensionalArraySame(ret1, ans1);
+
+    expect(compare0).toEqual(true);
+    expect(compare1).toEqual(true);
   });
 });
