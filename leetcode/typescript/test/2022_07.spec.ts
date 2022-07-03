@@ -7,6 +7,8 @@ import { isArraySame } from "../common/Util";
 import { TreeNode } from "../common/TreeNode";
 import { rangeSumBST } from "../2022_07/RangeSumOfBST";
 import { findLHS } from "../2022_07/LongestHarmoniousSubsequence";
+import { findMaxAverage } from "../2022_07/MaximumAverageSubarrayI";
+import { maximumSum } from "../2022_07/MaximumSubarraySumWithOneDeletion";
 
 describe("2022_07 test", () => {
   it("maximum twin sum of a linked list", () => {
@@ -128,6 +130,53 @@ describe("2022_07 test", () => {
     const ret0 = findLHS(nums0);
     const ret1 = findLHS(nums1);
     const ret2 = findLHS(nums2);
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+    expect(ret2).toEqual(ans2);
+  });
+
+  it("maximum average subarray I", () => {
+    const nums0 = [1, 12, -5, -6, 50, 3];
+    const k0 = 4;
+
+    const nums1 = [5];
+    const k1 = 1;
+
+    const nums2 = [0, 4, 0, 3, 2];
+    const k2 = 1;
+
+    const nums3 = [9, 7, 3, 5, 6, 2, 0, 8, 1, 9];
+    const k3 = 6;
+
+    const ret0 = findMaxAverage(nums0, k0);
+    const ret1 = findMaxAverage(nums1, k1);
+    const ret2 = findMaxAverage(nums2, k2);
+    const ret3 = findMaxAverage(nums3, k3);
+
+    const ans0 = 12.75;
+    const ans1 = 5;
+    const ans2 = 4;
+    const ans3 = 5.333333333333333;
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+    expect(ret2).toEqual(ans2);
+    expect(ret3).toEqual(ans3);
+  });
+
+  it("maximum subarray sum with one deletion", () => {
+    const arr0 = [1, -2, 0, 3];
+    const arr1 = [1, -2, -2, 3];
+    const arr2 = [-1, -1, -1, -1];
+
+    const ans0 = 4;
+    const ans1 = 3;
+    const ans2 = -1;
+
+    const ret0 = maximumSum(arr0);
+    const ret1 = maximumSum(arr1);
+    const ret2 = maximumSum(arr2);
 
     expect(ret0).toEqual(ans0);
     expect(ret1).toEqual(ans1);
