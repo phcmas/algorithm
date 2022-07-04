@@ -9,6 +9,8 @@ import { rangeSumBST } from "../2022_07/RangeSumOfBST";
 import { findLHS } from "../2022_07/LongestHarmoniousSubsequence";
 import { findMaxAverage } from "../2022_07/MaximumAverageSubarrayI";
 import { maximumSum } from "../2022_07/MaximumSubarraySumWithOneDeletion";
+import { findMaxConsecutiveOnes } from "../2022_07/MaxConsecutiveOnes";
+import { minMutation } from "../2022_07/MinimumGeneticMutation";
 
 describe("2022_07 test", () => {
   it("maximum twin sum of a linked list", () => {
@@ -177,6 +179,46 @@ describe("2022_07 test", () => {
     const ret0 = maximumSum(arr0);
     const ret1 = maximumSum(arr1);
     const ret2 = maximumSum(arr2);
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+    expect(ret2).toEqual(ans2);
+  });
+
+  it("max consecutive ones", () => {
+    const nums0 = [1, 1, 0, 1, 1, 1];
+    const nums1 = [1, 0, 1, 1, 0, 1];
+
+    const ans0 = 3;
+    const ans1 = 2;
+
+    const ret0 = findMaxConsecutiveOnes(nums0);
+    const ret1 = findMaxConsecutiveOnes(nums1);
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+  });
+
+  it("minimum genetic mutation", () => {
+    const start0 = "AACCGGTT";
+    const end0 = "AACCGGTA";
+    const bank0 = ["AACCGGTA"];
+
+    const start1 = "AACCGGTT";
+    const end1 = "AAACGGTA";
+    const bank1 = ["AACCGGTA", "AACCGCTA", "AAACGGTA"];
+
+    const start2 = "AAAAACCC";
+    const end2 = "AACCCCCC";
+    const bank2 = ["AAAACCCC", "AAACCCCC", "AACCCCCC"];
+
+    const ret0 = minMutation(start0, end0, bank0);
+    const ret1 = minMutation(start1, end1, bank1);
+    const ret2 = minMutation(start2, end2, bank2);
+
+    const ans0 = 1;
+    const ans1 = 2;
+    const ans2 = 3;
 
     expect(ret0).toEqual(ans0);
     expect(ret1).toEqual(ans1);
