@@ -86,3 +86,5 @@ function pushDominoes(dominoes: string): string {
 
   return result;
 }
+
+export { pushDominoes };
