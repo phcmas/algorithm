@@ -3,6 +3,7 @@ import { minPairSum } from "../2022_08/MinimizeMaximumPairSumInArray";
 import { pushDominoes } from "../2022_08/PushDominoes";
 import { deepestLeavesSum } from "../2022_08/DeepestLeavesSum";
 import { longestCommonSubsequence } from "../2022_08/LongestCommonSubsequence";
+import { FindElements } from "../2022_08/FindElementsInAContaminatedBinaryTree";
 
 describe("2022_08 test", () => {
   it("push dominoes", () => {
@@ -83,5 +84,43 @@ describe("2022_08 test", () => {
     expect(ret2).toEqual(ans2);
     expect(ret3).toEqual(ans3);
     expect(ret4).toEqual(ans4);
+  });
+
+  it("find element in a contaminated binary tree", () => {
+    const arr0 = [-1, null, -1];
+    const root0 = TreeNode.makeTreeNode(arr0);
+    const class0 = new FindElements(root0);
+
+    const ret00 = class0.find(1);
+    const ret01 = class0.find(2);
+
+    expect(ret00).toEqual(false);
+    expect(ret01).toEqual(true);
+
+    const arr1 = [-1, -1, -1, -1, -1];
+    const root1 = TreeNode.makeTreeNode(arr1);
+    const class1 = new FindElements(root1);
+
+    const ret10 = class1.find(1);
+    const ret11 = class1.find(3);
+    const ret12 = class1.find(5);
+
+    expect(ret10).toEqual(true);
+    expect(ret11).toEqual(true);
+    expect(ret12).toEqual(false);
+
+    const arr2 = [-1, null, -1, -1, null, -1];
+    const root2 = TreeNode.makeTreeNode(arr2);
+    const class2 = new FindElements(root2);
+
+    const ret20 = class2.find(2);
+    const ret21 = class2.find(3);
+    const ret22 = class2.find(4);
+    const ret23 = class2.find(5);
+
+    expect(ret20).toEqual(true);
+    expect(ret21).toEqual(false);
+    expect(ret22).toEqual(false);
+    expect(ret23).toEqual(true);
   });
 });

@@ -7,7 +7,7 @@
     "build": "tsc --project tsconfig.json",
     "start": "yarn build && ts-node",
     "lint": "eslint **/*.ts --fix",
-    "test": "jest -c",
+    "test": "jest",
     "test:coverage": "jest --coverage -c"
   },
   "devDependencies": {
