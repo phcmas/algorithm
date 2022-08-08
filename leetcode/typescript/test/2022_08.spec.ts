@@ -1,9 +1,11 @@
+import { isConatinedIn } from "../common/Util";
 import { TreeNode } from "../common/TreeNode";
 import { minPairSum } from "../2022_08/MinimizeMaximumPairSumInArray";
 import { pushDominoes } from "../2022_08/PushDominoes";
 import { deepestLeavesSum } from "../2022_08/DeepestLeavesSum";
 import { longestCommonSubsequence } from "../2022_08/LongestCommonSubsequence";
 import { FindElements } from "../2022_08/FindElementsInAContaminatedBinaryTree";
+import { findDifferentBinaryString } from "../2022_08/FindUniqueBinaryString";
 
 describe("2022_08 test", () => {
   it("push dominoes", () => {
@@ -122,5 +124,27 @@ describe("2022_08 test", () => {
     expect(ret21).toEqual(false);
     expect(ret22).toEqual(false);
     expect(ret23).toEqual(true);
+  });
+
+  it("find unique binary string", () => {
+    const nums0 = ["01", "10"];
+    const nums1 = ["00", "01"];
+    const nums2 = ["111", "011", "001"];
+    const nums3 = ["1"];
+
+    const ret0 = findDifferentBinaryString(nums0);
+    const ret1 = findDifferentBinaryString(nums1);
+    const ret2 = findDifferentBinaryString(nums2);
+    const ret3 = findDifferentBinaryString(nums3);
+
+    const compare0 = isConatinedIn(ret0, ["00", "11"]);
+    const compare1 = isConatinedIn(ret1, ["10", "11"]);
+    const compare2 = isConatinedIn(ret2, ["000", "010", "100", "101", "110"]);
+    const compare3 = isConatinedIn(ret3, ["0"]);
+
+    expect(compare0).toEqual(true);
+    expect(compare1).toEqual(true);
+    expect(compare2).toEqual(true);
+    expect(compare3).toEqual(true);
   });
 });

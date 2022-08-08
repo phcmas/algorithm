@@ -26,4 +26,13 @@ function isTwoDimensionalArraySame<T>(twoDimArr0: T[][], twoDimArr1: T[][]) {
   return true;
 }
 
-export { isArraySame, isArraySameIgnoringOrder, isTwoDimensionalArraySame };
+function isConatinedIn<T>(value: T, arr: T[]) {
+  return arr.some((element) => element === value);
+}
+
+export {
+  isArraySame,
+  isArraySameIgnoringOrder,
+  isTwoDimensionalArraySame,
+  isConatinedIn,
+};
