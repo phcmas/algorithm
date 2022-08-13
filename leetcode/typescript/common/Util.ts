@@ -26,6 +26,18 @@ function isTwoDimensionalArraySame<T>(twoDimArr0: T[][], twoDimArr1: T[][]) {
   return true;
 }
 
+function isTwoDimensionalArraySameIgnoringOrder<T>(
+  twoDimArr0: T[][],
+  twoDimArr1: T[][]
+) {
+  if (twoDimArr0.length !== twoDimArr1.length) return false;
+
+  const sorted0 = twoDimArr0.sort();
+  const sorted1 = twoDimArr1.sort();
+
+  return isTwoDimensionalArraySame(sorted0, sorted1);
+}
+
 function isConatinedIn<T>(value: T, arr: T[]) {
   return arr.some((element) => element === value);
 }
@@ -34,5 +46,6 @@ export {
   isArraySame,
   isArraySameIgnoringOrder,
   isTwoDimensionalArraySame,
+  isTwoDimensionalArraySameIgnoringOrder,
   isConatinedIn,
 };

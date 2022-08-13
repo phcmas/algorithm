@@ -1,4 +1,7 @@
-import { isConatinedIn } from "../common/Util";
+import {
+  isConatinedIn,
+  isTwoDimensionalArraySameIgnoringOrder,
+} from "../common/Util";
 import { TreeNode } from "../common/TreeNode";
 import { minPairSum } from "../2022_08/MinimizeMaximumPairSumInArray";
 import { pushDominoes } from "../2022_08/PushDominoes";
@@ -7,6 +10,8 @@ import { longestCommonSubsequence } from "../2022_08/LongestCommonSubsequence";
 import { FindElements } from "../2022_08/FindElementsInAContaminatedBinaryTree";
 import { findDifferentBinaryString } from "../2022_08/FindUniqueBinaryString";
 import { flatten } from "../2022_08/FlattenBinaryTreeToLinkedList";
+import { findSubsequences } from "../2022_08/IncreasingSubsequences";
+import { findSubsequencesII } from "../2022_08/IncreasingSubsequencesII";
 
 type TreeArr = (number | null)[];
 
@@ -191,5 +196,31 @@ describe("2022_08 test", () => {
     expect(compare0).toEqual(true);
     expect(compare1).toEqual(true);
     expect(compare2).toEqual(true);
+  });
+
+  it("increasing subsequences", () => {
+    const nums0 = [4, 6, 7, 7];
+    const nums1 = [4, 4, 3, 2, 1];
+
+    const ans0 = [
+      [4, 6],
+      [4, 6, 7],
+      [4, 6, 7, 7],
+      [4, 7],
+      [4, 7, 7],
+      [6, 7],
+      [6, 7, 7],
+      [7, 7],
+    ];
+    const ans1 = [[4, 4]];
+
+    const ret0 = findSubsequences(nums0);
+    const ret1 = findSubsequences(nums1);
+
+    const compare0 = isTwoDimensionalArraySameIgnoringOrder(ret0, ans0);
+    const compare1 = isTwoDimensionalArraySameIgnoringOrder(ret1, ans1);
+
+    expect(compare0).toEqual(true);
+    expect(compare1).toEqual(true);
   });
 });
