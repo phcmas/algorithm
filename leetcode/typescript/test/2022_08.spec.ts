@@ -6,6 +6,7 @@ import { deepestLeavesSum } from "../2022_08/DeepestLeavesSum";
 import { longestCommonSubsequence } from "../2022_08/LongestCommonSubsequence";
 import { FindElements } from "../2022_08/FindElementsInAContaminatedBinaryTree";
 import { findDifferentBinaryString } from "../2022_08/FindUniqueBinaryString";
+import { flatten } from "../2022_08/FlattenBinaryTreeToLinkedList";
 
 describe("2022_08 test", () => {
   it("push dominoes", () => {
@@ -146,5 +147,35 @@ describe("2022_08 test", () => {
     expect(compare1).toEqual(true);
     expect(compare2).toEqual(true);
     expect(compare3).toEqual(true);
+  });
+
+  it("flatten binary tree to linked list", () => {
+    const nums0 = [1, 2, 5, 3, 4, null, 6];
+    const nums1 = [];
+    const nums2 = [0];
+
+    const answerNums0 = [1, null, 2, null, 3, null, 4, null, 5, null, 6];
+    const answerNums1 = [];
+    const answerNums2 = [0];
+
+    const root0 = TreeNode.makeTreeNode(nums0);
+    const root1 = TreeNode.makeTreeNode(nums1);
+    const root2 = TreeNode.makeTreeNode(nums2);
+
+    const ans0 = TreeNode.makeTreeNode(answerNums0);
+    const ans1 = TreeNode.makeTreeNode(answerNums1);
+    const ans2 = TreeNode.makeTreeNode(answerNums2);
+
+    flatten(root0);
+    flatten(root1);
+    flatten(root2);
+
+    const compare0 = TreeNode.isSameTree(root0, ans0);
+    const compare1 = TreeNode.isSameTree(root1, ans1);
+    const compare2 = TreeNode.isSameTree(root2, ans2);
+
+    expect(compare0).toEqual(true);
+    expect(compare1).toEqual(true);
+    expect(compare2).toEqual(true);
   });
 });
