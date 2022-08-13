@@ -8,6 +8,8 @@ import { FindElements } from "../2022_08/FindElementsInAContaminatedBinaryTree";
 import { findDifferentBinaryString } from "../2022_08/FindUniqueBinaryString";
 import { flatten } from "../2022_08/FlattenBinaryTreeToLinkedList";
 
+type TreeArr = (number | null)[];
+
 describe("2022_08 test", () => {
   it("push dominoes", () => {
     const dominoes0 = "RR.L";
@@ -150,13 +152,25 @@ describe("2022_08 test", () => {
   });
 
   it("flatten binary tree to linked list", () => {
-    const nums0 = [1, 2, 5, 3, 4, null, 6];
-    const nums1 = [];
-    const nums2 = [0];
+    const nums0: TreeArr = [1, 2, 5, 3, 4, null, 6];
+    const nums1: TreeArr = [];
+    const nums2: TreeArr = [0];
 
-    const answerNums0 = [1, null, 2, null, 3, null, 4, null, 5, null, 6];
-    const answerNums1 = [];
-    const answerNums2 = [0];
+    const answerNums0: TreeArr = [
+      1,
+      null,
+      2,
+      null,
+      3,
+      null,
+      4,
+      null,
+      5,
+      null,
+      6,
+    ];
+    const answerNums1: TreeArr = [];
+    const answerNums2: TreeArr = [0];
 
     const root0 = TreeNode.makeTreeNode(nums0);
     const root1 = TreeNode.makeTreeNode(nums1);

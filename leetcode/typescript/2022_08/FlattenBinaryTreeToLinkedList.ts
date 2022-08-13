@@ -31,11 +31,26 @@ function traversePreorder(root: TreeNode | null, nodes: TreeNode[]) {
   traversePreorder(root.right, nodes);
 }
 
+function toLinkedList(nodes: TreeNode[]) {
+  const root = nodes[0];
+  let prev: TreeNode = nodes[0];
+
+  for (let i = 1; i < nodes.length; ++i) {
+    const node = nodes[i];
+    prev.left = null;
+    prev.right = node;
+    prev = node;
+  }
+
+  return root;
+}
+
 function flatten(root: TreeNode | null): void {
   if (root === null) return;
 
   const nodesInPreorder: TreeNode[] = [];
   traversePreorder(root, nodesInPreorder);
+  toLinkedList(nodesInPreorder);
 }
 
 export { flatten };
