@@ -14,6 +14,7 @@ import { findSubsequences } from "../2022_08/IncreasingSubsequences";
 import { equalPairs } from "../2022_08/EqualRowAndColumnPairs";
 import { peakIndexInMountainArray } from "../2022_08/PeakIndexInAMountainArray";
 import { maximumUniqueSubarray } from "../2022_08/MaximumErasureValue";
+import { maxIceCream } from "../2022_08/MaximumIceCreamBars";
 
 type TreeArr = (number | null)[];
 
@@ -283,5 +284,27 @@ describe("2022_08 test", () => {
 
     expect(ret0).toEqual(ans0);
     expect(ret1).toEqual(ans1);
+  });
+
+  it("maximum ice cream bars", () => {
+    const costs0 = [1, 3, 2, 4, 1];
+    const costs1 = [10, 6, 8, 7, 7, 8];
+    const costs2 = [1, 6, 3, 1, 2, 5];
+
+    const coins0 = 7;
+    const coins1 = 5;
+    const coins2 = 20;
+
+    const ans0 = 4;
+    const ans1 = 0;
+    const ans2 = 6;
+
+    const ret0 = maxIceCream(costs0, coins0);
+    const ret1 = maxIceCream(costs1, coins1);
+    const ret2 = maxIceCream(costs2, coins2);
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+    expect(ret2).toEqual(ans2);
   });
 });
