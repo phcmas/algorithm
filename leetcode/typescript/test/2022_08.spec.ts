@@ -12,6 +12,7 @@ import { findDifferentBinaryString } from "../2022_08/FindUniqueBinaryString";
 import { flatten } from "../2022_08/FlattenBinaryTreeToLinkedList";
 import { findSubsequences } from "../2022_08/IncreasingSubsequences";
 import { equalPairs } from "../2022_08/EqualRowAndColumnPairs";
+import { peakIndexInMountainArray } from "../2022_08/PeakIndexInAMountainArray";
 
 type TreeArr = (number | null)[];
 
@@ -222,6 +223,28 @@ describe("2022_08 test", () => {
 
     expect(compare0).toEqual(true);
     expect(compare1).toEqual(true);
+  });
+
+  it("peak index in a mountain array", () => {
+    const arr0 = [0, 1, 0];
+    const arr1 = [0, 2, 1, 0];
+    const arr2 = [0, 10, 5, 2];
+    const arr3 = [3, 4, 5, 1];
+
+    const ans0 = 1;
+    const ans1 = 1;
+    const ans2 = 1;
+    const ans3 = 2;
+
+    const ret0 = peakIndexInMountainArray(arr0);
+    const ret1 = peakIndexInMountainArray(arr1);
+    const ret2 = peakIndexInMountainArray(arr2);
+    const ret3 = peakIndexInMountainArray(arr3);
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+    expect(ret2).toEqual(ans2);
+    expect(ret3).toEqual(ans3);
   });
 
   it("equal row and column pairs", () => {
