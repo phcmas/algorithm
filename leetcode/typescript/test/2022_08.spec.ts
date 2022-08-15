@@ -13,6 +13,7 @@ import { flatten } from "../2022_08/FlattenBinaryTreeToLinkedList";
 import { findSubsequences } from "../2022_08/IncreasingSubsequences";
 import { equalPairs } from "../2022_08/EqualRowAndColumnPairs";
 import { peakIndexInMountainArray } from "../2022_08/PeakIndexInAMountainArray";
+import { maximumUniqueSubarray } from "../2022_08/MaximumErasureValue";
 
 type TreeArr = (number | null)[];
 
@@ -265,6 +266,20 @@ describe("2022_08 test", () => {
 
     const ret0 = equalPairs(grid0);
     const ret1 = equalPairs(grid1);
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+  });
+
+  it("maximum erasure value", () => {
+    const nums0 = [4, 2, 4, 5, 6];
+    const nums1 = [5, 2, 1, 2, 5, 2, 1, 2, 5];
+
+    const ans0 = 17;
+    const ans1 = 8;
+
+    const ret0 = maximumUniqueSubarray(nums0);
+    const ret1 = maximumUniqueSubarray(nums1);
 
     expect(ret0).toEqual(ans0);
     expect(ret1).toEqual(ans1);
