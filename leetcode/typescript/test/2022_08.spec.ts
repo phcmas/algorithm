@@ -11,7 +11,7 @@ import { FindElements } from "../2022_08/FindElementsInAContaminatedBinaryTree";
 import { findDifferentBinaryString } from "../2022_08/FindUniqueBinaryString";
 import { flatten } from "../2022_08/FlattenBinaryTreeToLinkedList";
 import { findSubsequences } from "../2022_08/IncreasingSubsequences";
-import { findSubsequencesII } from "../2022_08/IncreasingSubsequencesII";
+import { equalPairs } from "../2022_08/EqualRowAndColumnPairs";
 
 type TreeArr = (number | null)[];
 
@@ -222,5 +222,28 @@ describe("2022_08 test", () => {
 
     expect(compare0).toEqual(true);
     expect(compare1).toEqual(true);
+  });
+
+  it("equal row and column pairs", () => {
+    const grid0 = [
+      [3, 2, 1],
+      [1, 7, 6],
+      [2, 7, 7],
+    ];
+    const grid1 = [
+      [3, 1, 2, 2],
+      [1, 4, 4, 5],
+      [2, 4, 2, 2],
+      [2, 4, 2, 2],
+    ];
+
+    const ans0 = 1;
+    const ans1 = 3;
+
+    const ret0 = equalPairs(grid0);
+    const ret1 = equalPairs(grid1);
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
   });
 });
