@@ -15,6 +15,7 @@ import { equalPairs } from "../2022_08/EqualRowAndColumnPairs";
 import { peakIndexInMountainArray } from "../2022_08/PeakIndexInAMountainArray";
 import { maximumUniqueSubarray } from "../2022_08/MaximumErasureValue";
 import { maxIceCream } from "../2022_08/MaximumIceCreamBars";
+import { numSubarrayBoundedMax } from "../2022_08/NumberOfSubarraysWithBoundedMaximum";
 
 type TreeArr = (number | null)[];
 
@@ -302,6 +303,32 @@ describe("2022_08 test", () => {
     const ret0 = maxIceCream(costs0, coins0);
     const ret1 = maxIceCream(costs1, coins1);
     const ret2 = maxIceCream(costs2, coins2);
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+    expect(ret2).toEqual(ans2);
+  });
+
+  it("number of subarrays with bounded maximum", () => {
+    const nums0 = [2, 1, 4, 3];
+    const left0 = 2;
+    const right0 = 3;
+
+    const nums1 = [2, 9, 2, 5, 6];
+    const left1 = 2;
+    const right1 = 8;
+
+    const nums2 = [16, 69, 88, 85, 79, 87, 37, 33, 39, 34];
+    const left2 = 55;
+    const right2 = 57;
+
+    const ret0 = numSubarrayBoundedMax(nums0, left0, right0);
+    const ret1 = numSubarrayBoundedMax(nums1, left1, right1);
+    const ret2 = numSubarrayBoundedMax(nums2, left2, right2);
+
+    const ans0 = 3;
+    const ans1 = 7;
+    const ans2 = 0;
 
     expect(ret0).toEqual(ans0);
     expect(ret1).toEqual(ans1);
