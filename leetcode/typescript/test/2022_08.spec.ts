@@ -18,6 +18,7 @@ import { maxIceCream } from "../2022_08/MaximumIceCreamBars";
 import { numSubarrayBoundedMax } from "../2022_08/NumberOfSubarraysWithBoundedMaximum";
 import { isUnivalTree } from "../2022_08/UnivaluedBinaryTree";
 import { numSplits } from "../2022_08/NumberOfGoodWaysToSplitAString";
+import { getMaximumGold } from "../2022_08/PathWithMaximumGold";
 
 type TreeArr = (number | null)[];
 
@@ -366,5 +367,40 @@ describe("2022_08 test", () => {
 
     expect(ret0).toEqual(ans0);
     expect(ret1).toEqual(ans1);
+  });
+
+  it("path with maximum gold", () => {
+    const grid0 = [
+      [0, 6, 0],
+      [5, 8, 7],
+      [0, 9, 0],
+    ];
+
+    const grid1 = [
+      [1, 0, 7],
+      [2, 0, 6],
+      [3, 4, 5],
+      [0, 3, 0],
+      [9, 0, 20],
+    ];
+
+    const grid2 = [
+      [0, 0, 19, 5, 8],
+      [11, 20, 14, 1, 0],
+      [0, 0, 1, 1, 1],
+      [0, 2, 0, 2, 0],
+    ];
+
+    const ans0 = 24;
+    const ans1 = 28;
+    const ans2 = 77;
+
+    const ret0 = getMaximumGold(grid0);
+    const ret1 = getMaximumGold(grid1);
+    const ret2 = getMaximumGold(grid2);
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+    expect(ret2).toEqual(ans2);
   });
 });
