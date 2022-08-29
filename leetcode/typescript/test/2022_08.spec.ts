@@ -16,6 +16,7 @@ import { peakIndexInMountainArray } from "../2022_08/PeakIndexInAMountainArray";
 import { maximumUniqueSubarray } from "../2022_08/MaximumErasureValue";
 import { maxIceCream } from "../2022_08/MaximumIceCreamBars";
 import { numSubarrayBoundedMax } from "../2022_08/NumberOfSubarraysWithBoundedMaximum";
+import { isUnivalTree } from "../2022_08/UnivaluedBinaryTree";
 
 type TreeArr = (number | null)[];
 
@@ -333,5 +334,22 @@ describe("2022_08 test", () => {
     expect(ret0).toEqual(ans0);
     expect(ret1).toEqual(ans1);
     expect(ret2).toEqual(ans2);
+  });
+
+  it("univalued binary tree", () => {
+    const arr0 = [1, 1, 1, 1, 1, null, 1];
+    const arr1 = [2, 2, 2, 5, 2];
+
+    const root0 = TreeNode.makeTreeNode(arr0);
+    const root1 = TreeNode.makeTreeNode(arr1);
+
+    const ans0 = true;
+    const ans1 = false;
+
+    const ret0 = isUnivalTree(root0);
+    const ret1 = isUnivalTree(root1);
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
   });
 });
