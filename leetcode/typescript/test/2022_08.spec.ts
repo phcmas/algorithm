@@ -17,6 +17,7 @@ import { maximumUniqueSubarray } from "../2022_08/MaximumErasureValue";
 import { maxIceCream } from "../2022_08/MaximumIceCreamBars";
 import { numSubarrayBoundedMax } from "../2022_08/NumberOfSubarraysWithBoundedMaximum";
 import { isUnivalTree } from "../2022_08/UnivaluedBinaryTree";
+import { numSplits } from "../2022_08/NumberOfGoodWaysToSplitAString";
 
 type TreeArr = (number | null)[];
 
@@ -348,6 +349,20 @@ describe("2022_08 test", () => {
 
     const ret0 = isUnivalTree(root0);
     const ret1 = isUnivalTree(root1);
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+  });
+
+  it("number of good ways to split a string", () => {
+    const s0 = "aacaba";
+    const s1 = "abcd";
+
+    const ans0 = 2;
+    const ans1 = 1;
+
+    const ret0 = numSplits(s0);
+    const ret1 = numSplits(s1);
 
     expect(ret0).toEqual(ans0);
     expect(ret1).toEqual(ans1);
