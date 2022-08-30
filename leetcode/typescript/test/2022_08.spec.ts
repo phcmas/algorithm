@@ -19,6 +19,7 @@ import { numSubarrayBoundedMax } from "../2022_08/NumberOfSubarraysWithBoundedMa
 import { isUnivalTree } from "../2022_08/UnivaluedBinaryTree";
 import { numSplits } from "../2022_08/NumberOfGoodWaysToSplitAString";
 import { getMaximumGold } from "../2022_08/PathWithMaximumGold";
+import { maxDistance } from "../2022_08/AsFarFromLandAsPossible";
 
 type TreeArr = (number | null)[];
 
@@ -402,5 +403,46 @@ describe("2022_08 test", () => {
     expect(ret0).toEqual(ans0);
     expect(ret1).toEqual(ans1);
     expect(ret2).toEqual(ans2);
+  });
+
+  it("as far from land as possible", () => {
+    const grid0 = [
+      [1, 0, 1],
+      [0, 0, 0],
+      [1, 0, 1],
+    ];
+    const grid1 = [
+      [1, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+    ];
+    const grid2 = [
+      [0, 0, 0, 0],
+      [0, 0, 0, 0],
+      [0, 0, 0, 0],
+      [0, 0, 0, 0],
+    ];
+    const grid3 = [
+      [1, 1, 1, 1, 1],
+      [1, 1, 1, 1, 1],
+      [1, 1, 1, 1, 1],
+      [1, 1, 1, 1, 1],
+      [1, 1, 1, 1, 1],
+    ];
+
+    const ans0 = 2;
+    const ans1 = 4;
+    const ans2 = -1;
+    const ans3 = -1;
+
+    const ret0 = maxDistance(grid0);
+    const ret1 = maxDistance(grid1);
+    const ret2 = maxDistance(grid2);
+    const ret3 = maxDistance(grid3);
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+    expect(ret2).toEqual(ans2);
+    expect(ret3).toEqual(ans3);
   });
 });

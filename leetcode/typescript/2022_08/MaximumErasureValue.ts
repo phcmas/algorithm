@@ -20,7 +20,7 @@
  *  1 <= nums[i] <= 10^4 */
 
 function maximumUniqueSubarray(nums: number[]): number {
-  const appeared = new Set<Number>();
+  const appeared = new Set<number>();
   let start = 0;
   let end = 0;
   let sum = 0;
