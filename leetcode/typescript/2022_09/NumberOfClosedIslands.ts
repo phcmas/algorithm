@@ -44,20 +44,11 @@ function isCorner(row: number, column: number, grid: number[][]) {
   );
 }
 
-function canVisit(
-  row: number,
-  column: number,
-  grid: number[][],
-  visited: boolean[][]
-) {
+function isOutOfBoundary(row: number, column: number, grid: number[][]) {
   const rowLength = grid.length;
   const columnLength = grid[0].length;
 
-  if (row < 0 || row >= rowLength || column < 0 || column >= columnLength)
-    return false;
-  if (grid[row][column] === 1 || visited[row][column]) return false;
-
-  return true;
+  return row < 0 || row >= rowLength || column < 0 || column >= columnLength;
 }
 
 function visitConnectedLands(
@@ -74,8 +65,7 @@ function visitConnectedLands(
     const nextRow = row + dr[i];
     const nextColumn = column + dc[i];
 
-    if (!canVisit(nextRow, nextColumn, grid, visited)) continue;
-
+    if (isOutOfBoundary(nextRow, nextColumn, grid)) continue;
     visitConnectedLands(nextRow, nextColumn, grid, visited);
   }
 
@@ -116,9 +106,11 @@ function countOfInnerLands(grid: number[][], visited: boolean[][]) {
 }
 
 function closedIsland(grid: number[][]): number {
-  const visited: boolean[][] = new Array(grid.length)
+  const height = grid.length;
+  const width = grid[0].length;
+  const visited: boolean[][] = new Array(height)
     .fill(false)
-    .map(() => new Array(grid[0].length).fill(false));
+    .map(() => new Array(width).fill(false));
 
   countOfCornerLands(grid, visited);
   return countOfInnerLands(grid, visited);
