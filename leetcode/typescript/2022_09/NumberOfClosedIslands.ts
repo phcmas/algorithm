@@ -33,22 +33,19 @@ const dr = [-1, 0, 1, 0];
 const directionCount = dc.length;
 
 function isCorner(row: number, column: number, grid: number[][]) {
-  const rowLength = grid.length;
-  const columnLength = grid[0].length;
+  const height = grid.length;
+  const width = grid[0].length;
 
   return (
-    row === 0 ||
-    row === rowLength - 1 ||
-    column === 0 ||
-    column === columnLength - 1
+    row === 0 || row === height - 1 || column === 0 || column === width - 1
   );
 }
 
 function isOutOfBoundary(row: number, column: number, grid: number[][]) {
-  const rowLength = grid.length;
-  const columnLength = grid[0].length;
+  const height = grid.length;
+  const width = grid[0].length;
 
-  return row < 0 || row >= rowLength || column < 0 || column >= columnLength;
+  return row < 0 || row >= height || column < 0 || column >= width;
 }
 
 function visitConnectedLands(
