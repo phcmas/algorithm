@@ -1,5 +1,6 @@
 import { closedIsland } from "../2022_09/NumberOfClosedIslands";
 import { possibleBipartition } from "../2022_09/PossibleBipartition";
+import { minimumDeletions } from "../2022_09/MinimumDeletionsToMakeStringBalanced";
 
 describe("2022_08 test", () => {
   it("push dominoes", () => {
@@ -86,6 +87,24 @@ describe("2022_08 test", () => {
     const ret0 = possibleBipartition(n0, dislikes0);
     const ret1 = possibleBipartition(n1, dislikes1);
     const ret2 = possibleBipartition(n2, dislikes2);
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+    expect(ret2).toEqual(ans2);
+  });
+
+  it("minimum deletion to make string balanced", () => {
+    const s0 = "aababbab";
+    const s1 = "bbaaaaabb";
+    const s2 = "baababbaabbaaabaabbabbbabaaaaaabaabababaaababbb";
+
+    const ans0 = 2;
+    const ans1 = 2;
+    const ans2 = 18;
+
+    const ret0 = minimumDeletions(s0);
+    const ret1 = minimumDeletions(s1);
+    const ret2 = minimumDeletions(s2);
 
     expect(ret0).toEqual(ans0);
     expect(ret1).toEqual(ans1);
