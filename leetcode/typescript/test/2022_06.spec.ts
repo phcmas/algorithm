@@ -243,21 +243,21 @@ describe("2022_06 test", () => {
     const arr4 = [2, 3, 1];
     const arr5: number[] = [];
 
-    const tree0 = TreeNode.makeTreeNode(arr0);
-    const tree1 = TreeNode.makeTreeNode(arr1);
-    const tree2 = TreeNode.makeTreeNode(arr2);
+    const tree0 = TreeNode.make(arr0);
+    const tree1 = TreeNode.make(arr1);
+    const tree2 = TreeNode.make(arr2);
 
-    const ans0 = TreeNode.makeTreeNode(arr3);
-    const ans1 = TreeNode.makeTreeNode(arr4);
-    const ans2 = TreeNode.makeTreeNode(arr5);
+    const ans0 = TreeNode.make(arr3);
+    const ans1 = TreeNode.make(arr4);
+    const ans2 = TreeNode.make(arr5);
 
     const ret0 = invertTree(tree0);
     const ret1 = invertTree(tree1);
     const ret2 = invertTree(tree2);
 
-    const compare0 = TreeNode.isSameTree(ret0, ans0);
-    const compare1 = TreeNode.isSameTree(ret1, ans1);
-    const compare2 = TreeNode.isSameTree(ret2, ans2);
+    const compare0 = TreeNode.isSame(ret0, ans0);
+    const compare1 = TreeNode.isSame(ret1, ans1);
+    const compare2 = TreeNode.isSame(ret2, ans2);
 
     expect(compare0).toEqual(true);
     expect(compare1).toEqual(true);
@@ -342,8 +342,8 @@ describe("2022_06 test", () => {
     const arr0 = [1, 2, 3, null, 5];
     const arr1 = [1];
 
-    const root0 = TreeNode.makeTreeNode(arr0);
-    const root1 = TreeNode.makeTreeNode(arr1);
+    const root0 = TreeNode.make(arr0);
+    const root1 = TreeNode.make(arr1);
 
     const ans0 = ["1->2->5", "1->3"];
     const ans1 = ["1"];

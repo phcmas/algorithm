@@ -107,8 +107,8 @@ describe("2022_07 test", () => {
     const low1 = 6;
     const high1 = 10;
 
-    const root0 = TreeNode.makeTreeNode(arr0);
-    const root1 = TreeNode.makeTreeNode(arr1);
+    const root0 = TreeNode.make(arr0);
+    const root1 = TreeNode.make(arr1);
 
     const ans0 = 32;
     const ans1 = 23;

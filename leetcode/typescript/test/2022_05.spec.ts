@@ -80,17 +80,17 @@ describe("2022_05 test", () => {
     const nums11 = [1, 2];
     const ansNum1 = [2, 2];
 
-    const tree00 = TreeNode.makeTreeNode(nums00);
-    const tree01 = TreeNode.makeTreeNode(nums01);
-    const ansTree0 = TreeNode.makeTreeNode(ansNum0);
+    const tree00 = TreeNode.make(nums00);
+    const tree01 = TreeNode.make(nums01);
+    const ansTree0 = TreeNode.make(ansNum0);
     const retTree0 = mergeTrees(tree00, tree01);
-    const ans0 = TreeNode.isSameTree(retTree0, ansTree0);
+    const ans0 = TreeNode.isSame(retTree0, ansTree0);
 
-    const tree10 = TreeNode.makeTreeNode(nums10);
-    const tree11 = TreeNode.makeTreeNode(nums11);
-    const ansTree1 = TreeNode.makeTreeNode(ansNum1);
+    const tree10 = TreeNode.make(nums10);
+    const tree11 = TreeNode.make(nums11);
+    const ansTree1 = TreeNode.make(ansNum1);
     const retTree1 = mergeTrees(tree10, tree11);
-    const ans1 = TreeNode.isSameTree(retTree1, ansTree1);
+    const ans1 = TreeNode.isSame(retTree1, ansTree1);
 
     expect(ans0).toEqual(true);
     expect(ans1).toEqual(true);
@@ -115,23 +115,23 @@ describe("2022_05 test", () => {
 
   it("all nodes distance K in binary tree", () => {
     const arr0 = [3, 5, 1, 6, 2, 0, 8, null, null, 7, 4];
-    const root0 = TreeNode.makeTreeNode(arr0);
-    const target0 = TreeNode.makeTreeNode([5]);
+    const root0 = TreeNode.make(arr0);
+    const target0 = TreeNode.make([5]);
     const k0 = 2;
 
     const arr1 = [1];
-    const root1 = TreeNode.makeTreeNode(arr1);
-    const target1 = TreeNode.makeTreeNode([1]);
+    const root1 = TreeNode.make(arr1);
+    const target1 = TreeNode.make([1]);
     const k1 = 3;
 
     const arr2 = [0, 2, 1, null, null, 3];
-    const root2 = TreeNode.makeTreeNode(arr2);
-    const target2 = TreeNode.makeTreeNode([3]);
+    const root2 = TreeNode.make(arr2);
+    const target2 = TreeNode.make([3]);
     const k2 = 3;
 
     const arr3 = [0, 1, 3, 2, null, null, null, 4];
-    const root3 = TreeNode.makeTreeNode(arr3);
-    const target3 = TreeNode.makeTreeNode([1]);
+    const root3 = TreeNode.make(arr3);
+    const target3 = TreeNode.make([1]);
     const k3 = 0;
 
     const ret0 = distanceK(root0, target0, k0);
@@ -158,13 +158,13 @@ describe("2022_05 test", () => {
 
   it("pseudo palindrom path in a binary tree", () => {
     const arr0 = [2, 3, 1, 3, 1, null, 1];
-    const root0 = TreeNode.makeTreeNode(arr0);
+    const root0 = TreeNode.make(arr0);
 
     const arr1 = [2, 1, 1, 1, 3, null, null, null, null, null, 1];
-    const root1 = TreeNode.makeTreeNode(arr1);
+    const root1 = TreeNode.make(arr1);
 
     const arr2 = [9];
-    const root2 = TreeNode.makeTreeNode(arr2);
+    const root2 = TreeNode.make(arr2);
 
     const arr3 = [
       8,
@@ -184,7 +184,7 @@ describe("2022_05 test", () => {
       null,
       8,
     ];
-    const root3 = TreeNode.makeTreeNode(arr3);
+    const root3 = TreeNode.make(arr3);
 
     const ret0 = pseudoPalindromicPaths(root0);
     const ret1 = pseudoPalindromicPaths(root1);
@@ -204,13 +204,13 @@ describe("2022_05 test", () => {
 
   it("maximum level sum of a binary tree", () => {
     const arr0 = [1, 7, 0, 7, -8, null, null];
-    const root0 = TreeNode.makeTreeNode(arr0);
+    const root0 = TreeNode.make(arr0);
 
     const arr1 = [989, null, 10250, 98693, -89388, null, null, null, -32127];
-    const root1 = TreeNode.makeTreeNode(arr1);
+    const root1 = TreeNode.make(arr1);
 
     const arr2 = [-100, -200, -300, -20, -5, -10, null];
-    const root2 = TreeNode.makeTreeNode(arr2);
+    const root2 = TreeNode.make(arr2);
 
     const ret0 = maxLevelSum(root0);
     const ret1 = maxLevelSum(root1);

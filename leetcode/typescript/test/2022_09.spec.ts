@@ -2,7 +2,7 @@ import { closedIsland } from "../2022_09/NumberOfClosedIslands";
 import { possibleBipartition } from "../2022_09/PossibleBipartition";
 import { minimumDeletions } from "../2022_09/MinimumDeletionsToMakeStringBalanced";
 
-describe("2022_08 test", () => {
+describe("2022_09 test", () => {
   it("push dominoes", () => {
     const grid0 = [
       [1, 1, 1, 1, 1, 1, 1, 0],

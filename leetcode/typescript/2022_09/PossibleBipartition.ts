@@ -25,8 +25,6 @@
  *  ai < bi
  *  All the pairs of dislikes are unique. */
 
-type VertexWithColor = { vertex: number; color: number };
-
 function getAdjacentList(n: number, edges: number[][]) {
   const adjacentList: number[][] = new Array(n + 1)
     .fill(null)

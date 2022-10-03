@@ -56,8 +56,8 @@ describe("2022_08 test", () => {
     const arr0 = [1, 2, 3, 4, 5, null, 6, 7, null, null, null, null, 8];
     const arr1 = [6, 7, 8, 2, 7, 1, 3, 9, null, 1, 4, null, null, null, 5];
 
-    const root0 = TreeNode.makeTreeNode(arr0);
-    const root1 = TreeNode.makeTreeNode(arr1);
+    const root0 = TreeNode.make(arr0);
+    const root1 = TreeNode.make(arr1);
 
     const ans0 = 15;
     const ans1 = 19;
@@ -106,7 +106,7 @@ describe("2022_08 test", () => {
 
   it("find element in a contaminated binary tree", () => {
     const arr0 = [-1, null, -1];
-    const root0 = TreeNode.makeTreeNode(arr0);
+    const root0 = TreeNode.make(arr0);
     const class0 = new FindElements(root0);
 
     const ret00 = class0.find(1);
@@ -116,7 +116,7 @@ describe("2022_08 test", () => {
     expect(ret01).toEqual(true);
 
     const arr1 = [-1, -1, -1, -1, -1];
-    const root1 = TreeNode.makeTreeNode(arr1);
+    const root1 = TreeNode.make(arr1);
     const class1 = new FindElements(root1);
 
     const ret10 = class1.find(1);
@@ -128,7 +128,7 @@ describe("2022_08 test", () => {
     expect(ret12).toEqual(false);
 
     const arr2 = [-1, null, -1, -1, null, -1];
-    const root2 = TreeNode.makeTreeNode(arr2);
+    const root2 = TreeNode.make(arr2);
     const class2 = new FindElements(root2);
 
     const ret20 = class2.find(2);
@@ -185,21 +185,21 @@ describe("2022_08 test", () => {
     const answerNums1: TreeArr = [];
     const answerNums2: TreeArr = [0];
 
-    const root0 = TreeNode.makeTreeNode(nums0);
-    const root1 = TreeNode.makeTreeNode(nums1);
-    const root2 = TreeNode.makeTreeNode(nums2);
+    const root0 = TreeNode.make(nums0);
+    const root1 = TreeNode.make(nums1);
+    const root2 = TreeNode.make(nums2);
 
-    const ans0 = TreeNode.makeTreeNode(answerNums0);
-    const ans1 = TreeNode.makeTreeNode(answerNums1);
-    const ans2 = TreeNode.makeTreeNode(answerNums2);
+    const ans0 = TreeNode.make(answerNums0);
+    const ans1 = TreeNode.make(answerNums1);
+    const ans2 = TreeNode.make(answerNums2);
 
     flatten(root0);
     flatten(root1);
     flatten(root2);
 
-    const compare0 = TreeNode.isSameTree(root0, ans0);
-    const compare1 = TreeNode.isSameTree(root1, ans1);
-    const compare2 = TreeNode.isSameTree(root2, ans2);
+    const compare0 = TreeNode.isSame(root0, ans0);
+    const compare1 = TreeNode.isSame(root1, ans1);
+    const compare2 = TreeNode.isSame(root2, ans2);
 
     expect(compare0).toEqual(true);
     expect(compare1).toEqual(true);
@@ -343,8 +343,8 @@ describe("2022_08 test", () => {
     const arr0 = [1, 1, 1, 1, 1, null, 1];
     const arr1 = [2, 2, 2, 5, 2];
 
-    const root0 = TreeNode.makeTreeNode(arr0);
-    const root1 = TreeNode.makeTreeNode(arr1);
+    const root0 = TreeNode.make(arr0);
+    const root1 = TreeNode.make(arr1);
 
     const ans0 = true;
     const ans1 = false;

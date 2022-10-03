@@ -76,9 +76,9 @@ describe("common utility test", () => {
     const tree0 = treeExample0();
     const tree1 = treeExample1();
 
-    const ans0 = TreeNode.isSameTree(tree0, tree0);
-    const ans1 = TreeNode.isSameTree(tree1, tree1);
-    const ans2 = TreeNode.isSameTree(tree0, tree1);
+    const ans0 = TreeNode.isSame(tree0, tree0);
+    const ans1 = TreeNode.isSame(tree1, tree1);
+    const ans2 = TreeNode.isSame(tree0, tree1);
 
     expect(ans0).toEqual(true);
     expect(ans1).toEqual(true);
@@ -89,14 +89,14 @@ describe("common utility test", () => {
     const arr0 = [1, 3, 2, 5];
     const arr1 = [2, 1, 3, null, 4, null, 7];
 
-    const ret0 = TreeNode.makeTreeNode(arr0);
-    const ret1 = TreeNode.makeTreeNode(arr1);
+    const ret0 = TreeNode.make(arr0);
+    const ret1 = TreeNode.make(arr1);
 
     const ans0 = treeExample0();
     const ans1 = treeExample1();
 
-    const compare0 = TreeNode.isSameTree(ret0, ans0);
-    const compare1 = TreeNode.isSameTree(ret1, ans1);
+    const compare0 = TreeNode.isSame(ret0, ans0);
+    const compare1 = TreeNode.isSame(ret1, ans1);
 
     expect(compare0).toEqual(true);
     expect(compare1).toEqual(true);
