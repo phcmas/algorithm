@@ -2,6 +2,7 @@ import { TreeNode } from "../common/TreeNode";
 import { generateTrees } from "../2022_10/UniqueBinarySearchTreesII";
 import { subArrayRangesI } from "../2022_10/SumOfSubarrayRangesI";
 import { subArrayRangesII } from "../2022_10/SumOfSubarrayRangesII";
+import { sumSubarrayMins } from "../2022_10/SumOfSubarrayMinimums";
 
 describe("2022_10 test", () => {
   it("unique binary search tree II", () => {
@@ -62,5 +63,19 @@ describe("2022_10 test", () => {
     expect(ret0).toEqual(ans0);
     expect(ret1).toEqual(ans1);
     expect(ret2).toEqual(ans2);
+  });
+
+  it("sum of subarray minimums", () => {
+    const arr0 = [3, 1, 2, 4];
+    const arr1 = [11, 81, 94, 43, 3];
+
+    const ans0 = 17;
+    const ans1 = 444;
+
+    const ret0 = sumSubarrayMins(arr0);
+    const ret1 = sumSubarrayMins(arr1);
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
   });
 });
