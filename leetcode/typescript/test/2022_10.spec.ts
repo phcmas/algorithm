@@ -5,6 +5,7 @@ import { subArrayRangesII } from "../2022_10/SumOfSubarrayRangesII";
 import { sumSubarrayMins } from "../2022_10/SumOfSubarrayMinimums";
 import { smallestNumber } from "../2022_10/ConstructSmallestNumberFromDIString";
 import { minSteps } from "../2022_10/MinimumNumberOfStepsToMakeTwoStringsAnagramII";
+import { waysToMakeFair } from "../2022_10/WaysToMakeAFairArray";
 
 describe("2022_10 test", () => {
   it("unique binary search tree II", () => {
@@ -110,5 +111,27 @@ describe("2022_10 test", () => {
 
     expect(ret0).toEqual(ans0);
     expect(ret1).toEqual(ans1);
+  });
+
+  it("ways to make a fair array", () => {
+    const nums0 = [2, 1, 6, 4];
+    const nums1 = [1, 1, 1];
+    const nums2 = [1, 2, 3];
+    const nums3 = [4, 1, 1, 2, 5, 1, 5, 4];
+
+    const ans0 = 1;
+    const ans1 = 3;
+    const ans2 = 0;
+    const ans3 = 2;
+
+    const ret0 = waysToMakeFair(nums0);
+    const ret1 = waysToMakeFair(nums1);
+    const ret2 = waysToMakeFair(nums2);
+    const ret3 = waysToMakeFair(nums3);
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+    expect(ret2).toEqual(ans2);
+    expect(ret3).toEqual(ans3);
   });
 });
