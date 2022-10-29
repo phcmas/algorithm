@@ -4,6 +4,7 @@ import { subArrayRangesI } from "../2022_10/SumOfSubarrayRangesI";
 import { subArrayRangesII } from "../2022_10/SumOfSubarrayRangesII";
 import { sumSubarrayMins } from "../2022_10/SumOfSubarrayMinimums";
 import { smallestNumber } from "../2022_10/ConstructSmallestNumberFromDIString";
+import { minSteps } from "../2022_10/MinimumNumberOfStepsToMakeTwoStringsAnagramII";
 
 describe("2022_10 test", () => {
   it("unique binary search tree II", () => {
@@ -89,6 +90,23 @@ describe("2022_10 test", () => {
 
     const ret0 = smallestNumber(pattern0);
     const ret1 = smallestNumber(pattern1);
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+  });
+
+  it("minimum number of steps to make two strings anagram II", () => {
+    const s0 = "leetcode";
+    const t0 = "coats";
+
+    const s1 = "night";
+    const t1 = "thing";
+
+    const ans0 = 7;
+    const ans1 = 0;
+
+    const ret0 = minSteps(s0, t0);
+    const ret1 = minSteps(s1, t1);
 
     expect(ret0).toEqual(ans0);
     expect(ret1).toEqual(ans1);
