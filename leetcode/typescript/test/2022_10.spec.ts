@@ -3,6 +3,7 @@ import { generateTrees } from "../2022_10/UniqueBinarySearchTreesII";
 import { subArrayRangesI } from "../2022_10/SumOfSubarrayRangesI";
 import { subArrayRangesII } from "../2022_10/SumOfSubarrayRangesII";
 import { sumSubarrayMins } from "../2022_10/SumOfSubarrayMinimums";
+import { smallestNumber } from "../2022_10/ConstructSmallestNumberFromDIString";
 
 describe("2022_10 test", () => {
   it("unique binary search tree II", () => {
@@ -74,6 +75,20 @@ describe("2022_10 test", () => {
 
     const ret0 = sumSubarrayMins(arr0);
     const ret1 = sumSubarrayMins(arr1);
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+  });
+
+  it("construct smallest number from di string", () => {
+    const pattern0 = "IIIDIDD";
+    const pattern1 = "DDD";
+
+    const ans0 = "123549876";
+    const ans1 = "4321";
+
+    const ret0 = smallestNumber(pattern0);
+    const ret1 = smallestNumber(pattern1);
 
     expect(ret0).toEqual(ans0);
     expect(ret1).toEqual(ans1);
