@@ -40,16 +40,19 @@ function smallestLowerBound(given: number) {
 }
 
 function backtracking(pattern: string, index: number, current: string): string {
+  if (index === pattern.length) return current;
+
   const letter = pattern.charAt(index);
   const lastDigit = +current.charAt(current.length - 1);
   const nextStart =
     letter === "I"
       ? smallestUpperBound(lastDigit)
       : smallestLowerBound(lastDigit);
+  const nextEnd = letter === "I" ? 9 : lastDigit - 1;
 
   if (nextStart === -1) return "";
 
-  for (let next = nextStart; next <= 9; ++next) {
+  for (let next = nextStart; next <= nextEnd; ++next) {
     digitUsed[next] = true;
     const result = backtracking(pattern, index + 1, `${current}${next}`);
     digitUsed[next] = false;

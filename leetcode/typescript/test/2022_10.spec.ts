@@ -81,7 +81,7 @@ describe("2022_10 test", () => {
   });
 
   it("construct smallest number from di string", () => {
-    const pattern0 = "IIIDIDD";
+    const pattern0 = "IIIDIDDD";
     const pattern1 = "DDD";
 
     const ans0 = "123549876";
