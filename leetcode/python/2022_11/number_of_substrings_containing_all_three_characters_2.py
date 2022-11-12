@@ -28,6 +28,33 @@ s only consists of a, b or c characters.
 
 
 class Solution:
-    def number_of_substring(self, string: str) -> int:
-        print(string)
+    def number_of_substrings(self, string: str) -> int:
+        result, start, end = 0, 0, 0
+        count = {c: 0 for c in "abc"}
+
         return 0
+
+
+def main():
+    string0 = "abcabc"
+    string1 = "aaacb"
+    string2 = "abc"
+    string3 = "ababbbc"
+
+    solution0 = Solution()
+    solution1 = Solution()
+    solution2 = Solution()
+    solution3 = Solution()
+
+    answer0 = solution0.number_of_substrings(string0)
+    answer1 = solution1.number_of_substrings(string1)
+    answer2 = solution2.number_of_substrings(string2)
+    answer3 = solution3.number_of_substrings(string3)
+
+    print(answer0)
+    print(answer1)
+    print(answer2)
+    print(answer3)
+
+
+main()
