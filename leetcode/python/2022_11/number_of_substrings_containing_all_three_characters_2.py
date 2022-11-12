@@ -29,10 +29,19 @@ s only consists of a, b or c characters.
 
 class Solution:
     def number_of_substrings(self, string: str) -> int:
-        result, start, end = 0, 0, 0
+        result, start = 0, 0
         count = {c: 0 for c in "abc"}
 
-        return 0
+        for char in string:
+            count[char] += 1
+
+            while all(count.values()):
+                count[string[start]] -= 1
+                start += 1
+
+            result += start
+
+        return result
 
 
 def main():
