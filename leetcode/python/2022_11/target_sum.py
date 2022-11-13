@@ -30,8 +30,8 @@ Constraints:
 
 """
 
-
 from typing import List
+from collections import Counter
 
 MAX = 1000
 
@@ -40,29 +40,13 @@ class Solution:
     def __init__(self) -> None:
         self.cache = [[0 for i in range(20001)] for j in range(21)]
 
-    def backtracking(self, nums: List[int], index: int, prev: int, target: int) -> int:
-        if index == len(nums) - 1:
-            count = 0
-            if prev + nums[index] == target:
-                count += 1
-            if prev - nums[index] == target:
-                count += 1
-
-            return count
-
-        result = 0
-        result += self.backtracking(nums, index + 1, prev + nums[index], target)
-        result += self.backtracking(nums, index + 1, prev - nums[index], target)
-
-        return result
-
     def save(self, index: int, target: int, value: int):
         self.cache[index + 1][target + MAX] = value
 
     def load(self, index: int, target: int):
         return self.cache[index + 1][target + MAX]
 
-    def find_target_sum_ways(self, nums: List[int], target: int) -> int:
+    def find_target_sum_ways_dp(self, nums: List[int], target: int) -> int:
         self.save(-1, 0, 1)
 
         for i, num in enumerate(nums):
@@ -74,6 +58,20 @@ class Solution:
                 self.save(i, j, a + b)
 
         return self.load(len(nums) - 1, target)
+
+    def find_target_sum_ways(self, nums: List[int], target: int) -> int:
+        counter = Counter({0: 1})
+
+        for num in nums:
+            step = Counter()
+
+            for prev_sum, count in counter.items():
+                step[prev_sum + num] += count
+                step[prev_sum - num] += count
+
+            counter = step
+
+        return counter[target]
 
 
 def main():
