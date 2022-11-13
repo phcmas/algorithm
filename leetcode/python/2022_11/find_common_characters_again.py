@@ -20,17 +20,23 @@ words[i] consists of lowercase English letters.
 """
 
 from typing import List
-from collections import Counter
 
 
 class Solution:
     def common_chars(self, words: List[str]) -> List[str]:
-        intersection = Counter(words[0])
+        common = list(words[0])
 
         for word in words[1:]:
-            intersection &= Counter(word)
+            common_new = []
 
-        return list(intersection.elements())
+            for char in word:
+                if char in common:
+                    common_new.append(char)
+                    common.remove(char)
+
+            common = common_new
+
+        return common
 
 
 def main():
