@@ -37,6 +37,7 @@ class Solution:
 def main():
     nums0 = [1, 1, 2, 1, 1]
     nums1 = [2, 4, 6]
+
     nums2 = [2, 2, 2, 1, 2, 2, 1, 2, 2, 2]
 
     k0 = 3
