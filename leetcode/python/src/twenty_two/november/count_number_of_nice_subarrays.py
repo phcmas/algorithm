@@ -40,18 +40,23 @@ class Solution:
                 end = index
                 break
 
-        while start < end and end < len(nums):
+        if odd_count < k:
+            return 0
+
+        while start <= end < len(nums):
             prev_start = start
             prev_end = end
 
-            while nums[start] != 1:
+            while True:
                 start += 1
+                if start >= len(nums) or nums[start - 1] % 2 == 1:
+                    break
 
-            while nums[end + 1] != 1:
+            while True:
                 end += 1
+                if end >= len(nums) or nums[end] % 2 == 1:
+                    break
 
-            result += (start - prev_start + 1) * (end - prev_end + 1)
-            start += 1
-            end += 1
+            result += (start - prev_start) * (end - prev_end)
 
         return result

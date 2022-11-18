@@ -11,6 +11,7 @@ import src.twenty_two.november.maximum_total_importance_of_roads as importance_o
 import src.twenty_two.november.find_common_characters as common_characters
 import src.twenty_two.november.circular_permutation_in_binary_representation as permutation_in_binary_representation
 import src.twenty_two.november.count_number_of_nice_subarrays as number_of_nice_subarrays
+import src.twenty_two.november.count_number_of_nice_subarrays_again as number_of_nice_subarrays_again
 
 
 def test_target_sum():
@@ -142,19 +143,51 @@ def test_count_number_of_nice_subarrays():
     nums0 = [1, 1, 2, 1, 1]
     nums1 = [2, 4, 6]
     nums2 = [2, 2, 2, 1, 2, 2, 1, 2, 2, 2]
+    nums3 = [1, 1, 1, 1, 1]
 
     k0 = 3
     k1 = 1
     k2 = 2
+    k3 = 1
 
     solution0 = number_of_nice_subarrays.Solution()
     solution1 = number_of_nice_subarrays.Solution()
     solution2 = number_of_nice_subarrays.Solution()
+    solution3 = number_of_nice_subarrays.Solution()
 
     result0 = solution0.number_of_subarrays(nums0, k0)
     result1 = solution1.number_of_subarrays(nums1, k1)
     result2 = solution2.number_of_subarrays(nums2, k2)
+    result3 = solution3.number_of_subarrays(nums3, k3)
 
     assert result0 == 2
     assert result1 == 0
     assert result2 == 16
+    assert result3 == 5
+
+
+def test_count_number_of_nice_subarrays_again():
+    nums0 = [1, 1, 2, 1, 1]
+    nums1 = [2, 4, 6]
+    nums2 = [2, 2, 2, 1, 2, 2, 1, 2, 2, 2]
+    nums3 = [1, 1, 1, 1, 1]
+
+    k0 = 3
+    k1 = 1
+    k2 = 2
+    k3 = 1
+
+    solution0 = number_of_nice_subarrays_again.Solution()
+    solution1 = number_of_nice_subarrays_again.Solution()
+    solution2 = number_of_nice_subarrays_again.Solution()
+    solution3 = number_of_nice_subarrays_again.Solution()
+
+    result0 = solution0.number_of_subarrays(nums0, k0)
+    result1 = solution1.number_of_subarrays(nums1, k1)
+    result2 = solution2.number_of_subarrays(nums2, k2)
+    result3 = solution3.number_of_subarrays(nums3, k3)
+
+    assert result0 == 2
+    assert result1 == 0
+    assert result2 == 16
+    assert result3 == 5
