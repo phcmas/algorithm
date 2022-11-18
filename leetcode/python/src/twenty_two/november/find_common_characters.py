@@ -31,20 +31,3 @@ class Solution:
             intersection &= Counter(word)
 
         return list(intersection.elements())
-
-
-def main():
-    words0 = ["bella", "label", "roller"]
-    words1 = ["cool", "lock", "cook"]
-
-    solution0 = Solution()
-    solution1 = Solution()
-
-    ret0 = solution0.common_chars(words0)
-    ret1 = solution1.common_chars(words1)
-
-    print(ret0)
-    print(ret1)
-
-
-main()

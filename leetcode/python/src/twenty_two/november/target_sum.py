@@ -72,38 +72,3 @@ class Solution:
             counter = step
 
         return counter[target]
-
-
-def main():
-    nums0 = [1, 1, 1, 1, 1]
-    nums1 = [1]
-    nums2 = [1, 0]
-    nums3 = [0, 0, 0, 0, 0, 0, 0, 0, 1]
-    nums4 = [1, 999]
-
-    target0 = 3
-    target1 = 1
-    target2 = 1
-    target3 = 1
-    target4 = 998
-
-    solution0 = Solution()
-    solution1 = Solution()
-    solution2 = Solution()
-    solution3 = Solution()
-    solution4 = Solution()
-
-    result0 = solution0.find_target_sum_ways(nums0, target0)
-    result1 = solution1.find_target_sum_ways(nums1, target1)
-    result2 = solution2.find_target_sum_ways(nums2, target2)
-    result3 = solution3.find_target_sum_ways(nums3, target3)
-    result4 = solution4.find_target_sum_ways(nums4, target4)
-
-    print(result0)
-    print(result1)
-    print(result2)
-    print(result3)
-    print(result4)
-
-
-main()

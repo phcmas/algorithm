@@ -42,28 +42,3 @@ class Solution:
             result += start
 
         return result
-
-
-def main():
-    string0 = "abcabc"
-    string1 = "aaacb"
-    string2 = "abc"
-    string3 = "ababbbc"
-
-    solution0 = Solution()
-    solution1 = Solution()
-    solution2 = Solution()
-    solution3 = Solution()
-
-    answer0 = solution0.number_of_substrings(string0)
-    answer1 = solution1.number_of_substrings(string1)
-    answer2 = solution2.number_of_substrings(string2)
-    answer3 = solution3.number_of_substrings(string3)
-
-    print(answer0)
-    print(answer1)
-    print(answer2)
-    print(answer3)
-
-
-main()

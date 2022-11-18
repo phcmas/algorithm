@@ -50,23 +50,3 @@ class Solution:
 
         index = permutation.index(start)
         return permutation[index:] + permutation[:index]
-
-
-def main():
-    n0 = 2
-    start0 = 3
-
-    n1 = 3
-    start1 = 2
-
-    solution0 = Solution()
-    solution1 = Solution()
-
-    result0 = solution0.circular_permutation(n0, start0)
-    result1 = solution1.circular_permutation(n1, start1)
-
-    print(result0)
-    print(result1)
-
-
-main()

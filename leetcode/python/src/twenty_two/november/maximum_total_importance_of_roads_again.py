@@ -46,56 +46,14 @@ There are no duplicate roads.
 """
 
 from typing import List
-from collections import Counter
-from functools import reduce
 
 
 class Solution:
-    def increase_count(self, counter: dict, value: int) -> int:
-        if counter[value]:
-            counter[value] += 1
-        else:
-            counter[value] = 1
-
     def maximum_importance(self, n: int, roads: List[List[int]]) -> int:
-        counter = Counter()
-        result = 0
+        degree = [0] * n
 
-        for road in roads:
-            self.increase_count(counter, road[0])
-            self.increase_count(counter, road[1])
+        for a, b in roads:
+            degree[a] += 1
+            degree[b] += 1
 
-        sort_by_count = [
-            v
-            for k, v in sorted(counter.items(), key=lambda item: item[1], reverse=True)
-        ]
-
-        for index, num in enumerate(sort_by_count):
-            result += (n - index) * num
-
-        return result
-
-
-def main():
-    n0 = 5
-    n1 = 5
-    n2 = 5
-
-    roads0 = [[0, 1], [1, 2], [2, 3], [0, 2], [1, 3], [2, 4]]
-    roads1 = [[0, 3], [2, 4], [1, 3]]
-    roads2 = [[0, 1]]
-
-    solution0 = Solution()
-    solution1 = Solution()
-    solution2 = Solution()
-
-    result0 = solution0.maximum_importance(n0, roads0)
-    result1 = solution1.maximum_importance(n1, roads1)
-    result2 = solution2.maximum_importance(n2, roads2)
-
-    print(result0)
-    print(result1)
-    print(result2)
-
-
-main()
+        return sum(i * d for i, d in enumerate(sorted(degree), 1))

@@ -68,24 +68,3 @@ class Solution:
                 return False
 
         return True
-
-
-def main():
-    nums0 = [1, 2, 3, 3, 4, 5]
-    nums1 = [1, 2, 3, 3, 4, 4, 5, 5]
-    nums2 = [1, 2, 3, 4, 4, 5]
-
-    solution0 = Solution()
-    solution1 = Solution()
-    solution2 = Solution()
-
-    answer0 = solution0.is_possible(nums0)
-    answer1 = solution1.is_possible(nums1)
-    answer2 = solution2.is_possible(nums2)
-
-    print(answer0)
-    print(answer1)
-    print(answer2)
-
-
-main()

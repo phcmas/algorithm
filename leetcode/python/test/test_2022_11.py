@@ -1,0 +1,160 @@
+import sys
+from os.path import dirname, abspath, join
+
+ROOT_DIR = join(dirname(__file__), "..")
+sys.path.insert(1, abspath(ROOT_DIR))
+
+import src.twenty_two.november.target_sum as target_sum
+import src.twenty_two.november.split_array_into_consecutive_subsequences as consecutive_subsequences
+import src.twenty_two.november.number_of_substrings_containing_all_three_characters as all_three_characters
+import src.twenty_two.november.maximum_total_importance_of_roads as importance_of_roads
+import src.twenty_two.november.find_common_characters as common_characters
+import src.twenty_two.november.circular_permutation_in_binary_representation as permutation_in_binary_representation
+import src.twenty_two.november.count_number_of_nice_subarrays as number_of_nice_subarrays
+
+
+def test_target_sum():
+    nums0 = [1, 1, 1, 1, 1]
+    nums1 = [1]
+    nums2 = [1, 0]
+    nums3 = [0, 0, 0, 0, 0, 0, 0, 0, 1]
+    nums4 = [1, 999]
+
+    target0 = 3
+    target1 = 1
+    target2 = 1
+    target3 = 1
+    target4 = 998
+
+    solution0 = target_sum.Solution()
+    solution1 = target_sum.Solution()
+    solution2 = target_sum.Solution()
+    solution3 = target_sum.Solution()
+    solution4 = target_sum.Solution()
+
+    result0 = solution0.find_target_sum_ways(nums0, target0)
+    result1 = solution1.find_target_sum_ways(nums1, target1)
+    result2 = solution2.find_target_sum_ways(nums2, target2)
+    result3 = solution3.find_target_sum_ways(nums3, target3)
+    result4 = solution4.find_target_sum_ways(nums4, target4)
+
+    assert result0 == 5
+    assert result1 == 1
+    assert result2 == 2
+    assert result3 == 256
+    assert result4 == 1
+
+
+def test_split_array_into_consecutive_subsequences():
+    nums0 = [1, 2, 3, 3, 4, 5]
+    nums1 = [1, 2, 3, 3, 4, 4, 5, 5]
+    nums2 = [1, 2, 3, 4, 4, 5]
+
+    solution0 = consecutive_subsequences.Solution()
+    solution1 = consecutive_subsequences.Solution()
+    solution2 = consecutive_subsequences.Solution()
+
+    answer0 = solution0.is_possible(nums0)
+    answer1 = solution1.is_possible(nums1)
+    answer2 = solution2.is_possible(nums2)
+
+    assert answer0 == True
+    assert answer1 == True
+    assert answer2 == False
+
+
+def test_number_of_substrings_containing_all_three_characters():
+    string0 = "abcabc"
+    string1 = "aaacb"
+    string2 = "abc"
+    string3 = "ababbbc"
+
+    solution0 = all_three_characters.Solution()
+    solution1 = all_three_characters.Solution()
+    solution2 = all_three_characters.Solution()
+    solution3 = all_three_characters.Solution()
+
+    answer0 = solution0.number_of_substrings(string0)
+    answer1 = solution1.number_of_substrings(string1)
+    answer2 = solution2.number_of_substrings(string2)
+    answer3 = solution3.number_of_substrings(string3)
+
+    assert answer0 == 10
+    assert answer1 == 3
+    assert answer2 == 1
+    assert answer3 == 3
+
+
+def test_maximum_total_importance_of_roads():
+    n0 = 5
+    n1 = 5
+    n2 = 5
+
+    roads0 = [[0, 1], [1, 2], [2, 3], [0, 2], [1, 3], [2, 4]]
+    roads1 = [[0, 3], [2, 4], [1, 3]]
+    roads2 = [[0, 1]]
+
+    solution0 = importance_of_roads.Solution()
+    solution1 = importance_of_roads.Solution()
+    solution2 = importance_of_roads.Solution()
+
+    result0 = solution0.maximum_importance(n0, roads0)
+    result1 = solution1.maximum_importance(n1, roads1)
+    result2 = solution2.maximum_importance(n2, roads2)
+
+    assert result0 == 43
+    assert result1 == 20
+    assert result2 == 9
+
+
+def test_find_common_characters():
+    words0 = ["bella", "label", "roller"]
+    words1 = ["cool", "lock", "cook"]
+
+    solution0 = common_characters.Solution()
+    solution1 = common_characters.Solution()
+
+    result0 = solution0.common_chars(words0)
+    result1 = solution1.common_chars(words1)
+
+    assert result0 == ["e", "l", "l"]
+    assert result1 == ["c", "o"]
+
+
+def test_circular_permutation_in_binary_representation():
+    n0 = 2
+    start0 = 3
+
+    n1 = 3
+    start1 = 2
+
+    solution0 = permutation_in_binary_representation.Solution()
+    solution1 = permutation_in_binary_representation.Solution()
+
+    result0 = solution0.circular_permutation(n0, start0)
+    result1 = solution1.circular_permutation(n1, start1)
+
+    assert result0 == [3, 2, 0, 1]
+    assert result1 == [2, 6, 7, 5, 4, 0, 1, 3]
+
+
+def test_count_number_of_nice_subarrays():
+    nums0 = [1, 1, 2, 1, 1]
+    nums1 = [2, 4, 6]
+    nums2 = [2, 2, 2, 1, 2, 2, 1, 2, 2, 2]
+
+    k0 = 3
+    k1 = 1
+    k2 = 2
+
+    solution0 = number_of_nice_subarrays.Solution()
+    solution1 = number_of_nice_subarrays.Solution()
+    solution2 = number_of_nice_subarrays.Solution()
+
+    result0 = solution0.number_of_subarrays(nums0, k0)
+    result1 = solution1.number_of_subarrays(nums1, k1)
+    result2 = solution2.number_of_subarrays(nums2, k2)
+
+    assert result0 == 2
+    assert result1 == 0
+    assert result2 == 16
