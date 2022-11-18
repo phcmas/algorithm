@@ -31,4 +31,27 @@ from typing import List
 
 class Solution:
     def number_of_subarrays(self, nums: List[int], k: int) -> int:
-        return 0
+        start, end, odd_count, result = 0, 0, 0, 0
+
+        for index, num in enumerate(nums):
+            if num % 2 == 1:
+                odd_count += 1
+            if odd_count == k:
+                end = index
+                break
+
+        while start < end and end < len(nums):
+            prev_start = start
+            prev_end = end
+
+            while nums[start] != 1:
+                start += 1
+
+            while nums[end + 1] != 1:
+                end += 1
+
+            result += (start - prev_start + 1) * (end - prev_end + 1)
+            start += 1
+            end += 1
+
+        return result
