@@ -4,14 +4,14 @@ from os.path import dirname, abspath, join
 ROOT_DIR = join(dirname(__file__), "..")
 sys.path.insert(1, abspath(ROOT_DIR))
 
-import src.twenty_two.november.target_sum as target_sum
-import src.twenty_two.november.split_array_into_consecutive_subsequences as consecutive_subsequences
-import src.twenty_two.november.number_of_substrings_containing_all_three_characters as all_three_characters
-import src.twenty_two.november.maximum_total_importance_of_roads as importance_of_roads
-import src.twenty_two.november.find_common_characters as common_characters
-import src.twenty_two.november.circular_permutation_in_binary_representation as permutation_in_binary_representation
-import src.twenty_two.november.count_number_of_nice_subarrays as number_of_nice_subarrays
-import src.twenty_two.november.count_number_of_nice_subarrays_again as number_of_nice_subarrays_again
+import src.year_twenty_two.november.target_sum as target_sum
+import src.year_twenty_two.november.split_array_into_consecutive_subsequences as consecutive_subsequences
+import src.year_twenty_two.november.number_of_substrings_containing_all_three_characters as characters
+import src.year_twenty_two.november.maximum_total_importance_of_roads as importance_of_roads
+import src.year_twenty_two.november.find_common_characters as common_characters
+import src.year_twenty_two.november.circular_permutation_in_binary_representation as representation
+import src.year_twenty_two.november.count_number_of_nice_subarrays as number_of_nice_subarrays
+import src.year_twenty_two.november.count_number_of_nice_subarrays_again as subarrays_again
 
 
 def test_target_sum():
@@ -70,10 +70,10 @@ def test_number_of_substrings_containing_all_three_characters():
     string2 = "abc"
     string3 = "ababbbc"
 
-    solution0 = all_three_characters.Solution()
-    solution1 = all_three_characters.Solution()
-    solution2 = all_three_characters.Solution()
-    solution3 = all_three_characters.Solution()
+    solution0 = characters.Solution()
+    solution1 = characters.Solution()
+    solution2 = characters.Solution()
+    solution3 = characters.Solution()
 
     answer0 = solution0.number_of_substrings(string0)
     answer1 = solution1.number_of_substrings(string1)
@@ -129,8 +129,8 @@ def test_circular_permutation_in_binary_representation():
     n1 = 3
     start1 = 2
 
-    solution0 = permutation_in_binary_representation.Solution()
-    solution1 = permutation_in_binary_representation.Solution()
+    solution0 = representation.Solution()
+    solution1 = representation.Solution()
 
     result0 = solution0.circular_permutation(n0, start0)
     result1 = solution1.circular_permutation(n1, start1)
@@ -177,10 +177,10 @@ def test_count_number_of_nice_subarrays_again():
     k2 = 2
     k3 = 1
 
-    solution0 = number_of_nice_subarrays_again.Solution()
-    solution1 = number_of_nice_subarrays_again.Solution()
-    solution2 = number_of_nice_subarrays_again.Solution()
-    solution3 = number_of_nice_subarrays_again.Solution()
+    solution0 = subarrays_again.Solution()
+    solution1 = subarrays_again.Solution()
+    solution2 = subarrays_again.Solution()
+    solution3 = subarrays_again.Solution()
 
     result0 = solution0.number_of_subarrays(nums0, k0)
     result1 = solution1.number_of_subarrays(nums1, k1)
