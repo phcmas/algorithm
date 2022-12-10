@@ -1,17 +1,17 @@
 import sys
 from os.path import dirname, abspath, join
 
-ROOT_DIR = join(dirname(__file__), "..")
+ROOT_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(ROOT_DIR))
 
-import src.year_twenty_two.november.target_sum as target_sum
-import src.year_twenty_two.november.split_array_into_consecutive_subsequences as consecutive_subsequences
-import src.year_twenty_two.november.number_of_substrings_containing_all_three_characters as characters
-import src.year_twenty_two.november.maximum_total_importance_of_roads as importance_of_roads
-import src.year_twenty_two.november.find_common_characters as common_characters
-import src.year_twenty_two.november.circular_permutation_in_binary_representation as representation
-import src.year_twenty_two.november.count_number_of_nice_subarrays as number_of_nice_subarrays
-import src.year_twenty_two.november.count_number_of_nice_subarrays_again as subarrays_again
+import year_twenty_two.november.target_sum as target_sum
+import year_twenty_two.november.split_array_into_consecutive_subsequences as consecutive_subsequences
+import year_twenty_two.november.number_of_substrings_containing_all_three_characters as characters
+import year_twenty_two.november.maximum_total_importance_of_roads as importance_of_roads
+import year_twenty_two.november.find_common_characters as common_characters
+import year_twenty_two.november.circular_permutation_in_binary_representation as representation
+import year_twenty_two.november.count_number_of_nice_subarrays as number_of_nice_subarrays
+import year_twenty_two.november.count_number_of_nice_subarrays_again as subarrays_again
 
 
 def test_target_sum():

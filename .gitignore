@@ -14,3 +14,4 @@ LeetCode/C++/Makefile
 LeetCode/C++/*.dylib
 LeetCode/.history/*
 .DS_Store
+PipFile
