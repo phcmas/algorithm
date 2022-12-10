@@ -1,17 +1,18 @@
 import sys
 from os.path import dirname, abspath, join
 
-ROOT_DIR = join(dirname(__file__), "../src")
-sys.path.insert(1, abspath(ROOT_DIR))
+SRC_DIR = join(dirname(__file__), "../src")
+sys.path.insert(1, abspath(SRC_DIR))
 
 import year_twenty_two.november.target_sum as target_sum
-import year_twenty_two.november.split_array_into_consecutive_subsequences as consecutive_subsequences
-import year_twenty_two.november.number_of_substrings_containing_all_three_characters as characters
+import year_twenty_two.november.split_array_into_consecutive_subsequences as subsequences
+import year_twenty_two.november.number_of_substrings_containing_all_three_characters as chars
 import year_twenty_two.november.maximum_total_importance_of_roads as importance_of_roads
 import year_twenty_two.november.find_common_characters as common_characters
 import year_twenty_two.november.circular_permutation_in_binary_representation as representation
 import year_twenty_two.november.count_number_of_nice_subarrays as number_of_nice_subarrays
 import year_twenty_two.november.count_number_of_nice_subarrays_again as subarrays_again
+import year_twenty_two.november.validate_stack_sequences as stack_sequences
 
 
 def test_target_sum():
@@ -51,9 +52,9 @@ def test_split_array_into_consecutive_subsequences():
     nums1 = [1, 2, 3, 3, 4, 4, 5, 5]
     nums2 = [1, 2, 3, 4, 4, 5]
 
-    solution0 = consecutive_subsequences.Solution()
-    solution1 = consecutive_subsequences.Solution()
-    solution2 = consecutive_subsequences.Solution()
+    solution0 = subsequences.Solution()
+    solution1 = subsequences.Solution()
+    solution2 = subsequences.Solution()
 
     answer0 = solution0.is_possible(nums0)
     answer1 = solution1.is_possible(nums1)
@@ -70,10 +71,10 @@ def test_number_of_substrings_containing_all_three_characters():
     string2 = "abc"
     string3 = "ababbbc"
 
-    solution0 = characters.Solution()
-    solution1 = characters.Solution()
-    solution2 = characters.Solution()
-    solution3 = characters.Solution()
+    solution0 = chars.Solution()
+    solution1 = chars.Solution()
+    solution2 = chars.Solution()
+    solution3 = chars.Solution()
 
     answer0 = solution0.number_of_substrings(string0)
     answer1 = solution1.number_of_substrings(string1)
@@ -191,3 +192,20 @@ def test_count_number_of_nice_subarrays_again():
     assert result1 == 0
     assert result2 == 16
     assert result3 == 5
+
+
+def test_validate_stack_sequences():
+    pushed0 = [1, 2, 3, 4, 5]
+    popped0 = [4, 5, 3, 2, 1]
+
+    pushed1 = [1, 2, 3, 4, 5]
+    popped1 = [4, 3, 5, 1, 2]
+
+    solution0 = stack_sequences.Solution()
+    solution1 = stack_sequences.Solution()
+
+    result0 = solution0.validate_stack_sequences(pushed0, popped0)
+    result1 = solution1.validate_stack_sequences(pushed1, popped1)
+
+    assert result0 is True
+    assert result1 is False
