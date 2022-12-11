@@ -1,7 +1,12 @@
+from __future__ import annotations
+
 from typing import List
 
 
 class ListNode:
+    val: int
+    next: ListNode
+
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next

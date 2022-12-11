@@ -19,10 +19,38 @@ The number of nodes in the list is in the range [0, 200].
 -200 <= x <= 200
 """
 
-from typing import Optional
+from typing import List, Optional
 from common.list_node import ListNode
+
+
+MIN_VALUE = -201
 
 
 class Solution:
     def partition(self, head: Optional[ListNode], x: int) -> Optional[ListNode]:
-        pass
+        if head is None:
+            return None
+
+        first = ListNode(MIN_VALUE, head)
+        node = first
+
+        while node.next is not None:
+            if node.next.val >= x:
+                prev_of_first_ge = node
+                break
+
+            node = node.next
+
+        while node is not None and node.next is not None:
+            next = node.next
+
+            if next.val < x:
+                node.next = next.next
+                temp = prev_of_first_ge.next
+                prev_of_first_ge.next = next
+                next.next = temp
+                prev_of_first_ge = next
+            else:
+                node = next
+
+        return first.next
