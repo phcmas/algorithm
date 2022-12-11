@@ -1,5 +1,6 @@
 import sys
 from os.path import dirname, abspath, join
+from common.list_node import ListNode
 
 SRC_DIR = join(dirname(__file__), "../src")
 TEST_DIR = join(dirname(__file__), "../test")
@@ -7,8 +8,9 @@ TEST_DIR = join(dirname(__file__), "../test")
 sys.path.insert(1, abspath(SRC_DIR))
 sys.path.insert(1, abspath(TEST_DIR))
 
-from util import is_same_array_ignoring_order
+from util import is_same_arrays_ignoring_order, is_same_list_nodes
 import year_twenty_two.december.maximum_split_of_positive_even_integer as maximum_split
+import year_twenty_two.december.partition_list as partition_list
 
 
 def test_maximum_split_of_positive_even_integers():
@@ -28,10 +30,33 @@ def test_maximum_split_of_positive_even_integers():
     answer1 = []
     answer2 = [2, 4, 6, 16]
 
-    compare0 = is_same_array_ignoring_order(result0, answer0)
-    compare1 = is_same_array_ignoring_order(result1, answer1)
-    compare2 = is_same_array_ignoring_order(result2, answer2)
+    compare0 = is_same_arrays_ignoring_order(result0, answer0)
+    compare1 = is_same_arrays_ignoring_order(result1, answer1)
+    compare2 = is_same_arrays_ignoring_order(result2, answer2)
 
     assert compare0 == True
     assert compare1 == True
     assert compare2 == True
+
+
+def test_partition_list():
+    head0 = ListNode.make([1, 4, 3, 2, 5, 2])
+    head1 = ListNode.make([2, 1])
+
+    x0 = 3
+    x1 = 2
+
+    solution0 = partition_list.Solution()
+    solution1 = partition_list.Solution()
+
+    result0 = solution0.partition(head0, x0)
+    result1 = solution1.partition(head1, x1)
+
+    answer0 = ListNode.make([1, 2, 2, 4, 3, 5])
+    answer1 = ListNode.make([1, 2])
+
+    compare0 = is_same_list_nodes(result0, answer0)
+    compare1 = is_same_list_nodes(result1, answer1)
+
+    assert compare0 == True
+    assert compare1 == True

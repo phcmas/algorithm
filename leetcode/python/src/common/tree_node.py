@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 from queue import Queue
 
 
@@ -9,7 +9,7 @@ class TreeNode:
         self.right = right
 
     @staticmethod
-    def make(nums: List[int]):
+    def make(nums: List[Optional[int]]):
         if len(nums) == 0 or nums[0] is None:
             return None
 
