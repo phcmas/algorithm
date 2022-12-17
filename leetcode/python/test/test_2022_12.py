@@ -1,3 +1,4 @@
+from re import T
 import sys
 from os.path import abspath, dirname, join
 
@@ -11,6 +12,7 @@ from util import is_same_arrays_ignoring_order, is_same_list_nodes
 
 import year_twenty_two.december.maximum_split_of_positive_even_integer as maximum_split
 import year_twenty_two.december.partition_list as partition_list
+import year_twenty_two.december.arithmetic_subarrays as arithmetic_subarrays
 from common.list_node import ListNode
 
 
@@ -75,3 +77,26 @@ def test_partition_list():
     assert compare1 == True
     assert compare2 == True
     assert compare3 == True
+
+
+def test_arithmetic_subarrays():
+    nums0 = [4, 6, 5, 9, 3, 7]
+    nums1 = [-12, -9, -3, -12, -6, 15, 20, -25, -20, -15, -10]
+
+    l0 = [0, 0, 2]
+    l1 = [0, 1, 6, 4, 8, 7]
+
+    r0 = [2, 3, 5]
+    r1 = [4, 4, 9, 7, 9, 10]
+
+    solution0 = arithmetic_subarrays.Solution()
+    solution1 = arithmetic_subarrays.Solution()
+
+    result0 = solution0.check_arithmetic_subarrays(nums0, l0, r0)
+    result1 = solution1.check_arithmetic_subarrays(nums1, l1, r1)
+
+    answer0 = [True, False, True]
+    answer1 = [False, True, False, False, True, True]
+
+    assert result0 == answer0
+    assert result1 == answer1
