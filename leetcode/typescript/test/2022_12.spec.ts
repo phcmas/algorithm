@@ -1,4 +1,6 @@
+import { isExportDeclaration } from "typescript";
 import { balanceBST } from "../2022_12/BalanceABinarySearchTree";
+import { customSortString } from "../2022_12/CustomSortString";
 import { TreeNode } from "../common/TreeNode";
 
 describe("2022_12 test", () => {
@@ -22,5 +24,27 @@ describe("2022_12 test", () => {
     expect(compare0).toEqual(true);
     expect(compare1).toEqual(true);
     expect(compare2).toEqual(true);
+  });
+
+  it("custom sort string", () => {
+    const order0 = "cba";
+    const order1 = "cbafg";
+    const order2 = "kqep";
+
+    const s0 = "abcd";
+    const s1 = "abcd";
+    const s2 = "pekeq";
+
+    const result0 = customSortString(order0, s0);
+    const result1 = customSortString(order1, s1);
+    const result2 = customSortString(order2, s2);
+
+    const answer0 = "cbad";
+    const answer1 = "cbad";
+    const answer2 = "kqeep";
+
+    expect(result0).toEqual(answer0);
+    expect(result1).toEqual(answer1);
+    expect(result2).toEqual(answer2);
   });
 });
