@@ -1,4 +1,5 @@
 import { maxSubarraySumCircular } from "../2023_01/MaximumSumCircularSubarray";
+import { countKDifference } from "../2023_01/CountNumberOfPairsWithAbsoluteDifferenceK";
 
 describe("2022_12 test", () => {
   it("maximum sum circular subarray", () => {
@@ -25,5 +26,27 @@ describe("2022_12 test", () => {
     expect(ret2).toEqual(ans2);
     expect(ret3).toEqual(ans3);
     expect(ret4).toEqual(ans4);
+  });
+
+  it("count number of pairs with absolute difference K", () => {
+    const nums0 = [1, 2, 2, 1];
+    const nums1 = [1, 3];
+    const nums2 = [3, 2, 1, 5, 4];
+
+    const k0 = 1;
+    const k1 = 3;
+    const k2 = 2;
+
+    const ret0 = countKDifference(nums0, k0);
+    const ret1 = countKDifference(nums1, k1);
+    const ret2 = countKDifference(nums2, k2);
+
+    const ans0 = 4;
+    const ans1 = 0;
+    const ans2 = 3;
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+    expect(ret2).toEqual(ans2);
   });
 });
