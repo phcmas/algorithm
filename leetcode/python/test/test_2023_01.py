@@ -4,7 +4,8 @@ from os.path import dirname, abspath, join
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
-import year_twenty_three.number_of_arithmetic_triplets as arithmetic_triplets
+import year_twenty_three.january.number_of_arithmetic_triplets as arithmetic_triplets
+import year_twenty_three.january.sum_of_beauty_of_all_substrings as beauty_sum
 
 
 def test_arithmetic_triplets():
@@ -37,3 +38,20 @@ def test_arithmetic_triplets():
     assert result1 == answer1
     assert result2 == answer2
     assert result3 == answer3
+
+
+def test_beauty_sum():
+    solution0 = beauty_sum.Solution()
+    solution1 = beauty_sum.Solution()
+
+    s0 = "aabcb"
+    s1 = "aabcbaa"
+
+    result0 = solution0.beauty_sum(s0)
+    result1 = solution1.beauty_sum(s1)
+
+    answer0 = 5
+    answer1 = 17
+
+    assert result0 == answer0
+    assert result1 == answer1
