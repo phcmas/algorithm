@@ -1,7 +1,8 @@
-import { maxSubarraySumCircular } from "../2023_01/MaximumSumCircularSubarray";
-import { countKDifference } from "../2023_01/CountNumberOfPairsWithAbsoluteDifferenceK";
+import { maxSubarraySumCircular } from "../2023_01_02/MaximumSumCircularSubarray";
+import { countKDifference } from "../2023_01_02/CountNumberOfPairsWithAbsoluteDifferenceK";
+import { maxCoins } from "../2023_01_02/MaximumNumberOfCoinsYouCanGet";
 
-describe("2022_12 test", () => {
+describe("2023_01_02 test", () => {
   it("maximum sum circular subarray", () => {
     const nums0 = [1, -2, 3, -2];
     const nums1 = [5, -3, 5];
@@ -44,6 +45,24 @@ describe("2022_12 test", () => {
     const ans0 = 4;
     const ans1 = 0;
     const ans2 = 3;
+
+    expect(ret0).toEqual(ans0);
+    expect(ret1).toEqual(ans1);
+    expect(ret2).toEqual(ans2);
+  });
+
+  it("maximum number of coins you can get", () => {
+    const piles0 = [2, 4, 1, 2, 7, 8];
+    const piles1 = [2, 4, 5];
+    const piles2 = [9, 8, 7, 6, 5, 1, 2, 3, 4];
+
+    const ans0 = 9;
+    const ans1 = 4;
+    const ans2 = 18;
+
+    const ret0 = maxCoins(piles0);
+    const ret1 = maxCoins(piles1);
+    const ret2 = maxCoins(piles2);
 
     expect(ret0).toEqual(ans0);
     expect(ret1).toEqual(ans1);
