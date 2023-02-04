@@ -2,6 +2,8 @@ import { maxSubarraySumCircular } from "../2023_01_02/MaximumSumCircularSubarray
 import { countKDifference } from "../2023_01_02/CountNumberOfPairsWithAbsoluteDifferenceK";
 import { maxCoins } from "../2023_01_02/MaximumNumberOfCoinsYouCanGet";
 import { countMaxOrSubsets } from "../2023_01_02/CountNumberOfMaximumBitwiseORSubsets";
+import { getHappyString } from "../2023_01_02/TheKthLexicographicalStringOfAllHappyStringsOfLengthN";
+import { removeStars } from "../2023_01_02/RemovingStarsFromAString";
 
 describe("2023_01_02 test", () => {
   it("maximum sum circular subarray", () => {
@@ -86,5 +88,42 @@ describe("2023_01_02 test", () => {
     expect(result0).toEqual(answer0);
     expect(result1).toEqual(answer1);
     expect(result2).toEqual(answer2);
+  });
+
+  it("the kth lexicographical string of all happy strings of length n", () => {
+    const n0 = 1;
+    const k0 = 3;
+
+    const n1 = 1;
+    const k1 = 4;
+
+    const n2 = 3;
+    const k2 = 9;
+
+    const answer0 = "c";
+    const answer1 = "";
+    const answer2 = "cab";
+
+    const result0 = getHappyString(n0, k0);
+    const result1 = getHappyString(n1, k1);
+    const result2 = getHappyString(n2, k2);
+
+    expect(result0).toEqual(answer0);
+    expect(result1).toEqual(answer1);
+    expect(result2).toEqual(answer2);
+  });
+
+  it("removing stars from a string", () => {
+    const s0 = "leet**cod*e";
+    const s1 = "erase*****";
+
+    const result0 = removeStars(s0);
+    const result1 = removeStars(s1);
+
+    const anwer0 = "lecoe";
+    const anwer1 = "";
+
+    expect(result0).toEqual(anwer0);
+    expect(result1).toEqual(anwer1);
   });
 });
