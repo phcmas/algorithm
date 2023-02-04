@@ -1,6 +1,7 @@
 import { maxSubarraySumCircular } from "../2023_01_02/MaximumSumCircularSubarray";
 import { countKDifference } from "../2023_01_02/CountNumberOfPairsWithAbsoluteDifferenceK";
 import { maxCoins } from "../2023_01_02/MaximumNumberOfCoinsYouCanGet";
+import { countMaxOrSubsets } from "../2023_01_02/CountNumberOfMaximumBitwiseORSubsets";
 
 describe("2023_01_02 test", () => {
   it("maximum sum circular subarray", () => {
@@ -67,5 +68,23 @@ describe("2023_01_02 test", () => {
     expect(ret0).toEqual(ans0);
     expect(ret1).toEqual(ans1);
     expect(ret2).toEqual(ans2);
+  });
+
+  it("count number of maximum bitwise or subsets", () => {
+    const nums0 = [3, 1];
+    const nums1 = [2, 2, 2];
+    const nums2 = [3, 2, 1, 5];
+
+    const answer0 = 2;
+    const answer1 = 7;
+    const answer2 = 6;
+
+    const result0 = countMaxOrSubsets(nums0);
+    const result1 = countMaxOrSubsets(nums1);
+    const result2 = countMaxOrSubsets(nums2);
+
+    expect(result0).toEqual(answer0);
+    expect(result1).toEqual(answer1);
+    expect(result2).toEqual(answer2);
   });
 });
