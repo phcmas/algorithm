@@ -4,6 +4,8 @@ import { maxCoins } from "../2023_01_02/MaximumNumberOfCoinsYouCanGet";
 import { countMaxOrSubsets } from "../2023_01_02/CountNumberOfMaximumBitwiseORSubsets";
 import { getHappyString } from "../2023_01_02/TheKthLexicographicalStringOfAllHappyStringsOfLengthN";
 import { removeStars } from "../2023_01_02/RemovingStarsFromAString";
+import { allPossibleFBT } from "../2023_01_02/AllPossibleFullBinaryTrees";
+import { TreeNode } from "../common/TreeNode";
 
 describe("2023_01_02 test", () => {
   it("maximum sum circular subarray", () => {
@@ -120,10 +122,34 @@ describe("2023_01_02 test", () => {
     const result0 = removeStars(s0);
     const result1 = removeStars(s1);
 
-    const anwer0 = "lecoe";
-    const anwer1 = "";
+    const answer0 = "lecoe";
+    const answer1 = "";
 
-    expect(result0).toEqual(anwer0);
-    expect(result1).toEqual(anwer1);
+    expect(result0).toEqual(answer0);
+    expect(result1).toEqual(answer1);
+  });
+
+  it("all possible full binary trees", () => {
+    const n0 = 7;
+    const n1 = 3;
+
+    const result0 = allPossibleFBT(n0);
+    const result1 = allPossibleFBT(n1);
+
+    const answer0 = [
+      TreeNode.make([0, 0, 0, null, null, 0, 0, null, null, 0, 0]),
+      TreeNode.make([0, 0, 0, null, null, 0, 0, 0, 0]),
+      TreeNode.make([0, 0, 0, 0, 0, 0, 0]),
+      TreeNode.make([0, 0, 0, 0, 0, null, null, null, null, 0, 0]),
+      TreeNode.make([0, 0, 0, 0, 0, null, null, 0, 0]),
+    ];
+
+    const answer1 = [TreeNode.make([0, 0, 0])];
+
+    const compare0 = TreeNode.isSameListIgnoringOrder(result0, answer0);
+    const compare1 = TreeNode.isSameListIgnoringOrder(result1, answer1);
+
+    expect(compare0).toEqual(true);
+    expect(compare1).toEqual(true);
   });
 });
