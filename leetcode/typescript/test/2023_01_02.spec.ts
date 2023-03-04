@@ -5,6 +5,7 @@ import { countMaxOrSubsets } from "../2023_01_02/CountNumberOfMaximumBitwiseORSu
 import { getHappyString } from "../2023_01_02/TheKthLexicographicalStringOfAllHappyStringsOfLengthN";
 import { removeStars } from "../2023_01_02/RemovingStarsFromAString";
 import { allPossibleFBT } from "../2023_01_02/AllPossibleFullBinaryTrees";
+import { longestBeautifulSubstring } from "../2023_01_02/LongestSubstringOfAllVowelsInOrder";
 import { TreeNode } from "../common/TreeNode";
 
 describe("2023_01_02 test", () => {
@@ -151,5 +152,27 @@ describe("2023_01_02 test", () => {
 
     expect(compare0).toEqual(true);
     expect(compare1).toEqual(true);
+  });
+
+  it("longest substring of all vowels in order", () => {
+    const word0 = "aeiaaioaaaaeiiiiouuuooaauuaeiu";
+    const word1 = "aeeeiiiioooauuuaeiou";
+    const word2 = "a";
+    const word3 = "aeiou";
+
+    const result0 = longestBeautifulSubstring(word0);
+    const result1 = longestBeautifulSubstring(word1);
+    const result2 = longestBeautifulSubstring(word2);
+    const result3 = longestBeautifulSubstring(word3);
+
+    const answer0 = 13;
+    const answer1 = 5;
+    const answer2 = 0;
+    const answer3 = 5;
+
+    expect(result0).toEqual(answer0);
+    expect(result1).toEqual(answer1);
+    expect(result2).toEqual(answer2);
+    expect(result3).toEqual(answer3);
   });
 });
