@@ -33,17 +33,10 @@ class Solution:
         if len(palindrome) == 1:
             return ""
 
-        if palindrome[0] != "a":
-            return "a" + palindrome[1:]
+        middle = len(palindrome) // 2
 
-        last = ceil(len(palindrome) / 2)
-        is_even = len(palindrome) % 2 == 0
-
-        for i, char in enumerate(palindrome[:last]):
-            if char == "a":
-                continue
-
-            if i < last - 1 or (i == last - 1 and is_even):
+        for i, char in enumerate(palindrome[:middle]):
+            if char != "a":
                 return palindrome[0:i] + "a" + palindrome[i + 1 :]
 
-        return palindrome[: len(palindrome) - 1] + "b"
+        return palindrome[:-1] + "b"
