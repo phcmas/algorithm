@@ -7,6 +7,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 import year_twenty_three.march.maximum_product_of_the_length_of_two_palindromic_subsequences as max_product
 import year_twenty_three.march.predict_the_winner as predict_the_winner
 import year_twenty_three.march.break_a_palindrome as break_a_palindrome
+import year_twenty_three.march.largest_sum_of_averages as largest_sum_of_averages
 
 
 # def test_max_product():
@@ -78,3 +79,30 @@ def test_break_palindrome():
     assert result2 == answer2
     assert result3 == answer3
     assert result4 == answer4
+
+
+def test_largest_sum_of_averages():
+    solution0 = largest_sum_of_averages.Solution()
+    solution1 = largest_sum_of_averages.Solution()
+    solution2 = largest_sum_of_averages.Solution()
+
+    nums0 = [9, 1, 2, 3, 9]
+    k0 = 3
+
+    nums1 = [1, 2, 3, 4, 5, 6, 7]
+    k1 = 4
+
+    nums2 = [4, 1, 7, 5, 6, 2, 3]
+    k2 = 4
+
+    result0 = solution0.largest_sum_of_averages(nums0, k0)
+    result1 = solution1.largest_sum_of_averages(nums1, k1)
+    result2 = solution2.largest_sum_of_averages(nums2, k2)
+
+    answer0 = 20.00000
+    answer1 = 20.50000
+    answer2 = 18.16667
+
+    assert round(result0, 5) == answer0
+    assert round(result1, 5) == answer1
+    assert round(result2, 5) == answer2
