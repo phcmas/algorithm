@@ -4,10 +4,14 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
+from util import is_same_list_nodes
+
 import year_twenty_three.march.break_a_palindrome as break_a_palindrome
 import year_twenty_three.march.largest_sum_of_averages as largest_sum_of_averages
 import year_twenty_three.march.maximum_width_of_binary_tree as maximum_width_of_binary_tree
+import year_twenty_three.march.merge_in_between_linked_lists as merge_in_between_linked_lists
 import year_twenty_three.march.predict_the_winner as predict_the_winner
+from common.list_node import ListNode
 from common.tree_node import TreeNode
 
 
@@ -107,3 +111,28 @@ def test_width_of_binary_tree():
     assert result0 == answer0
     assert result1 == answer1
     assert result2 == answer2
+
+
+def test_merge_in_between_linked_lists():
+    solution0 = merge_in_between_linked_lists.Solution()
+    solution1 = merge_in_between_linked_lists.Solution()
+
+    list01 = ListNode.make([0, 1, 2, 3, 4, 5])
+    list02 = ListNode.make([1000000, 1000001, 1000002])
+    a0, b0 = 3, 4
+
+    list11 = ListNode.make([0, 1, 2, 3, 4, 5, 6])
+    list12 = ListNode.make([1000000, 1000001, 1000002, 1000003, 1000004])
+    a1, b1 = 2, 5
+
+    answer0 = ListNode.make([0, 1, 2, 1000000, 1000001, 1000002, 5])
+    answer1 = ListNode.make([0, 1, 1000000, 1000001, 1000002, 1000003, 1000004, 6])
+
+    result0 = solution0.merge_in_between(list01, a0, b0, list02)
+    result1 = solution1.merge_in_between(list11, a1, b1, list12)
+
+    compare0 = is_same_list_nodes(result0, answer0)
+    compare1 = is_same_list_nodes(result1, answer1)
+
+    assert compare0 == True
+    assert compare1 == True
