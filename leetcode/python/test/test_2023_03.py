@@ -1,35 +1,14 @@
 import sys
-from os.path import dirname, abspath, join
+from os.path import abspath, dirname, join
 
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
-import year_twenty_three.march.maximum_product_of_the_length_of_two_palindromic_subsequences as max_product
-import year_twenty_three.march.predict_the_winner as predict_the_winner
 import year_twenty_three.march.break_a_palindrome as break_a_palindrome
 import year_twenty_three.march.largest_sum_of_averages as largest_sum_of_averages
-
-
-# def test_max_product():
-#    solution0 = max_product.Solution()
-#    solution1 = max_product.Solution()
-#    solution2 = max_product.Solution()
-#
-#    s0 = "leetcodecom"
-#    s1 = "bb"
-#    s2 = "accbcaxxcxx"
-#
-#    result0 = solution0.max_product(s0)
-#    result1 = solution1.max_product(s1)
-#    result2 = solution2.max_product(s2)
-#
-#    answer0 = 9
-#    answer1 = 1
-#    answer2 = 25
-#
-#    assert result0 == answer0
-#    assert result1 == answer1
-#    assert result2 == answer2
+import year_twenty_three.march.maximum_width_of_binary_tree as maximum_width_of_binary_tree
+import year_twenty_three.march.predict_the_winner as predict_the_winner
+from common.tree_node import TreeNode
 
 
 def test_predict_the_winner():
@@ -106,3 +85,25 @@ def test_largest_sum_of_averages():
     assert round(result0, 5) == answer0
     assert round(result1, 5) == answer1
     assert round(result2, 5) == answer2
+
+
+def test_width_of_binary_tree():
+    solution0 = maximum_width_of_binary_tree.Solution()
+    solution1 = maximum_width_of_binary_tree.Solution()
+    solution2 = maximum_width_of_binary_tree.Solution()
+
+    root0 = TreeNode.make([1, 3, 2, 5, 3, None, 9])
+    root1 = TreeNode.make([1, 3, 2, 5, None, None, 9, 6, None, 7])
+    root2 = TreeNode.make([1, 3, 2, 5])
+
+    answer0 = 4
+    answer1 = 7
+    answer2 = 2
+
+    result0 = solution0.width_of_binary_tree(root0)
+    result1 = solution1.width_of_binary_tree(root1)
+    result2 = solution2.width_of_binary_tree(root2)
+
+    assert result0 == answer0
+    assert result1 == answer1
+    assert result2 == answer2
