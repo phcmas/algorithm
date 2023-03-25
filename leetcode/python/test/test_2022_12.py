@@ -4,6 +4,7 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
+# pylint: disable=C0413,R0402
 from util import is_same_arrays_ignoring_order, is_same_list_nodes
 
 import year_twenty_two.december.arithmetic_subarrays as arithmetic_subarrays

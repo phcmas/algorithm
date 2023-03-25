@@ -4,6 +4,7 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
+# pylint: disable=C0413,R0402
 from util import is_same_list_nodes
 
 import year_twenty_three.march.break_a_palindrome as break_a_palindrome
@@ -11,6 +12,8 @@ import year_twenty_three.march.largest_sum_of_averages as largest_sum_of_average
 import year_twenty_three.march.maximum_width_of_binary_tree as maximum_width_of_binary_tree
 import year_twenty_three.march.merge_in_between_linked_lists as merge_in_between_linked_lists
 import year_twenty_three.march.predict_the_winner as predict_the_winner
+import year_twenty_three.march.minimum_deletions_to_make_array_beautiful as min_deletion
+
 from common.list_node import ListNode
 from common.tree_node import TreeNode
 
@@ -136,3 +139,20 @@ def test_merge_in_between_linked_lists():
 
     assert compare0 is True
     assert compare1 is True
+
+
+def test_min_deletion():
+    solution0 = min_deletion.Solution()
+    solution1 = min_deletion.Solution()
+
+    nums0 = [1, 1, 2, 3, 5]
+    nums1 = [1, 1, 2, 2, 3, 3]
+
+    answer0 = 1
+    answer1 = 2
+
+    result0 = solution0.min_deletion(nums0)
+    result1 = solution1.min_deletion(nums1)
+
+    assert result0 == answer0
+    assert result1 == answer1

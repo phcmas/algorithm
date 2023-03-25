@@ -6,8 +6,7 @@ You are given a 0-indexed integer array nums. The array nums is beautiful if:
 1. nums.length is even.
 2. nums[i] != nums[i + 1] for all i % 2 == 0.
 
-Note that an empty array is considered beautiful.
-You can delete any number of elements from nums.
+Note that an empty array is considered beautiful. You can delete any number of elements from nums.
 When you delete an element, all the elements to the right of the deleted element will
 be shifted one unit to the left to fill the gap created and all the elements
 to the left of the deleted element will remain unchanged.
@@ -35,4 +34,19 @@ from typing import List
 
 class Solution:
     def min_deletion(self, nums: List[int]) -> int:
-        pass
+        count, stack = 0, [nums[0]]
+
+        for num in nums[1:]:
+            top = stack[len(stack) - 1]
+
+            if len(stack) % 2 == 1 and top == num:
+                count += 1
+                continue
+
+            stack.append(num)
+
+        if len(stack) % 2 == 1:
+            count += 1
+            stack.pop()
+
+        return count

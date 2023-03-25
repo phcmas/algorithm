@@ -4,6 +4,7 @@ from os.path import dirname, abspath, join
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
+# pylint: disable=C0413,R0402
 import year_twenty_two.november.target_sum as target_sum
 import year_twenty_two.november.split_array_into_consecutive_subsequences as subsequences
 import year_twenty_two.november.number_of_substrings_containing_all_three_characters as chars
