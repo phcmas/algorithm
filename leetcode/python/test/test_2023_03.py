@@ -134,5 +134,5 @@ def test_merge_in_between_linked_lists():
     compare0 = is_same_list_nodes(result0, answer0)
     compare1 = is_same_list_nodes(result1, answer1)
 
-    assert compare0 == True
-    assert compare1 == True
+    assert compare0 is True
+    assert compare1 is True

@@ -15,7 +15,7 @@ analyse-fallback-blocks=no
 #errors-only=
 
 # Always return a 0 (non-error) status code, even if lint errors are found.
-# This is primarily useful in continuous integration scripts.
+
 #exit-zero=
 
 # A comma-separated list of package or module names from where C extensions may
@@ -61,11 +61,7 @@ ignored-modules=
 
 # Python code to execute, usually for sys.path manipulation such as
 # pygtk.require().
-init-hook='import sys;
-sys.path.append('/home/seungkyun/study/algorithm/leetcode/python/src');
-sys.path.append('/home/seungkyun/opt/anaconda3/envs/algorithm/lib/python3.8/site-packages');
-sys.path.append('/home/seungkyun/opt/anaconda3/envs/algorithm/lib/python3.8');
-'
+init-hook='from pylint.config import find_pylintrc; import os, sys; sys.path.append(f"{os.path.dirname(find_pylintrc())}");'
 
 # Use multiple processes to speed up Pylint. Specifying 0 will auto-detect the
 # number of processors available to use, and will cap the count on Windows to
@@ -155,7 +151,11 @@ disable=raw-checker-failed,
         suppressed-message,
         useless-suppression,
         deprecated-pragma,
-        use-symbolic-message-instead
+        use-symbolic-message-instead,
+        trailing-whitespace,
+        missing-class-docstring,
+        missing-function-docstring,
+        missing-module-docstring
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option

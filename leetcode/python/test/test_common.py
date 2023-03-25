@@ -1,5 +1,5 @@
 import sys
-from os.path import dirname, abspath, join
+from os.path import abspath, dirname, join
 
 SRC_DIR = join(dirname(__file__), "../src")
 TEST_DIR = join(dirname(__file__), "../test")
@@ -8,6 +8,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 sys.path.insert(1, abspath(TEST_DIR))
 
 from util import is_same_list_nodes
+
 from common.list_node import ListNode
 
 
@@ -24,7 +25,7 @@ def test_make_list_node0():
     answer = list_node_example0()
 
     compare = is_same_list_nodes(result, answer)
-    assert compare == True
+    assert compare is True
 
 
 def test_make_list_node1():
@@ -32,4 +33,4 @@ def test_make_list_node1():
     answer = None
 
     compare = is_same_list_nodes(result, answer)
-    assert compare == True
+    assert compare is True
