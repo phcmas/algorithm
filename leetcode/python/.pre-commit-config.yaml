@@ -6,7 +6,12 @@ repos:
         entry: pylint
         language: system
         types: [python]
-        args: ["-rn", "-sn", "--rcfile=.pylintrc"]
+        args:
+          [
+            "-rn",
+            "-sn",
+            "--rcfile=/Users/seungkyun_park/study/algorithm/leetcode/python/.pylintrc",
+          ]
   - repo: local
     hooks:
       - id: black
