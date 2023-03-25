@@ -1,7 +1,10 @@
-""" 1493. Longest Subarray of 1's After Deleting One Element """
+from typing import List
+
 """
+1493. Longest Subarray of 1's After Deleting One Element
+
 Given a binary array nums, you should delete one element from it.
-Return the size of the longest non-empty subarray containing only 1's in the resulting array. 
+Return the size of the longest non-empty subarray containing only 1's in the resulting array.
 Return 0 if there is no such subarray.
 
 Example 1:
@@ -25,11 +28,9 @@ nums[i] is either 0 or 1.
 """
 
 
-from typing import List
-
-
 ## First Solution - Proved by Me, Correct but complicated
 class Solution:
+    # pylint: disable=R0912
     def longest_subarray(self, nums: List[int]) -> int:
         one_count, zero_count = 0, 0
         consecutive_ones: List[int] = []
@@ -65,6 +66,7 @@ class Solution:
 
         longest_length = max(consecutive_ones)
 
+        # pylint: disable=C0200
         for idx in range(len(can_be_merged)):
             if can_be_merged[idx] and idx < len(consecutive_ones) - 1:
                 merged_length = consecutive_ones[idx] + consecutive_ones[idx + 1]

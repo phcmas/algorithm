@@ -1,7 +1,7 @@
 """
 1238. Circular Permutation in Binary Representation
 
-Given 2 integers n and start. Your task is return any permutation p of 
+Given 2 integers n and start. Your task is return any permutation p of
 (0,1,2.....,2^n -1) such that :
 
 p[0] = start
@@ -12,7 +12,7 @@ Example 1:
 Input: n = 2, start = 3
 Output: [3,2,0,1]
 Explanation: The binary representation of the permutation
-is (11,10,00,01). All the adjacent element differ by one bit. 
+is (11,10,00,01). All the adjacent element differ by one bit.
 Another valid permutation is [3,1,0,2]
 
 Example 2:

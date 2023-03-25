@@ -1,6 +1,6 @@
 """
 86. Partition List
-Given the head of a linked list and a value x, 
+Given the head of a linked list and a value x,
 partition it such that all nodes less than x come before nodes greater than or equal to x.
 
 You should preserve the original relative order of the nodes in each of the two partitions.
@@ -19,7 +19,7 @@ The number of nodes in the list is in the range [0, 200].
 -200 <= x <= 200
 """
 
-from typing import List, Optional
+from typing import Optional
 from common.list_node import ListNode
 
 

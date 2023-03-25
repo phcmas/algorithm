@@ -1,5 +1,5 @@
 """ 1781. Sum of Beauty of All Substrings """
-""" 
+"""
 The beauty of a string is the difference in frequencies between the most frequent and least frequent characters.
 For example, the beauty of "abaacc" is 3 - 1 = 2.
 Given a string s, return the sum of beauty of all of its substrings.
@@ -15,9 +15,8 @@ Output: 17
 
 Constraints:
 1 <= s.length <= 500
-s consists of only lowercase English letters. 
+s consists of only lowercase English letters.
 """
-from collections import defaultdict
 
 
 class Solution:
