@@ -1,6 +1,7 @@
 from typing import List, Optional
 
 from common.list_node import ListNode
+from common.tree_node import TreeNode
 
 
 def is_same_arrays_ignoring_order(arr0: List[int], arr1: List[int]):
@@ -25,3 +26,16 @@ def is_same_list_nodes(head0: Optional[ListNode], head1: Optional[ListNode]):
         node1 = node1.next
 
     return node1 is None
+
+
+def is_same_tree(tree0: Optional[TreeNode], tree1: Optional[TreeNode]) -> bool:
+    if tree0 is None or tree1 is None:
+        return tree0 is None and tree1 is None
+
+    if tree0.val != tree1.val:
+        return False
+
+    is_left_same = is_same_tree(tree0.left, tree1.left)
+    is_right_same = is_same_tree(tree0.right, tree1.right)
+
+    return is_left_same and is_right_same
