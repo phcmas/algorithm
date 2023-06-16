@@ -8,6 +8,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 import year_twenty_three.june.maximum_number_of_occurrences_of_a_substring as max_frequency
 import year_twenty_three.june.smallest_subsequence_of_distinct_characters as smallest_subsequence
 import year_twenty_three.june.fair_distribution_of_cookies as distribute_cookies
+import year_twenty_three.june.maximum_tastiness_of_candy_basket as maximum_tastiness
 
 
 def test_maximum_number_of_occurences_of_a_substring():
@@ -70,6 +71,28 @@ def test_distribute_cookies():
     result0 = solution0.distribute_cookies(cookies0, k0)
     result1 = solution1.distribute_cookies(cookies1, k1)
     result2 = solution2.distribute_cookies(cookies2, k2)
+
+    assert result0 == answer0
+    assert result1 == answer1
+    assert result2 == answer2
+
+
+def test_maximum_tastiness():
+    solution0 = maximum_tastiness.Solution()
+    solution1 = maximum_tastiness.Solution()
+    solution2 = maximum_tastiness.Solution()
+
+    price0, k0 = [13, 5, 1, 8, 21, 2], 3
+    price1, k1 = [1, 3, 1], 2
+    price2, k2 = [7, 7, 7, 7], 2
+
+    answer0 = 8
+    answer1 = 2
+    answer2 = 0
+
+    result0 = solution0.maximum_tastiness(price0, k0)
+    result1 = solution1.maximum_tastiness(price1, k1)
+    result2 = solution2.maximum_tastiness(price2, k2)
 
     assert result0 == answer0
     assert result1 == answer1
