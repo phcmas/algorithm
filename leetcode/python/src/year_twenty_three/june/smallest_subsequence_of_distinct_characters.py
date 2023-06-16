@@ -1,6 +1,7 @@
 """
 1081. Smallest Subsequence of Distinct Characters
-Given a string s, return the lexicographically smallest subsequence of s that contains all the distinct characters of s exactly once.
+Given a string s, return the lexicographically smallest subsequence of s 
+that contains all the distinct characters of s exactly once.
 
 Example 1:
 Input: s = "bcabc"
@@ -19,13 +20,17 @@ s consists of lowercase English letters.
 class Solution:
     def smallest_subsequence(self, s: str) -> str:
         result = ""
+        last, seen = {char: index for index, char in enumerate(s)}, set()
 
-        for char in s:
-            index = result.find(char)
+        for index, char in enumerate(s):
+            if char in seen:
+                continue
 
-            if index == -1:
-                result += char
-            elif index < len(result) - 1 and char >= result[index + 1]:
-                result = result[:index] + result[index + 1 :] + char
+            while len(result) > 0 and result[-1] > char and last[result[-1]] > index:
+                seen.remove(result[-1])
+                result = result[:-1]
+
+            result += char
+            seen.add(char)
 
         return result

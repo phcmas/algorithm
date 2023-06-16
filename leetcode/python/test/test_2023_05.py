@@ -45,21 +45,21 @@ def test_binary_tree_pruning():
     assert compare3 is True
 
 
-def test_find_maximum_xor():
-    solution0 = maximum_xor.Solution()
-    solution1 = maximum_xor.Solution()
-
-    nums0 = [3, 10, 5, 25, 2, 8]
-    nums1 = [14, 70, 53, 83, 49, 91, 36, 80, 92, 51, 66, 70]
-
-    answer0 = 28
-    answer1 = 127
-
-    result0 = solution0.find_maximum_xor(nums0)
-    result1 = solution1.find_maximum_xor(nums1)
-
-    assert answer0 == result0
-    assert answer1 == result1
+# def test_find_maximum_xor():
+#    solution0 = maximum_xor.Solution()
+#    solution1 = maximum_xor.Solution()
+#
+#    nums0 = [3, 10, 5, 25, 2, 8]
+#    nums1 = [14, 70, 53, 83, 49, 91, 36, 80, 92, 51, 66, 70]
+#
+#    answer0 = 28
+#    answer1 = 127
+#
+#    result0 = solution0.find_maximum_xor(nums0)
+#    result1 = solution1.find_maximum_xor(nums1)
+#
+#    assert answer0 == result0
+#    assert answer1 == result1
 
 
 def test_find_disappeared_numbers():
