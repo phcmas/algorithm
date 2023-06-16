@@ -6,6 +6,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 
 # pylint: disable=C0413,R0402
 import year_twenty_three.june.maximum_number_of_occurrences_of_a_substring as max_frequency
+import year_twenty_three.june.smallest_subsequence_of_distinct_characters as smallest_subsequence
 
 
 def test_maximum_number_of_occurences_of_a_substring():
@@ -33,3 +34,20 @@ def test_maximum_number_of_occurences_of_a_substring():
     assert result0 == answer0
     assert result1 == answer1
     assert result2 == answer2
+
+
+def test_smallest_subsequence():
+    solution0 = smallest_subsequence.Solution()
+    solution1 = smallest_subsequence.Solution()
+
+    s0 = "bcabc"
+    s1 = "cbacdcbc"
+
+    answer0 = "abc"
+    answer1 = "acdb"
+
+    result0 = solution0.smallest_subsequence(s0)
+    result1 = solution1.smallest_subsequence(s1)
+
+    assert result0 == answer0
+    assert result1 == answer1
