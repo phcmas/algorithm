@@ -1,11 +1,11 @@
 """
 2305. Fair Distribution of Cookies
 
-You are given an integer array cookies, where cookies[i] denotes 
-the number of cookies in the ith bag. You are also given an integer k that denotes the number of children to 
-distribute all the bags of cookies to. 
+You are given an integer array cookies, where cookies[i] denotes
+the number of cookies in the ith bag. You are also given an integer k that denotes the number of children to
+distribute all the bags of cookies to.
 All the cookies in the same bag must go to the same child and cannot be split up.
-The unfairness of a distribution is defined as the maximum total cookies obtained 
+The unfairness of a distribution is defined as the maximum total cookies obtained
 by a single child in the distribution. Return the minimum unfairness of all distributions.
 
 Example 1:
@@ -33,11 +33,29 @@ Constraints:
 2 <= k <= cookies.length
 
 """
-
-
+import sys
 from typing import List
 
 
 class Solution:
     def distribute_cookies(self, cookies: List[int], k: int) -> int:
-        return 0
+        answer = sys.maxsize
+        children = [0] * k
+
+        def distribute(index: int):
+            nonlocal answer, children
+
+            if index == len(cookies):
+                answer = min(answer, max(children))
+                return
+
+            if answer <= max(children):
+                return
+
+            for i in range(k):
+                children[i] += cookies[index]
+                distribute(index + 1)
+                children[i] -= cookies[index]
+
+        distribute(0)
+        return answer

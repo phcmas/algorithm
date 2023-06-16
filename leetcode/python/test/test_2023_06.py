@@ -57,15 +57,20 @@ def test_smallest_subsequence():
 def test_distribute_cookies():
     solution0 = distribute_cookies.Solution()
     solution1 = distribute_cookies.Solution()
+    solution2 = distribute_cookies.Solution()
 
     cookies0, k0 = [8, 15, 10, 20, 8], 2
     cookies1, k1 = [6, 1, 3, 2, 2, 4, 1, 2], 3
+    cookies2, k2 = [36597, 70125, 68220, 4921], 2
 
     answer0 = 31
     answer1 = 7
+    answer2 = 104817
 
     result0 = solution0.distribute_cookies(cookies0, k0)
     result1 = solution1.distribute_cookies(cookies1, k1)
+    result2 = solution2.distribute_cookies(cookies2, k2)
 
     assert result0 == answer0
     assert result1 == answer1
+    assert result2 == answer2
