@@ -12,6 +12,7 @@ import year_twenty_three.june.fair_distribution_of_cookies as distribute_cookies
 import year_twenty_three.june.maximum_tastiness_of_candy_basket as maximum_tastiness
 import year_twenty_three.june.backspace_string_compare as backspace_compare
 import year_twenty_three.june.count_good_nodes_in_binary_tree as good_nodes
+import year_twenty_three.june.append_characters_to_string_to_make_subsequence as append_characters
 
 
 def test_maximum_number_of_occurences_of_a_substring():
@@ -136,6 +137,28 @@ def test_good_nodes():
     result0 = solution0.good_nodes(root0)
     result1 = solution1.good_nodes(root1)
     result2 = solution2.good_nodes(root2)
+
+    assert result0 == answer0
+    assert result1 == answer1
+    assert result2 == answer2
+
+
+def test_append_characters():
+    solution0 = append_characters.Solution()
+    solution1 = append_characters.Solution()
+    solution2 = append_characters.Solution()
+
+    s0, t0 = "coaching", "coding"
+    s1, t1 = "abcde", "a"
+    s2, t2 = "z", "abcde"
+
+    answer0 = 4
+    answer1 = 0
+    answer2 = 5
+
+    result0 = solution0.append_characters(s0, t0)
+    result1 = solution1.append_characters(s1, t1)
+    result2 = solution2.append_characters(s2, t2)
 
     assert result0 == answer0
     assert result1 == answer1
