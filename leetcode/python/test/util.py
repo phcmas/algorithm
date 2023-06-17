@@ -4,6 +4,13 @@ from common.list_node import ListNode
 from common.tree_node import TreeNode
 
 
+def is_same_double_arrays_ignoring_order(arr0: List[List[int]], arr1: List[List[int]]):
+    sorted0 = sorted(arr0)
+    sorted1 = sorted(arr1)
+
+    return sorted0 == sorted1
+
+
 def is_same_arrays_ignoring_order(arr0: List[int], arr1: List[int]):
     sorted0 = sorted(arr0)
     sorted1 = sorted(arr1)

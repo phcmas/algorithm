@@ -1,10 +1,12 @@
 import sys
 from os.path import abspath, dirname, join
 
+
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
 # pylint: disable=C0413,R0402
+from util import is_same_double_arrays_ignoring_order
 from common.tree_node import TreeNode
 import year_twenty_three.june.maximum_number_of_occurrences_of_a_substring as max_frequency
 import year_twenty_three.june.smallest_subsequence_of_distinct_characters as smallest_subsequence
@@ -13,6 +15,7 @@ import year_twenty_three.june.maximum_tastiness_of_candy_basket as maximum_tasti
 import year_twenty_three.june.backspace_string_compare as backspace_compare
 import year_twenty_three.june.count_good_nodes_in_binary_tree as good_nodes
 import year_twenty_three.june.append_characters_to_string_to_make_subsequence as append_characters
+import year_twenty_three.june.subsets_II as subsets_with_dup
 
 
 def test_maximum_number_of_occurences_of_a_substring():
@@ -163,3 +166,29 @@ def test_append_characters():
     assert result0 == answer0
     assert result1 == answer1
     assert result2 == answer2
+
+
+def test_subsets_II():
+    solution0 = subsets_with_dup.Solution()
+    solution1 = subsets_with_dup.Solution()
+    solution2 = subsets_with_dup.Solution()
+
+    nums0 = [1, 2, 2]
+    nums1 = [0]
+    nums2 = [4, 1, 0]
+
+    result0 = solution0.subsets_with_dup(nums0)
+    result1 = solution1.subsets_with_dup(nums1)
+    result2 = solution2.subsets_with_dup(nums2)
+
+    answer0 = [[], [1], [1, 2], [1, 2, 2], [2], [2, 2]]
+    answer1 = [[], [0]]
+    answer2 = [[], [0], [1], [4], [0, 1], [0, 4], [1, 4], [0, 1, 4]]
+
+    compare0 = is_same_double_arrays_ignoring_order(answer0, result0)
+    compare1 = is_same_double_arrays_ignoring_order(answer1, result1)
+    compare2 = is_same_double_arrays_ignoring_order(answer2, result2)
+
+    assert compare0 is True
+    assert compare1 is True
+    assert compare2 is True
