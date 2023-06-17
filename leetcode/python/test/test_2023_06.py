@@ -16,6 +16,7 @@ import year_twenty_three.june.backspace_string_compare as backspace_compare
 import year_twenty_three.june.count_good_nodes_in_binary_tree as good_nodes
 import year_twenty_three.june.append_characters_to_string_to_make_subsequence as append_characters
 import year_twenty_three.june.subsets_II as subsets_with_dup
+import year_twenty_three.june.longest_nice_subarray as longest_nice_subarray
 
 
 def test_maximum_number_of_occurences_of_a_substring():
@@ -192,3 +193,20 @@ def test_subsets_II():
     assert compare0 is True
     assert compare1 is True
     assert compare2 is True
+
+
+def test_longest_nice_subarray():
+    solution0 = longest_nice_subarray.Solution()
+    solution1 = longest_nice_subarray.Solution()
+
+    nums0 = [1, 3, 8, 48, 10]
+    nums1 = [3, 1, 5, 11, 13]
+
+    answer0 = 3
+    answer1 = 1
+
+    result0 = solution0.longest_nice_subarray(nums0)
+    result1 = solution1.longest_nice_subarray(nums1)
+
+    assert result0 == answer0
+    assert result1 == answer1
