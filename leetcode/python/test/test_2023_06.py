@@ -9,6 +9,7 @@ import year_twenty_three.june.maximum_number_of_occurrences_of_a_substring as ma
 import year_twenty_three.june.smallest_subsequence_of_distinct_characters as smallest_subsequence
 import year_twenty_three.june.fair_distribution_of_cookies as distribute_cookies
 import year_twenty_three.june.maximum_tastiness_of_candy_basket as maximum_tastiness
+import year_twenty_three.june.backspace_string_compare as backspace_compare
 
 
 def test_maximum_number_of_occurences_of_a_substring():
@@ -97,3 +98,21 @@ def test_maximum_tastiness():
     assert result0 == answer0
     assert result1 == answer1
     assert result2 == answer2
+
+
+def test_backspace_compare():
+    solution0 = backspace_compare.Solution()
+    solution1 = backspace_compare.Solution()
+    solution2 = backspace_compare.Solution()
+
+    s0, t0 = "ab#c", "ad#c"
+    s1, t1 = "ab##", "c#d#"
+    s2, t2 = "a#c", "b"
+
+    result0 = solution0.backspace_compare(s0, t0)
+    result1 = solution1.backspace_compare(s1, t1)
+    result2 = solution2.backspace_compare(s2, t2)
+
+    assert result0 is True
+    assert result1 is True
+    assert result2 is False
