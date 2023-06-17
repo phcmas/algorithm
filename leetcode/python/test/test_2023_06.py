@@ -5,11 +5,13 @@ SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
 # pylint: disable=C0413,R0402
+from common.tree_node import TreeNode
 import year_twenty_three.june.maximum_number_of_occurrences_of_a_substring as max_frequency
 import year_twenty_three.june.smallest_subsequence_of_distinct_characters as smallest_subsequence
 import year_twenty_three.june.fair_distribution_of_cookies as distribute_cookies
 import year_twenty_three.june.maximum_tastiness_of_candy_basket as maximum_tastiness
 import year_twenty_three.june.backspace_string_compare as backspace_compare
+import year_twenty_three.june.count_good_nodes_in_binary_tree as good_nodes
 
 
 def test_maximum_number_of_occurences_of_a_substring():
@@ -116,3 +118,25 @@ def test_backspace_compare():
     assert result0 is True
     assert result1 is True
     assert result2 is False
+
+
+def test_good_nodes():
+    solution0 = good_nodes.Solution()
+    solution1 = good_nodes.Solution()
+    solution2 = good_nodes.Solution()
+
+    root0 = TreeNode.make([3, 1, 4, 3, None, 1, 5])
+    root1 = TreeNode.make([3, 3, None, 4, 2])
+    root2 = TreeNode.make([1])
+
+    answer0 = 4
+    answer1 = 3
+    answer2 = 1
+
+    result0 = solution0.good_nodes(root0)
+    result1 = solution1.good_nodes(root1)
+    result2 = solution2.good_nodes(root2)
+
+    assert result0 == answer0
+    assert result1 == answer1
+    assert result2 == answer2
