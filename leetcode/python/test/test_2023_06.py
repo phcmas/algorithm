@@ -17,6 +17,7 @@ import year_twenty_three.june.count_good_nodes_in_binary_tree as good_nodes
 import year_twenty_three.june.append_characters_to_string_to_make_subsequence as append_characters
 import year_twenty_three.june.subsets_II as subsets_with_dup
 import year_twenty_three.june.longest_nice_subarray as longest_nice_subarray
+import year_twenty_three.june.construct_k_palindrome_strings as can_construct
 
 
 def test_maximum_number_of_occurences_of_a_substring():
@@ -210,3 +211,21 @@ def test_longest_nice_subarray():
 
     assert result0 == answer0
     assert result1 == answer1
+
+
+def test_can_construct():
+    solution0 = can_construct.Solution()
+    solution1 = can_construct.Solution()
+    solution2 = can_construct.Solution()
+
+    s0, k0 = "annabelle", 2
+    s1, k1 = "leetcode", 3
+    s2, k2 = "true", 4
+
+    result0 = solution0.can_construct(s0, k0)
+    result1 = solution1.can_construct(s1, k1)
+    result2 = solution2.can_construct(s2, k2)
+
+    assert result0 is True
+    assert result1 is False
+    assert result2 is True
