@@ -1,14 +1,16 @@
 import sys
 from os.path import abspath, dirname, join
 
-
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
 # pylint: disable=C0413,R0402
-import year_twenty_three.july.optimal_partition_of_string as partition_string
-import year_twenty_three.july.maximum_sum_of_two_non_overlapping_subarrays as max_sum_two_overlap
+from util import is_same_double_arrays_ignoring_order
+
+import year_twenty_three.july.group_the_people_given_the_group_size_they_belong_to as group_the_people
 import year_twenty_three.july.longest_nice_substring as longest_nice_substring
+import year_twenty_three.july.maximum_sum_of_two_non_overlapping_subarrays as max_sum_two_overlap
+import year_twenty_three.july.optimal_partition_of_string as partition_string
 
 
 def test_partition_string():
@@ -60,3 +62,23 @@ def test_longest_nice_substring():
     assert result0 == answer0
     assert result1 == answer1
     assert result2 == answer2
+
+
+def test_group_the_people():
+    solution0 = group_the_people.Solution()
+    solution1 = group_the_people.Solution()
+
+    group_sizes0 = [3, 3, 3, 3, 3, 1, 3]
+    group_sizes1 = [2, 1, 3, 3, 3, 2]
+
+    result0 = solution0.group_the_people(group_sizes0)
+    result1 = solution1.group_the_people(group_sizes1)
+
+    answer0 = [[5], [0, 1, 2], [3, 4, 6]]
+    answer1 = [[1], [0, 5], [2, 3, 4]]
+
+    compare0 = is_same_double_arrays_ignoring_order(result0, answer0)
+    compare1 = is_same_double_arrays_ignoring_order(result1, answer1)
+
+    assert compare0 is True
+    assert compare1 is True
