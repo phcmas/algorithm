@@ -1,12 +1,14 @@
 import sys
 from os.path import abspath, dirname, join
 
+
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
-# pylint: disable=C0413,R0402
+# pylint: disable=C0411,C0413,R0402
 from util import is_same_arrays_ignoring_order
-
+from common.tree_node import TreeNode
+import year_twenty_three.october.find_largest_value_in_each_tree_row as largest_values
 import year_twenty_three.october.largest_divisible_subset_v1 as largest_divisible_subset_v1
 import year_twenty_three.october.largest_divisible_subset_v2 as largest_divisible_subset_v2
 
@@ -61,3 +63,23 @@ def test_largest_divisible_subset_v2():
     assert compare0 is True
     assert compare1 is True
     assert compare2 is True
+
+
+def test_find_largest_value_in_each_tree_row():
+    solution0 = largest_values.Solution()
+    solution1 = largest_values.Solution()
+
+    root0 = TreeNode.make([1, 3, 2, 5, 3, None, 9])
+    root1 = TreeNode.make([1, 2, 3])
+
+    answer0 = [1, 3, 9]
+    answer1 = [1, 3]
+
+    result0 = solution0.largest_values(root0)
+    result1 = solution1.largest_values(root1)
+
+    compare0 = is_same_arrays_ignoring_order(result0, answer0)
+    compare1 = is_same_arrays_ignoring_order(result1, answer1)
+
+    assert compare0 is True
+    assert compare1 is True
