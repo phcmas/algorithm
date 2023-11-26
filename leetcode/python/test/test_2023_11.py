@@ -1,12 +1,12 @@
 import sys
 from os.path import abspath, dirname, join
 
-
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
 # pylint: disable=C0411,C0413,R0402
 import year_twenty_three.november.reverse_string_ii as reverse_string_ii
+import year_twenty_three.november.fair_candy_swap as fair_candy_swap
 
 
 def test_reverse_string_ii():
@@ -41,3 +41,21 @@ def test_reverse_string_ii():
     assert result5 == "bacd"
     assert result6 == "cbadefihgjklmg"
     assert result7 == "dcbaefghlkjigm"
+
+
+def test_fair_candy_swap():
+    solution0 = fair_candy_swap.Solution()
+    solution1 = fair_candy_swap.Solution()
+    solution2 = fair_candy_swap.Solution()
+
+    alice_sizes0, bob_sizes0 = [1, 1], [2, 2]
+    alice_sizes1, bob_sizes1 = [1, 2], [2, 3]
+    alice_sizes2, bob_sizes2 = [2], [1, 3]
+
+    result0 = solution0.fair_candy_swap(alice_sizes0, bob_sizes0)
+    result1 = solution1.fair_candy_swap(alice_sizes1, bob_sizes1)
+    result2 = solution2.fair_candy_swap(alice_sizes2, bob_sizes2)
+
+    assert result0 == [1, 2]
+    assert result1 == [1, 2]
+    assert result2 == [2, 3]
