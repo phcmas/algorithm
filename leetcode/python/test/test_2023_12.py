@@ -1,0 +1,55 @@
+import sys
+from os.path import abspath, dirname, join
+
+SRC_DIR = join(dirname(__file__), "../src")
+sys.path.insert(1, abspath(SRC_DIR))
+
+# pylint: disable=C0411,C0413,R0402
+from common.tree_node import TreeNode
+import year_twenty_three.december.maximum_the_confusion_of_an_exam as maximum_the_confusion
+import year_twenty_three.december.cousins_in_binary_tree as cousins_in_binary_tree
+
+
+def test_maximum_the_confusion():
+    solution0 = maximum_the_confusion.Solution()
+    solution1 = maximum_the_confusion.Solution()
+    solution2 = maximum_the_confusion.Solution()
+
+    key0, k0 = "TTFF", 2
+    key1, k1 = "TFFT", 1
+    key2, k2 = "TTFTTFTT", 1
+
+    result0 = solution0.max_consecutive_answers(key0, k0)
+    result1 = solution1.max_consecutive_answers(key1, k1)
+    result2 = solution2.max_consecutive_answers(key2, k2)
+
+    answer0 = 4
+    answer1 = 3
+    answer2 = 5
+
+    # assert result0 == answer0
+    # assert result1 == answer1
+    # assert result2 == answer2
+
+
+def test_is_cousins():
+    solution0 = cousins_in_binary_tree.Solution()
+    solution1 = cousins_in_binary_tree.Solution()
+    solution2 = cousins_in_binary_tree.Solution()
+
+    root0 = TreeNode.make([1, 2, 3, 4])
+    x0, y0 = 4, 3
+
+    root1 = TreeNode.make([1, 2, 3, None, 4, None, 5])
+    x1, y1 = 5, 4
+
+    root2 = TreeNode.make([1, 2, 3, None, 4])
+    x2, y2 = 2, 2
+
+    result0 = solution0.is_cousins(root0, x0, y0)
+    result1 = solution1.is_cousins(root1, x1, y1)
+    result2 = solution2.is_cousins(root2, x2, y2)
+
+    assert result0 is False
+    assert result1 is True
+    assert result2 is False
