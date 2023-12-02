@@ -27,9 +27,9 @@ def test_maximum_the_confusion():
     answer1 = 3
     answer2 = 5
 
-    # assert result0 == answer0
-    # assert result1 == answer1
-    # assert result2 == answer2
+    assert result0 == answer0
+    assert result1 == answer1
+    assert result2 == answer2
 
 
 def test_is_cousins():
