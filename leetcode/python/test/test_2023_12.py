@@ -8,6 +8,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 from common.tree_node import TreeNode
 import year_twenty_three.december.maximum_the_confusion_of_an_exam as maximum_the_confusion
 import year_twenty_three.december.cousins_in_binary_tree as cousins_in_binary_tree
+import year_twenty_three.december.longest_zigzag_path_in_a_binary_tree as longest_zigzag_path
 
 
 def test_maximum_the_confusion():
@@ -53,3 +54,23 @@ def test_is_cousins():
     assert result0 is False
     assert result1 is True
     assert result2 is False
+
+
+def test_longest_zigzag():
+    solution0 = longest_zigzag_path.Solution()
+    solution1 = longest_zigzag_path.Solution()
+    solution2 = longest_zigzag_path.Solution()
+
+    root0 = TreeNode.make(
+        [1, None, 1, 1, 1, None, None, 1, 1, None, 1, None, None, None, 1]
+    )
+    root1 = TreeNode.make([1, 1, 1, None, 1, None, None, 1, 1, None, 1])
+    root2 = TreeNode.make([1])
+
+    result0 = solution0.longest_zigzag(root0)
+    result1 = solution1.longest_zigzag(root1)
+    result2 = solution2.longest_zigzag(root2)
+
+    assert result0 == 3
+    assert result1 == 4
+    assert result2 == 0
