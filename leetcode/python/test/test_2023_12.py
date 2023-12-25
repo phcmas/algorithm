@@ -9,6 +9,7 @@ from common.tree_node import TreeNode
 import year_twenty_three.december.maximum_the_confusion_of_an_exam as maximum_the_confusion
 import year_twenty_three.december.cousins_in_binary_tree as cousins_in_binary_tree
 import year_twenty_three.december.longest_zigzag_path_in_a_binary_tree as longest_zigzag_path
+import year_twenty_three.december.delete_operation_for_two_strings as delete_operation
 
 
 def test_maximum_the_confusion():
@@ -74,3 +75,17 @@ def test_longest_zigzag():
     assert result0 == 3
     assert result1 == 4
     assert result2 == 0
+
+
+def test_delete_operation():
+    solution0 = delete_operation.Solution()
+    solution1 = delete_operation.Solution()
+
+    word01, word02 = "sea", "eat"
+    word11, word12 = "leetcode", "etco"
+
+    result0 = solution0.min_distance(word01, word02)
+    result1 = solution1.min_distance(word11, word12)
+
+    assert result0 == 2
+    assert result1 == 4
