@@ -4,7 +4,7 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
-# pylint: disable=C0411,C0413,R0402
+# pylint: disable=C0411,C0413,R0402,E0401
 from common.tree_node import TreeNode
 import year_twenty_three.december.maximum_the_confusion_of_an_exam as maximum_the_confusion
 import year_twenty_three.december.cousins_in_binary_tree as cousins_in_binary_tree

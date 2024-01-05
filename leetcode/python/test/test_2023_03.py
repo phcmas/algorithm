@@ -4,7 +4,7 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
-# pylint: disable=C0413,R0402
+# pylint: disable=C0413,R0402,E0401
 from util import is_same_list_nodes
 
 import year_twenty_three.march.break_a_palindrome as break_a_palindrome

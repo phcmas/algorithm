@@ -5,7 +5,7 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
-# pylint: disable=C0413,R0402
+# pylint: disable=C0413,R0402,E0401
 from util import is_same_double_arrays_ignoring_order
 from common.tree_node import TreeNode
 import year_twenty_three.june.maximum_number_of_occurrences_of_a_substring as max_frequency

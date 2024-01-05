@@ -4,7 +4,7 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
-# pylint: disable=C0413,R0402
+# pylint: disable=C0413,R0402,E0401
 import year_twenty_three.august.maximum_distance_between_a_pair_of_values as max_distance
 
 

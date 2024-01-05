@@ -4,7 +4,7 @@ from os.path import dirname, abspath, join
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
-# pylint: disable=C0413,R0402
+# pylint: disable=C0413,R0402,E0401
 import year_twenty_three.january.number_of_arithmetic_triplets as arithmetic_triplets
 import year_twenty_three.january.sum_of_beauty_of_all_substrings as beauty_sum
 import year_twenty_three.january.longest_subarray_of_1s_after_deleting_one_element as longest_subarray

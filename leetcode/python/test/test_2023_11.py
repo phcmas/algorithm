@@ -4,7 +4,7 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
-# pylint: disable=C0411,C0413,R0402
+# pylint: disable=C0411,C0413,R0402,E0401
 import year_twenty_three.november.reverse_string_ii as reverse_string_ii
 import year_twenty_three.november.fair_candy_swap as fair_candy_swap
 

@@ -4,7 +4,7 @@ from os.path import dirname, abspath, join
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
-# pylint: disable=C0413,R0402
+# pylint: disable=C0413,R0402,E0401
 import year_twenty_two.november.target_sum as target_sum
 import year_twenty_two.november.split_array_into_consecutive_subsequences as subsequences
 import year_twenty_two.november.number_of_substrings_containing_all_three_characters as chars
@@ -61,9 +61,9 @@ def test_split_array_into_consecutive_subsequences():
     answer1 = solution1.is_possible(nums1)
     answer2 = solution2.is_possible(nums2)
 
-    assert answer0 == True
-    assert answer1 == True
-    assert answer2 == False
+    assert answer0 is True
+    assert answer1 is True
+    assert answer2 is False
 
 
 def test_number_of_substrings_containing_all_three_characters():

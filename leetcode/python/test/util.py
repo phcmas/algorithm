@@ -1,5 +1,6 @@
 from typing import List, Optional
 
+# pylint: disable=E0401
 from common.list_node import ListNode
 from common.tree_node import TreeNode
 

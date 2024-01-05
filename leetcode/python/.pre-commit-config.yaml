@@ -8,9 +8,9 @@ repos:
     types: [python]
     args:
       [
-           "-rn",
-           "-sn",
-           "--rcfile=./leetcode/python/.pylintrc"
+        "-rn",
+        "-sn",
+        "--rcfile=leetcode/python/.pylintrc"
       ]
 - repo: local
   hooks:

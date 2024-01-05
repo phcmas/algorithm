@@ -61,7 +61,9 @@ ignored-modules=
 
 # Python code to execute, usually for sys.path manipulation such as
 # pygtk.require().
-init-hook='from pylint.config import find_pylintrc; import os, sys; sys.path.append(f"{os.path.dirname(find_pylintrc())}"); sys.path.append(f"{os.path.dirname(find_pylintrc())}/src");'
+#init-hook='from pylint.config import find_pylintrc; import os, sys; sys.path.append(f"{os.path.dirname(find_pylintrc())}");'
+init-hook='from pathlib import Path; sys.path.append(f"{Path(__file__).parent.resolve()}/src");'
+
 
 # Use multiple processes to speed up Pylint. Specifying 0 will auto-detect the
 # number of processors available to use, and will cap the count on Windows to

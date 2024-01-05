@@ -4,7 +4,7 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
-# pylint: disable=C0413,R0402
+# pylint: disable=C0413,R0402,E0401
 from util import is_same_arrays_ignoring_order, is_same_list_nodes
 
 import year_twenty_two.december.arithmetic_subarrays as arithmetic_subarrays
@@ -34,9 +34,9 @@ def test_maximum_split_of_positive_even_integers():
     compare1 = is_same_arrays_ignoring_order(result1, answer1)
     compare2 = is_same_arrays_ignoring_order(result2, answer2)
 
-    assert compare0 == True
-    assert compare1 == True
-    assert compare2 == True
+    assert compare0 is True
+    assert compare1 is True
+    assert compare2 is True
 
 
 def test_partition_list():
@@ -70,10 +70,10 @@ def test_partition_list():
     compare2 = is_same_list_nodes(result2, answer2)
     compare3 = is_same_list_nodes(result3, answer3)
 
-    assert compare0 == True
-    assert compare1 == True
-    assert compare2 == True
-    assert compare3 == True
+    assert compare0 is True
+    assert compare1 is True
+    assert compare2 is True
+    assert compare3 is True
 
 
 def test_arithmetic_subarrays():

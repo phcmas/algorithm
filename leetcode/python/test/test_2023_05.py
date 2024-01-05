@@ -4,12 +4,11 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
-# pylint: disable=C0413,R0402
+# pylint: disable=C0413,R0402,E0401
 from util import is_same_tree
 from common.tree_node import TreeNode
 
 import year_twenty_three.may.binary_tree_pruning as binary_tree_pruning
-import year_twenty_three.may.maximum_xor_of_the_two_numbers_in_an_array as maximum_xor
 import year_twenty_three.may.find_all_numbers_disappeared_in_an_array as find_all_numbers
 
 

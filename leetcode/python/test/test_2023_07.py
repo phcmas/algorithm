@@ -4,7 +4,7 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
-# pylint: disable=C0413,R0402
+# pylint: disable=C0413,R0402,E0401
 from util import is_same_double_arrays_ignoring_order
 
 import year_twenty_three.july.group_the_people_given_the_group_size_they_belong_to as group_the_people
