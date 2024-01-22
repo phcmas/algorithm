@@ -11,6 +11,7 @@ import year_twenty_four.january.edit_distance as edit_distance
 import year_twenty_four.january.remove_duplicates_from_sorted_array as remove_duplicates
 import year_twenty_four.january.two_sum_iv as two_sum_iv
 import year_twenty_four.january.divisor_game as divisor_game
+import year_twenty_four.january.minimum_string_length_after_removing_substrings as min_length
 
 
 def test_maximum_the_confusion():
@@ -86,3 +87,16 @@ def test_divisor_game():
 
     assert result0 is True
     assert result1 is False
+
+
+def test_min_length():
+    solution0 = min_length.Solution()
+    solution1 = min_length.Solution()
+
+    s0, s1 = "ABFCACDB", "ACBBD"
+
+    result0 = solution0.min_length(s0)
+    result1 = solution1.min_length(s1)
+
+    assert result0 == 2
+    assert result1 == 5
