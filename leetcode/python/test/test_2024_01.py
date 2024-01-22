@@ -5,9 +5,11 @@ SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
 # pylint: disable=C0411,C0413,R0402,E0401
+from common.tree_node import TreeNode
 import year_twenty_four.january.count_the_number_of_good_subarrays as count_the_number
 import year_twenty_four.january.edit_distance as edit_distance
 import year_twenty_four.january.remove_duplicates_from_sorted_array as remove_duplicates
+import year_twenty_four.january.two_sum_iv as two_sum_iv
 
 
 def test_maximum_the_confusion():
@@ -53,3 +55,20 @@ def test_remove_duplicates():
 
     assert result0 == answer0
     assert result1 == answer1
+
+
+def test_find_target():
+    solution0 = two_sum_iv.Solution()
+    solution1 = two_sum_iv.Solution()
+
+    nums0, k0 = [5, 3, 6, 2, 4, None, 7], 9
+    nums1, k1 = [5, 3, 6, 2, 4, None, 7], 28
+
+    root0 = TreeNode.make(nums0)
+    root1 = TreeNode.make(nums1)
+
+    result0 = solution0.find_target(root0, k0)
+    result1 = solution1.find_target(root1, k1)
+
+    assert result0 is True
+    assert result1 is False
