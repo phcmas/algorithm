@@ -10,6 +10,7 @@ import year_twenty_four.january.count_the_number_of_good_subarrays as count_the_
 import year_twenty_four.january.edit_distance as edit_distance
 import year_twenty_four.january.remove_duplicates_from_sorted_array as remove_duplicates
 import year_twenty_four.january.two_sum_iv as two_sum_iv
+import year_twenty_four.january.divisor_game as divisor_game
 
 
 def test_maximum_the_confusion():
@@ -69,6 +70,19 @@ def test_find_target():
 
     result0 = solution0.find_target(root0, k0)
     result1 = solution1.find_target(root1, k1)
+
+    assert result0 is True
+    assert result1 is False
+
+
+def test_divisor_game():
+    solution0 = divisor_game.Solution()
+    solution1 = divisor_game.Solution()
+
+    n0, n1 = 2, 3
+
+    result0 = solution0.divisor_game(n0)
+    result1 = solution1.divisor_game(n1)
 
     assert result0 is True
     assert result1 is False

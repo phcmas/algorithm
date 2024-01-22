@@ -17,8 +17,8 @@ The number of nodes in the tree is in the range [1, 10^4].
 root is guaranteed to be a valid binary search tree.
 -10^5 <= k <= 10^5
 """
-# pylint: disable=E0401
 
+# pylint: disable=E0401
 from common.tree_node import TreeNode
 
 
