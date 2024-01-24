@@ -33,4 +33,24 @@ word1 and word2 consist of lowercase English letters.
 
 class Solution:
     def min_distance(self, word1: str, word2: str) -> int:
-        pass
+        length1, length2 = len(word1), len(word2)
+        distances = [[0] * (length2 + 1) for _ in range(length1 + 1)]
+
+        for i in range(length1 + 1):
+            distances[i][0] = i
+
+        for j in range(length2 + 1):
+            distances[0][j] = j
+
+        for i in range(1, length1 + 1):
+            for j in range(1, length2 + 1):
+
+                if word1[i - 1] == word2[j - 1]:
+                    distances[i][j] = distances[i - 1][j - 1]
+                else:
+                    insert = distances[i][j - 1]
+                    replace = distances[i - 1][j - 1]
+                    delete = distances[i - 1][j]
+                    distances[i][j] = min(insert, replace, delete) + 1
+
+        return distances[length1][length2]
