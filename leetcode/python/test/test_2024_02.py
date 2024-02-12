@@ -6,6 +6,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 
 # pylint: disable=C0411,C0413,R0402,E0401
 import year_twenty_four.february.maximum_score_from_removing_stones as maximum_score
+import year_twenty_four.february.valid_parenthesis_string as valid_parenthesis_string
 
 
 def test_maximum_the_confusion():
@@ -24,3 +25,21 @@ def test_maximum_the_confusion():
     assert result0 == 6
     assert result1 == 7
     assert result2 == 8
+
+
+def test_valid_parenthesis_string():
+    solution0 = valid_parenthesis_string.Solution()
+    solution1 = valid_parenthesis_string.Solution()
+    solution2 = valid_parenthesis_string.Solution()
+
+    s0 = "()"
+    s1 = "(*)"
+    s2 = "(*))"
+
+    result0 = solution0.check_valid_string(s0)
+    result1 = solution1.check_valid_string(s1)
+    result2 = solution2.check_valid_string(s2)
+
+    assert result0 is True
+    assert result1 is True
+    assert result2 is True
