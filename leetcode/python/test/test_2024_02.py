@@ -7,6 +7,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 # pylint: disable=C0411,C0413,R0402,E0401
 import year_twenty_four.february.maximum_score_from_removing_stones as maximum_score
 import year_twenty_four.february.valid_parenthesis_string as valid_parenthesis_string
+import year_twenty_four.february.minimum_increment_to_make_array_unique as min_increment
 
 
 def test_maximum_the_confusion():
@@ -43,3 +44,17 @@ def test_valid_parenthesis_string():
     assert result0 is True
     assert result1 is True
     assert result2 is True
+
+
+def test_min_increment():
+    solution0 = min_increment.Solution()
+    solution1 = min_increment.Solution()
+
+    nums0 = [1, 2, 2]
+    nums1 = [3, 2, 1, 2, 1, 7]
+
+    result0 = solution0.min_increment_for_unique(nums0)
+    result1 = solution1.min_increment_for_unique(nums1)
+
+    assert result0 == 1
+    assert result1 == 6
