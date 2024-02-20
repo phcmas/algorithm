@@ -8,6 +8,26 @@ sys.path.insert(1, abspath(SRC_DIR))
 import year_twenty_four.february.maximum_score_from_removing_stones as maximum_score
 import year_twenty_four.february.valid_parenthesis_string as valid_parenthesis_string
 import year_twenty_four.february.minimum_increment_to_make_array_unique as min_increment
+import year_twenty_four.february.reach_a_number as reach_a_number
+
+
+def test_reach_a_number():
+    solution0 = reach_a_number.Solution()
+    solution1 = reach_a_number.Solution()
+    solution2 = reach_a_number.Solution()
+    solution3 = reach_a_number.Solution()
+
+    target0, target1, target2, target3 = 2, 3, -2, 8
+
+    result0 = solution0.reach_number(target0)
+    result1 = solution1.reach_number(target1)
+    result2 = solution2.reach_number(target2)
+    result3 = solution3.reach_number(target3)
+
+    assert result0 == 3
+    assert result1 == 2
+    assert result2 == 3
+    assert result3 == 4
 
 
 def test_maximum_the_confusion():
