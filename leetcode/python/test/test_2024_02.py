@@ -9,6 +9,7 @@ import year_twenty_four.february.maximum_score_from_removing_stones as maximum_s
 import year_twenty_four.february.valid_parenthesis_string as valid_parenthesis_string
 import year_twenty_four.february.minimum_increment_to_make_array_unique as min_increment
 import year_twenty_four.february.reach_a_number as reach_a_number
+import year_twenty_four.february.battleships_in_a_board as battleships_in_a_board
 
 
 def test_reach_a_number():
@@ -78,3 +79,21 @@ def test_min_increment():
 
     assert result0 == 1
     assert result1 == 6
+
+
+def test_count_battleships():
+    solution0 = battleships_in_a_board.Solution()
+    solution1 = battleships_in_a_board.Solution()
+    solution2 = battleships_in_a_board.Solution()
+
+    board0 = [["X", ".", ".", "X"], [".", ".", ".", "X"], [".", ".", ".", "X"]]
+    board1 = [["."]]
+    board2 = [["X", "X", "X"]]
+
+    result0 = solution0.count_battleships(board0)
+    result1 = solution1.count_battleships(board1)
+    result2 = solution2.count_battleships(board2)
+
+    assert result0 == 2
+    assert result1 == 0
+    assert result2 == 1
