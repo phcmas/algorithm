@@ -37,18 +37,13 @@ from typing import List
 
 
 class Solution:
-    def can_be_maximum(self, nums: List[int], num: int) -> bool:
-        current, next = nums[-1], nums[-2]
+    def can_be_maximum(self, nums: List[int], target: int) -> bool:
+        current = nums[-1]
 
-        for i in range(len(nums) - 2, -1, -1):
-            next = nums[i]
+        for num in reversed(nums[:-1]):
+            current = num + max(0, current - target)
 
-            if current > num:
-                next += current - num
-
-            current = next
-
-        return current <= num
+        return current <= target
 
     def minimize_array_value(self, nums: List[int]) -> int:
         left, right = min(nums), max(nums)
