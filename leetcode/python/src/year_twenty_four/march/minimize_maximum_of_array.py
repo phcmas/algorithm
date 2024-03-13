@@ -44,8 +44,7 @@ class Solution:
             next = nums[i]
 
             if current > num:
-                diff = current - num
-                next += diff
+                next += current - num
 
             current = next
 
