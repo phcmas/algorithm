@@ -7,6 +7,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 # pylint: disable=C0411,C0413,R0402,E0401
 import year_twenty_four.may.find_the_distance_value_between_two_arrays as find_the_distance
 import year_twenty_four.may.fair_candy_swap as find_candy_swap
+import year_twenty_four.may.find_the_k_beauty_of_a_number as find_the_k_beauty
 
 
 def test_find_the_distance_value():
@@ -43,3 +44,17 @@ def test_find_candy_swap():
     assert result0 == [1, 2]
     assert result1 == [1, 2]
     assert result2 == [2, 3]
+
+
+def test_find_the_k_beauty():
+    solution0 = find_the_k_beauty.Solution()
+    solution1 = find_the_k_beauty.Solution()
+
+    num0, k0 = 240, 2
+    num1, k1 = 430043, 2
+
+    result0 = solution0.divisor_substrings(num0, k0)
+    result1 = solution1.divisor_substrings(num1, k1)
+
+    assert result0 == 2
+    assert result1 == 2
