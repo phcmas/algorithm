@@ -8,6 +8,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 import year_twenty_four.may.find_the_distance_value_between_two_arrays as find_the_distance
 import year_twenty_four.may.fair_candy_swap as find_candy_swap
 import year_twenty_four.may.find_the_k_beauty_of_a_number as find_the_k_beauty
+import year_twenty_four.may.binary_trees_with_factors as binary_trees_with_factors
 
 
 def test_find_the_distance_value():
@@ -58,3 +59,21 @@ def test_find_the_k_beauty():
 
     assert result0 == 2
     assert result1 == 2
+
+
+def test_binary_trees_with_factors():
+    solution0 = binary_trees_with_factors.Solution()
+    solution1 = binary_trees_with_factors.Solution()
+    solution2 = binary_trees_with_factors.Solution()
+
+    arr0 = [2, 4]
+    arr1 = [2, 4, 5, 10]
+    arr2 = [18, 3, 6, 2]
+
+    result0 = solution0.num_factored_binary_trees(arr0)
+    result1 = solution1.num_factored_binary_trees(arr1)
+    result2 = solution2.num_factored_binary_trees(arr2)
+
+    assert result0 == 3
+    assert result1 == 7
+    assert result2 == 12
