@@ -10,6 +10,7 @@ import year_twenty_four.may.fair_candy_swap as find_candy_swap
 import year_twenty_four.may.find_the_k_beauty_of_a_number as find_the_k_beauty
 import year_twenty_four.may.binary_trees_with_factors as binary_trees_with_factors
 import year_twenty_four.may.rabbits_in_forest as rabbits_in_forest
+import year_twenty_four.may.longest_happy_string as longest_happy_string
 
 
 def test_find_the_distance_value():
@@ -92,3 +93,21 @@ def test_rabbits_in_forest():
 
     assert result0 == 5
     assert result1 == 11
+
+
+def test_longest_happy_string():
+    solution0 = longest_happy_string.Solution()
+    solution1 = longest_happy_string.Solution()
+    solution2 = longest_happy_string.Solution()
+
+    a0, b0, c0 = 1, 1, 7
+    a1, b1, c1 = 7, 1, 0
+    a2, b2, c2 = 0, 8, 11
+
+    result0 = solution0.longest_diverse_string(a0, b0, c0)
+    result1 = solution1.longest_diverse_string(a1, b1, c1)
+    result2 = solution2.longest_diverse_string(a2, b2, c2)
+
+    assert result0 == "ccaccbcc"
+    assert result1 == "aabaa"
+    assert len(result2) == 19
