@@ -11,6 +11,7 @@ import year_twenty_four.may.find_the_k_beauty_of_a_number as find_the_k_beauty
 import year_twenty_four.may.binary_trees_with_factors as binary_trees_with_factors
 import year_twenty_four.may.rabbits_in_forest as rabbits_in_forest
 import year_twenty_four.may.longest_happy_string as longest_happy_string
+import year_twenty_four.may.maximum_repeating_substring as maximum_repeating_substring
 
 
 def test_find_the_distance_value():
@@ -111,3 +112,25 @@ def test_longest_happy_string():
     assert result0 == "ccaccbcc"
     assert result1 == "aabaa"
     assert len(result2) == 19
+
+
+def test_maximum_repeating_substring():
+    solution0 = maximum_repeating_substring.Solution()
+    solution1 = maximum_repeating_substring.Solution()
+    solution2 = maximum_repeating_substring.Solution()
+    solution3 = maximum_repeating_substring.Solution()
+
+    sequence0, word0 = "ababc", "ab"
+    sequence1, word1 = "ababc", "ba"
+    sequence2, word2 = "ababc", "ac"
+    sequence3, word3 = "aaabaaaabaaabaaaabaaaabaaaabaaaaba", "aaaba"
+
+    result0 = solution0.max_repeating(sequence0, word0)
+    result1 = solution1.max_repeating(sequence1, word1)
+    result2 = solution2.max_repeating(sequence2, word2)
+    result3 = solution3.max_repeating(sequence3, word3)
+
+    assert result0 == 2
+    assert result1 == 1
+    assert result2 == 0
+    assert result3 == 5
