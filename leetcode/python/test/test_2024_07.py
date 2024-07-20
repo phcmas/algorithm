@@ -4,7 +4,9 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
+# ruff: noqa
 import year_twenty_four.july.minimum_number_of_operations_to_sort_a_binary_tree_by_level as minimum_number_of_operations
+import year_twenty_four.july.count_servers_that_communicate as count_servers
 from common.tree_node import TreeNode
 
 
@@ -22,3 +24,27 @@ def test_minimum_number_of_operations():
     assert result0 == 3
     assert result1 == 3
     assert result2 == 0
+
+
+def test_count_servers():
+    solution = count_servers.Solution()
+
+    grid0 = [[1, 0], [0, 1]]
+    grid1 = [[1, 0], [1, 1]]
+    grid2 = [[1, 1, 0, 0], [0, 0, 1, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+
+    result0 = solution.count_servers(grid0)
+    result1 = solution.count_servers(grid1)
+    result2 = solution.count_servers(grid2)
+
+    assert result0 == 0
+    assert result1 == 3
+    assert result2 == 4
+
+    result0 = solution.count_servers_2(grid0)
+    result1 = solution.count_servers_2(grid1)
+    result2 = solution.count_servers_2(grid2)
+
+    assert result0 == 0
+    assert result1 == 3
+    assert result2 == 4
