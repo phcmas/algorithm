@@ -7,6 +7,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 # ruff: noqa
 import year_twenty_four.july.minimum_number_of_operations_to_sort_a_binary_tree_by_level as minimum_number_of_operations
 import year_twenty_four.july.count_servers_that_communicate as count_servers
+import year_twenty_four.july.ransom_note as ransom_note
 from common.tree_node import TreeNode
 
 
@@ -48,3 +49,27 @@ def test_count_servers():
     assert result0 == 0
     assert result1 == 3
     assert result2 == 4
+
+
+def test_can_construct():
+    solution = ransom_note.Solution()
+
+    ransom_note0, magazine0 = "a", "b"
+    ransom_note1, magazine1 = "aa", "ab"
+    ransom_note2, magazine2 = "aa", "aab"
+
+    result0 = solution.can_construct(ransom_note0, magazine0)
+    result1 = solution.can_construct(ransom_note1, magazine1)
+    result2 = solution.can_construct(ransom_note2, magazine2)
+
+    assert result0 is False
+    assert result1 is False
+    assert result2 is True
+
+    result3 = solution.can_construct(ransom_note0, magazine0)
+    result4 = solution.can_construct(ransom_note1, magazine1)
+    result5 = solution.can_construct(ransom_note2, magazine2)
+
+    assert result3 is False
+    assert result4 is False
+    assert result5 is True
