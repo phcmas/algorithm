@@ -8,6 +8,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 import year_twenty_four.july.minimum_number_of_operations_to_sort_a_binary_tree_by_level as minimum_number_of_operations
 import year_twenty_four.july.count_servers_that_communicate as count_servers
 import year_twenty_four.july.ransom_note as ransom_note
+import year_twenty_four.july.pancake_sorting as pancake_sorting
 from common.tree_node import TreeNode
 
 
@@ -73,3 +74,16 @@ def test_can_construct():
     assert result3 is False
     assert result4 is False
     assert result5 is True
+
+
+def test_pancake_sorting():
+    soution = pancake_sorting.Solution()
+
+    arr0 = [3, 2, 4, 1]
+    arr1 = [1, 2, 3]
+
+    result0 = soution.pancake_sort(arr0)
+    result1 = soution.pancake_sort(arr1)
+
+    assert result0 == [3, 4, 2, 3, 2]
+    assert result1 == []
