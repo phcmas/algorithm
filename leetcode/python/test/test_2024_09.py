@@ -6,6 +6,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 
 # ruff: noqa
 import year_twenty_four.september.flower_planting_with_no_adjacent as flower_planting_with_no_adjacent
+import year_twenty_four.september.count_numbers_with_unique_digits as count_numbers_with_unique_digits
 
 
 def test_garden_no_adj():
@@ -28,3 +29,19 @@ def test_garden_no_adj():
     assert result2 == [1, 2, 3, 4]
     assert result3 == [1]
     assert result4 == [1, 1, 2, 1, 2, 1, 3, 1]
+
+
+def test_count_numbers_with_unique_digits():
+    solution = count_numbers_with_unique_digits.Solution()
+
+    n0 = 2
+    n1 = 0
+    n2 = 3
+
+    result0 = solution.count_numbers_with_unique_digits(n0)
+    result1 = solution.count_numbers_with_unique_digits(n1)
+    result2 = solution.count_numbers_with_unique_digits(n2)
+
+    assert result0 == 91
+    assert result1 == 1
+    assert result2 == 739
