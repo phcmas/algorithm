@@ -7,6 +7,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 # ruff: noqa
 import year_twenty_four.september.flower_planting_with_no_adjacent as flower_planting_with_no_adjacent
 import year_twenty_four.september.count_numbers_with_unique_digits as count_numbers_with_unique_digits
+import year_twenty_four.september.find_132_pattern as find_132_pattern
 
 
 def test_garden_no_adj():
@@ -45,3 +46,28 @@ def test_count_numbers_with_unique_digits():
     assert result0 == 91
     assert result1 == 1
     assert result2 == 739
+
+
+def test_find_132_pattern():
+    solution = find_132_pattern.Solution()
+
+    nums0 = [1, 2, 3, 4]
+    nums1 = [3, 1, 4, 2]
+    nums2 = [-1, 3, 2, 0]
+    nums3 = [3, 5, 0, 3, 4]
+    nums4 = [1, 0, 1, -4, -3]
+    nums5 = [1, 4, 0, -1, -2, -3, -1, -2]
+
+    result0 = solution.find_132_pattern(nums0)
+    result1 = solution.find_132_pattern(nums1)
+    result2 = solution.find_132_pattern(nums2)
+    result3 = solution.find_132_pattern(nums3)
+    result4 = solution.find_132_pattern(nums4)
+    result5 = solution.find_132_pattern(nums5)
+
+    assert result0 is False
+    assert result1 is True
+    assert result2 is True
+    assert result3 is True
+    assert result4 is False
+    assert result5 is True
