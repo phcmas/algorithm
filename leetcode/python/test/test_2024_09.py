@@ -8,6 +8,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 import year_twenty_four.september.flower_planting_with_no_adjacent as flower_planting_with_no_adjacent
 import year_twenty_four.september.count_numbers_with_unique_digits as count_numbers_with_unique_digits
 import year_twenty_four.september.find_132_pattern as find_132_pattern
+import year_twenty_four.september.swap_for_longest_repeated_character_substring as swap_for_longest_repeated_character_substring
 
 
 def test_garden_no_adj():
@@ -71,3 +72,19 @@ def test_find_132_pattern():
     assert result3 is True
     assert result4 is False
     assert result5 is True
+
+
+def test_swap_for_longest_repeated_character_substring():
+    solution = swap_for_longest_repeated_character_substring.Solution()
+
+    text0 = "ababa"
+    text1 = "aaabaaa"
+    text2 = "aaaaa"
+
+    result0 = solution.max_rep_opt1(text0)
+    result1 = solution.max_rep_opt1(text1)
+    result2 = solution.max_rep_opt1(text2)
+
+    assert result0 == 3
+    assert result1 == 6
+    assert result2 == 5
