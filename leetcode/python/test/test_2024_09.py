@@ -5,10 +5,12 @@ SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
 # ruff: noqa
+from common.tree_node import TreeNode
 import year_twenty_four.september.flower_planting_with_no_adjacent as flower_planting_with_no_adjacent
 import year_twenty_four.september.count_numbers_with_unique_digits as count_numbers_with_unique_digits
 import year_twenty_four.september.find_132_pattern as find_132_pattern
 import year_twenty_four.september.swap_for_longest_repeated_character_substring as swap_for_longest_repeated_character_substring
+import year_twenty_four.september.leaf_similar_trees as leaf_similar_trees
 
 
 def test_garden_no_adj():
@@ -88,3 +90,19 @@ def test_swap_for_longest_repeated_character_substring():
     assert result0 == 3
     assert result1 == 6
     assert result2 == 5
+
+
+def test_leaf_similar_trees():
+    solution = leaf_similar_trees.Solution()
+
+    root00 = TreeNode.make([3, 5, 1, 6, 2, 9, 8, None, None, 7, 4])
+    root01 = TreeNode.make([3, 5, 1, 6, 7, 4, 2, None, None, None, None, None, None, 9, 8])
+
+    root10 = TreeNode.make([1, 2, 3])
+    root11 = TreeNode.make([1, 3, 2])
+
+    result0 = solution.leaf_similar(root00, root01)
+    result1 = solution.leaf_similar(root10, root11)
+
+    assert result0 is True
+    assert result1 is False
