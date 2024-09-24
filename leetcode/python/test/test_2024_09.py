@@ -11,6 +11,7 @@ import year_twenty_four.september.count_numbers_with_unique_digits as count_numb
 import year_twenty_four.september.find_132_pattern as find_132_pattern
 import year_twenty_four.september.swap_for_longest_repeated_character_substring as swap_for_longest_repeated_character_substring
 import year_twenty_four.september.leaf_similar_trees as leaf_similar_trees
+import year_twenty_four.september.find_target_indices_after_sorting_array as target_indices
 
 
 def test_garden_no_adj():
@@ -106,3 +107,19 @@ def test_leaf_similar_trees():
 
     assert result0 is True
     assert result1 is False
+
+
+def test_target_indices():
+    solution = target_indices.Solution()
+
+    nums0, target0 = [1, 2, 5, 2, 3], 2
+    nums1, target1 = [1, 2, 5, 2, 3], 3
+    nums2, target2 = [1, 2, 5, 2, 3], 5
+
+    result0 = solution.target_indices(nums0, target0)
+    result1 = solution.target_indices(nums1, target1)
+    result2 = solution.target_indices(nums2, target2)
+
+    assert result0 == [1, 2]
+    assert result1 == [3]
+    assert result2 == [4]
