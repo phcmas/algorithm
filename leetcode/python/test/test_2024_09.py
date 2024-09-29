@@ -12,6 +12,7 @@ import year_twenty_four.september.find_132_pattern as find_132_pattern
 import year_twenty_four.september.swap_for_longest_repeated_character_substring as swap_for_longest_repeated_character_substring
 import year_twenty_four.september.leaf_similar_trees as leaf_similar_trees
 import year_twenty_four.september.find_target_indices_after_sorting_array as target_indices
+import year_twenty_four.september.plus_one as plus_one
 
 
 def test_garden_no_adj():
@@ -123,3 +124,19 @@ def test_target_indices():
     assert result0 == [1, 2]
     assert result1 == [3]
     assert result2 == [4]
+
+
+def test_plus_one():
+    solution = plus_one.Solution()
+
+    digits0 = [1, 2, 3]
+    digits1 = [4, 3, 2, 1]
+    digits2 = [9]
+
+    result0 = solution.plus_one(digits0)
+    result1 = solution.plus_one(digits1)
+    result2 = solution.plus_one(digits2)
+
+    assert result0 == [1, 2, 4]
+    assert result1 == [4, 3, 2, 2]
+    assert result2 == [1, 0]
