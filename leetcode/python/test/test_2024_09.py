@@ -1,6 +1,7 @@
 import sys
 from os.path import abspath, dirname, join
 
+
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
@@ -13,6 +14,7 @@ import year_twenty_four.september.swap_for_longest_repeated_character_substring 
 import year_twenty_four.september.leaf_similar_trees as leaf_similar_trees
 import year_twenty_four.september.find_target_indices_after_sorting_array as target_indices
 import year_twenty_four.september.plus_one as plus_one
+import year_twenty_four.september.edit_distance as edit_distance
 
 
 def test_garden_no_adj():
@@ -140,3 +142,19 @@ def test_plus_one():
     assert result0 == [1, 2, 4]
     assert result1 == [4, 3, 2, 2]
     assert result2 == [1, 0]
+
+
+def test_edit_distance():
+    solution = edit_distance.Solution()
+
+    word00, word01 = "horse", "ros"
+    word10, word11 = "intention", "execution"
+    word20, word21 = "", "a"
+
+    result0 = solution.min_distance(word00, word01)
+    result1 = solution.min_distance(word10, word11)
+    result2 = solution.min_distance(word20, word21)
+
+    assert result0 == 3
+    assert result1 == 5
+    assert result2 == 1
