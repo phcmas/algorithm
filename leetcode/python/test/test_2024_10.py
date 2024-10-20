@@ -9,6 +9,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 from util import is_same_arrays_ignoring_order
 import year_twenty_four.october.distant_barcodes as distant_barcodes
 import year_twenty_four.october.substring_with_concatenation_of_all_words as find_substring
+import year_twenty_four.october.car_pooling as car_pooling
 
 
 def test_distant_barcodes():
@@ -59,3 +60,22 @@ def test_find_substring():
     assert compare2
     assert compare3
     assert compare4
+
+
+def test_car_pooling():
+    solution = car_pooling.Solution()
+
+    trips0, capacity0 = [[2, 1, 5], [3, 3, 7]], 4
+    trips1, capacity1 = [[2, 1, 5], [3, 3, 7]], 5
+    trips2, capacity2 = [[2, 1, 5], [3, 5, 7]], 3
+    trips3, capacity3 = [[3, 2, 8], [4, 4, 6], [10, 8, 9]], 11
+
+    result0 = solution.car_pooling(trips0, capacity0)
+    result1 = solution.car_pooling(trips1, capacity1)
+    result2 = solution.car_pooling(trips2, capacity2)
+    result3 = solution.car_pooling(trips3, capacity3)
+
+    assert result0 is False
+    assert result1 is True
+    assert result2 is True
+    assert result3 is True
