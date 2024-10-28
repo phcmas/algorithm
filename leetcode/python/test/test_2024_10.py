@@ -1,5 +1,6 @@
 import sys
 from os.path import abspath, dirname, join
+from unittest import result
 
 
 SRC_DIR = join(dirname(__file__), "../src")
@@ -10,6 +11,7 @@ from util import is_same_arrays_ignoring_order
 import year_twenty_four.october.distant_barcodes as distant_barcodes
 import year_twenty_four.october.substring_with_concatenation_of_all_words as find_substring
 import year_twenty_four.october.car_pooling as car_pooling
+import year_twenty_four.october.heaters as heaters
 
 
 def test_distant_barcodes():
@@ -79,3 +81,19 @@ def test_car_pooling():
     assert result1 is True
     assert result2 is True
     assert result3 is True
+
+
+def test_heaters():
+    solution = heaters.Solution()
+
+    houses0, heaters0 = [1, 2, 3], [2]
+    houses1, heaters1 = [1, 2, 3, 4], [1, 4]
+    houses2, heaters2 = [1, 5], [2]
+
+    result0 = solution.find_radius(houses0, heaters0)
+    result1 = solution.find_radius(houses1, heaters1)
+    result2 = solution.find_radius(houses2, heaters2)
+
+    assert result0 == 1
+    assert result1 == 1
+    assert result2 == 3
