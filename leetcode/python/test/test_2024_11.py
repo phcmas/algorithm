@@ -1,14 +1,16 @@
 import sys
 from os.path import abspath, dirname, join
 
-
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
 # ruff: noqa
+
 from util import is_same_arrays_ignoring_order
-import year_twenty_four.november.different_ways_to_add_parentheses as diff_ways_to_compute
 import year_twenty_four.november.decoded_string_at_index as decode_at_index
+import year_twenty_four.november.different_ways_to_add_parentheses as diff_ways_to_compute
+import year_twenty_four.november.kth_largest_sum_in_a_binary_tree as kth_lagest_level_sum
+from common.tree_node import TreeNode
 
 
 def test_diff_ways_to_compute():
@@ -41,3 +43,23 @@ def test_decode_at_index():
     assert result1 == "h"
     assert result2 == "a"
     assert result3 == "k"
+
+
+def test_kth_largest_level_sum():
+    solution = kth_lagest_level_sum.Solution()
+
+    root0 = TreeNode.make([5, 8, 9, 2, 1, 3, 7, 4, 6])
+    root1 = TreeNode.make([1, 2, None, 3])
+    root2 = TreeNode.make([5, 8, 9, 2, 1, 3, 7])
+
+    k0 = 2
+    k1 = 1
+    k2 = 4
+
+    result0 = solution.kth_largest_level_sum(root0, k0)
+    result1 = solution.kth_largest_level_sum(root1, k1)
+    result2 = solution.kth_largest_level_sum(root2, k2)
+
+    assert result0 == 13
+    assert result1 == 3
+    assert result2 == -1
