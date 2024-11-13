@@ -6,10 +6,12 @@ sys.path.insert(1, abspath(SRC_DIR))
 
 # ruff: noqa
 
-from util import is_same_arrays_ignoring_order
+from common.list_node import ListNode
+from util import is_same_arrays_ignoring_order, is_same_list_nodes
 import year_twenty_four.november.decoded_string_at_index as decode_at_index
 import year_twenty_four.november.different_ways_to_add_parentheses as diff_ways_to_compute
 import year_twenty_four.november.kth_largest_sum_in_a_binary_tree as kth_lagest_level_sum
+import year_twenty_four.november.merge_k_sorted_lists as merge_k_sorted_lists
 from common.tree_node import TreeNode
 
 
@@ -63,3 +65,21 @@ def test_kth_largest_level_sum():
     assert result0 == 13
     assert result1 == 3
     assert result2 == -1
+
+
+def test_merge_k_lists():
+    solution = merge_k_sorted_lists.Solution()
+
+    lists0 = [ListNode.make([1, 4, 5]), ListNode.make([1, 3, 4]), ListNode.make([2, 6])]
+    lists1 = []
+    lists2 = [None]
+
+    result0 = solution.merge_k_lists(lists0)
+    result1 = solution.merge_k_lists(lists1)
+    result2 = solution.merge_k_lists(lists2)
+
+    answer0 = ListNode.make([1, 1, 2, 3, 4, 4, 5, 6])
+
+    assert is_same_list_nodes(result0, answer0)
+    assert result1 is None
+    assert result2 is None
