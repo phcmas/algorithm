@@ -4,15 +4,14 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
-# ruff: noqa
-
-from common.list_node import ListNode
-from util import is_same_arrays_ignoring_order, is_same_list_nodes
 import year_twenty_four.november.decoded_string_at_index as decode_at_index
 import year_twenty_four.november.different_ways_to_add_parentheses as diff_ways_to_compute
 import year_twenty_four.november.kth_largest_sum_in_a_binary_tree as kth_lagest_level_sum
 import year_twenty_four.november.merge_k_sorted_lists as merge_k_sorted_lists
+import year_twenty_four.november.top_k_frequent_words as top_k_frequent_words
+from common.list_node import ListNode
 from common.tree_node import TreeNode
+from util import is_same_arrays_ignoring_order, is_same_list_nodes
 
 
 def test_diff_ways_to_compute():
@@ -83,3 +82,21 @@ def test_merge_k_lists():
     assert is_same_list_nodes(result0, answer0)
     assert result1 is None
     assert result2 is None
+
+
+def test_top_k_frequent():
+    solution = top_k_frequent_words.Solution()
+
+    words0 = ["i", "love", "leetcode", "i", "love", "coding"]
+    words1 = ["the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"]
+    words2 = ["i", "love", "leetcode", "i", "love", "coding"]
+
+    k0, k1, k2 = 2, 4, 1
+
+    result0 = solution.top_k_frequent(words0, k0)
+    result1 = solution.top_k_frequent(words1, k1)
+    result2 = solution.top_k_frequent(words2, k2)
+
+    assert result0 == ["i", "love"]
+    assert result1 == ["the", "is", "sunny", "day"]
+    assert result2 == ["i"]
