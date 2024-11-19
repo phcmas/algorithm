@@ -7,6 +7,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 import year_twenty_four.november.decoded_string_at_index as decode_at_index
 import year_twenty_four.november.different_ways_to_add_parentheses as diff_ways_to_compute
 import year_twenty_four.november.kth_largest_sum_in_a_binary_tree as kth_lagest_level_sum
+import year_twenty_four.november.longest_valid_parentheses as longest_valid_parentheses
 import year_twenty_four.november.merge_k_sorted_lists as merge_k_sorted_lists
 import year_twenty_four.november.top_k_frequent_words as top_k_frequent_words
 from common.list_node import ListNode
@@ -100,3 +101,22 @@ def test_top_k_frequent():
     assert result0 == ["i", "love"]
     assert result1 == ["the", "is", "sunny", "day"]
     assert result2 == ["i"]
+
+
+def test_longest_valid_parentheses():
+    solution = longest_valid_parentheses.Solution()
+
+    s0 = "(()"
+    s1 = ")()())"
+    s2 = ""
+    s3 = "("
+
+    result0 = solution.longest_valid_parentheses(s0)
+    result1 = solution.longest_valid_parentheses(s1)
+    result2 = solution.longest_valid_parentheses(s2)
+    result3 = solution.longest_valid_parentheses(s3)
+
+    assert result0 == 2
+    assert result1 == 4
+    assert result2 == 0
+    assert result3 == 0
