@@ -6,13 +6,14 @@ sys.path.insert(1, abspath(SRC_DIR))
 
 import year_twenty_four.november.decoded_string_at_index as decode_at_index
 import year_twenty_four.november.different_ways_to_add_parentheses as diff_ways_to_compute
+import year_twenty_four.november.find_duplicate_subtrees as find_duplicate_subtrees
 import year_twenty_four.november.kth_largest_sum_in_a_binary_tree as kth_lagest_level_sum
 import year_twenty_four.november.longest_valid_parentheses as longest_valid_parentheses
 import year_twenty_four.november.merge_k_sorted_lists as merge_k_sorted_lists
 import year_twenty_four.november.top_k_frequent_words as top_k_frequent_words
 from common.list_node import ListNode
 from common.tree_node import TreeNode
-from util import is_same_arrays_ignoring_order, is_same_list_nodes
+from util import is_same_arrays_ignoring_order, is_same_list_nodes, is_same_tree_arrays_ignoring_order
 
 
 def test_diff_ways_to_compute():
@@ -120,3 +121,31 @@ def test_longest_valid_parentheses():
     assert result1 == 4
     assert result2 == 0
     assert result3 == 0
+
+
+def test_find_duplicate_subtrees():
+    solution = find_duplicate_subtrees.Solution()
+
+    root0 = TreeNode.make([1, 2, 3, 4, None, 2, 4, None, None, 4])
+    root1 = TreeNode.make([2, 1, 1])
+    root2 = TreeNode.make([2, 2, 2, 3, None, 3, None])
+    root3 = TreeNode.make([0, 0, 0, 0, None, None, 0, None, None, 0, 0])
+    root4 = TreeNode.make([2, 1, 11, 11, None, 1])
+
+    result0 = solution.find_duplicate_subtrees(root0)
+    result1 = solution.find_duplicate_subtrees(root1)
+    result2 = solution.find_duplicate_subtrees(root2)
+    result3 = solution.find_duplicate_subtrees(root3)
+    result4 = solution.find_duplicate_subtrees(root4)
+
+    answer0 = [TreeNode.make([2, 4]), TreeNode.make([4])]
+    answer1 = [TreeNode.make([1])]
+    answer2 = [TreeNode.make([2, 3]), TreeNode.make([3])]
+    answer3 = [TreeNode.make([0])]
+    answer4 = []
+
+    assert is_same_tree_arrays_ignoring_order(result0, answer0)
+    assert is_same_tree_arrays_ignoring_order(result1, answer1)
+    assert is_same_tree_arrays_ignoring_order(result2, answer2)
+    assert is_same_tree_arrays_ignoring_order(result3, answer3)
+    assert is_same_tree_arrays_ignoring_order(result4, answer4)

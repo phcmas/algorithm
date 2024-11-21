@@ -12,6 +12,17 @@ def is_same_double_arrays_ignoring_order(arr0: List[List[int]], arr1: List[List[
     return sorted0 == sorted1
 
 
+def is_same_tree_arrays_ignoring_order(arr0: List[TreeNode], arr1: List[TreeNode]):
+    sorted0 = sorted(arr0, key=lambda x: x.val)
+    sorted1 = sorted(arr1, key=lambda x: x.val)
+
+    for tree0, tree1 in zip(sorted0, sorted1):
+        if not is_same_tree(tree0, tree1):
+            return False
+
+    return True
+
+
 def is_same_arrays_ignoring_order(arr0: List[int], arr1: List[int]):
     sorted0 = sorted(arr0)
     sorted1 = sorted(arr1)
