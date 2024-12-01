@@ -11,6 +11,9 @@ import year_twenty_four.november.kth_largest_sum_in_a_binary_tree as kth_lagest_
 import year_twenty_four.november.longest_valid_parentheses as longest_valid_parentheses
 import year_twenty_four.november.merge_k_sorted_lists as merge_k_sorted_lists
 import year_twenty_four.november.top_k_frequent_words as top_k_frequent_words
+import year_twenty_four.november.minimum_falling_path_sum as min_falling_path_sum
+
+
 from common.list_node import ListNode
 from common.tree_node import TreeNode
 from util import is_same_arrays_ignoring_order, is_same_list_nodes, is_same_tree_arrays_ignoring_order
@@ -149,3 +152,16 @@ def test_find_duplicate_subtrees():
     assert is_same_tree_arrays_ignoring_order(result2, answer2)
     assert is_same_tree_arrays_ignoring_order(result3, answer3)
     assert is_same_tree_arrays_ignoring_order(result4, answer4)
+
+
+def test_min_falling_path_sum():
+    solution = min_falling_path_sum.Solution()
+
+    matrix0 = [[2, 1, 3], [6, 5, 4], [7, 8, 9]]
+    matrix1 = [[-19, 57], [-40, -5]]
+
+    result0 = solution.min_falling_path_sum(matrix0)
+    result1 = solution.min_falling_path_sum(matrix1)
+
+    assert result0 == 13
+    assert result1 == -59
