@@ -29,6 +29,16 @@ import heapq
 
 class Solution:
     def max_distance(self, arrays: list[list[int]]) -> int:
+        result, min_val, max_val = 0, arrays[0][0], arrays[0][-1]
+
+        for array in arrays[1:]:
+            result = max(result, array[-1] - min_val, max_val - array[0])
+            min_val = min(min_val, array[0])
+            max_val = max(max_val, array[-1])
+
+        return result
+
+    def max_distance_old(self, arrays: list[list[int]]) -> int:
         result, first_nums, final_nums = 0, [], []
 
         for i, array in enumerate(arrays):
