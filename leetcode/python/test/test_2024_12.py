@@ -7,6 +7,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 import year_twenty_four.december.diagonal_traverse_ii as diagonal_traverse_ii
 import year_twenty_four.december.maximum_distance_in_arrays as maximum_distance_in_arrays
 import year_twenty_four.december.zero_array_transformation as zero_array_transformation
+import year_twenty_four.december.find_first_and_last_position_of_element_in_sorted_array as find_first_and_last
 
 
 def test_diagonal_traverse_ii():
@@ -49,3 +50,24 @@ def test_zero_array_transformation():
 
     assert result0 is True
     assert result1 is False
+
+
+def test_first_and_last():
+    solution = find_first_and_last.Solution()
+
+    nums0 = [5, 7, 7, 8, 8, 10]
+    target0 = 8
+
+    nums1 = [5, 7, 7, 8, 8, 10]
+    target1 = 6
+
+    nums2 = []
+    target2 = 0
+
+    result0 = solution.search_range(nums0, target0)
+    result1 = solution.search_range(nums1, target1)
+    result2 = solution.search_range(nums2, target2)
+
+    assert result0 == [3, 4]
+    assert result1 == [-1, -1]
+    assert result2 == [-1, -1]
