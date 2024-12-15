@@ -6,6 +6,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 
 import year_twenty_four.december.diagonal_traverse_ii as diagonal_traverse_ii
 import year_twenty_four.december.maximum_distance_in_arrays as maximum_distance_in_arrays
+import year_twenty_four.december.zero_array_transformation as zero_array_transformation
 
 
 def test_diagonal_traverse_ii():
@@ -32,3 +33,19 @@ def test_maximum_distance_in_arrays():
 
     assert result0 == 4
     assert result1 == 0
+
+
+def test_zero_array_transformation():
+    solution = zero_array_transformation.Solution()
+
+    nums0 = [1, 0, 1]
+    queries0 = [[0, 2]]
+
+    nums1 = [4, 3, 2, 1]
+    queries1 = [[1, 3], [0, 2]]
+
+    result0 = solution.is_zero_array(nums0, queries0)
+    result1 = solution.is_zero_array(nums1, queries1)
+
+    assert result0 is True
+    assert result1 is False
