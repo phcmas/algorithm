@@ -3,11 +3,11 @@ from os.path import abspath, dirname, join
 from unittest import result
 
 
-SRC_DIR = join(dirname(__file__), "../src")
+SRC_DIR = join(dirname(__file__), "../../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
 # ruff: noqa
-from util import is_same_arrays_ignoring_order
+from common.util import is_same_arrays_ignoring_order
 import year_twenty_four.october.distant_barcodes as distant_barcodes
 import year_twenty_four.october.substring_with_concatenation_of_all_words as find_substring
 import year_twenty_four.october.car_pooling as car_pooling

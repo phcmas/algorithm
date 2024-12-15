@@ -1,11 +1,11 @@
 import sys
 from os.path import abspath, dirname, join
 
-SRC_DIR = join(dirname(__file__), "../src")
+SRC_DIR = join(dirname(__file__), "../../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
 # pylint: disable=C0413,R0402,E0401
-from util import is_same_list_nodes
+from common.util import is_same_list_nodes
 
 import year_twenty_three.march.break_a_palindrome as break_a_palindrome
 import year_twenty_three.march.largest_sum_of_averages as largest_sum_of_averages

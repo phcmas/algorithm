@@ -1,7 +1,7 @@
 import sys
 from os.path import abspath, dirname, join
 
-SRC_DIR = join(dirname(__file__), "../src")
+SRC_DIR = join(dirname(__file__), "../../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
 import year_twenty_four.november.decoded_string_at_index as decode_at_index
@@ -16,7 +16,7 @@ import year_twenty_four.november.minimum_falling_path_sum as min_falling_path_su
 
 from common.list_node import ListNode
 from common.tree_node import TreeNode
-from util import is_same_arrays_ignoring_order, is_same_list_nodes, is_same_tree_arrays_ignoring_order
+from common.util import is_same_arrays_ignoring_order, is_same_list_nodes, is_same_tree_arrays_ignoring_order
 
 
 def test_diff_ways_to_compute():

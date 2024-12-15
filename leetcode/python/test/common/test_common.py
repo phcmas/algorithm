@@ -1,14 +1,14 @@
 import sys
 from os.path import abspath, dirname, join
 
-SRC_DIR = join(dirname(__file__), "../src")
-TEST_DIR = join(dirname(__file__), "../test")
+SRC_DIR = join(dirname(__file__), "../../src")
+TEST_DIR = join(dirname(__file__), "../../test")
 
 sys.path.insert(1, abspath(SRC_DIR))
 sys.path.insert(1, abspath(TEST_DIR))
 
 # pylint: disable=C0413,R0402,E0401
-from util import is_same_list_nodes
+from common.util import is_same_list_nodes
 from common.list_node import ListNode
 
 

@@ -1,12 +1,12 @@
 import sys
 from os.path import abspath, dirname, join
 
-SRC_DIR = join(dirname(__file__), "../src")
+SRC_DIR = join(dirname(__file__), "../../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
 # pylint: disable=C0411,C0413,R0402,E0401
 from common.tree_node import TreeNode
-from util import is_same_tree
+from common.util import is_same_tree
 import year_twenty_four.may.find_the_distance_value_between_two_arrays as find_the_distance
 import year_twenty_four.may.fair_candy_swap as find_candy_swap
 import year_twenty_four.may.find_the_k_beauty_of_a_number as find_the_k_beauty

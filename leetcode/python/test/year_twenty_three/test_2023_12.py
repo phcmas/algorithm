@@ -1,7 +1,7 @@
 import sys
 from os.path import abspath, dirname, join
 
-SRC_DIR = join(dirname(__file__), "../src")
+SRC_DIR = join(dirname(__file__), "../../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
 # pylint: disable=C0411,C0413,R0402,E0401
@@ -63,9 +63,7 @@ def test_longest_zigzag():
     solution1 = longest_zigzag_path.Solution()
     solution2 = longest_zigzag_path.Solution()
 
-    root0 = TreeNode.make(
-        [1, None, 1, 1, 1, None, None, 1, 1, None, 1, None, None, None, 1]
-    )
+    root0 = TreeNode.make([1, None, 1, 1, 1, None, None, 1, 1, None, 1, None, None, None, 1])
     root1 = TreeNode.make([1, 1, 1, None, 1, None, None, 1, 1, None, 1])
     root2 = TreeNode.make([1])
 
