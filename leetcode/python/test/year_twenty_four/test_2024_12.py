@@ -8,6 +8,7 @@ import year_twenty_four.december.diagonal_traverse_ii as diagonal_traverse_ii
 import year_twenty_four.december.maximum_distance_in_arrays as maximum_distance_in_arrays
 import year_twenty_four.december.zero_array_transformation as zero_array_transformation
 import year_twenty_four.december.find_first_and_last_position_of_element_in_sorted_array as find_first_and_last
+import year_twenty_four.december.merge_strings_alternately as merge_alternately
 
 
 def test_diagonal_traverse_ii():
@@ -71,3 +72,19 @@ def test_first_and_last():
     assert result0 == [3, 4]
     assert result1 == [-1, -1]
     assert result2 == [-1, -1]
+
+
+def test_merge_alternately():
+    solution = merge_alternately.Solution()
+
+    word01, word02 = "abc", "pqr"
+    word11, word12 = "ab", "pqrs"
+    word21, word22 = "abcd", "pq"
+
+    result0 = solution.merge_alternately(word01, word02)
+    result1 = solution.merge_alternately(word11, word12)
+    result2 = solution.merge_alternately(word21, word22)
+
+    assert result0 == "apbqcr"
+    assert result1 == "apbqrs"
+    assert result2 == "apbqcd"
