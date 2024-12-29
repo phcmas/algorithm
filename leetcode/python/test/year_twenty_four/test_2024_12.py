@@ -10,6 +10,7 @@ import year_twenty_four.december.zero_array_transformation as zero_array_transfo
 import year_twenty_four.december.find_first_and_last_position_of_element_in_sorted_array as find_first_and_last
 import year_twenty_four.december.merge_strings_alternately as merge_alternately
 import year_twenty_four.december.continuous_subarrays as continuous_subarrays
+import year_twenty_four.december.minimum_remove_to_make_valid_parentheses as minimum_remove
 
 
 def test_diagonal_traverse_ii():
@@ -102,3 +103,19 @@ def test_continuous_subarrays():
 
     assert result0 == 8
     assert result1 == 6
+
+
+def test_minimum_remove():
+    solution = minimum_remove.Solution()
+
+    s0 = "lee(t(c)o)de)"
+    s1 = "a)b(c)d"
+    s2 = "))(("
+
+    result0 = solution.min_remove_to_make_valid(s0)
+    result1 = solution.min_remove_to_make_valid(s1)
+    result2 = solution.min_remove_to_make_valid(s2)
+
+    assert result0 == "lee(t(c)o)de"
+    assert result1 == "ab(c)d"
+    assert result2 == ""
