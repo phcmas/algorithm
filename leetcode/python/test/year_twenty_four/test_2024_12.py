@@ -13,6 +13,7 @@ import year_twenty_four.december.continuous_subarrays as continuous_subarrays
 import year_twenty_four.december.minimum_remove_to_make_valid_parentheses as minimum_remove
 import year_twenty_four.december.valid_sudoku as valid_sudoku
 import year_twenty_four.december.longest_arithmetic_subsequence_of_given_difference as longest_subsequence
+import year_twenty_four.december.product_of_array_except_self as product_except_self
 
 
 def test_diagonal_traverse_ii():
@@ -177,3 +178,16 @@ def test_longest_subsequence():
     assert result2 == 4
     assert result3 == 2
     assert result4 == 2
+
+
+def test_product_except_self():
+    solution = product_except_self.Solution()
+
+    nums0 = [1, 2, 3, 4]
+    nums1 = [-1, 1, 0, -3, 3]
+
+    result0 = solution.product_except_self(nums0)
+    result1 = solution.product_except_self(nums1)
+
+    assert result0 == [24, 12, 8, 6]
+    assert result1 == [0, 0, 9, 0, 0]
