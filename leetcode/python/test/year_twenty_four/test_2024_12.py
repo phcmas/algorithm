@@ -12,6 +12,7 @@ import year_twenty_four.december.merge_strings_alternately as merge_alternately
 import year_twenty_four.december.continuous_subarrays as continuous_subarrays
 import year_twenty_four.december.minimum_remove_to_make_valid_parentheses as minimum_remove
 import year_twenty_four.december.valid_sudoku as valid_sudoku
+import year_twenty_four.december.longest_arithmetic_subsequence_of_given_difference as longest_subsequence
 
 
 def test_diagonal_traverse_ii():
@@ -154,3 +155,25 @@ def test_valid_sudoku():
 
     assert result0 is True
     assert result1 is False
+
+
+def test_longest_subsequence():
+    solution = longest_subsequence.Solution()
+
+    arr0, diff0 = [1, 2, 3, 4], 1
+    arr1, diff1 = [1, 3, 5, 7], -1
+    arr2, diff2 = [1, 5, 7, 8, 5, 3, 4, 2, 1], -2
+    arr3, diff3 = [3, 4, -3, -2, -4], -5
+    arr4, diff4 = [4, 12, 10, 0, -2, 7, -8, 9, -9, -12, -12, 8, 8], 0
+
+    result0 = solution.longest_subsequence(arr0, diff0)
+    result1 = solution.longest_subsequence(arr1, diff1)
+    result2 = solution.longest_subsequence(arr2, diff2)
+    result3 = solution.longest_subsequence(arr3, diff3)
+    result4 = solution.longest_subsequence(arr4, diff4)
+
+    assert result0 == 4
+    assert result1 == 1
+    assert result2 == 4
+    assert result3 == 2
+    assert result4 == 2
