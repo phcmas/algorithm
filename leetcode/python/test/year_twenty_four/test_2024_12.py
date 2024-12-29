@@ -9,6 +9,7 @@ import year_twenty_four.december.maximum_distance_in_arrays as maximum_distance_
 import year_twenty_four.december.zero_array_transformation as zero_array_transformation
 import year_twenty_four.december.find_first_and_last_position_of_element_in_sorted_array as find_first_and_last
 import year_twenty_four.december.merge_strings_alternately as merge_alternately
+import year_twenty_four.december.continuous_subarrays as continuous_subarrays
 
 
 def test_diagonal_traverse_ii():
@@ -88,3 +89,16 @@ def test_merge_alternately():
     assert result0 == "apbqcr"
     assert result1 == "apbqrs"
     assert result2 == "apbqcd"
+
+
+def test_continuous_subarrays():
+    solution = continuous_subarrays.Solution()
+
+    nums0 = [5, 4, 2, 4]
+    nums1 = [1, 2, 3]
+
+    result0 = solution.continuous_subarrays_old(nums0)
+    result1 = solution.continuous_subarrays_old(nums1)
+
+    assert result0 == 8
+    assert result1 == 6
