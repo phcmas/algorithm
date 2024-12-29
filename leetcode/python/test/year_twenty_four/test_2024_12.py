@@ -11,6 +11,7 @@ import year_twenty_four.december.find_first_and_last_position_of_element_in_sort
 import year_twenty_four.december.merge_strings_alternately as merge_alternately
 import year_twenty_four.december.continuous_subarrays as continuous_subarrays
 import year_twenty_four.december.minimum_remove_to_make_valid_parentheses as minimum_remove
+import year_twenty_four.december.valid_sudoku as valid_sudoku
 
 
 def test_diagonal_traverse_ii():
@@ -119,3 +120,37 @@ def test_minimum_remove():
     assert result0 == "lee(t(c)o)de"
     assert result1 == "ab(c)d"
     assert result2 == ""
+
+
+def test_valid_sudoku():
+    solution = valid_sudoku.Solution()
+
+    board0 = [
+        ["5", "3", ".", ".", "7", ".", ".", ".", "."],
+        ["6", ".", ".", "1", "9", "5", ".", ".", "."],
+        [".", "9", "8", ".", ".", ".", ".", "6", "."],
+        ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
+        ["4", ".", ".", "8", ".", "3", ".", ".", "1"],
+        ["7", ".", ".", ".", "2", ".", ".", ".", "6"],
+        [".", "6", ".", ".", ".", ".", "2", "8", "."],
+        [".", ".", ".", "4", "1", "9", ".", ".", "5"],
+        [".", ".", ".", ".", "8", ".", ".", "7", "9"],
+    ]
+
+    board1 = [
+        ["8", "3", ".", ".", "7", ".", ".", ".", "."],
+        ["6", ".", ".", "1", "9", "5", ".", ".", "."],
+        [".", "9", "8", ".", ".", ".", ".", "6", "."],
+        ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
+        ["4", ".", ".", "8", ".", "3", ".", ".", "1"],
+        ["7", ".", ".", ".", "2", ".", ".", ".", "6"],
+        [".", "6", ".", ".", ".", ".", "2", "8", "."],
+        [".", ".", ".", "4", "1", "9", ".", ".", "5"],
+        [".", ".", ".", ".", "8", ".", ".", "7", "9"],
+    ]
+
+    result0 = solution.is_valid_sudoku(board0)
+    result1 = solution.is_valid_sudoku(board1)
+
+    assert result0 is True
+    assert result1 is False
