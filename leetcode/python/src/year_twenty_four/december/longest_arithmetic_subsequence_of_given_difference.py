@@ -27,10 +27,9 @@ Constraints:
 
 class Solution:
     def longest_subsequence(self, arr: list[int], difference: int) -> int:
-        dp, idxs = [0] * (len(arr) + 1), {}
+        dp = {}
 
-        for idx, num in enumerate(arr):
-            dp[idx] = dp[idxs.get(num - difference, -1)] + 1
-            idxs[num] = idx
+        for num in arr:
+            dp[num] = dp.get(num - difference, 0) + 1
 
-        return max(dp)
+        return max(dp.values())
