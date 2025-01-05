@@ -1,12 +1,11 @@
 import sys
 from os.path import abspath, dirname, join
 
-from common.util import is_same_list_nodes
-
 SRC_DIR = join(dirname(__file__), "../../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
 from common.list_node import ListNode
+from common.util import is_same_list_nodes
 import year_twenty_five.january.check_if_n_and_its_double_exist as check_if_exist
 import year_twenty_five.january.remove_nth_node_from_end_of_list as remove_nth_from_end
 

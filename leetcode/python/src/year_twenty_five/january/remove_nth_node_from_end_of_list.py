@@ -29,5 +29,17 @@ from common.list_node import ListNode
 
 
 class Solution:
-    def remove_nth_from_end(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
-        return None
+    def remove_nth_from_end(self, head: ListNode, n: int) -> Optional[ListNode]:
+        dummy = ListNode(val=-1, next=head)
+        first, second = dummy, dummy
+
+        for _ in range(n + 1):
+            first = first.next
+
+        while first is not None:
+            first = first.next
+            second = second.next
+
+        second.next = second.next.next
+
+        return dummy.next
