@@ -8,6 +8,7 @@ from common.list_node import ListNode
 from common.util import is_same_list_nodes
 import year_twenty_five.january.check_if_n_and_its_double_exist as check_if_exist
 import year_twenty_five.january.remove_nth_node_from_end_of_list as remove_nth_from_end
+import year_twenty_five.january.linked_list_components as num_components
 
 
 def test_check_if_exist():
@@ -40,3 +41,16 @@ def test_remove_nth_from_end():
     assert is_same_list_nodes(result0, ListNode.make([1, 2, 3, 5]))
     assert is_same_list_nodes(result1, ListNode.make([]))
     assert is_same_list_nodes(result2, ListNode.make([1]))
+
+
+def test_num_componentes():
+    solution = num_components.Solution()
+
+    head0, nums0 = ListNode.make([0, 1, 2, 3]), [0, 1, 3]
+    head1, nums1 = ListNode.make([0, 1, 2, 3, 4]), [0, 3, 1, 4]
+
+    result0 = solution.num_components(head0, nums0)
+    result1 = solution.num_components(head1, nums1)
+
+    assert result0 == 2
+    assert result1 == 2
