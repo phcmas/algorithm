@@ -6,9 +6,11 @@ sys.path.insert(1, abspath(SRC_DIR))
 
 from common.list_node import ListNode
 from common.util import is_same_list_nodes
+
 import year_twenty_five.january.check_if_n_and_its_double_exist as check_if_exist
 import year_twenty_five.january.remove_nth_node_from_end_of_list as remove_nth_from_end
 import year_twenty_five.january.linked_list_components as num_components
+import year_twenty_five.january.sliding_window_maximum as max_sliding_window
 
 
 def test_check_if_exist():
@@ -54,3 +56,19 @@ def test_num_componentes():
 
     assert result0 == 2
     assert result1 == 2
+
+
+def test_max_sliding_window():
+    solution = max_sliding_window.Solution()
+
+    nums0, k0 = [1, 3, -1, -3, 5, 3, 6, 7], 3
+    nums1, k1 = [1], 1
+    nums2, k2 = [3, 3, -1, -3, 5, 7, 6, 7, 7], 3
+
+    result0 = solution.max_sliding_window(nums0, k0)
+    result1 = solution.max_sliding_window(nums1, k1)
+    result2 = solution.max_sliding_window(nums2, k2)
+
+    assert result0 == [3, 3, 5, 5, 6, 7]
+    assert result1 == [1]
+    assert result2 == [3, 3, 5, 7, 7, 7, 7]
