@@ -11,6 +11,7 @@ import year_twenty_five.january.check_if_n_and_its_double_exist as check_if_exis
 import year_twenty_five.january.remove_nth_node_from_end_of_list as remove_nth_from_end
 import year_twenty_five.january.linked_list_components as num_components
 import year_twenty_five.january.sliding_window_maximum as max_sliding_window
+import year_twenty_five.january.maximum_size_subarray_sum_equals_k as max_sub_array_len
 
 
 def test_check_if_exist():
@@ -72,3 +73,16 @@ def test_max_sliding_window():
     assert result0 == [3, 3, 5, 5, 6, 7]
     assert result1 == [1]
     assert result2 == [3, 3, 5, 7, 7, 7, 7]
+
+
+def test_max_sub_array_len():
+    solution = max_sub_array_len.Solution()
+
+    nums0, k0 = [1, -1, 5, -2, 3], 3
+    nums1, k1 = [-2, -1, 2, 1], 1
+
+    result0 = solution.max_sub_array_len(nums0, k0)
+    result1 = solution.max_sub_array_len(nums1, k1)
+
+    assert result0 == 4
+    assert result1 == 2
