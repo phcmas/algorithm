@@ -4,14 +4,15 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
-from common.list_node import ListNode
-from common.util import is_same_list_nodes
-
+import year_twenty_five.january.check_completeness_of_a_binary_tree as is_complete_tree
 import year_twenty_five.january.check_if_n_and_its_double_exist as check_if_exist
-import year_twenty_five.january.remove_nth_node_from_end_of_list as remove_nth_from_end
 import year_twenty_five.january.linked_list_components as num_components
-import year_twenty_five.january.sliding_window_maximum as max_sliding_window
 import year_twenty_five.january.maximum_size_subarray_sum_equals_k as max_sub_array_len
+import year_twenty_five.january.remove_nth_node_from_end_of_list as remove_nth_from_end
+import year_twenty_five.january.sliding_window_maximum as max_sliding_window
+from common.list_node import ListNode
+from common.tree_node import TreeNode
+from common.util import is_same_list_nodes
 
 
 def test_check_if_exist():
@@ -86,3 +87,22 @@ def test_max_sub_array_len():
 
     assert result0 == 4
     assert result1 == 2
+
+
+def test_is_complete_tree():
+    solution = is_complete_tree.Solution()
+
+    root0 = TreeNode.make([1, 2, 3, 4, 5, 6])
+    root1 = TreeNode.make([1, 2, 3, 4, 5, None, 7])
+    root2 = TreeNode.make([1, 2, 3, 5, None, 7, 8])
+    root3 = TreeNode.make([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, None, None, 15])
+
+    result0 = solution.is_complete_tree(root0)
+    result1 = solution.is_complete_tree(root1)
+    result2 = solution.is_complete_tree(root2)
+    result3 = solution.is_complete_tree(root3)
+
+    assert result0 is True
+    assert result1 is False
+    assert result2 is False
+    assert result3 is False
