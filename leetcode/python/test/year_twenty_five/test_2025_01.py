@@ -10,6 +10,8 @@ import year_twenty_five.january.linked_list_components as num_components
 import year_twenty_five.january.maximum_size_subarray_sum_equals_k as max_sub_array_len
 import year_twenty_five.january.remove_nth_node_from_end_of_list as remove_nth_from_end
 import year_twenty_five.january.sliding_window_maximum as max_sliding_window
+import year_twenty_five.january.word_pattern_ii as word_patter_match
+
 from common.list_node import ListNode
 from common.tree_node import TreeNode
 from common.util import is_same_list_nodes
@@ -104,5 +106,24 @@ def test_is_complete_tree():
 
     assert result0 is True
     assert result1 is False
+    assert result2 is False
+    assert result3 is False
+
+
+def test_word_pattern_match():
+    solution = word_patter_match.Solution()
+
+    pattern0, s0 = "abab", "redblueredblue"
+    pattern1, s1 = "aaaa", "asdasdasdasd"
+    pattern2, s2 = "aabb", "xyzabcxzyabc"
+    pattern3, s3 = "ab", "aa"
+
+    result0 = solution.word_pattern_match(pattern0, s0)
+    result1 = solution.word_pattern_match(pattern1, s1)
+    result2 = solution.word_pattern_match(pattern2, s2)
+    result3 = solution.word_pattern_match(pattern3, s3)
+
+    assert result0 is True
+    assert result1 is True
     assert result2 is False
     assert result3 is False
