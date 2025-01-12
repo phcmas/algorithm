@@ -11,6 +11,7 @@ import year_twenty_five.january.maximum_size_subarray_sum_equals_k as max_sub_ar
 import year_twenty_five.january.remove_nth_node_from_end_of_list as remove_nth_from_end
 import year_twenty_five.january.sliding_window_maximum as max_sliding_window
 import year_twenty_five.january.word_pattern_ii as word_patter_match
+import year_twenty_five.january.greatest_common_divisor_of_strings as gcd_of_strings
 
 from common.list_node import ListNode
 from common.tree_node import TreeNode
@@ -127,3 +128,19 @@ def test_word_pattern_match():
     assert result1 is True
     assert result2 is False
     assert result3 is False
+
+
+def test_gcd_of_strings():
+    solution = gcd_of_strings.Solution()
+
+    str00, str01 = "ABCABC", "ABC"
+    str10, str11 = "ABABAB", "ABAB"
+    str20, str21 = "LEET", "CODE"
+
+    result0 = solution.gcd_of_strings(str00, str01)
+    result1 = solution.gcd_of_strings(str10, str11)
+    result2 = solution.gcd_of_strings(str20, str21)
+
+    assert result0 == "ABC"
+    assert result1 == "AB"
+    assert result2 == ""
