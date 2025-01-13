@@ -12,6 +12,7 @@ import year_twenty_five.january.remove_nth_node_from_end_of_list as remove_nth_f
 import year_twenty_five.january.sliding_window_maximum as max_sliding_window
 import year_twenty_five.january.word_pattern_ii as word_patter_match
 import year_twenty_five.january.greatest_common_divisor_of_strings as gcd_of_strings
+import year_twenty_five.january.word_subsets as word_subsets
 
 from common.list_node import ListNode
 from common.tree_node import TreeNode
@@ -144,3 +145,22 @@ def test_gcd_of_strings():
     assert result0 == "ABC"
     assert result1 == "AB"
     assert result2 == ""
+
+
+def test_word_subsets():
+    solution = word_subsets.Solution()
+
+    words01, words02 = ["amazon", "apple", "facebook", "google", "leetcode"], ["e", "o"]
+    words11, words12 = ["amazon", "apple", "facebook", "google", "leetcode"], ["lc", "eo"]
+    words21, words22 = ["acaac", "cccbb", "aacbb", "caacc", "bcbbb"], ["c", "cc", "b"]
+    words31, words32 = ["amazon", "apple", "facebook", "google", "leetcode"], ["lo", "eo"]
+
+    result0 = solution.word_subsets(words01, words02)
+    result1 = solution.word_subsets(words11, words12)
+    result2 = solution.word_subsets(words21, words22)
+    result3 = solution.word_subsets(words31, words32)
+
+    assert result0 == ["facebook", "google", "leetcode"]
+    assert result1 == ["leetcode"]
+    assert result2 == ["cccbb"]
+    assert result3 == ["google", "leetcode"]
