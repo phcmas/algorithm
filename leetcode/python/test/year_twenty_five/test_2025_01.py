@@ -13,6 +13,7 @@ import year_twenty_five.january.sliding_window_maximum as max_sliding_window
 import year_twenty_five.january.word_pattern_ii as word_patter_match
 import year_twenty_five.january.greatest_common_divisor_of_strings as gcd_of_strings
 import year_twenty_five.january.word_subsets as word_subsets
+import year_twenty_five.january.shortest_path_in_binary_matrix as shortest_path_binary_matrix
 
 from common.list_node import ListNode
 from common.tree_node import TreeNode
@@ -164,3 +165,22 @@ def test_word_subsets():
     assert result1 == ["leetcode"]
     assert result2 == ["cccbb"]
     assert result3 == ["google", "leetcode"]
+
+
+def test_shortest_path_binary_matrix():
+    solution = shortest_path_binary_matrix.Solution()
+
+    grid0 = [[0, 1], [1, 0]]
+    grid1 = [[0, 0, 0], [1, 1, 0], [1, 1, 0]]
+    grid2 = [[1, 0, 0], [1, 1, 0], [1, 1, 0]]
+    grid3 = [[0, 0, 0], [0, 1, 0], [0, 0, 0]]
+
+    result0 = solution.shortest_path_binary_matrix(grid0)
+    result1 = solution.shortest_path_binary_matrix(grid1)
+    result2 = solution.shortest_path_binary_matrix(grid2)
+    result3 = solution.shortest_path_binary_matrix(grid3)
+
+    assert result0 == 2
+    assert result1 == 4
+    assert result2 == -1
+    assert result3 == 4
