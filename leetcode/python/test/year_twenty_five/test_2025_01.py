@@ -14,6 +14,7 @@ import year_twenty_five.january.word_pattern_ii as word_patter_match
 import year_twenty_five.january.greatest_common_divisor_of_strings as gcd_of_strings
 import year_twenty_five.january.word_subsets as word_subsets
 import year_twenty_five.january.shortest_path_in_binary_matrix as shortest_path_binary_matrix
+import year_twenty_five.january.set_matrix_zeroes as set_zeroes
 
 from common.list_node import ListNode
 from common.tree_node import TreeNode
@@ -184,3 +185,19 @@ def test_shortest_path_binary_matrix():
     assert result1 == 4
     assert result2 == -1
     assert result3 == 4
+
+
+def test_set_zeroes():
+    solution = set_zeroes.Solution()
+
+    matrix0 = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]
+    matrix1 = [[0, 1, 2, 0], [3, 4, 5, 2], [1, 3, 1, 5]]
+    matrix2 = [[1, 2, 3, 4], [5, 0, 7, 8], [0, 10, 11, 12], [13, 14, 15, 0]]
+
+    solution.set_zeroes(matrix0)
+    solution.set_zeroes(matrix1)
+    solution.set_zeroes(matrix2)
+
+    assert matrix0 == [[1, 0, 1], [0, 0, 0], [1, 0, 1]]
+    assert matrix1 == [[0, 0, 0, 0], [0, 4, 5, 0], [0, 3, 1, 0]]
+    assert matrix2 == [[0, 0, 3, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
