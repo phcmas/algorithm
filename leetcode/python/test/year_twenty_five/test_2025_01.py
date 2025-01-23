@@ -15,6 +15,7 @@ import year_twenty_five.january.greatest_common_divisor_of_strings as gcd_of_str
 import year_twenty_five.january.word_subsets as word_subsets
 import year_twenty_five.january.shortest_path_in_binary_matrix as shortest_path_binary_matrix
 import year_twenty_five.january.set_matrix_zeroes as set_zeroes
+import year_twenty_five.january.count_univalue_subtrees as count_univalue_subtrees
 
 from common.list_node import ListNode
 from common.tree_node import TreeNode
@@ -201,3 +202,22 @@ def test_set_zeroes():
     assert matrix0 == [[1, 0, 1], [0, 0, 0], [1, 0, 1]]
     assert matrix1 == [[0, 0, 0, 0], [0, 4, 5, 0], [0, 3, 1, 0]]
     assert matrix2 == [[0, 0, 3, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+
+
+def test_count_univalue_subtrees():
+    solution = count_univalue_subtrees.Solution()
+
+    root0 = TreeNode.make([5, 1, 5, 5, 5, None, 5])
+    root1 = TreeNode.make([])
+    root2 = TreeNode.make([5, 5, 5, 5, 5, None, 5])
+    root3 = TreeNode.make([1, 1, 1, 5, 5, None, 5])
+
+    result0 = solution.count_unival_subtrees(root0)
+    result1 = solution.count_unival_subtrees(root1)
+    result2 = solution.count_unival_subtrees(root2)
+    result3 = solution.count_unival_subtrees(root3)
+
+    assert result0 == 4
+    assert result1 == 0
+    assert result2 == 6
+    assert result3 == 3
