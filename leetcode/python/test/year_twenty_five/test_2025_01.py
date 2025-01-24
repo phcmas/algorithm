@@ -16,6 +16,7 @@ import year_twenty_five.january.word_subsets as word_subsets
 import year_twenty_five.january.shortest_path_in_binary_matrix as shortest_path_binary_matrix
 import year_twenty_five.january.set_matrix_zeroes as set_zeroes
 import year_twenty_five.january.count_univalue_subtrees as count_univalue_subtrees
+import year_twenty_five.january.make_the_prefix_sum_non_negative as make_pref_sum_nonnegative
 
 from common.list_node import ListNode
 from common.tree_node import TreeNode
@@ -221,3 +222,19 @@ def test_count_univalue_subtrees():
     assert result1 == 0
     assert result2 == 6
     assert result3 == 3
+
+
+def test_make_pref_sum_nonnegative():
+    solution = make_pref_sum_nonnegative.Solution()
+
+    nums0 = [2, 3, -5, 4]
+    nums1 = [3, -5, -2, 6]
+    nums2 = [6, -6, -3, 3, 1, 5, -4, -3, -2, -3, 4, -1, 4, 4, -2, 6, 0]
+
+    result0 = solution.make_pref_sum_nonnegative(nums0)
+    result1 = solution.make_pref_sum_nonnegative(nums1)
+    result2 = solution.make_pref_sum_nonnegative(nums2)
+
+    assert result0 == 0
+    assert result1 == 1
+    assert result2 == 1
