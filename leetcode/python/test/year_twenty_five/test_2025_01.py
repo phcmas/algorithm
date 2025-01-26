@@ -17,6 +17,7 @@ import year_twenty_five.january.shortest_path_in_binary_matrix as shortest_path_
 import year_twenty_five.january.set_matrix_zeroes as set_zeroes
 import year_twenty_five.january.count_univalue_subtrees as count_univalue_subtrees
 import year_twenty_five.january.make_the_prefix_sum_non_negative as make_pref_sum_nonnegative
+import year_twenty_five.january.flip_columns_for_maximum_number_of_equal_rows as max_equal_rows_after_flips
 
 from common.list_node import ListNode
 from common.tree_node import TreeNode
@@ -238,3 +239,19 @@ def test_make_pref_sum_nonnegative():
     assert result0 == 0
     assert result1 == 1
     assert result2 == 1
+
+
+def test_max_equal_rows_after_flips():
+    solution = max_equal_rows_after_flips.Solution()
+
+    matrix0 = [[0, 1], [1, 1]]
+    matrix1 = [[0, 1], [1, 0]]
+    matrix2 = [[0, 0, 0], [0, 0, 1], [1, 1, 0]]
+
+    result0 = solution.max_equal_rows_after_flips(matrix0)
+    result1 = solution.max_equal_rows_after_flips(matrix1)
+    result2 = solution.max_equal_rows_after_flips(matrix2)
+
+    assert result0 == 1
+    assert result1 == 2
+    assert result2 == 2
