@@ -6,19 +6,19 @@ sys.path.insert(1, abspath(SRC_DIR))
 
 import year_twenty_five.january.check_completeness_of_a_binary_tree as is_complete_tree
 import year_twenty_five.january.check_if_n_and_its_double_exist as check_if_exist
+import year_twenty_five.january.count_univalue_subtrees as count_univalue_subtrees
+import year_twenty_five.january.flip_columns_for_maximum_number_of_equal_rows as max_equal_rows_after_flips
+import year_twenty_five.january.greatest_common_divisor_of_strings as gcd_of_strings
 import year_twenty_five.january.linked_list_components as num_components
+import year_twenty_five.january.make_the_prefix_sum_non_negative as make_pref_sum_nonnegative
 import year_twenty_five.january.maximum_size_subarray_sum_equals_k as max_sub_array_len
 import year_twenty_five.january.remove_nth_node_from_end_of_list as remove_nth_from_end
-import year_twenty_five.january.sliding_window_maximum as max_sliding_window
-import year_twenty_five.january.word_pattern_ii as word_patter_match
-import year_twenty_five.january.greatest_common_divisor_of_strings as gcd_of_strings
-import year_twenty_five.january.word_subsets as word_subsets
-import year_twenty_five.january.shortest_path_in_binary_matrix as shortest_path_binary_matrix
 import year_twenty_five.january.set_matrix_zeroes as set_zeroes
-import year_twenty_five.january.count_univalue_subtrees as count_univalue_subtrees
-import year_twenty_five.january.make_the_prefix_sum_non_negative as make_pref_sum_nonnegative
-import year_twenty_five.january.flip_columns_for_maximum_number_of_equal_rows as max_equal_rows_after_flips
-
+import year_twenty_five.january.shortest_path_in_binary_matrix as shortest_path_binary_matrix
+import year_twenty_five.january.sliding_window_maximum as max_sliding_window
+import year_twenty_five.january.walls_and_gates as walls_and_gates
+import year_twenty_five.january.word_pattern_ii as word_patter_match
+import year_twenty_five.january.word_subsets as word_subsets
 from common.list_node import ListNode
 from common.tree_node import TreeNode
 from common.util import is_same_list_nodes
@@ -255,3 +255,21 @@ def test_max_equal_rows_after_flips():
     assert result0 == 1
     assert result1 == 2
     assert result2 == 2
+
+
+def test_walls_and_gates():
+    solution = walls_and_gates.Solution()
+
+    rooms0 = [
+        [2147483647, -1, 0, 2147483647],
+        [2147483647, 2147483647, 2147483647, -1],
+        [2147483647, -1, 2147483647, -1],
+        [0, -1, 2147483647, 2147483647],
+    ]
+    rooms1 = [[-1]]
+
+    solution.walls_and_gates(rooms0)
+    solution.walls_and_gates(rooms1)
+
+    assert rooms0 == [[3, -1, 0, 1], [2, 2, 1, -1], [1, -1, 2, -1], [0, -1, 3, 4]]
+    assert rooms1 == [[-1]]
