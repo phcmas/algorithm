@@ -6,6 +6,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 
 import year_twenty_five.february.meeting_rooms_ii as meeting_rooms_ii
 import year_twenty_five.february.daily_temperatures as daily_temperatures
+import year_twenty_five.february.continuous_subarray_sum as check_subarray_sum
 
 
 def test_check_if_exist():
@@ -41,3 +42,25 @@ def test_daily_temperatures():
     assert result0 == [1, 1, 4, 2, 1, 1, 0, 0]
     assert result1 == [1, 1, 1, 0]
     assert result2 == [1, 1, 0]
+
+
+def test_check_subarray_sum():
+    solution = check_subarray_sum.Solution()
+
+    nums0, k0 = [23, 2, 4, 6, 7], 6
+    nums1, k1 = [23, 2, 6, 4, 7], 6
+    nums2, k2 = [23, 2, 6, 4, 7], 13
+    nums3, k3 = [0], 3
+    nums4, k4 = [5, 0, 0, 0], 3
+
+    result0 = solution.check_subarray_sum(nums0, k0)
+    result1 = solution.check_subarray_sum(nums1, k1)
+    result2 = solution.check_subarray_sum(nums2, k2)
+    result3 = solution.check_subarray_sum(nums3, k3)
+    result4 = solution.check_subarray_sum(nums4, k4)
+
+    assert result0 is True
+    assert result1 is True
+    assert result2 is False
+    assert result3 is False
+    assert result4 is True
