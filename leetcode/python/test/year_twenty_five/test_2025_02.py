@@ -7,6 +7,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 import year_twenty_five.february.meeting_rooms_ii as meeting_rooms_ii
 import year_twenty_five.february.daily_temperatures as daily_temperatures
 import year_twenty_five.february.continuous_subarray_sum as check_subarray_sum
+import year_twenty_five.february.zigzag_conversion as zigzag_conversion
 
 
 def test_check_if_exist():
@@ -64,3 +65,22 @@ def test_check_subarray_sum():
     assert result2 is False
     assert result3 is False
     assert result4 is True
+
+
+def test_zigzag_conversion():
+    solution = zigzag_conversion.Solution()
+
+    s0, num_rows0 = "PAYPALISHIRING", 3
+    s1, num_rows1 = "PAYPALISHIRING", 4
+    s2, num_rows2 = "A", 1
+    s3, num_rows3 = "ABC", 1
+
+    result0 = solution.convert(s0, num_rows0)
+    result1 = solution.convert(s1, num_rows1)
+    result2 = solution.convert(s2, num_rows2)
+    result3 = solution.convert(s3, num_rows3)
+
+    assert result0 == "PAHNAPLSIIGYIR"
+    assert result1 == "PINALSIGYAHRPI"
+    assert result2 == "A"
+    assert result3 == "ABC"
