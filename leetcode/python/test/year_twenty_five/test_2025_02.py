@@ -8,6 +8,7 @@ import year_twenty_five.february.meeting_rooms_ii as meeting_rooms_ii
 import year_twenty_five.february.daily_temperatures as daily_temperatures
 import year_twenty_five.february.continuous_subarray_sum as check_subarray_sum
 import year_twenty_five.february.zigzag_conversion as zigzag_conversion
+import year_twenty_five.february.buildings_with_an_ocean_view as buildings_with_an_ocean_view
 
 
 def test_check_if_exist():
@@ -84,3 +85,19 @@ def test_zigzag_conversion():
     assert result1 == "PINALSIGYAHRPI"
     assert result2 == "A"
     assert result3 == "ABC"
+
+
+def test_buildings_with_an_ocean_view():
+    solution = buildings_with_an_ocean_view.Solution()
+
+    heights0 = [4, 2, 3, 1]
+    heights1 = [4, 3, 2, 1]
+    heights2 = [1, 3, 2, 4]
+
+    result0 = solution.find_buildings(heights0)
+    result1 = solution.find_buildings(heights1)
+    result2 = solution.find_buildings(heights2)
+
+    assert result0 == [0, 2, 3]
+    assert result1 == [0, 1, 2, 3]
+    assert result2 == [3]
