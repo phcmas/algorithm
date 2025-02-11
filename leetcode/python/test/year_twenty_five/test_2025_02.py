@@ -9,6 +9,7 @@ import year_twenty_five.february.daily_temperatures as daily_temperatures
 import year_twenty_five.february.continuous_subarray_sum as check_subarray_sum
 import year_twenty_five.february.zigzag_conversion as zigzag_conversion
 import year_twenty_five.february.buildings_with_an_ocean_view as buildings_with_an_ocean_view
+import year_twenty_five.february.minimum_cost_to_connect_sticks as connect_sticks
 
 
 def test_check_if_exist():
@@ -101,3 +102,22 @@ def test_buildings_with_an_ocean_view():
     assert result0 == [0, 2, 3]
     assert result1 == [0, 1, 2, 3]
     assert result2 == [3]
+
+
+def test_connect_sticks():
+    solution = connect_sticks.Solution()
+
+    sticks0 = [2, 4, 3]
+    sticks1 = [1, 8, 3, 5]
+    sticks2 = [5]
+    sticks3 = [3354, 4316, 3259, 4904, 4598, 474, 3166, 6322, 8080, 9009]
+
+    result0 = solution.connect_sticks(sticks0)
+    result1 = solution.connect_sticks(sticks1)
+    result2 = solution.connect_sticks(sticks2)
+    result3 = solution.connect_sticks(sticks3)
+
+    assert result0 == 14
+    assert result1 == 30
+    assert result2 == 0
+    assert result3 == 151646
