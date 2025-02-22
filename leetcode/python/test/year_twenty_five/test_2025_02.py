@@ -10,6 +10,7 @@ import year_twenty_five.february.continuous_subarray_sum as check_subarray_sum
 import year_twenty_five.february.zigzag_conversion as zigzag_conversion
 import year_twenty_five.february.buildings_with_an_ocean_view as buildings_with_an_ocean_view
 import year_twenty_five.february.minimum_cost_to_connect_sticks as connect_sticks
+import year_twenty_five.february.longest_continuous_subarray_with_absolute_diff_less_than_or_equal_to_limit as longest_subarray
 
 
 def test_check_if_exist():
@@ -121,3 +122,19 @@ def test_connect_sticks():
     assert result1 == 30
     assert result2 == 0
     assert result3 == 151646
+
+
+def test_longest_subarray():
+    solution = longest_subarray.Solution()
+
+    nums0, limit0 = [8, 2, 4, 7], 4
+    nums1, limit1 = [10, 1, 2, 4, 7, 2], 5
+    nums2, limit2 = [4, 2, 2, 2, 4, 4, 2, 2], 0
+
+    result0 = solution.longest_subarray(nums0, limit0)
+    result1 = solution.longest_subarray(nums1, limit1)
+    result2 = solution.longest_subarray(nums2, limit2)
+
+    assert result0 == 2
+    assert result1 == 4
+    assert result2 == 3
