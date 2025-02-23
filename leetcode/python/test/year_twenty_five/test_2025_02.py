@@ -11,6 +11,7 @@ import year_twenty_five.february.zigzag_conversion as zigzag_conversion
 import year_twenty_five.february.buildings_with_an_ocean_view as buildings_with_an_ocean_view
 import year_twenty_five.february.minimum_cost_to_connect_sticks as connect_sticks
 import year_twenty_five.february.longest_continuous_subarray_with_absolute_diff_less_than_or_equal_to_limit as longest_subarray
+import year_twenty_five.february.meeting_scheduler as meeting_scheduler
 
 
 def test_check_if_exist():
@@ -138,3 +139,39 @@ def test_longest_subarray():
     assert result0 == 2
     assert result1 == 4
     assert result2 == 3
+
+
+def test_meeting_scheduler():
+    solution = meeting_scheduler.Solution()
+
+    slots01 = [[10, 50], [60, 120], [140, 210]]
+    slots02 = [[0, 15], [60, 70]]
+    duration0 = 8
+
+    slots11 = [[10, 50], [60, 120], [140, 210]]
+    slots12 = [[0, 15], [60, 70]]
+    duration1 = 12
+
+    slots21 = [
+        [216397070, 363167701],
+        [98730764, 158208909],
+        [441003187, 466254040],
+        [558239978, 678368334],
+        [683942980, 717766451],
+    ]
+    slots22 = [
+        [50490609, 222653186],
+        [512711631, 670791418],
+        [730229023, 802410205],
+        [812553104, 891266775],
+        [230032010, 399152578],
+    ]
+    duration2 = 456085
+
+    result0 = solution.min_available_duration(slots01, slots02, duration0)
+    result1 = solution.min_available_duration(slots11, slots12, duration1)
+    result2 = solution.min_available_duration(slots21, slots22, duration2)
+
+    assert result0 == [60, 68]
+    assert result1 == []
+    assert result2 == [98730764, 99186849]
