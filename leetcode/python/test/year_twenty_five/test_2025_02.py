@@ -12,6 +12,7 @@ import year_twenty_five.february.buildings_with_an_ocean_view as buildings_with_
 import year_twenty_five.february.minimum_cost_to_connect_sticks as connect_sticks
 import year_twenty_five.february.longest_continuous_subarray_with_absolute_diff_less_than_or_equal_to_limit as longest_subarray
 import year_twenty_five.february.meeting_scheduler as meeting_scheduler
+import year_twenty_five.february.minimum_insertions_to_balance_a_parentheses_string as min_insertion
 
 
 def test_check_if_exist():
@@ -175,3 +176,22 @@ def test_meeting_scheduler():
     assert result0 == [60, 68]
     assert result1 == []
     assert result2 == [98730764, 99186849]
+
+
+def test_min_insertion():
+    solution = min_insertion.Solution()
+
+    s0 = "(()))"
+    s1 = "())"
+    s2 = "))())("
+    s3 = "()()()()()("
+
+    result0 = solution.min_insertions(s0)
+    result1 = solution.min_insertions(s1)
+    result2 = solution.min_insertions(s2)
+    result3 = solution.min_insertions(s3)
+
+    assert result0 == 1
+    assert result1 == 0
+    assert result2 == 3
+    assert result3 == 7
