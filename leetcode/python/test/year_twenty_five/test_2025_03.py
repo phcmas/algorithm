@@ -6,6 +6,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 
 import year_twenty_five.march.evaluate_reverse_polish_notation as eval_rpn
 import year_twenty_five.march.simplify_path as simplify_path
+import year_twenty_five.march.surrounded_regions as surrounded_regions
 
 
 def test_eval_rpn():
@@ -44,3 +45,19 @@ def test_simplify_path():
     assert result2 == "/home/user/Pictures"
     assert result3 == "/"
     assert result4 == "/.../b/d"
+
+
+def test_surrounded_regions():
+    solution = surrounded_regions.Solution()
+
+    board0 = [["X", "X", "X", "X"], ["X", "O", "O", "X"], ["X", "X", "O", "X"], ["X", "O", "X", "X"]]
+    board1 = [["X"]]
+    board2 = [["O", "X", "O"], ["X", "O", "X"], ["O", "X", "O"]]
+
+    solution.solve(board0)
+    solution.solve(board1)
+    solution.solve(board2)
+
+    assert board0 == [["X", "X", "X", "X"], ["X", "X", "X", "X"], ["X", "X", "X", "X"], ["X", "O", "X", "X"]]
+    assert board1 == [["X"]]
+    assert board2 == [["O", "X", "O"], ["X", "X", "X"], ["O", "X", "O"]]
