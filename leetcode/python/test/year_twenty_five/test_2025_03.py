@@ -7,6 +7,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 import year_twenty_five.march.evaluate_reverse_polish_notation as eval_rpn
 import year_twenty_five.march.simplify_path as simplify_path
 import year_twenty_five.march.surrounded_regions as surrounded_regions
+import year_twenty_five.march.rotate_array as rotate_array
 
 
 def test_eval_rpn():
@@ -61,3 +62,16 @@ def test_surrounded_regions():
     assert board0 == [["X", "X", "X", "X"], ["X", "X", "X", "X"], ["X", "X", "X", "X"], ["X", "O", "X", "X"]]
     assert board1 == [["X"]]
     assert board2 == [["O", "X", "O"], ["X", "X", "X"], ["O", "X", "O"]]
+
+
+def test_rotate_array():
+    solution = rotate_array.Solution()
+
+    nums0, k0 = [1, 2, 3, 4, 5, 6, 7], 3
+    nums1, k1 = [-1, -100, 3, 99], 2
+
+    solution.rotate(nums0, k0)
+    solution.rotate(nums1, k1)
+
+    assert nums0 == [5, 6, 7, 1, 2, 3, 4]
+    assert nums1 == [3, 99, -1, -100]
