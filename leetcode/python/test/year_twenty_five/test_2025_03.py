@@ -9,6 +9,7 @@ import year_twenty_five.march.simplify_path as simplify_path
 import year_twenty_five.march.surrounded_regions as surrounded_regions
 import year_twenty_five.march.rotate_array as rotate_array
 import year_twenty_five.march.reverse_words_in_a_string as reverse_words
+import year_twenty_five.march.single_number_ii as single_number
 
 
 def test_eval_rpn():
@@ -92,3 +93,19 @@ def test_reverse_words():
     assert result0 == "blue is sky the"
     assert result1 == "world hello"
     assert result2 == "example good a"
+
+
+def test_single_number():
+    solution = single_number.Solution()
+
+    nums0 = [2, 2, 3, 2]
+    nums1 = [0, 1, 0, 1, 0, 1, 99]
+
+    # result0 = solution.single_number(nums0)
+    # result1 = solution.single_number(nums1)
+
+    result0 = solution.single_number_sort(nums0)
+    result1 = solution.single_number_sort(nums1)
+
+    assert result0 == 3
+    assert result1 == 99
