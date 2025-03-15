@@ -8,6 +8,7 @@ import year_twenty_five.march.evaluate_reverse_polish_notation as eval_rpn
 import year_twenty_five.march.simplify_path as simplify_path
 import year_twenty_five.march.surrounded_regions as surrounded_regions
 import year_twenty_five.march.rotate_array as rotate_array
+import year_twenty_five.march.reverse_words_in_a_string as reverse_words
 
 
 def test_eval_rpn():
@@ -75,3 +76,19 @@ def test_rotate_array():
 
     assert nums0 == [5, 6, 7, 1, 2, 3, 4]
     assert nums1 == [3, 99, -1, -100]
+
+
+def test_reverse_words():
+    solution = reverse_words.Solution()
+
+    s0 = "the sky is blue"
+    s1 = "  hello world  "
+    s2 = "a good   example"
+
+    result0 = solution.reverse_words(s0)
+    result1 = solution.reverse_words(s1)
+    result2 = solution.reverse_words(s2)
+
+    assert result0 == "blue is sky the"
+    assert result1 == "world hello"
+    assert result2 == "example good a"
