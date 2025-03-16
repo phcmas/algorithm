@@ -4,6 +4,7 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
+from common.util import is_same_double_arrays_ignoring_order
 import year_twenty_five.march.evaluate_reverse_polish_notation as eval_rpn
 import year_twenty_five.march.simplify_path as simplify_path
 import year_twenty_five.march.surrounded_regions as surrounded_regions
@@ -12,6 +13,7 @@ import year_twenty_five.march.reverse_words_in_a_string as reverse_words
 import year_twenty_five.march.single_number_ii as single_number
 import year_twenty_five.march.bitwise_and_of_numbers_range as range_bitwise_and
 import year_twenty_five.march.game_of_life as game_of_life
+import year_twenty_five.march.find_k_pairs_with_smallest_sums as k_smallest_pairs
 
 
 def test_eval_rpn():
@@ -143,3 +145,45 @@ def test_game_of_life():
 
     assert board0 == [[0, 0, 0], [1, 0, 1], [0, 1, 1], [0, 1, 0]]
     assert board1 == [[1, 1], [1, 1]]
+
+
+def test_k_smallest_pairs():
+    solution = k_smallest_pairs.Solution()
+
+    nums01, nums02, k0 = [1, 7, 11], [2, 4, 6], 3
+    nums11, nums12, k1 = [1, 1, 2], [1, 2, 3], 2
+    nums21, nums22, k2 = [0, 0, 0, 0, 0], [-3, 22, 35, 56, 76], 22
+
+    result0 = solution.k_smallest_pairs(nums01, nums02, k0)
+    result1 = solution.k_smallest_pairs(nums11, nums12, k1)
+    result2 = solution.k_smallest_pairs(nums21, nums22, k2)
+
+    assert is_same_double_arrays_ignoring_order(result0, [[1, 2], [1, 4], [1, 6]])
+    assert is_same_double_arrays_ignoring_order(result1, [[1, 1], [1, 1]])
+    assert is_same_double_arrays_ignoring_order(
+        result2,
+        [
+            [0, -3],
+            [0, -3],
+            [0, -3],
+            [0, -3],
+            [0, -3],
+            [0, 22],
+            [0, 22],
+            [0, 22],
+            [0, 22],
+            [0, 22],
+            [0, 35],
+            [0, 35],
+            [0, 35],
+            [0, 35],
+            [0, 35],
+            [0, 56],
+            [0, 56],
+            [0, 56],
+            [0, 56],
+            [0, 56],
+            [0, 76],
+            [0, 76],
+        ],
+    )
