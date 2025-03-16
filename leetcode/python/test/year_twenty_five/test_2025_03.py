@@ -11,6 +11,7 @@ import year_twenty_five.march.rotate_array as rotate_array
 import year_twenty_five.march.reverse_words_in_a_string as reverse_words
 import year_twenty_five.march.single_number_ii as single_number
 import year_twenty_five.march.bitwise_and_of_numbers_range as range_bitwise_and
+import year_twenty_five.march.game_of_life as game_of_life
 
 
 def test_eval_rpn():
@@ -129,3 +130,16 @@ def test_range_bitwise_and():
     assert result1 == 0
     assert result2 == 0
     assert result3 == 2
+
+
+def test_game_of_life():
+    solution = game_of_life.Solution()
+
+    board0 = [[0, 1, 0], [0, 0, 1], [1, 1, 1], [0, 0, 0]]
+    board1 = [[1, 1], [1, 0]]
+
+    solution.game_of_life(board0)
+    solution.game_of_life(board1)
+
+    assert board0 == [[0, 0, 0], [1, 0, 1], [0, 1, 1], [0, 1, 0]]
+    assert board1 == [[1, 1], [1, 1]]
