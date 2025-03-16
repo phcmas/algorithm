@@ -10,6 +10,7 @@ import year_twenty_five.march.surrounded_regions as surrounded_regions
 import year_twenty_five.march.rotate_array as rotate_array
 import year_twenty_five.march.reverse_words_in_a_string as reverse_words
 import year_twenty_five.march.single_number_ii as single_number
+import year_twenty_five.march.bitwise_and_of_numbers_range as range_bitwise_and
 
 
 def test_eval_rpn():
@@ -109,3 +110,22 @@ def test_single_number():
 
     assert result0 == 3
     assert result1 == 99
+
+
+def test_range_bitwise_and():
+    solution = range_bitwise_and.Solution()
+
+    left0, right0 = 5, 7
+    left1, right1 = 0, 0
+    left2, right2 = 1, 2147483647
+    left3, right3 = 2, 2
+
+    result0 = solution.range_bitwise_and(left0, right0)
+    result1 = solution.range_bitwise_and(left1, right1)
+    result2 = solution.range_bitwise_and(left2, right2)
+    result3 = solution.range_bitwise_and(left3, right3)
+
+    assert result0 == 4
+    assert result1 == 0
+    assert result2 == 0
+    assert result3 == 2
