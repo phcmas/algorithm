@@ -14,6 +14,7 @@ import year_twenty_five.march.single_number_ii as single_number
 import year_twenty_five.march.bitwise_and_of_numbers_range as range_bitwise_and
 import year_twenty_five.march.game_of_life as game_of_life
 import year_twenty_five.march.find_k_pairs_with_smallest_sums as k_smallest_pairs
+import year_twenty_five.march.rotate_image as rotate_image
 
 
 def test_eval_rpn():
@@ -158,32 +159,20 @@ def test_k_smallest_pairs():
     result1 = solution.k_smallest_pairs(nums11, nums12, k1)
     result2 = solution.k_smallest_pairs(nums21, nums22, k2)
 
+    # fmt: off
     assert is_same_double_arrays_ignoring_order(result0, [[1, 2], [1, 4], [1, 6]])
     assert is_same_double_arrays_ignoring_order(result1, [[1, 1], [1, 1]])
-    assert is_same_double_arrays_ignoring_order(
-        result2,
-        [
-            [0, -3],
-            [0, -3],
-            [0, -3],
-            [0, -3],
-            [0, -3],
-            [0, 22],
-            [0, 22],
-            [0, 22],
-            [0, 22],
-            [0, 22],
-            [0, 35],
-            [0, 35],
-            [0, 35],
-            [0, 35],
-            [0, 35],
-            [0, 56],
-            [0, 56],
-            [0, 56],
-            [0, 56],
-            [0, 56],
-            [0, 76],
-            [0, 76],
-        ],
-    )
+    assert is_same_double_arrays_ignoring_order(result2, [[0, -3],[0, -3],[0, -3],[0, -3],[0, -3],[0, 22],[0, 22],[0, 22],[0, 22],[0, 22],[0, 35],[0, 35],[0, 35],[0, 35],[0, 35],[0, 56],[0, 56],[0, 56],[0, 56],[0, 56],[0, 76],[0, 76]])
+
+
+def test_rotate_image():
+    solution = rotate_image.Solution()
+
+    matrix0 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    matrix1 = [[5, 1, 9, 11], [2, 4, 8, 10], [13, 3, 6, 7], [15, 14, 12, 16]]
+
+    solution.rotate(matrix0)
+    solution.rotate(matrix1)
+
+    assert matrix0 == [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
+    assert matrix1 == [[15, 13, 2, 5], [14, 3, 4, 1], [12, 6, 8, 9], [16, 7, 10, 11]]
