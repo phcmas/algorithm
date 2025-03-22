@@ -4,6 +4,7 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
+from common.tree_node import TreeNode
 from common.util import is_same_double_arrays_ignoring_order
 import year_twenty_five.march.evaluate_reverse_polish_notation as eval_rpn
 import year_twenty_five.march.simplify_path as simplify_path
@@ -16,6 +17,7 @@ import year_twenty_five.march.game_of_life as game_of_life
 import year_twenty_five.march.find_k_pairs_with_smallest_sums as k_smallest_pairs
 import year_twenty_five.march.rotate_image as rotate_image
 import year_twenty_five.march.insert_delete_get_random_o1 as insert_delete_get_random_o1
+import year_twenty_five.march.validate_binary_search_tree as is_valid_bst
 
 
 def test_eval_rpn():
@@ -203,3 +205,19 @@ def test_insert_delete_random_o1():
     assert result6 is False
 
     assert result7 == 2
+
+
+def test_is_valid_bst():
+    solution = is_valid_bst.Solution()
+
+    root0 = TreeNode.make([2, 1, 3])
+    root1 = TreeNode.make([5, 1, 4, None, None, 3, 6])
+    root2 = TreeNode.make([5, 4, 6, None, None, 3, 7])
+
+    result0 = solution.is_valid_bst(root0)
+    result1 = solution.is_valid_bst(root1)
+    result2 = solution.is_valid_bst(root2)
+
+    assert result0 is True
+    assert result1 is False
+    assert result2 is False
