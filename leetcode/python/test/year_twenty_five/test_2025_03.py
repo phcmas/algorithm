@@ -15,6 +15,7 @@ import year_twenty_five.march.bitwise_and_of_numbers_range as range_bitwise_and
 import year_twenty_five.march.game_of_life as game_of_life
 import year_twenty_five.march.find_k_pairs_with_smallest_sums as k_smallest_pairs
 import year_twenty_five.march.rotate_image as rotate_image
+import year_twenty_five.march.insert_delete_get_random_o1 as insert_delete_get_random_o1
 
 
 def test_eval_rpn():
@@ -176,3 +177,29 @@ def test_rotate_image():
 
     assert matrix0 == [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
     assert matrix1 == [[15, 13, 2, 5], [14, 3, 4, 1], [12, 6, 8, 9], [16, 7, 10, 11]]
+
+
+def test_insert_delete_random_o1():
+    solution = insert_delete_get_random_o1.RandomizedSet()
+
+    result0 = solution.insert(0)
+    result1 = solution.insert(1)
+    result2 = solution.insert(1)
+
+    result3 = solution.remove(0)
+    result4 = solution.insert(2)
+    result5 = solution.remove(1)
+    result6 = solution.remove(1)
+
+    result7 = solution.get_random()
+
+    assert result0 is True
+    assert result1 is True
+    assert result2 is False
+
+    assert result3 is True
+    assert result4 is True
+    assert result5 is True
+    assert result6 is False
+
+    assert result7 == 2
