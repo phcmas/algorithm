@@ -57,9 +57,6 @@ class Solution:
         return (right + offset) % len(nums)
 
     def search(self, nums: list[int], target: int) -> int:
-        if len(nums) == 0:
-            return 0 if nums[0] == target else -1
-
         offset = self.find_offset(nums) if nums[0] > nums[-1] else 0
         idx = self.find_floor_idx(nums, offset, target)
 
