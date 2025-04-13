@@ -6,6 +6,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 
 import year_twenty_five.april.take_k_of_each_character_from_left_and_right as take_characters
 import year_twenty_five.april.lru_cache as lru_cache
+import year_twenty_five.april.search_in_rotated_sorted_array as search
 
 
 def test_take_characters():
@@ -78,3 +79,19 @@ def test_lru_cache():
     result3 = cache.get(2)
     assert list(cache.data.items()) == [(1, 2), (2, 6)]
     assert result3 == 6
+
+
+def test_search():
+    solution = search.Solution()
+
+    nums0, target0 = [4, 5, 6, 7, 0, 1, 2], 0
+    nums1, target1 = [4, 5, 6, 7, 0, 1, 2], 3
+    nums2, target2 = [1], 0
+
+    result0 = solution.search(nums0, target0)
+    result1 = solution.search(nums1, target1)
+    result2 = solution.search(nums2, target2)
+
+    assert result0 == 4
+    assert result1 == -1
+    assert result2 == -1
