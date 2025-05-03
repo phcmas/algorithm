@@ -7,6 +7,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 import year_twenty_five.april.take_k_of_each_character_from_left_and_right as take_characters
 import year_twenty_five.april.lru_cache as lru_cache
 import year_twenty_five.april.search_in_rotated_sorted_array as search
+import year_twenty_five.april.longest_uncommon_subsequence_ii as find_lus_length
 
 
 def test_take_characters():
@@ -95,3 +96,22 @@ def test_search():
     assert result0 == 4
     assert result1 == -1
     assert result2 == -1
+
+
+def test_find_lus_length():
+    solution = find_lus_length.Solution()
+
+    strs0 = ["aba", "cdc", "eae"]
+    strs1 = ["aaa", "aaa", "aa"]
+    strs2 = ["abcd", "abcd", "abc", "bcd", "ace", "a"]
+    strs3 = ["abcd", "abcd", "ae"]
+
+    result0 = solution.find_lus_length(strs0)
+    result1 = solution.find_lus_length(strs1)
+    result2 = solution.find_lus_length(strs2)
+    result3 = solution.find_lus_length(strs3)
+
+    assert result0 == 3
+    assert result1 == -1
+    assert result2 == 3
+    assert result3 == 2
