@@ -6,6 +6,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 
 import year_twenty_five.may.lru_cache as lru_cache
 import year_twenty_five.may.insert_delete_get_random_o1 as insert_delete_get_random_o1
+import year_twenty_five.may.count_good_numbers as count_good_numbers
 
 
 def test_lru_cache():
@@ -89,3 +90,15 @@ def test_insert_delete_random_o1():
     assert result6 is False
 
     assert result7 == 2
+
+
+def test_count_good_numbers():
+    solution = count_good_numbers.Solution()
+
+    result0 = solution.count_good_numbers(1)
+    result1 = solution.count_good_numbers(4)
+    result2 = solution.count_good_numbers(50)
+
+    assert result0 == 5
+    assert result1 == 400
+    assert result2 == 564908303
