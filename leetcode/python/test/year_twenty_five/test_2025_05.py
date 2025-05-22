@@ -7,6 +7,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 import year_twenty_five.may.lru_cache as lru_cache
 import year_twenty_five.may.insert_delete_get_random_o1 as insert_delete_get_random_o1
 import year_twenty_five.may.count_good_numbers as count_good_numbers
+import year_twenty_five.may.letter_tile_possibilities as letter_tile_possibilities
 
 
 def test_lru_cache():
@@ -102,3 +103,15 @@ def test_count_good_numbers():
     assert result0 == 5
     assert result1 == 400
     assert result2 == 564908303
+
+
+def test_letter_tile_possibilities():
+    solution = letter_tile_possibilities.Solution()
+
+    result0 = solution.num_tile_possibilities("AAB")
+    result1 = solution.num_tile_possibilities("AAABBC")
+    result2 = solution.num_tile_possibilities("V")
+
+    assert result0 == 8
+    assert result1 == 188
+    assert result2 == 1
