@@ -8,6 +8,7 @@ import year_twenty_five.may.lru_cache as lru_cache
 import year_twenty_five.may.insert_delete_get_random_o1 as insert_delete_get_random_o1
 import year_twenty_five.may.count_good_numbers as count_good_numbers
 import year_twenty_five.may.letter_tile_possibilities as letter_tile_possibilities
+import year_twenty_five.may.most_profit_assigning_work as most_profit_assignment
 
 
 def test_lru_cache():
@@ -115,3 +116,39 @@ def test_letter_tile_possibilities():
     assert result0 == 8
     assert result1 == 188
     assert result2 == 1
+
+
+def test_most_profit_assignment():
+    solution = most_profit_assignment.Solution()
+
+    difficulties0 = [2, 4, 6, 8, 10]
+    profits0 = [10, 20, 30, 40, 50]
+    workers0 = [4, 5, 6, 7]
+
+    difficulties1 = [85, 47, 57]
+    profits1 = [24, 66, 99]
+    workers1 = [40, 25, 25]
+
+    difficulties2 = [68, 35, 52, 47, 86]
+    profits2 = [67, 17, 1, 81, 3]
+    workers2 = [92, 10, 85, 84, 82]
+
+    difficulties3 = [17, 23, 25, 30, 30, 34, 55, 58, 72, 85]
+    profits3 = [4, 41, 57, 64, 65, 68, 73, 73, 87, 98]
+    workers3 = [99, 35, 21, 66, 22, 7, 12, 75, 8, 94]
+
+    difficulties4 = [66, 1, 28, 73, 53, 35, 45, 60, 100, 44, 59, 94, 27, 88, 7, 18, 83, 18, 72, 63]
+    profits4 = [66, 20, 84, 81, 56, 40, 37, 82, 53, 45, 43, 96, 67, 27, 12, 54, 98, 19, 47, 77]
+    workers4 = [61, 33, 68, 38, 63, 45, 1, 10, 53, 23, 66, 70, 14, 51, 94, 18, 28, 78, 100, 16]
+
+    result0 = solution.max_profit_assignment(difficulties0, profits0, workers0)
+    result1 = solution.max_profit_assignment(difficulties1, profits1, workers1)
+    result2 = solution.max_profit_assignment(difficulties2, profits2, workers2)
+    result3 = solution.max_profit_assignment(difficulties3, profits3, workers3)
+    result4 = solution.max_profit_assignment(difficulties4, profits4, workers4)
+
+    assert result0 == 100
+    assert result1 == 0
+    assert result2 == 324
+    assert result3 == 432
+    assert result4 == 1392
