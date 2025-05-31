@@ -9,6 +9,7 @@ import year_twenty_five.may.insert_delete_get_random_o1 as insert_delete_get_ran
 import year_twenty_five.may.count_good_numbers as count_good_numbers
 import year_twenty_five.may.letter_tile_possibilities as letter_tile_possibilities
 import year_twenty_five.may.most_profit_assigning_work as most_profit_assignment
+import year_twenty_five.may.stone_game as stone_game
 
 
 def test_lru_cache():
@@ -152,3 +153,16 @@ def test_most_profit_assignment():
     assert result2 == 324
     assert result3 == 432
     assert result4 == 1392
+
+
+def test_stone_game():
+    solution = stone_game.Solution()
+
+    piles0 = [5, 3, 4, 5]
+    piles1 = [3, 7, 2, 3]
+
+    result0 = solution.stone_game(piles0)
+    result1 = solution.stone_game(piles1)
+
+    assert result0 is True
+    assert result1 is True
