@@ -10,6 +10,7 @@ import year_twenty_five.may.count_good_numbers as count_good_numbers
 import year_twenty_five.may.letter_tile_possibilities as letter_tile_possibilities
 import year_twenty_five.may.most_profit_assigning_work as most_profit_assignment
 import year_twenty_five.may.stone_game as stone_game
+import year_twenty_five.may.reveal_cards_in_increasing_order as reveal_cards
 
 
 def test_lru_cache():
@@ -166,3 +167,16 @@ def test_stone_game():
 
     assert result0 is True
     assert result1 is True
+
+
+def test_reveal_cards():
+    solution = reveal_cards.Solution()
+
+    deck0 = [17, 13, 11, 2, 3, 5, 7]
+    deck1 = [1, 1000]
+
+    result0 = solution.deck_revealed_increasing(deck0)
+    result1 = solution.deck_revealed_increasing(deck1)
+
+    assert result0 == [2, 13, 3, 11, 5, 17, 7]
+    assert result1 == [1, 1000]
