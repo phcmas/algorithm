@@ -1,5 +1,6 @@
 import { minDifference } from "../2025_06/MinimumDifferenceBetweenLargestAndSmallestValueInThreeMoves";
 import { maximumGain } from "../2025_06/MaximumScoreFromRemovingSubstrings";
+import { numDistinctIslands } from "../2025_06/NumberOfDistinctIslands";
 
 describe("2025_06 test", () => {
   it("Minimum Difference Between Largest and Smallest Value in Three Moves", () => {
@@ -30,5 +31,36 @@ describe("2025_06 test", () => {
 
     expect(res0).toEqual(19);
     expect(res1).toEqual(20);
+  });
+
+  it("Number Of Distinct Islands", () => {
+    const grid0 = [
+      [1, 1, 0, 0, 0],
+      [1, 1, 0, 0, 0],
+      [0, 0, 0, 1, 1],
+      [0, 0, 0, 1, 1],
+    ];
+    const grid1 = [
+      [1, 1, 0, 1, 1],
+      [1, 0, 0, 0, 0],
+      [0, 0, 0, 0, 1],
+      [1, 1, 0, 1, 1],
+    ];
+
+    // prettier-ignore
+    const grid2 = [
+      [0,0,1,0,1,0,1,1,1,0,0,0,0,1,0,0,1,0,0,1,1,1,0,1,1,1,0,0,0,1,1,0,1,1,0,1,0,1,0,1,0,0,0,0,0,1,1,1,1,0],
+      [0,0,1,0,0,1,1,1,0,0,1,0,1,0,0,1,1,0,0,1,0,0,0,1,0,1,1,1,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,1,0,1,0,0,0],
+      [0,1,0,1,0,1,1,1,0,0,1,1,0,0,0,0,1,0,1,0,1,1,1,0,1,1,1,0,0,0,1,0,1,0,1,0,0,0,1,1,1,1,1,0,0,1,0,0,1,0],
+      [1,0,1,0,0,1,0,1,0,0,1,0,0,1,1,1,0,1,0,0,0,0,1,0,1,0,0,1,0,1,1,1,0,1,0,0,0,1,1,1,0,0,0,0,1,1,1,1,1,1]
+    ]
+
+    const res0 = numDistinctIslands(grid0);
+    const res1 = numDistinctIslands(grid1);
+    const res2 = numDistinctIslands(grid2);
+
+    expect(res0).toEqual(1);
+    expect(res1).toEqual(3);
+    expect(res2).toEqual(15);
   });
 });
