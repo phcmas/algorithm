@@ -1,6 +1,7 @@
 import { minDifference } from "../2025_06/MinimumDifferenceBetweenLargestAndSmallestValueInThreeMoves";
 import { maximumGain } from "../2025_06/MaximumScoreFromRemovingSubstrings";
 import { numDistinctIslands } from "../2025_06/NumberOfDistinctIslands";
+import { expand } from "../2025_06/BraceExpansion";
 
 describe("2025_06 test", () => {
   it("Minimum Difference Between Largest and Smallest Value in Three Moves", () => {
@@ -63,4 +64,18 @@ describe("2025_06 test", () => {
     expect(res1).toEqual(3);
     expect(res2).toEqual(15);
   });
+});
+
+it("Brace Expansion", () => {
+  const s0 = "{a,b}c{d,e}f";
+  const s1 = "abcd";
+
+  const res0 = expand(s0);
+  const res1 = expand(s1);
+
+  const ans0 = ["acdf", "acef", "bcdf", "bcef"];
+  const ans1 = ["abcd"];
+
+  expect(res0).toEqual(ans0);
+  expect(res1).toEqual(ans1);
 });
