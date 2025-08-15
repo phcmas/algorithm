@@ -59,10 +59,7 @@ export class TreeNode {
     return a.val - b.val;
   }
 
-  static isSameListIgnoringOrder(
-    list0: (TreeNode | null)[],
-    list1: (TreeNode | null)[]
-  ) {
+  static isSameListIgnoringOrder(list0: (TreeNode | null)[], list1: (TreeNode | null)[]) {
     if (list0.length !== list1.length) return false;
 
     const sorted0 = list0.sort(this.compare);
