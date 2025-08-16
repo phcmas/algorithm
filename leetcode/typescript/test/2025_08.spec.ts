@@ -1,6 +1,7 @@
 import { smallestCommonElement } from "../2025_08/FindSmallestCommonElementInAllRows";
 import { minCost } from "../2025_08/PaintHouse";
 import { verticalOrder } from "../2025_08/BinaryTreeVerticalOrderTraversal";
+import { pathSum } from "../2025_08/PathSumIII";
 import { TreeNode } from "../common/TreeNode";
 import { isTwoDimensionalArraySame } from "../common/Util";
 
@@ -56,5 +57,24 @@ describe("2025_08 test", () => {
     expect(isTwoDimensionalArraySame(ret0, ans0)).toEqual(true);
     expect(isTwoDimensionalArraySame(ret1, ans1)).toEqual(true);
     expect(isTwoDimensionalArraySame(ret2, ans2)).toEqual(true);
+  });
+
+  it("Path Sum III", () => {
+    const root0 = TreeNode.make([10, 5, -3, 3, 2, null, 11, 3, -2, null, 1]);
+    const targetSum0 = 8;
+
+    const root1 = TreeNode.make([5, 4, 8, 11, null, 13, 4, 7, 2, null, null, 5, 1]);
+    const targetSum1 = 22;
+
+    const root2 = TreeNode.make([0, 1, 1]);
+    const targetSum2 = 1;
+
+    const ret0 = pathSum(root0, targetSum0);
+    const ret1 = pathSum(root1, targetSum1);
+    const ret2 = pathSum(root2, targetSum2);
+
+    expect(ret0).toEqual(3);
+    expect(ret1).toEqual(3);
+    expect(ret2).toEqual(4);
   });
 });
