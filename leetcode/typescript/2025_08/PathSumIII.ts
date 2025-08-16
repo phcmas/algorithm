@@ -46,9 +46,34 @@ function dfs(root: TreeNode | null, target: number, sums: Set<number>): [number,
   return [count, freq];
 }
 
-function pathSum(root: TreeNode | null, targetSum: number): number {
+function pathSumOld(root: TreeNode | null, targetSum: number): number {
   const [cnt, freq] = dfs(root, targetSum, new Set<number>([targetSum]));
   return cnt + (freq[targetSum] ?? 0);
+}
+
+let count = 0;
+
+function preOrder(node: TreeNode | null, k: number, curSum: number, freq: Record<number, number>) {
+  if (node === null) return;
+
+  curSum += node.val;
+
+  if (curSum === k) count++;
+  count += freq[curSum - k] ?? 0;
+
+  freq[curSum] = (freq[curSum] ?? 0) + 1;
+
+  preOrder(node.left, k, curSum, freq);
+  preOrder(node.right, k, curSum, freq);
+
+  freq[curSum]--;
+  curSum -= node.val;
+}
+
+function pathSum(root: TreeNode | null, targetSum: number): number {
+  count = 0;
+  preOrder(root, targetSum, 0, {});
+  return count;
 }
 
 export { pathSum };
