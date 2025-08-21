@@ -4,6 +4,7 @@ import { verticalOrder } from "../2025_08/BinaryTreeVerticalOrderTraversal";
 import { pathSum } from "../2025_08/PathSumIII";
 import { TreeNode } from "../common/TreeNode";
 import { isTwoDimensionalArraySame } from "../common/Util";
+import { FileSystem } from "../2025_08/DesignFileSystem";
 
 describe("2025_08 test", () => {
   it("Find Smallest Common Element in All Rows", () => {
@@ -76,5 +77,35 @@ describe("2025_08 test", () => {
     expect(ret0).toEqual(3);
     expect(ret1).toEqual(3);
     expect(ret2).toEqual(4);
+  });
+
+  it("File System", () => {
+    const system0 = new FileSystem();
+
+    const ret0 = system0.createPath("/a", 1);
+    const ret1 = system0.get("/a");
+
+    const system1 = new FileSystem();
+    const ret2 = system1.createPath("/leet", 1);
+    const ret3 = system1.createPath("/leet/code", 2);
+    const ret4 = system1.get("/leet/code");
+    const ret5 = system1.createPath("/c/d", 1);
+    const ret6 = system1.get("/c");
+
+    const system2 = new FileSystem();
+    const ret7 = system2.createPath("/a", 1);
+    const ret8 = system2.createPath("/a", 2);
+    const ret9 = system2.get("/a");
+
+    expect(ret0).toEqual(true);
+    expect(ret1).toEqual(1);
+    expect(ret2).toEqual(true);
+    expect(ret3).toEqual(true);
+    expect(ret4).toEqual(2);
+    expect(ret5).toEqual(false);
+    expect(ret6).toEqual(-1);
+    expect(ret7).toEqual(true);
+    expect(ret8).toEqual(false);
+    expect(ret9).toEqual(1);
   });
 });
