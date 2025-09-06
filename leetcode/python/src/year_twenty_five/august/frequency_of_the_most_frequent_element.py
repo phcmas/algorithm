@@ -32,28 +32,20 @@ Constraints:
 
 
 class Solution:
-    def maxFrequency(self, nums: list[int], k: int) -> int:
-        idx, lower, upper = 0, min(nums), max(nums) + k
-        max_freq, min_upper_idxs = 0, {}
+    def max_frequency(self, nums: list[int], k: int) -> int:
+        left, right, curr = 0, 0, 0
+        max_freq = 0
+
         nums.sort()
 
-        for elem in range(lower, upper + 1):
-            while idx < len(nums) - 1 and elem == nums[idx + 1]:
-                idx += 1
+        for right in range(len(nums)):
+            target = nums[right]
+            curr += target
 
-            min_upper_idxs[elem] = idx
+            while (right - left + 1) * target - curr > k:
+                curr -= nums[left]
+                left += 1
 
-        for elem in range(lower, upper + 1):
-            op, freq = 0, 0
-
-            for i in range(min_upper_idxs[elem], -1, -1):
-                op += elem - nums[i]
-
-                if op > k:
-                    break
-
-                freq += 1
-
-            max_freq = max(max_freq, freq)
+            max_freq = max(max_freq, right - left + 1)
 
         return max_freq
