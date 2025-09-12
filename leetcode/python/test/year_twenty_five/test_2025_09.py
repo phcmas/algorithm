@@ -6,6 +6,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 
 import year_twenty_five.september.campus_bikes_ii as assign_bikes
 import year_twenty_five.september.can_i_win as can_i_win
+import year_twenty_five.september.largest_unique_number as largest_unique_number
 
 
 def test_assign_bikes():
@@ -45,3 +46,16 @@ def test_can_i_win():
     assert ret1 is True
     assert ret2 is True
     assert ret3 is False
+
+
+def test_largest_unique_number():
+    solution = largest_unique_number.Solution()
+
+    nums0 = [5, 7, 3, 9, 4, 9, 8, 3, 1]
+    nums1 = [9, 9, 8, 8]
+
+    ret0 = solution.largest_unique_number(nums0)
+    ret1 = solution.largest_unique_number(nums1)
+
+    assert ret0 == 8
+    assert ret1 == -1
