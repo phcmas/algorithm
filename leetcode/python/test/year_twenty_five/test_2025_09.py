@@ -7,6 +7,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 import year_twenty_five.september.campus_bikes_ii as assign_bikes
 import year_twenty_five.september.can_i_win as can_i_win
 import year_twenty_five.september.largest_unique_number as largest_unique_number
+import year_twenty_five.september.number_of_matching_subsequences as num_matching_subseq
 
 
 def test_assign_bikes():
@@ -59,3 +60,16 @@ def test_largest_unique_number():
 
     assert ret0 == 8
     assert ret1 == -1
+
+
+def test_num_matching_subseq():
+    solution = num_matching_subseq.Solution()
+
+    s0, words0 = "abcde", ["a", "bb", "acd", "ace"]
+    s1, words1 = "dsahjpjauf", ["ahjpjau", "ja", "ahbwzgqnuk", "tnmlanowax"]
+
+    ret0 = solution.num_matching_subseq(s0, words0)
+    ret1 = solution.num_matching_subseq(s1, words1)
+
+    assert ret0 == 3
+    assert ret1 == 2
