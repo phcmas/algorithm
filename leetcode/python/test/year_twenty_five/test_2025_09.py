@@ -8,6 +8,7 @@ import year_twenty_five.september.campus_bikes_ii as assign_bikes
 import year_twenty_five.september.can_i_win as can_i_win
 import year_twenty_five.september.largest_unique_number as largest_unique_number
 import year_twenty_five.september.number_of_matching_subsequences as num_matching_subseq
+import year_twenty_five.september.maximum_distance_between_a_pair_of_values as max_distance
 
 
 def test_assign_bikes():
@@ -73,3 +74,19 @@ def test_num_matching_subseq():
 
     assert ret0 == 3
     assert ret1 == 2
+
+
+def test_max_distance():
+    solution = max_distance.Solution()
+
+    nums01, nums02 = [55, 30, 5, 4, 2], [100, 20, 10, 10, 5]
+    nums11, nums12 = [2, 2, 2], [10, 10, 1]
+    nums21, nums22 = [30, 29, 19, 5], [25, 25, 25, 25, 25]
+
+    ret0 = solution.max_distance(nums01, nums02)
+    ret1 = solution.max_distance(nums11, nums12)
+    ret2 = solution.max_distance(nums21, nums22)
+
+    assert ret0 == 2
+    assert ret1 == 1
+    assert ret2 == 2
