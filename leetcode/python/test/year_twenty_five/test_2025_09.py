@@ -9,6 +9,7 @@ import year_twenty_five.september.can_i_win as can_i_win
 import year_twenty_five.september.largest_unique_number as largest_unique_number
 import year_twenty_five.september.number_of_matching_subsequences as num_matching_subseq
 import year_twenty_five.september.maximum_distance_between_a_pair_of_values as max_distance
+import year_twenty_five.september.shortest_way_to_form_string as shortest_way
 
 
 def test_assign_bikes():
@@ -90,3 +91,22 @@ def test_max_distance():
     assert ret0 == 2
     assert ret1 == 1
     assert ret2 == 2
+
+
+def test_shortest_way():
+    solution = shortest_way.Solution()
+
+    source0, target0 = "abc", "abcbc"
+    source1, target1 = "abc", "acdbc"
+    source2, target2 = "xyz", "xzyxz"
+    source3, target3 = "aaaaa", "aaaaaaaaaaaaa"
+
+    ret0 = solution.shortest_way(source0, target0)
+    ret1 = solution.shortest_way(source1, target1)
+    ret2 = solution.shortest_way(source2, target2)
+    ret3 = solution.shortest_way(source3, target3)
+
+    assert ret0 == 2
+    assert ret1 == -1
+    assert ret2 == 3
+    assert ret3 == 3
