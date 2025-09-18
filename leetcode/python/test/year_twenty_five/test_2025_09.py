@@ -10,6 +10,7 @@ import year_twenty_five.september.largest_unique_number as largest_unique_number
 import year_twenty_five.september.number_of_matching_subsequences as num_matching_subseq
 import year_twenty_five.september.maximum_distance_between_a_pair_of_values as max_distance
 import year_twenty_five.september.shortest_way_to_form_string as shortest_way
+import year_twenty_five.september.rotated_digits as rotated_digits
 
 
 def test_assign_bikes():
@@ -110,3 +111,28 @@ def test_shortest_way():
     assert ret1 == -1
     assert ret2 == 3
     assert ret3 == 3
+
+
+def test_rotated_digits():
+    solution = rotated_digits.Solution()
+
+    n0 = 10
+    n1 = 1
+    n2 = 2
+    n3 = 29
+    n4 = 99
+    n5 = 231
+
+    ret0 = solution.rotated_digits(n0)
+    ret1 = solution.rotated_digits(n1)
+    ret2 = solution.rotated_digits(n2)
+    ret3 = solution.rotated_digits(n3)
+    ret4 = solution.rotated_digits(n4)
+    ret5 = solution.rotated_digits(n5)
+
+    assert ret0 == 4
+    assert ret1 == 0
+    assert ret2 == 1
+    assert ret3 == 15
+    assert ret4 == 40
+    assert ret5 == 101
