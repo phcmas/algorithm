@@ -6,11 +6,14 @@ sys.path.insert(1, abspath(SRC_DIR))
 
 import year_twenty_five.september.campus_bikes_ii as assign_bikes
 import year_twenty_five.september.can_i_win as can_i_win
+import year_twenty_five.september.complete_binary_tree_inserter as cbt_inserter
 import year_twenty_five.september.largest_unique_number as largest_unique_number
-import year_twenty_five.september.number_of_matching_subsequences as num_matching_subseq
 import year_twenty_five.september.maximum_distance_between_a_pair_of_values as max_distance
-import year_twenty_five.september.shortest_way_to_form_string as shortest_way
+import year_twenty_five.september.number_of_matching_subsequences as num_matching_subseq
 import year_twenty_five.september.rotated_digits as rotated_digits
+import year_twenty_five.september.shortest_way_to_form_string as shortest_way
+from common.tree_node import TreeNode
+from common.util import is_same_tree
 
 
 def test_assign_bikes():
@@ -136,3 +139,13 @@ def test_rotated_digits():
     assert ret3 == 15
     assert ret4 == 40
     assert ret5 == 101
+
+
+def test_cbt_inserter():
+    root0 = TreeNode.make([1, 2])
+    after_insertion0 = TreeNode.make([1, 2, 3, 4])
+    inserter0 = cbt_inserter.CBTInserter(root0)
+
+    assert inserter0.insert(3) == 1
+    assert inserter0.insert(4) == 2
+    assert is_same_tree(inserter0.get_root(), after_insertion0)
