@@ -12,6 +12,7 @@ import year_twenty_five.september.maximum_distance_between_a_pair_of_values as m
 import year_twenty_five.september.number_of_matching_subsequences as num_matching_subseq
 import year_twenty_five.september.rotated_digits as rotated_digits
 import year_twenty_five.september.shortest_way_to_form_string as shortest_way
+import year_twenty_five.september.number_of_wonderful_substrings as wonderful_substrings
 from common.tree_node import TreeNode
 from common.util import is_same_tree
 
@@ -149,3 +150,19 @@ def test_cbt_inserter():
     assert inserter0.insert(3) == 1
     assert inserter0.insert(4) == 2
     assert is_same_tree(inserter0.get_root(), after_insertion0)
+
+
+def test_wonderful_substrings():
+    solution = wonderful_substrings.Solution()
+
+    word0 = "aba"
+    word1 = "aabb"
+    word2 = "he"
+
+    ret0 = solution.wonderful_substrings(word0)
+    ret1 = solution.wonderful_substrings(word1)
+    ret2 = solution.wonderful_substrings(word2)
+
+    assert ret0 == 4
+    assert ret1 == 9
+    assert ret2 == 2
