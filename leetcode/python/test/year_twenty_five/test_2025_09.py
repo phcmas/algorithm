@@ -6,13 +6,14 @@ sys.path.insert(1, abspath(SRC_DIR))
 
 import year_twenty_five.september.campus_bikes_ii as assign_bikes
 import year_twenty_five.september.can_i_win as can_i_win
+import year_twenty_five.september.check_if_a_number_is_majority_element_in_a_sorted_array as is_majority_element
 import year_twenty_five.september.complete_binary_tree_inserter as cbt_inserter
 import year_twenty_five.september.largest_unique_number as largest_unique_number
 import year_twenty_five.september.maximum_distance_between_a_pair_of_values as max_distance
 import year_twenty_five.september.number_of_matching_subsequences as num_matching_subseq
+import year_twenty_five.september.number_of_wonderful_substrings as wonderful_substrings
 import year_twenty_five.september.rotated_digits as rotated_digits
 import year_twenty_five.september.shortest_way_to_form_string as shortest_way
-import year_twenty_five.september.number_of_wonderful_substrings as wonderful_substrings
 from common.tree_node import TreeNode
 from common.util import is_same_tree
 
@@ -166,3 +167,19 @@ def test_wonderful_substrings():
     assert ret0 == 4
     assert ret1 == 9
     assert ret2 == 2
+
+
+def test_is_majority_element():
+    solution = is_majority_element.Solution()
+
+    nums0 = [2, 4, 5, 5, 5, 5, 5, 6, 6]
+    nums1 = [10, 100, 101, 101]
+
+    target0 = 5
+    target1 = 101
+
+    ret0 = solution.is_majority_element(nums0, target0)
+    ret1 = solution.is_majority_element(nums1, target1)
+
+    assert ret0 is True
+    assert ret1 is False
