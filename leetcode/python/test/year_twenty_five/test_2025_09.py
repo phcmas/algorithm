@@ -14,6 +14,7 @@ import year_twenty_five.september.number_of_matching_subsequences as num_matchin
 import year_twenty_five.september.number_of_wonderful_substrings as wonderful_substrings
 import year_twenty_five.september.rotated_digits as rotated_digits
 import year_twenty_five.september.shortest_way_to_form_string as shortest_way
+import year_twenty_five.september.two_best_non_overlapping_events as max_two_events
 from common.tree_node import TreeNode
 from common.util import is_same_tree
 
@@ -183,3 +184,22 @@ def test_is_majority_element():
 
     assert ret0 is True
     assert ret1 is False
+
+
+def test_max_two_events():
+    solution = max_two_events.Solution()
+
+    events0 = [[1, 3, 2], [4, 5, 2], [2, 4, 3]]
+    events1 = [[1, 3, 2], [4, 5, 2], [1, 5, 5]]
+    events2 = [[1, 5, 3], [1, 5, 1], [6, 6, 5]]
+    events3 = [[66, 97, 90], [98, 98, 68], [38, 49, 63], [91, 100, 42], [92, 100, 22], [1, 77, 50], [64, 72, 97]]
+
+    ret0 = solution.max_two_events(events0)
+    ret1 = solution.max_two_events(events1)
+    ret2 = solution.max_two_events(events2)
+    ret3 = solution.max_two_events(events3)
+
+    assert ret0 == 4
+    assert ret1 == 5
+    assert ret2 == 8
+    assert ret3 == 165
