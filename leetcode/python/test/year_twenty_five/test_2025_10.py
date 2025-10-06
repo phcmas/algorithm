@@ -6,6 +6,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 
 import year_twenty_five.october.connecting_cities_with_minimum_cost as minumum_cost
 import year_twenty_five.october.find_the_safest_path_in_a_grid as maximum_safeness_factor
+import year_twenty_five.october.regions_cut_by_slashes as regions_by_slashes
 
 
 def test_minimum_cost():
@@ -41,3 +42,25 @@ def test_maximum_safeness_factor():
     assert ret1 == 2
     assert ret2 == 2
     assert ret3 == 0
+
+
+def test_regions_by_slashes():
+    solution = regions_by_slashes.Solution()
+
+    grid0 = [" /", "/ "]
+    grid1 = [" /", "  "]
+    grid2 = ["/\\", "\\/"]
+    grid3 = [" / ", " \\/", " / "]
+    grid4 = ["/\\/\\", "\\///", " \\//", "////"]
+
+    ret0 = solution.regions_by_slashes(grid0)
+    ret1 = solution.regions_by_slashes(grid1)
+    ret2 = solution.regions_by_slashes(grid2)
+    ret3 = solution.regions_by_slashes(grid3)
+    ret4 = solution.regions_by_slashes(grid4)
+
+    assert ret0 == 2
+    assert ret1 == 1
+    assert ret2 == 5
+    assert ret3 == 3
+    assert ret4 == 9
