@@ -7,6 +7,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 import year_twenty_five.october.connecting_cities_with_minimum_cost as minumum_cost
 import year_twenty_five.october.find_the_safest_path_in_a_grid as maximum_safeness_factor
 import year_twenty_five.october.regions_cut_by_slashes as regions_by_slashes
+import year_twenty_five.october.wiggle_sort as wiggle_sort
 
 
 def test_minimum_cost():
@@ -64,3 +65,16 @@ def test_regions_by_slashes():
     assert ret2 == 5
     assert ret3 == 3
     assert ret4 == 9
+
+
+def test_wiggle_sort():
+    solution = wiggle_sort.Solution()
+
+    nums0 = [3, 5, 2, 1, 6, 4]
+    nums1 = [6, 6, 5, 6, 3, 8]
+
+    solution.wiggle_sort(nums0)
+    solution.wiggle_sort(nums1)
+
+    assert nums0 == [3, 5, 1, 6, 2, 4]
+    assert nums1 == [6, 6, 5, 6, 3, 8]
