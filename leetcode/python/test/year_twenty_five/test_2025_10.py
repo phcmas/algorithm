@@ -8,6 +8,7 @@ import year_twenty_five.october.connecting_cities_with_minimum_cost as minumum_c
 import year_twenty_five.october.find_the_safest_path_in_a_grid as maximum_safeness_factor
 import year_twenty_five.october.regions_cut_by_slashes as regions_by_slashes
 import year_twenty_five.october.wiggle_sort as wiggle_sort
+import year_twenty_five.october.out_of_boundary_paths as find_paths
 
 
 def test_minimum_cost():
@@ -78,3 +79,15 @@ def test_wiggle_sort():
 
     assert nums0 == [3, 5, 1, 6, 2, 4]
     assert nums1 == [6, 6, 5, 6, 3, 8]
+
+
+def test_find_paths():
+    solution = find_paths.Solution()
+
+    ret0 = solution.find_paths(2, 2, 2, 0, 0)
+    ret1 = solution.find_paths(1, 3, 3, 0, 1)
+    ret2 = solution.find_paths(10, 10, 0, 5, 5)
+
+    assert ret0 == 6
+    assert ret1 == 12
+    assert ret2 == 0
