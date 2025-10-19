@@ -4,11 +4,13 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
+from common.tree_node import TreeNode
 import year_twenty_five.october.connecting_cities_with_minimum_cost as minumum_cost
 import year_twenty_five.october.find_the_safest_path_in_a_grid as maximum_safeness_factor
 import year_twenty_five.october.regions_cut_by_slashes as regions_by_slashes
 import year_twenty_five.october.wiggle_sort as wiggle_sort
 import year_twenty_five.october.out_of_boundary_paths as find_paths
+import year_twenty_five.october.two_sum_bsts as two_sum_bsts
 
 
 def test_minimum_cost():
@@ -91,3 +93,21 @@ def test_find_paths():
     assert ret0 == 6
     assert ret1 == 12
     assert ret2 == 0
+
+
+def test_two_sum_bsts():
+    solution = two_sum_bsts.Solution()
+
+    root01 = TreeNode.make([2, 1, 4])
+    root02 = TreeNode.make([1, 0, 3])
+    target0 = 5
+
+    root11 = TreeNode.make([0, -10, 10])
+    root12 = TreeNode.make([5, 1, 7, 0, 2])
+    target1 = 18
+
+    ret0 = solution.two_sum_bsts(root01, root02, target0)
+    ret1 = solution.two_sum_bsts(root11, root12, target1)
+
+    assert ret0 is True
+    assert ret1 is False
