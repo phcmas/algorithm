@@ -11,6 +11,7 @@ import year_twenty_five.october.regions_cut_by_slashes as regions_by_slashes
 import year_twenty_five.october.wiggle_sort as wiggle_sort
 import year_twenty_five.october.out_of_boundary_paths as find_paths
 import year_twenty_five.october.two_sum_bsts as two_sum_bsts
+import year_twenty_five.october.find_k_closest_elements as find_closest_elements
 
 
 def test_minimum_cost():
@@ -111,3 +112,21 @@ def test_two_sum_bsts():
 
     assert ret0 is True
     assert ret1 is False
+
+
+def test_find_closest_elements():
+    solution = find_closest_elements.Solution()
+
+    arr0 = [1, 2, 3, 4, 5]
+    k0 = 4
+    x0 = 3
+
+    arr1 = [1, 1, 2, 3, 4, 5]
+    k1 = 4
+    x1 = -1
+
+    ret0 = solution.find_closest_elements(arr0, k0, x0)
+    ret1 = solution.find_closest_elements(arr1, k1, x1)
+
+    assert ret0 == [1, 2, 3, 4]
+    assert ret1 == [1, 1, 2, 3]
