@@ -12,6 +12,7 @@ import year_twenty_five.october.wiggle_sort as wiggle_sort
 import year_twenty_five.october.out_of_boundary_paths as find_paths
 import year_twenty_five.october.two_sum_bsts as two_sum_bsts
 import year_twenty_five.october.find_k_closest_elements as find_closest_elements
+import year_twenty_five.october.minimum_operations_to_make_the_integer_zero as make_the_integer_zero
 
 
 def test_minimum_cost():
@@ -130,3 +131,16 @@ def test_find_closest_elements():
 
     assert ret0 == [1, 2, 3, 4]
     assert ret1 == [1, 1, 2, 3]
+
+
+def test_make_the_integer_zero():
+    solution = make_the_integer_zero.Solution()
+
+    num01, num02 = 3, -2
+    num11, num12 = 5, 7
+
+    ret0 = solution.make_the_integer_zero(num01, num02)
+    ret1 = solution.make_the_integer_zero(num11, num12)
+
+    assert ret0 == 3
+    assert ret1 == -1
