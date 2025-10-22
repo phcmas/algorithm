@@ -13,6 +13,7 @@ import year_twenty_five.october.out_of_boundary_paths as find_paths
 import year_twenty_five.october.two_sum_bsts as two_sum_bsts
 import year_twenty_five.october.find_k_closest_elements as find_closest_elements
 import year_twenty_five.october.minimum_operations_to_make_the_integer_zero as make_the_integer_zero
+import year_twenty_five.october.palindrome_permutation_ii as generate_palindromes
 
 
 def test_minimum_cost():
@@ -144,3 +145,19 @@ def test_make_the_integer_zero():
 
     assert ret0 == 3
     assert ret1 == -1
+
+
+def test_generate_palindromes():
+    solution = generate_palindromes.Solution()
+
+    s0 = "aabb"
+    s1 = "abc"
+    s2 = "aabbc"
+
+    ret0 = solution.generate_palindromes(s0)
+    ret1 = solution.generate_palindromes(s1)
+    ret2 = solution.generate_palindromes(s2)
+
+    assert sorted(ret0) == ["abba", "baab"]
+    assert sorted(ret1) == []
+    assert sorted(ret2) == ["abcba", "bacab"]
