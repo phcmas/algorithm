@@ -14,6 +14,7 @@ import year_twenty_five.october.two_sum_bsts as two_sum_bsts
 import year_twenty_five.october.find_k_closest_elements as find_closest_elements
 import year_twenty_five.october.minimum_operations_to_make_the_integer_zero as make_the_integer_zero
 import year_twenty_five.october.palindrome_permutation_ii as generate_palindromes
+import year_twenty_five.october.dot_product_of_two_sparse_vectors as dot_product
 
 
 def test_minimum_cost():
@@ -161,3 +162,30 @@ def test_generate_palindromes():
     assert sorted(ret0) == ["abba", "baab"]
     assert sorted(ret1) == []
     assert sorted(ret2) == ["abcba", "bacab"]
+
+
+def test_dot_product():
+    nums01 = [1, 0, 0, 2, 3]
+    nums02 = [0, 3, 0, 4, 0]
+
+    vec01 = dot_product.SparseVector(nums01)
+    vec02 = dot_product.SparseVector(nums02)
+    ans0 = vec01.dot_product(vec02)
+
+    nums11 = [0, 1, 0, 0, 0]
+    nums12 = [0, 0, 0, 0, 2]
+
+    vec11 = dot_product.SparseVector(nums11)
+    vec12 = dot_product.SparseVector(nums12)
+    ans1 = vec11.dot_product(vec12)
+
+    nums21 = [0, 1, 0, 0, 2, 0, 0]
+    nums22 = [1, 0, 0, 0, 3, 0, 4]
+
+    vec21 = dot_product.SparseVector(nums21)
+    vec22 = dot_product.SparseVector(nums22)
+    ans2 = vec21.dot_product(vec22)
+
+    assert ans0 == 8
+    assert ans1 == 0
+    assert ans2 == 6
