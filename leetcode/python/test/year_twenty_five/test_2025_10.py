@@ -15,6 +15,7 @@ import year_twenty_five.october.find_k_closest_elements as find_closest_elements
 import year_twenty_five.october.minimum_operations_to_make_the_integer_zero as make_the_integer_zero
 import year_twenty_five.october.palindrome_permutation_ii as generate_palindromes
 import year_twenty_five.october.dot_product_of_two_sparse_vectors as dot_product
+import year_twenty_five.october.missing_element_in_sorted_array as missing_element
 
 
 def test_minimum_cost():
@@ -189,3 +190,19 @@ def test_dot_product():
     assert ans0 == 8
     assert ans1 == 0
     assert ans2 == 6
+
+
+def test_missing_element():
+    solution = missing_element.Solution()
+
+    nums0, k0 = [4, 7, 9, 10], 1
+    nums1, k1 = [4, 7, 9, 10], 3
+    nums2, k2 = [1, 2, 4], 3
+
+    ret0 = solution.missing_element(nums0, k0)
+    ret1 = solution.missing_element(nums1, k1)
+    ret2 = solution.missing_element(nums2, k2)
+
+    assert ret0 == 5
+    assert ret1 == 8
+    assert ret2 == 6
