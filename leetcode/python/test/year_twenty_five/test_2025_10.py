@@ -16,6 +16,7 @@ import year_twenty_five.october.minimum_operations_to_make_the_integer_zero as m
 import year_twenty_five.october.palindrome_permutation_ii as generate_palindromes
 import year_twenty_five.october.dot_product_of_two_sparse_vectors as dot_product
 import year_twenty_five.october.missing_element_in_sorted_array as missing_element
+import year_twenty_five.october.minimum_subarrays_in_a_valid_split as valid_subarray_split
 
 
 def test_minimum_cost():
@@ -206,3 +207,19 @@ def test_missing_element():
     assert ret0 == 5
     assert ret1 == 8
     assert ret2 == 6
+
+
+def test_valid_subarray_split():
+    solution = valid_subarray_split.Solution()
+
+    nums0 = [2, 6, 3, 4, 3]
+    nums1 = [3, 5]
+    nums2 = [1, 2, 1]
+
+    ret0 = solution.valid_subarray_split(nums0)
+    ret1 = solution.valid_subarray_split(nums1)
+    ret2 = solution.valid_subarray_split(nums2)
+
+    assert ret0 == 2
+    assert ret1 == 2
+    assert ret2 == -1
