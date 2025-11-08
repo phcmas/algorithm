@@ -1,11 +1,16 @@
 import sys
 from os.path import abspath, dirname, join
 
+
 SRC_DIR = join(dirname(__file__), "../../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
+from common.util import is_same_list_nodes
+from common.list_node import ListNode
+
 import year_twenty_five.november.sparse_matrix_multiplication as sparse_matrix_multiplication
 import year_twenty_five.november.maximum_value_at_a_given_index_in_a_bounded_array as max_value
+import year_twenty_five.november.remove_duplicates_from_an_unsorted_linked_list as delete_duplicates_unsorted
 
 
 def test_multiply():
@@ -41,3 +46,23 @@ def test_max_value():
     assert ret1 == 3
     assert ret2 == 4
     assert ret3 == 1
+
+
+def test_delete_duplicates_unsorted():
+    solution = delete_duplicates_unsorted.Solution()
+
+    head0 = ListNode.make([1, 2, 3, 2])
+    head1 = ListNode.make([2, 1, 1, 2])
+    head2 = ListNode.make([3, 2, 2, 1, 3, 2, 4])
+
+    ret0 = solution.delete_duplicates_unsorted(head0)
+    ret1 = solution.delete_duplicates_unsorted(head1)
+    ret2 = solution.delete_duplicates_unsorted(head2)
+
+    answer0 = ListNode.make([1, 3])
+    answer1 = ListNode.make([])
+    answer2 = ListNode.make([1, 4])
+
+    assert is_same_list_nodes(ret0, answer0)
+    assert is_same_list_nodes(ret1, answer1)
+    assert is_same_list_nodes(ret2, answer2)
