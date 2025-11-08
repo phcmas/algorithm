@@ -1,16 +1,15 @@
 import sys
 from os.path import abspath, dirname, join
 
-
 SRC_DIR = join(dirname(__file__), "../../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
-from common.util import is_same_list_nodes
-from common.list_node import ListNode
-
-import year_twenty_five.november.sparse_matrix_multiplication as sparse_matrix_multiplication
+import year_twenty_five.november.maximum_number_of_eaten_apples as eaten_apples
 import year_twenty_five.november.maximum_value_at_a_given_index_in_a_bounded_array as max_value
 import year_twenty_five.november.remove_duplicates_from_an_unsorted_linked_list as delete_duplicates_unsorted
+import year_twenty_five.november.sparse_matrix_multiplication as sparse_matrix_multiplication
+from common.list_node import ListNode
+from common.util import is_same_list_nodes
 
 
 def test_multiply():
@@ -66,3 +65,19 @@ def test_delete_duplicates_unsorted():
     assert is_same_list_nodes(ret0, answer0)
     assert is_same_list_nodes(ret1, answer1)
     assert is_same_list_nodes(ret2, answer2)
+
+
+def test_eaten_apples():
+    solution = eaten_apples.Solution()
+
+    apples0 = [1, 2, 3, 5, 2]
+    days0 = [3, 2, 1, 4, 2]
+
+    apples1 = [3, 0, 0, 0, 0, 2]
+    days1 = [3, 0, 0, 0, 0, 2]
+
+    ret0 = solution.eaten_apples(apples0, days0)
+    ret1 = solution.eaten_apples(apples1, days1)
+
+    assert ret0 == 7
+    assert ret1 == 5
