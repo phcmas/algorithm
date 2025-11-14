@@ -8,6 +8,8 @@ import year_twenty_five.november.maximum_number_of_eaten_apples as eaten_apples
 import year_twenty_five.november.maximum_value_at_a_given_index_in_a_bounded_array as max_value
 import year_twenty_five.november.remove_duplicates_from_an_unsorted_linked_list as delete_duplicates_unsorted
 import year_twenty_five.november.sparse_matrix_multiplication as sparse_matrix_multiplication
+import year_twenty_five.november.two_sum_iii as two_sum_iii
+
 from common.list_node import ListNode
 from common.util import is_same_list_nodes
 
@@ -81,3 +83,17 @@ def test_eaten_apples():
 
     assert ret0 == 7
     assert ret1 == 5
+
+
+def test_two_sum_iii():
+    two_sum = two_sum_iii.TwoSum()
+
+    two_sum.add(3)
+    two_sum.add(1)
+    two_sum.add(5)
+
+    ret0 = two_sum.find(4)
+    ret1 = two_sum.find(7)
+
+    assert ret0 is True
+    assert ret1 is False
