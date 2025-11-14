@@ -86,14 +86,32 @@ def test_eaten_apples():
 
 
 def test_two_sum_iii():
-    two_sum = two_sum_iii.TwoSum()
+    two_sum0 = two_sum_iii.TwoSum2()
 
-    two_sum.add(3)
-    two_sum.add(1)
-    two_sum.add(5)
+    two_sum0.add(3)
+    two_sum0.add(1)
+    two_sum0.add(5)
 
-    ret0 = two_sum.find(4)
-    ret1 = two_sum.find(7)
+    ret0 = two_sum0.find(4)
+    ret1 = two_sum0.find(7)
+
+    two_sum1 = two_sum_iii.TwoSum2()
+
+    two_sum1.add(3)
+    two_sum1.add(2)
+    two_sum1.add(1)
+
+    ret2 = two_sum1.find(2)
+    ret3 = two_sum1.find(3)
+    ret4 = two_sum1.find(4)
+    ret5 = two_sum1.find(5)
+    ret6 = two_sum1.find(6)
 
     assert ret0 is True
     assert ret1 is False
+
+    assert ret2 is False
+    assert ret3 is True
+    assert ret4 is True
+    assert ret5 is True
+    assert ret6 is False

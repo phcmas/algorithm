@@ -31,9 +31,10 @@ At most 10^4 calls will be made to add and find.
 """
 
 import bisect
+from typing import Counter
 
 
-class TwoSumOld:
+class TwoSum0:
     def __init__(self):
         self.nums = []
 
@@ -71,7 +72,7 @@ class TwoSumOld:
         return False
 
 
-class TwoSum:
+class TwoSum1:
     def __init__(self):
         self.nums = []
 
@@ -84,6 +85,26 @@ class TwoSum:
             idx = bisect.bisect_left(self.nums, diff, i + 1)
 
             if idx < len(self.nums) and self.nums[idx] == diff:
+                return True
+
+        return False
+
+
+class TwoSum2:
+    def __init__(self):
+        self.counter = Counter()
+
+    def add(self, num: int):
+        self.counter[num] += 1
+
+    def find(self, val: int) -> bool:
+        for num in self.counter:
+            diff = val - num
+
+            if diff not in self.counter:
+                continue
+
+            if diff != num or self.counter[num] > 1:
                 return True
 
         return False
