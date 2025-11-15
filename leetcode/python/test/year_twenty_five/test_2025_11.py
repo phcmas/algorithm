@@ -9,6 +9,7 @@ import year_twenty_five.november.maximum_value_at_a_given_index_in_a_bounded_arr
 import year_twenty_five.november.remove_duplicates_from_an_unsorted_linked_list as delete_duplicates_unsorted
 import year_twenty_five.november.sparse_matrix_multiplication as sparse_matrix_multiplication
 import year_twenty_five.november.two_sum_iii as two_sum_iii
+import year_twenty_five.november.shortest_distance_to_target_color as shortest_distance_color
 
 from common.list_node import ListNode
 from common.util import is_same_list_nodes
@@ -115,3 +116,19 @@ def test_two_sum_iii():
     assert ret4 is True
     assert ret5 is True
     assert ret6 is False
+
+
+def test_shortest_distance_color():
+    solution = shortest_distance_color.Solution()
+
+    colors0 = [1, 1, 2, 1, 3, 2, 2, 3, 3]
+    queries0 = [[1, 3], [2, 2], [6, 1]]
+
+    colors1 = [1, 2]
+    queries1 = [[0, 3]]
+
+    ret0 = solution.shortest_distance_color(colors0, queries0)
+    ret1 = solution.shortest_distance_color(colors1, queries1)
+
+    assert ret0 == [3, 0, 3]
+    assert ret1 == [-1]
