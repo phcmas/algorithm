@@ -10,6 +10,7 @@ import year_twenty_five.november.remove_duplicates_from_an_unsorted_linked_list 
 import year_twenty_five.november.sparse_matrix_multiplication as sparse_matrix_multiplication
 import year_twenty_five.november.two_sum_iii as two_sum_iii
 import year_twenty_five.november.shortest_distance_to_target_color as shortest_distance_color
+import year_twenty_five.november.stone_game_ii as stone_game_ii
 
 from common.list_node import ListNode
 from common.util import is_same_list_nodes
@@ -132,3 +133,19 @@ def test_shortest_distance_color():
 
     assert ret0 == [3, 0, 3]
     assert ret1 == [-1]
+
+
+def test_stone_game_ii():
+    solution = stone_game_ii.Solution()
+
+    piles0 = [2, 7, 9, 4, 4]
+    piles1 = [1, 2, 3, 4, 5, 100]
+    piles2 = [77, 12, 64, 35, 28, 4, 87, 21, 20]
+
+    ret0 = solution.stone_game_ii(piles0)
+    ret1 = solution.stone_game_ii(piles1)
+    ret2 = solution.stone_game_ii(piles2)
+
+    assert ret0 == 10
+    assert ret1 == 104
+    assert ret2 == 217
