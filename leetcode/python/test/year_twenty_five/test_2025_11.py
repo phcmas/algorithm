@@ -11,6 +11,7 @@ import year_twenty_five.november.sparse_matrix_multiplication as sparse_matrix_m
 import year_twenty_five.november.two_sum_iii as two_sum_iii
 import year_twenty_five.november.shortest_distance_to_target_color as shortest_distance_color
 import year_twenty_five.november.stone_game_ii as stone_game_ii
+import year_twenty_five.november.three_sum_smaller as three_sum_smaller
 
 from common.list_node import ListNode
 from common.util import is_same_list_nodes
@@ -149,3 +150,25 @@ def test_stone_game_ii():
     assert ret0 == 10
     assert ret1 == 104
     assert ret2 == 217
+
+
+def test_three_sum_smaller():
+    solution = three_sum_smaller.Solution()
+
+    nums0, target0 = [-2, 0, 1, 3], 2
+    nums1, target1 = [], 0
+    nums2, target2 = [0], 0
+    nums3, target3 = [-3, -1, 0, 2, 4], 2
+    nums4, target4 = [0, 0, 0], 0
+
+    ret0 = solution.three_sum_smaller(nums0, target0)
+    ret1 = solution.three_sum_smaller(nums1, target1)
+    ret2 = solution.three_sum_smaller(nums2, target2)
+    ret3 = solution.three_sum_smaller(nums3, target3)
+    ret4 = solution.three_sum_smaller(nums4, target4)
+
+    assert ret0 == 2
+    assert ret1 == 0
+    assert ret2 == 0
+    assert ret3 == 6
+    assert ret4 == 0
