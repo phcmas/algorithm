@@ -26,7 +26,7 @@ n == nums.length
 """
 
 
-class Solution:
+class Solution0:
     def _make_freqs(self, nums: list[int]) -> dict[int, int]:
         prev, freqs = nums[0] - 1, {}
 
@@ -58,3 +58,21 @@ class Solution:
         nums.sort()
         freqs = self._make_freqs(nums)
         return sum(self._two_sum_smaller(nums, i + 1, target - nums[i], freqs) for i in range(len(nums) - 1))
+
+
+class Solution1:
+    def three_sum_smaller(self, nums: list[int], target: int) -> int:
+        nums.sort()
+        answer, n = 0, len(nums)
+
+        for i, num in enumerate(nums):
+            left, right = i + 1, n - 1
+
+            while left < right:
+                if nums[left] + nums[right] + num >= target:
+                    right -= 1
+                else:
+                    answer += right - left
+                    left += 1
+
+        return answer

@@ -153,22 +153,40 @@ def test_stone_game_ii():
 
 
 def test_three_sum_smaller():
-    solution = three_sum_smaller.Solution()
+    solution0 = three_sum_smaller.Solution0()
+    solution1 = three_sum_smaller.Solution1()
 
     nums0, target0 = [-2, 0, 1, 3], 2
     nums1, target1 = [], 0
     nums2, target2 = [0], 0
     nums3, target3 = [-3, -1, 0, 2, 4], 2
     nums4, target4 = [0, 0, 0], 0
+    nums5, target5 = [3, 1, 0, -2], 4
 
-    ret0 = solution.three_sum_smaller(nums0, target0)
-    ret1 = solution.three_sum_smaller(nums1, target1)
-    ret2 = solution.three_sum_smaller(nums2, target2)
-    ret3 = solution.three_sum_smaller(nums3, target3)
-    ret4 = solution.three_sum_smaller(nums4, target4)
+    ret00 = solution0.three_sum_smaller(nums0, target0)
+    ret01 = solution0.three_sum_smaller(nums1, target1)
+    ret02 = solution0.three_sum_smaller(nums2, target2)
+    ret03 = solution0.three_sum_smaller(nums3, target3)
+    ret04 = solution0.three_sum_smaller(nums4, target4)
+    ret05 = solution0.three_sum_smaller(nums5, target5)
 
-    assert ret0 == 2
-    assert ret1 == 0
-    assert ret2 == 0
-    assert ret3 == 6
-    assert ret4 == 0
+    assert ret00 == 2
+    assert ret01 == 0
+    assert ret02 == 0
+    assert ret03 == 6
+    assert ret04 == 0
+    assert ret05 == 3
+
+    ret10 = solution1.three_sum_smaller(nums0, target0)
+    ret11 = solution1.three_sum_smaller(nums1, target1)
+    ret12 = solution1.three_sum_smaller(nums2, target2)
+    ret13 = solution1.three_sum_smaller(nums3, target3)
+    ret14 = solution1.three_sum_smaller(nums4, target4)
+    ret15 = solution1.three_sum_smaller(nums5, target5)
+
+    assert ret10 == 2
+    assert ret11 == 0
+    assert ret12 == 0
+    assert ret13 == 6
+    assert ret14 == 0
+    assert ret15 == 3
