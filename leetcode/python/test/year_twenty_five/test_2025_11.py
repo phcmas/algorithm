@@ -7,12 +7,12 @@ sys.path.insert(1, abspath(SRC_DIR))
 import year_twenty_five.november.maximum_number_of_eaten_apples as eaten_apples
 import year_twenty_five.november.maximum_value_at_a_given_index_in_a_bounded_array as max_value
 import year_twenty_five.november.remove_duplicates_from_an_unsorted_linked_list as delete_duplicates_unsorted
-import year_twenty_five.november.sparse_matrix_multiplication as sparse_matrix_multiplication
-import year_twenty_five.november.two_sum_iii as two_sum_iii
 import year_twenty_five.november.shortest_distance_to_target_color as shortest_distance_color
+import year_twenty_five.november.smallest_number_in_infinite_set as smallest_infinite_set
+import year_twenty_five.november.sparse_matrix_multiplication as sparse_matrix_multiplication
 import year_twenty_five.november.stone_game_ii as stone_game_ii
 import year_twenty_five.november.three_sum_smaller as three_sum_smaller
-
+import year_twenty_five.november.two_sum_iii as two_sum_iii
 from common.list_node import ListNode
 from common.util import is_same_list_nodes
 
@@ -190,3 +190,24 @@ def test_three_sum_smaller():
     assert ret13 == 6
     assert ret14 == 0
     assert ret15 == 3
+
+
+def test_smallest_infinite_set():
+    obj = smallest_infinite_set.SmallestInfiniteSet()
+
+    obj.add_back(2)
+    ret0 = obj.pop_smallest()
+    ret1 = obj.pop_smallest()
+    ret2 = obj.pop_smallest()
+
+    obj.add_back(1)
+    ret3 = obj.pop_smallest()
+    ret4 = obj.pop_smallest()
+    ret5 = obj.pop_smallest()
+
+    assert ret0 == 1
+    assert ret1 == 2
+    assert ret2 == 3
+    assert ret3 == 1
+    assert ret4 == 4
+    assert ret5 == 5
