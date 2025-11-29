@@ -4,6 +4,7 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
+import year_twenty_five.november.binary_string_with_substrings_representing_1_to_n as query_string
 import year_twenty_five.november.maximum_number_of_eaten_apples as eaten_apples
 import year_twenty_five.november.maximum_value_at_a_given_index_in_a_bounded_array as max_value
 import year_twenty_five.november.remove_duplicates_from_an_unsorted_linked_list as delete_duplicates_unsorted
@@ -211,3 +212,45 @@ def test_smallest_infinite_set():
     assert ret3 == 1
     assert ret4 == 4
     assert ret5 == 5
+
+
+def test_query_string():
+    solution0 = query_string.Solution0()
+
+    s0, n0 = "0110", 3
+    s1, n1 = "0110", 4
+    s2, n2 = "1111000101", 5
+    s3, n3 = "110101011011000011011111000000", 15
+    s4, n4 = "0", 1
+
+    ret0 = solution0.query_string(s0, n0)
+    ret1 = solution0.query_string(s1, n1)
+    ret2 = solution0.query_string(s2, n2)
+    ret3 = solution0.query_string(s3, n3)
+    ret4 = solution0.query_string(s4, n4)
+
+    assert ret0 is True
+    assert ret1 is False
+    assert ret2 is True
+    assert ret3 is False
+    assert ret4 is False
+
+    solution1 = query_string.Solution1()
+
+    s0, n0 = "0110", 3
+    s1, n1 = "0110", 4
+    s2, n2 = "1111000101", 5
+    s3, n3 = "110101011011000011011111000000", 15
+    s4, n4 = "0", 1
+
+    ret0 = solution1.query_string(s0, n0)
+    ret1 = solution1.query_string(s1, n1)
+    ret2 = solution1.query_string(s2, n2)
+    ret3 = solution1.query_string(s3, n3)
+    ret4 = solution1.query_string(s4, n4)
+
+    assert ret0 is True
+    assert ret1 is False
+    assert ret2 is True
+    assert ret3 is False
+    assert ret4 is False
