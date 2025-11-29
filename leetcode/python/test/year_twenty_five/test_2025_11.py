@@ -14,6 +14,7 @@ import year_twenty_five.november.sparse_matrix_multiplication as sparse_matrix_m
 import year_twenty_five.november.stone_game_ii as stone_game_ii
 import year_twenty_five.november.three_sum_smaller as three_sum_smaller
 import year_twenty_five.november.two_sum_iii as two_sum_iii
+import year_twenty_five.november.range_addition as range_addition
 from common.list_node import ListNode
 from common.util import is_same_list_nodes
 
@@ -254,3 +255,16 @@ def test_query_string():
     assert ret2 is True
     assert ret3 is False
     assert ret4 is False
+
+
+def test_range_addition():
+    solution = range_addition.Solution()
+
+    length0, updates0 = 5, [[1, 3, 2], [2, 4, 3], [0, 2, -2]]
+    length1, updates1 = 10, [[2, 4, 6], [5, 6, 8], [1, 9, -4]]
+
+    ret0 = solution.get_modified_array(length0, updates0)
+    ret1 = solution.get_modified_array(length1, updates1)
+
+    assert ret0 == [-2, 0, 3, 5, 3]
+    assert ret1 == [0, -4, 2, 2, 2, 4, 4, -4, -4, -4]
