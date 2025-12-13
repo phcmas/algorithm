@@ -28,43 +28,26 @@ Constraints:
 1 <= p <= 10^9
 """
 
-import math
-from collections import defaultdict
-
 
 class Solution:
     def min_subarray(self, nums: list[int], p: int) -> int:
-        total = sum(nums)
+        need = sum(nums) % p
 
-        if total % p == 0:
+        if need == 0:
             return 0
 
-        prefix_sums = defaultdict(list[int])
-        cur, answer = 0, math.inf
+        prefix = 0
+        target = -1
+        seen = {0: -1}
+        answer = len(nums)
 
         for i, num in enumerate(nums):
-            cur += num
-            prefix_sums[cur % p].append(i)
+            prefix = (prefix + num) % p
+            target = (prefix - need) % p
 
-        for rem, idxs0 in prefix_sums.items():
-            if rem == total % p and idxs0[0] < len(nums) - 1:
-                answer = min(answer, idxs0[0] + 1)
+            if target in seen:
+                answer = min(answer, i - seen[target])
 
-            if (rem + total % p) % p not in prefix_sums:
-                continue
+            seen[prefix] = i
 
-            idxs1 = prefix_sums[(rem + total % p) % p]
-            left, right = 0, 0
-
-            while left < len(idxs0):
-                if idxs0[left] > idxs1[right]:
-                    if right == len(idxs1) - 1:
-                        break
-
-                    right += 1
-
-                else:
-                    answer = min(answer, idxs1[right] - idxs0[left])
-                    left += 1
-
-        return -1 if answer == math.inf else answer
+        return answer if answer < len(nums) else -1
