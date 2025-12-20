@@ -6,6 +6,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 
 import year_twenty_five.december.make_sum_divisible_by_p as min_subarray
 import year_twenty_five.december.merge_sorted_array as merge_sorted_array
+import year_twenty_five.december.remove_element as remove_element
 
 
 def test_min_subarray():
@@ -50,3 +51,25 @@ def test_merge_sorted_array():
     assert nums11 == [1]
     assert nums21 == [1]
     assert nums31 == [1, 2]
+
+
+def test_remove_element():
+    solution = remove_element.Solution()
+
+    nums0, val0 = [3, 2, 2, 3], 3
+    nums1, val1 = [0, 1, 2, 2, 3, 0, 4, 2], 2
+    nums2, val2 = [2], 3
+    nums3, val3 = [1], 1
+    nums4, val4 = [4, 5], 4
+
+    ret0 = solution.remove_element(nums0, val0)
+    ret1 = solution.remove_element(nums1, val1)
+    ret2 = solution.remove_element(nums2, val2)
+    ret3 = solution.remove_element(nums3, val3)
+    ret4 = solution.remove_element(nums4, val4)
+
+    assert sorted(nums0[:ret0]) == [2, 2]
+    assert sorted(nums1[:ret1]) == [0, 0, 1, 3, 4]
+    assert sorted(nums2[:ret2]) == [2]
+    assert sorted(nums3[:ret3]) == []
+    assert sorted(nums4[:ret4]) == [5]
