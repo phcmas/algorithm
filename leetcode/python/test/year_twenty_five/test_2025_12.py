@@ -5,6 +5,7 @@ SRC_DIR = join(dirname(__file__), "../../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
 import year_twenty_five.december.make_sum_divisible_by_p as min_subarray
+import year_twenty_five.december.merge_sorted_array as merge_sorted_array
 
 
 def test_min_subarray():
@@ -30,3 +31,22 @@ def test_min_subarray():
     assert ret3 == -1
     assert ret4 == 1
     assert ret5 == 1
+
+
+def test_merge_sorted_array():
+    solution = merge_sorted_array.Solution()
+
+    nums01, nums02, m0, n0 = [1, 2, 3, 0, 0, 0], [2, 5, 6], 3, 3
+    nums11, nums12, m1, n1 = [1], [], 1, 0
+    nums21, nums22, m2, n2 = [0], [1], 0, 1
+    nums31, nums32, m3, n3 = [2, 0], [1], 1, 1
+
+    solution.merge(nums01, m0, nums02, n0)
+    solution.merge(nums11, m1, nums12, n1)
+    solution.merge(nums21, m2, nums22, n2)
+    solution.merge(nums31, m3, nums32, n3)
+
+    assert nums01 == [1, 2, 2, 3, 5, 6]
+    assert nums11 == [1]
+    assert nums21 == [1]
+    assert nums31 == [1, 2]
