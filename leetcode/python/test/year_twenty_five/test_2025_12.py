@@ -8,6 +8,7 @@ import year_twenty_five.december.make_sum_divisible_by_p as min_subarray
 import year_twenty_five.december.merge_sorted_array as merge_sorted_array
 import year_twenty_five.december.remove_element as remove_element
 import year_twenty_five.december.remove_duplicates_from_sorted_array as remove_duplicates_from_sorted_array
+import year_twenty_five.december.valid_palindrome as valid_palindrome
 
 
 def test_min_subarray():
@@ -87,3 +88,19 @@ def test_remove_duplicates_from_sorted_array():
 
     assert sorted(nums0[:ret0]) == [1, 2]
     assert sorted(nums1[:ret1]) == [0, 1, 2, 3, 4]
+
+
+def test_valid_palindrome():
+    solution = valid_palindrome.Solution()
+
+    s0 = "A man, a plan, a canal: Panama"
+    s1 = "race a car"
+    s2 = " "
+
+    ret0 = solution.is_palindrome(s0)
+    ret1 = solution.is_palindrome(s1)
+    ret2 = solution.is_palindrome(s2)
+
+    assert ret0 is True
+    assert ret1 is False
+    assert ret2 is True
