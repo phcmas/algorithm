@@ -10,6 +10,8 @@ import year_twenty_five.december.remove_element as remove_element
 import year_twenty_five.december.remove_duplicates_from_sorted_array as remove_duplicates_from_sorted_array
 import year_twenty_five.december.valid_palindrome as valid_palindrome
 import year_twenty_five.december.two_sum_ii as two_sum_ii
+import year_twenty_five.december.ransom_note as ransom_note
+import year_twenty_five.december.minimum_size_subarray_sum as minimum_size_subarray_sum
 
 
 def test_min_subarray():
@@ -121,3 +123,35 @@ def test_two_sum_ii():
     assert ret0 == [1, 2]
     assert ret1 == [1, 3]
     assert ret2 == [1, 2]
+
+
+def test_ransom_note():
+    solution = ransom_note.Solution()
+
+    ransom_note0, magazine0 = "a", "b"
+    ransom_note1, magazine1 = "aa", "ab"
+    ransom_note2, magazine2 = "aa", "aab"
+
+    ret0 = solution.can_construct(ransom_note0, magazine0)
+    ret1 = solution.can_construct(ransom_note1, magazine1)
+    ret2 = solution.can_construct(ransom_note2, magazine2)
+
+    assert ret0 is False
+    assert ret1 is False
+    assert ret2 is True
+
+
+def test_minimum_size_subarray_sum():
+    solution = minimum_size_subarray_sum.Solution()
+
+    target0, nums0 = 7, [2, 3, 1, 2, 4, 3]
+    target1, nums1 = 4, [1, 4, 4]
+    target2, nums2 = 11, [1, 1, 1, 1, 1, 1, 1, 1]
+
+    ret0 = solution.min_sub_array_len(target0, nums0)
+    ret1 = solution.min_sub_array_len(target1, nums1)
+    ret2 = solution.min_sub_array_len(target2, nums2)
+
+    assert ret0 == 2
+    assert ret1 == 1
+    assert ret2 == 0
