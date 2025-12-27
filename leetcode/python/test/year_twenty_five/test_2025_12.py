@@ -9,6 +9,7 @@ import year_twenty_five.december.merge_sorted_array as merge_sorted_array
 import year_twenty_five.december.remove_element as remove_element
 import year_twenty_five.december.remove_duplicates_from_sorted_array as remove_duplicates_from_sorted_array
 import year_twenty_five.december.valid_palindrome as valid_palindrome
+import year_twenty_five.december.two_sum_ii as two_sum_ii
 
 
 def test_min_subarray():
@@ -104,3 +105,19 @@ def test_valid_palindrome():
     assert ret0 is True
     assert ret1 is False
     assert ret2 is True
+
+
+def test_two_sum_ii():
+    solution = two_sum_ii.Solution()
+
+    numbers0, target0 = [2, 7, 11, 15], 9
+    numbers1, target1 = [2, 3, 4], 6
+    numbers2, target2 = [-1, 0], -1
+
+    ret0 = solution.two_sum(numbers0, target0)
+    ret1 = solution.two_sum(numbers1, target1)
+    ret2 = solution.two_sum(numbers2, target2)
+
+    assert ret0 == [1, 2]
+    assert ret1 == [1, 3]
+    assert ret2 == [1, 2]
