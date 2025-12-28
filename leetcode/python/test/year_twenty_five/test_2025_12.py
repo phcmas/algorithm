@@ -12,6 +12,7 @@ import year_twenty_five.december.valid_palindrome as valid_palindrome
 import year_twenty_five.december.two_sum_ii as two_sum_ii
 import year_twenty_five.december.ransom_note as ransom_note
 import year_twenty_five.december.minimum_size_subarray_sum as minimum_size_subarray_sum
+import year_twenty_five.december.summary_ranges as summary_ranges
 
 
 def test_min_subarray():
@@ -155,3 +156,16 @@ def test_minimum_size_subarray_sum():
     assert ret0 == 2
     assert ret1 == 1
     assert ret2 == 0
+
+
+def test_summary_ranges():
+    solution = summary_ranges.Solution()
+
+    nums0 = [0, 1, 2, 4, 5, 7]
+    nums1 = [0, 2, 3, 4, 6, 8, 9]
+
+    ret0 = solution.summary_ranges(nums0)
+    ret1 = solution.summary_ranges(nums1)
+
+    assert ret0 == ["0->2", "4->5", "7"]
+    assert ret1 == ["0", "2->4", "6", "8->9"]
