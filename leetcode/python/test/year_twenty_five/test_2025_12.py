@@ -16,6 +16,7 @@ import year_twenty_five.december.summary_ranges as summary_ranges
 import year_twenty_five.december.two_sum_ii as two_sum_ii
 import year_twenty_five.december.valid_palindrome as valid_palindrome
 import year_twenty_five.december.add_two_numbers as add_two_numbers
+import year_twenty_five.december.min_stack as min_stack
 from common.tree_node import TreeNode
 from common.util import is_same_list_nodes, is_same_tree
 
@@ -215,3 +216,22 @@ def test_add_two_numbers():
     assert is_same_list_nodes(ret0, ans0)
     assert is_same_list_nodes(ret1, ans1)
     assert is_same_list_nodes(ret2, ans2)
+
+
+def test_min_stack():
+    stack0 = min_stack.MinStack()
+
+    stack0.push(-2)
+    stack0.push(0)
+    stack0.push(-3)
+
+    ret0 = stack0.get_min()
+
+    stack0.pop()
+
+    ret1 = stack0.top()
+    ret2 = stack0.get_min()
+
+    assert ret0 == -3
+    assert ret1 == 0
+    assert ret2 == -2
