@@ -4,15 +4,18 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
+import year_twenty_five.december.construct_binary_tree_from_preorder_and_inorder_traversal as build_tree
 import year_twenty_five.december.make_sum_divisible_by_p as min_subarray
 import year_twenty_five.december.merge_sorted_array as merge_sorted_array
-import year_twenty_five.december.remove_element as remove_element
-import year_twenty_five.december.remove_duplicates_from_sorted_array as remove_duplicates_from_sorted_array
-import year_twenty_five.december.valid_palindrome as valid_palindrome
-import year_twenty_five.december.two_sum_ii as two_sum_ii
-import year_twenty_five.december.ransom_note as ransom_note
 import year_twenty_five.december.minimum_size_subarray_sum as minimum_size_subarray_sum
+import year_twenty_five.december.ransom_note as ransom_note
+import year_twenty_five.december.remove_duplicates_from_sorted_array as remove_duplicates_from_sorted_array
+import year_twenty_five.december.remove_element as remove_element
 import year_twenty_five.december.summary_ranges as summary_ranges
+import year_twenty_five.december.two_sum_ii as two_sum_ii
+import year_twenty_five.december.valid_palindrome as valid_palindrome
+from common.tree_node import TreeNode
+from common.util import is_same_tree
 
 
 def test_min_subarray():
@@ -169,3 +172,19 @@ def test_summary_ranges():
 
     assert ret0 == ["0->2", "4->5", "7"]
     assert ret1 == ["0", "2->4", "6", "8->9"]
+
+
+def test_build_tree():
+    solution = build_tree.Solution()
+
+    preorder0, inorder0 = [3, 9, 20, 15, 7], [9, 3, 15, 20, 7]
+    preorder1, inorder1 = [-1], [-1]
+
+    ret0 = solution.build_tree(preorder0, inorder0)
+    ret1 = solution.build_tree(preorder1, inorder1)
+
+    ans0 = TreeNode.make([3, 9, 20, None, None, 15, 7])
+    ans1 = TreeNode.make([-1])
+
+    assert is_same_tree(ret0, ans0)
+    assert is_same_tree(ret1, ans1)
