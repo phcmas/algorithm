@@ -4,6 +4,7 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
+from common.list_node import ListNode
 import year_twenty_five.december.construct_binary_tree_from_preorder_and_inorder_traversal as build_tree
 import year_twenty_five.december.make_sum_divisible_by_p as min_subarray
 import year_twenty_five.december.merge_sorted_array as merge_sorted_array
@@ -14,8 +15,9 @@ import year_twenty_five.december.remove_element as remove_element
 import year_twenty_five.december.summary_ranges as summary_ranges
 import year_twenty_five.december.two_sum_ii as two_sum_ii
 import year_twenty_five.december.valid_palindrome as valid_palindrome
+import year_twenty_five.december.add_two_numbers as add_two_numbers
 from common.tree_node import TreeNode
-from common.util import is_same_tree
+from common.util import is_same_list_nodes, is_same_tree
 
 
 def test_min_subarray():
@@ -188,3 +190,28 @@ def test_build_tree():
 
     assert is_same_tree(ret0, ans0)
     assert is_same_tree(ret1, ans1)
+
+
+def test_add_two_numbers():
+    solution = add_two_numbers.Solution()
+
+    l01 = ListNode.make([2, 4, 3])
+    l02 = ListNode.make([5, 6, 4])
+
+    l11 = ListNode.make([0])
+    l12 = ListNode.make([0])
+
+    l21 = ListNode.make([9, 9, 9, 9, 9, 9, 9])
+    l22 = ListNode.make([9, 9, 9, 9])
+
+    ans0 = ListNode.make([7, 0, 8])
+    ans1 = ListNode.make([0])
+    ans2 = ListNode.make([8, 9, 9, 9, 0, 0, 0, 1])
+
+    ret0 = solution.add_two_numbers(l01, l02)
+    ret1 = solution.add_two_numbers(l11, l12)
+    ret2 = solution.add_two_numbers(l21, l22)
+
+    assert is_same_list_nodes(ret0, ans0)
+    assert is_same_list_nodes(ret1, ans1)
+    assert is_same_list_nodes(ret2, ans2)
