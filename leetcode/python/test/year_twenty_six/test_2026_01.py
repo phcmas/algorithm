@@ -4,10 +4,12 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
+from common.tree_node import TreeNode
 import year_twenty_six.january.isomorphic_strings as isomorphic_strings
 import year_twenty_six.january.valid_sudoku as is_valid_sudoku
 import year_twenty_six.january.remove_duplicates_from_sorted_array_ii as remove_duplicates
 import year_twenty_six.january.best_time_to_buy_and_sell_stock as max_profit
+import year_twenty_six.january.binary_tree_right_side_view as right_side_view
 
 
 def test_isomorphic_strings():
@@ -101,3 +103,22 @@ def test_max_profit():
 
     assert ret0 == 5
     assert ret1 == 0
+
+
+def test_right_side_view():
+    solution = right_side_view.Solution()
+
+    root0 = TreeNode.make([1, 2, 3, None, 5, None, 4])
+    root1 = TreeNode.make([1, 2, 3, 4, None, None, None, 5])
+    root2 = TreeNode.make([1, None, 3])
+    root3 = TreeNode.make([])
+
+    ret0 = solution.right_side_view(root0)
+    ret1 = solution.right_side_view(root1)
+    ret2 = solution.right_side_view(root2)
+    ret3 = solution.right_side_view(root3)
+
+    assert ret0 == [1, 3, 4]
+    assert ret1 == [1, 3, 4, 5]
+    assert ret2 == [1, 3]
+    assert ret3 == []
