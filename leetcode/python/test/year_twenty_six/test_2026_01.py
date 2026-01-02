@@ -7,6 +7,7 @@ sys.path.insert(1, abspath(SRC_DIR))
 import year_twenty_six.january.isomorphic_strings as isomorphic_strings
 import year_twenty_six.january.valid_sudoku as is_valid_sudoku
 import year_twenty_six.january.remove_duplicates_from_sorted_array_ii as remove_duplicates
+import year_twenty_six.january.best_time_to_buy_and_sell_stock as max_profit
 
 
 def test_isomorphic_strings():
@@ -87,3 +88,16 @@ def test_remove_duplicates():
 
     assert ret1 == 7
     assert nums1[:ret1] == [0, 0, 1, 1, 2, 3, 3]
+
+
+def test_max_profit():
+    solution = max_profit.Solution()
+
+    prices0 = [7, 1, 5, 3, 6, 4]
+    prices1 = [7, 6, 4, 3, 2]
+
+    ret0 = solution.max_profit(prices0)
+    ret1 = solution.max_profit(prices1)
+
+    assert ret0 == 5
+    assert ret1 == 0
