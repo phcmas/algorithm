@@ -4,9 +4,9 @@ from os.path import abspath, dirname, join
 SRC_DIR = join(dirname(__file__), "../../src")
 sys.path.insert(1, abspath(SRC_DIR))
 
-
 import year_twenty_six.january.isomorphic_strings as isomorphic_strings
 import year_twenty_six.january.valid_sudoku as is_valid_sudoku
+import year_twenty_six.january.remove_duplicates_from_sorted_array_ii as remove_duplicates
 
 
 def test_isomorphic_strings():
@@ -71,3 +71,19 @@ def test_is_valid_sudoku():
     assert ret0 is True
     assert ret1 is False
     assert ret2 is False
+
+
+def test_remove_duplicates():
+    solution = remove_duplicates.Solution()
+
+    nums0 = [1, 1, 1, 2, 2, 3]
+    nums1 = [0, 0, 1, 1, 1, 1, 2, 3, 3]
+
+    ret0 = solution.remove_duplicates(nums0)
+    ret1 = solution.remove_duplicates(nums1)
+
+    assert ret0 == 5
+    assert nums0[:ret0] == [1, 1, 2, 2, 3]
+
+    assert ret1 == 7
+    assert nums1[:ret1] == [0, 0, 1, 1, 2, 3, 3]
