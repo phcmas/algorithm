@@ -10,6 +10,7 @@ import year_twenty_six.january.valid_sudoku as is_valid_sudoku
 import year_twenty_six.january.remove_duplicates_from_sorted_array_ii as remove_duplicates
 import year_twenty_six.january.best_time_to_buy_and_sell_stock as max_profit
 import year_twenty_six.january.binary_tree_right_side_view as right_side_view
+import year_twenty_six.january.house_robber as house_robber
 
 
 def test_isomorphic_strings():
@@ -122,3 +123,16 @@ def test_right_side_view():
     assert ret1 == [1, 3, 4, 5]
     assert ret2 == [1, 3]
     assert ret3 == []
+
+
+def test_house_robber():
+    solution = house_robber.Solution()
+
+    nums0 = [1, 2, 3, 1]
+    nums1 = [2, 7, 9, 3, 1]
+
+    ret0 = solution.rob(nums0)
+    ret1 = solution.rob(nums1)
+
+    assert ret0 == 4
+    assert ret1 == 12
